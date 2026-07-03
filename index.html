@@ -451,6 +451,8 @@ wr:[
    Completion codes are only verifiable with the same secret in the Instructor panel. */
 const SECRET='xC5HdRKpNu3k33MMQunh8YLZ';
 const QUIZ_N=10, QUIZ_MIN=12, ALL_N=20, ALL_MIN=25;
+/* Lecture slide decks (accessible PPTX, original content). Add entries as decks are published. */
+const SLIDES={1:'slides/ch01-communicating-in-todays-workplace.pptx'};
 
 const P={};                 // practice: {ch:{answered:{},correct}}
 const HW={};                // homework sessions per chapter
@@ -824,6 +826,7 @@ function render(){
   const modeNames={practice:'Practice questions',homework:'Graded homework',quiz:'Timed quiz'};
   m.innerHTML=memoHead(modeNames[view.mode]+' — Chapter '+view.ch,'Chapter '+view.ch+': '+d.t,d.sub);
   m.insertAdjacentHTML('beforeend',tabsHtml(view.mode));
+  if(SLIDES[view.ch]) m.insertAdjacentHTML('beforeend','<p class="mono" style="margin:12px 0 0"><a href="'+SLIDES[view.ch]+'" download style="color:var(--navy)">⬇ DOWNLOAD CHAPTER '+view.ch+' LECTURE SLIDES (POWERPOINT)</a></p>');
   m.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{view.mode=t.dataset.m;render();window.scrollTo({top:0});});
   if(view.mode==='practice') renderPractice(m,d);
   else if(view.mode==='homework') renderHomework(m,d);
