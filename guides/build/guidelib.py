@@ -14,9 +14,14 @@ def new_doc(chapter_num, chapter_title, subtitle):
     # base styles
     st = doc.styles['Normal']; st.font.name = 'Calibri'; st.font.size = Pt(11)
     st.font.color.rgb = INK
+    st.paragraph_format.line_spacing = 1.15
+    st.paragraph_format.space_after = Pt(8)
     for name, size in [('Title', 26), ('Heading 1', 16), ('Heading 2', 13)]:
         s = doc.styles[name]; s.font.name = 'Cambria'; s.font.size = Pt(size)
         s.font.bold = True; s.font.color.rgb = GREEN
+    doc.styles['Heading 1'].paragraph_format.space_before = Pt(18)
+    doc.styles['Heading 1'].paragraph_format.space_after = Pt(8)
+    doc.styles['Heading 2'].paragraph_format.space_before = Pt(12)
     # metadata (accessibility checkers look for a document title)
     doc.core_properties.title = f'BADM 225 Study Guide — Chapter {chapter_num}: {chapter_title}'
     doc.core_properties.author = 'Derek D. Bussan, Ph.D., M.B.A.'
@@ -31,6 +36,7 @@ def new_doc(chapter_num, chapter_title, subtitle):
     r = p.add_run('Original instructional material written by the instructor. Not affiliated with, '
                   'and containing no content from, any textbook or publisher.')
     r.font.size = Pt(9); r.font.color.rgb = MUT
+    doc.add_page_break()
     return doc
 
 def h1(doc, text): doc.add_paragraph(text, style='Heading 1')
@@ -72,6 +78,27 @@ def references(doc, refs):
         p.paragraph_format.left_indent = Inches(0.5)
         p.paragraph_format.first_line_indent = Inches(-0.5)  # hanging indent
         p.paragraph_format.space_after = Pt(8)
+
+def figure(doc, img_path, caption, alt):
+    p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    run = p.add_run(); pic = run.add_picture(img_path, width=Inches(6.0))
+    pic._inline.docPr.set('descr', alt)   # alt text for screen readers / checkers
+    cap = doc.add_paragraph(); cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r = cap.add_run(caption); r.italic = True; r.font.size = Pt(9.5); r.font.color.rgb = MUT
+
+def quiz(doc, questions, answers):
+    h1(doc, 'Self-check quiz')
+    p = doc.add_paragraph(); r = p.add_run('Answer before looking at the key on the final page. '
+        'If you miss one, reread that section — then take the full practice set on the course site.')
+    r.italic = True; r.font.size = Pt(10); r.font.color.rgb = MUT
+    for i, (q, opts) in enumerate(questions, 1):
+        pq = doc.add_paragraph(); rq = pq.add_run(f'{i}. {q}'); rq.bold = True
+        for letter, opt in zip('abcd', opts):
+            doc.add_paragraph(f'{letter}) {opt}').paragraph_format.left_indent = Inches(0.4)
+    doc.add_page_break()
+    h2(doc, 'Answer key')
+    key = doc.add_paragraph()
+    key.add_run('   '.join(f'{i}. {a}' for i, a in enumerate(answers, 1))).bold = True
 
 def finish(doc, path, site_note=True):
     if site_note:
