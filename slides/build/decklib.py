@@ -12,7 +12,8 @@ INK      = RGBColor(0x21, 0x2A, 0x26)   # near-black green for body text
 GREEN    = RGBColor(0x0E, 0x4D, 0x33)   # deep forest — dominant
 MOSS     = RGBColor(0x5C, 0x8A, 0x6E)   # supporting tone
 TINT     = RGBColor(0xEA, 0xF1, 0xEB)   # pale green card background
-GOLD     = RGBColor(0xC9, 0x93, 0x1A)   # sharp accent (sparing)
+GOLD     = RGBColor(0xC9, 0x93, 0x1A)   # sharp accent — large/bold text on dark bg only
+GOLD_TEXT= RGBColor(0x8A, 0x64, 0x10)   # darker gold: passes 4.5:1 on white for small text
 WHITE    = RGBColor(0xFF, 0xFF, 0xFF)
 MUTED    = RGBColor(0x5E, 0x6B, 0x64)
 
@@ -59,6 +60,7 @@ def _title_ph(prs, slide, text, color, size=34, top=Inches(0.45), left=Inches(0.
         ph.left, ph.top, ph.width, ph.height = left, top, width or Inches(12.2), Inches(1.0)
     tf = ph.text_frame; tf.word_wrap = True
     tf.paragraphs[0].text = ""
+    tf.paragraphs[0].alignment = PP_ALIGN.LEFT
     r = tf.paragraphs[0].add_run(); r.text = text
     r.font.name = HEAD; r.font.size = Pt(size); r.font.bold = True; r.font.color.rgb = color
     _alt(ph, "Slide title: " + text)
@@ -74,7 +76,7 @@ def para(tf, text, size=16, color=INK, bold=False, bullet=False, lead=None,
     p.space_after = Pt(space_after)
     if bullet:
         rb = p.add_run(); rb.text = "▪  "
-        rb.font.name = BODY; rb.font.size = Pt(size); rb.font.color.rgb = GOLD
+        rb.font.name = BODY; rb.font.size = Pt(size); rb.font.color.rgb = GOLD_TEXT
     if lead:
         rl = p.add_run(); rl.text = lead + "  "
         rl.font.name = font; rl.font.size = Pt(size); rl.font.bold = True; rl.font.color.rgb = GREEN
@@ -117,7 +119,7 @@ def badge(slide, x, y, d, symbol, fill=GREEN, fg=WHITE, alt_text="Icon"):
 
 # ---------- slide constructors ----------
 def title_slide(prs, kicker, title, subtitle, deck_label):
-    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    slide = prs.slides.add_slide(prs.slide_layouts[5])
     _bg(slide, GREEN)
     tfk = textbox(slide, Inches(0.9), Inches(1.5), Inches(11.5), Inches(0.5), "Course label")
     para(tfk, kicker, size=15, color=RGBColor(0xBF, 0xD8, 0xC6), first=True, font=BODY)
@@ -131,7 +133,7 @@ def title_slide(prs, kicker, title, subtitle, deck_label):
     return slide
 
 def section_slide(prs, number, title, note_text, deck_label, idx):
-    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    slide = prs.slides.add_slide(prs.slide_layouts[5])
     _bg(slide, GREEN)
     tfn = textbox(slide, Inches(0.9), Inches(1.3), Inches(3.0), Inches(1.6), "Section number " + number)
     para(tfn, number, size=80, color=GOLD, bold=True, first=True, font=HEAD)
@@ -142,7 +144,7 @@ def section_slide(prs, number, title, note_text, deck_label, idx):
     return slide
 
 def content_slide(prs, title, deck_label, idx, title_size=32):
-    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    slide = prs.slides.add_slide(prs.slide_layouts[5])
     _bg(slide, WHITE)
     _title_ph(prs, slide, title, GREEN, size=title_size)
     _footer(slide, deck_label, idx)
@@ -233,7 +235,7 @@ def stat_slide(prs, title, big, big_label, points, deck_label, idx):
     return slide
 
 def quote_slide(prs, title, quote, attribution, deck_label, idx):
-    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    slide = prs.slides.add_slide(prs.slide_layouts[5])
     _bg(slide, TINT)
     _title_ph(prs, slide, title, GREEN)
     tf = textbox(slide, Inches(1.4), Inches(2.4), Inches(10.5), Inches(2.6), "Quotation")
@@ -244,7 +246,7 @@ def quote_slide(prs, title, quote, attribution, deck_label, idx):
     return slide
 
 def discussion_slide(prs, title, questions, deck_label, idx):
-    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    slide = prs.slides.add_slide(prs.slide_layouts[5])
     _bg(slide, GREEN)
     _title_ph(prs, slide, title, WHITE)
     tf = textbox(slide, Inches(0.8), Inches(1.9), Inches(11.7), Inches(4.9), "Discussion questions")
