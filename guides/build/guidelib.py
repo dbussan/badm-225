@@ -4,6 +4,8 @@
 from docx import Document
 from docx.shared import Pt, RGBColor, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
 
 GREEN = RGBColor(0x0E, 0x4D, 0x33)
 INK   = RGBColor(0x21, 0x2A, 0x26)
@@ -37,7 +39,27 @@ def new_doc(chapter_num, chapter_title, subtitle):
                   'and containing no content from, any textbook or publisher.')
     r.font.size = Pt(9); r.font.color.rgb = MUT
     doc.add_page_break()
+    _page_numbers(doc, chapter_num)
     return doc
+
+def _field(paragraph, instr, size=9):
+    r = paragraph.add_run()
+    f1 = OxmlElement('w:fldChar'); f1.set(qn('w:fldCharType'), 'begin')
+    it = OxmlElement('w:instrText'); it.set(qn('xml:space'), 'preserve'); it.text = instr
+    f2 = OxmlElement('w:fldChar'); f2.set(qn('w:fldCharType'), 'end')
+    r._r.append(f1); r._r.append(it); r._r.append(f2)
+    r.font.size = Pt(size); r.font.color.rgb = MUT; r.font.name = 'Calibri'
+
+def _page_numbers(doc, chapter_num):
+    footer = doc.sections[0].footer
+    p = footer.paragraphs[0]
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r1 = p.add_run(f'BADM 225 Study Guide · Chapter {chapter_num}  —  Page ')
+    r1.font.size = Pt(9); r1.font.color.rgb = MUT
+    _field(p, 'PAGE')
+    r2 = p.add_run(' of ')
+    r2.font.size = Pt(9); r2.font.color.rgb = MUT
+    _field(p, 'NUMPAGES')
 
 def h1(doc, text): doc.add_paragraph(text, style='Heading 1')
 def h2(doc, text): doc.add_paragraph(text, style='Heading 2')
