@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Communication — Homework, Practice &amp; Quizzes (Ch. 1–14)</title>
+<title>BADM 225 — Professional Communication for Business (UND) · Practice &amp; Homework</title>
 <style>
 /* Fully self-contained: no external fonts or connections. System font stacks below. */
 :root{
@@ -124,8 +124,8 @@ footer b{color:var(--ink)}
 <div class="wrap">
 <aside>
   <div class="brand">
-    <div class="mono">Practice Set · BComm</div>
-    <h1>Business Communication Practice</h1>
+    <div class="mono">UND · Nistler CoBPA</div>
+    <h1>BADM 225 — Professional Communication for Business</h1>
   </div>
   <div class="scorebox" id="totalbox">SESSION SCORE<br><b id="totscore">0 / 0</b> answered correct</div>
   <select class="msel" id="msel" aria-label="Choose a chapter"></select>
@@ -744,7 +744,7 @@ function render(){
   if(view.mode==='practice') renderPractice(m,d);
   else if(view.mode==='homework') renderHomework(m,d);
   else renderQuiz(m);
-  m.insertAdjacentHTML('beforeend','<footer><b>About this practice set.</b> All questions and model guidance are original material written for this course as supplemental practice. This site is not affiliated with, and does not reproduce content from, any textbook or publisher. Nothing you enter is uploaded or stored; scores reach your instructor only via completion codes submitted in the LMS.</footer>');
+  m.insertAdjacentHTML('beforeend','<footer><b>About this practice set.</b> All questions and model guidance are original material written by the instructor as supplemental practice for BADM 225. This is not an official University of North Dakota website, and it is not affiliated with, and does not reproduce content from, any textbook or publisher. Nothing you enter is uploaded or stored; scores reach your instructor only via completion codes submitted in the LMS.</footer>');
   wireCopy(m);
 }
 render();
