@@ -453,6 +453,19 @@ const SECRET='xC5HdRKpNu3k33MMQunh8YLZ';
 const QUIZ_N=10, QUIZ_MIN=12, ALL_N=20, ALL_MIN=25;
 /* Lecture slide decks (accessible PPTX, original content). Add entries as decks are published. */
 const SLIDES={1:'slides/ch01-communicating-in-todays-workplace.pptx'};
+/* Instructor's own career-series presentations (all original instructor material). */
+const CAREER=[
+ ['always-be-applying.pptx','Always Be Applying!','Why your job search never really stops — and how to make that work for you.',19],
+ ['no-interviews-no-job-offers-maybe.pptx','No Interviews, No Job Offers… Maybe.','Diagnosing a stalled job search and fixing the right stage of the funnel.',17],
+ ['how-to-negotiate-your-salary.pptx','How to Negotiate Your Salary','Preparation, timing, and scripts for the conversation most people avoid.',24],
+ ['career-strategy.pptx','Career Strategy','Playing the long game: skills, moves, and positioning across a career.',34],
+ ['company-culture.pptx','Company Culture','Reading a culture before you join it — and surviving the one you have.',18],
+ ['toxic-boss.pptx','Toxic Boss','Recognizing toxic management and protecting your work and wellbeing.',20],
+ ['morale-building.pptx','Morale Building','What actually lifts a team — and what only looks like it does.',11],
+ ['market-research-presentation.pptx','Market Research','Researching a market like a professional: sources, structure, and story.',16],
+ ['feasibility-study-opinion.pptx','Feasibility Study Opinion','Turning analysis into a defensible recommendation.',9],
+ ['dereks-introduction.pptx','Meet Your Instructor','Dr. Bussan’s introduction — the road from lab bench to classroom.',54]
+];
 
 const P={};                 // practice: {ch:{answered:{},correct}}
 const HW={};                // homework sessions per chapter
@@ -511,9 +524,11 @@ function buildNav(){
   const xd=document.createElement('div'); xd.className='navxtra';
   const bq=document.createElement('button'); bq.className='chbtn'; bq.innerHTML='<span class="n">★</span><span class="t">Comprehensive Quiz ('+ALL_N+' Q, all chapters)</span>';
   bq.onclick=()=>{view={kind:'quizAll'};render();window.scrollTo({top:0});};
+  const bc=document.createElement('button'); bc.className='chbtn'+(view.kind==='career'?' active':''); bc.innerHTML='<span class="n">▤</span><span class="t">Instructor’s Career Series ('+CAREER.length+' decks)</span>';
+  bc.onclick=()=>{view={kind:'career'};render();window.scrollTo({top:0});};
   const bi=document.createElement('button'); bi.className='chbtn'; bi.innerHTML='<span class="n">⚿</span><span class="t">Instructor Tools</span>';
   bi.onclick=()=>{view={kind:'instructor'};render();window.scrollTo({top:0});};
-  xd.appendChild(bq); xd.appendChild(bi); nav.appendChild(xd);
+  xd.appendChild(bq); xd.appendChild(bc); xd.appendChild(bi); nav.appendChild(xd);
   sel.onchange=e=>{view={kind:'ch',ch:+e.target.value,mode:'practice'};render();};
   const [c,a]=totals();
   document.getElementById('totscore').textContent=c+' / '+a;
@@ -818,6 +833,19 @@ function render(){
   buildNav();
   const m=document.getElementById('main');
   if(view.kind==='instructor'){ renderInstructor(m); return; }
+  if(view.kind==='career'){
+    m.innerHTML=memoHead('Instructor’s career series — original presentations','Instructor’s Career Series',
+     'Presentations created by your instructor on careers, job searching, and workplace life — the practical side of professional communication. All original instructor material. Click any title to download the PowerPoint.');
+    let h='';
+    CAREER.forEach(c=>{
+      h+='<div class="wr" style="margin-top:14px"><div class="tag mono">'+c[3]+' SLIDES · PPTX</div>'+
+       '<h3 style="margin-top:4px"><a href="slides/career/'+c[0]+'" download style="color:var(--navy)">'+c[1]+'</a></h3>'+
+       '<p class="sub" style="margin-top:4px">'+c[2]+'</p>'+
+       '<a class="mono" href="slides/career/'+c[0]+'" download style="color:var(--navy);font-size:12px">⬇ DOWNLOAD</a></div>';
+    });
+    m.insertAdjacentHTML('beforeend',h+'<footer><b>About this series.</b> These presentations are the instructor’s own original work, shared for students in this course. They are not affiliated with any textbook or publisher.</footer>');
+    return;
+  }
   if(view.kind==='quizAll'){
     m.innerHTML=memoHead('Comprehensive quiz — all chapters','Comprehensive Quiz','Twenty questions drawn at random from all fourteen chapter banks. '+ALL_MIN+'-minute limit.');
     renderQuiz(m); return;
