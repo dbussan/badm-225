@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Communication — Homework, Practice &amp; Quizzes (Ch. 1–14)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF7F0; --card:#FFFFFF; --ink:#1C2B3A; --line:#D9D2C3;
+  --navy:#20456B; --stamp:#2E7D5B; --proof:#B23A31; --hilite:#FFF0BF; --mut:#7C7566;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+.wrap{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+/* ---------- sidebar: the course file ---------- */
+aside{background:var(--ink);color:#EDE8DC;padding:26px 0 40px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{padding:0 22px 18px;border-bottom:1px solid #34455A}
+.brand .mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#9FB2C6;text-transform:uppercase}
+.brand h1{font-family:'IBM Plex Serif',serif;font-size:20px;line-height:1.25;margin-top:6px;color:#fff}
+.scorebox{margin:16px 22px;padding:12px 14px;border:1px dashed #4A5D74;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C9D6E4}
+.scorebox b{color:#fff}
+.unit{margin-top:16px}
+.unit h2{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA3B9;padding:6px 22px}
+.chbtn{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;background:none;border:none;color:#E4DFD3;font:inherit;font-size:13.5px;padding:8px 22px;cursor:pointer}
+.chbtn:hover{background:#28394D}
+.chbtn.active{background:var(--navy);color:#fff}
+.chbtn .n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#93A8BE;width:26px;flex:none}
+.chbtn.active .n{color:#CFE0F2}
+.chbtn .t{flex:1;padding-right:8px}
+.chbtn .dot{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#7E92A8}
+.chbtn .dot.done{color:#7FD4AC}
+/* ---------- main ---------- */
+main{padding:34px clamp(20px,5vw,64px) 90px;max-width:980px}
+.memo{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--navy);padding:22px 26px;box-shadow:0 1px 0 rgba(28,43,58,.06)}
+.memo table{font-family:'IBM Plex Mono',monospace;font-size:12.5px;border-collapse:collapse}
+.memo td{padding:2px 0;vertical-align:top}
+.memo td.k{color:var(--mut);width:74px;letter-spacing:.08em}
+.memo h2{font-family:'IBM Plex Serif',serif;font-size:clamp(22px,3.2vw,30px);margin-top:12px;color:var(--navy)}
+.memo p.sub{color:var(--mut);font-size:14px;margin-top:6px;max-width:62ch}
+.bar{display:flex;gap:14px;align-items:center;margin:22px 0 8px;flex-wrap:wrap}
+.progress{flex:1;min-width:180px;height:8px;background:#E9E2D2;border:1px solid var(--line);position:relative}
+.progress i{position:absolute;inset:0;right:auto;background:var(--stamp);width:0%;transition:width .25s}
+.bar .mono, .mono{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mut)}
+.reset{font-family:'IBM Plex Mono',monospace;font-size:12px;background:none;border:1px solid var(--line);padding:6px 12px;cursor:pointer;color:var(--ink)}
+.reset:hover{border-color:var(--proof);color:var(--proof)}
+/* ---------- questions ---------- */
+.q{background:var(--card);border:1px solid var(--line);margin-top:18px;padding:20px 24px;position:relative}
+.q .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
+.q h3{font-size:16px;font-weight:600;margin:6px 0 14px;max-width:70ch}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;background:#FCFAF5;border:1px solid var(--line);padding:10px 14px;margin-top:8px;cursor:pointer;position:relative;color:var(--ink)}
+.opt:hover{background:var(--hilite)}
+.q.locked .opt{cursor:default}
+.q.locked .opt:hover{background:#FCFAF5}
+.opt.correct{border-color:var(--stamp);background:#EDF7F1}
+.opt.wrong{border-color:var(--proof);background:#FBEFEE;text-decoration:underline;text-decoration-color:var(--proof);text-decoration-thickness:2px;text-underline-offset:3px}
+.opt .mark{font-family:'IBM Plex Mono',monospace;font-size:11px;float:right;margin-left:10px}
+.opt.correct .mark{color:var(--stamp)}
+.opt.wrong .mark{color:var(--proof)}
+.stamp{position:absolute;top:14px;right:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;border:2px solid var(--stamp);color:var(--stamp);padding:3px 9px;transform:rotate(-6deg);opacity:0;pointer-events:none}
+.q.right .stamp{opacity:1;animation:stampIn .18s ease-out}
+@keyframes stampIn{from{transform:rotate(-6deg) scale(1.6);opacity:0}to{transform:rotate(-6deg) scale(1);opacity:1}}
+.note{display:none;margin-top:12px;padding:10px 14px;border-left:3px solid var(--proof);background:#FDF6F0;font-size:13.5px;color:#5B4A44}
+.note b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--proof)}
+.q.right .note{border-left-color:var(--stamp);background:#F2F8F4}
+.q.right .note b{color:var(--stamp)}
+.q.locked .note{display:block}
+/* ---------- writing prompts ---------- */
+.wr{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--navy);margin-top:18px;padding:20px 24px}
+.wr h3{font-size:16px;font-weight:600;margin:6px 0 10px;max-width:70ch}
+.wr textarea{width:100%;min-height:110px;font:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--line);background:#FCFAF5;resize:vertical}
+.wr details{margin-top:10px}
+.wr summary{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--navy);cursor:pointer}
+.wr .model{margin-top:8px;padding:12px 16px;background:#F3F1E9;border:1px dashed var(--line);font-size:13.5px}
+.wr .model li{margin:4px 0 4px 18px}
+footer{margin-top:44px;font-size:12.5px;color:var(--mut);max-width:72ch}
+footer b{color:var(--ink)}
+.opt:focus-visible,.chbtn:focus-visible,.reset:focus-visible,summary:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+/* mobile */
+.msel{display:none}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr}
+  aside{position:static;height:auto;padding-bottom:10px}
+  .unitwrap{display:none}
+  .msel{display:block;margin:14px 22px 6px;width:calc(100% - 44px);font:inherit;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:8px}
+}
+
+/* ---------- modes / tabs ---------- */
+.tabs{display:flex;gap:0;margin-top:20px;border-bottom:2px solid var(--line)}
+.tab{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;background:none;border:1px solid var(--line);border-bottom:none;padding:9px 16px;cursor:pointer;color:var(--mut)}
+.tab.active{background:var(--card);color:var(--navy);border-color:var(--navy);border-bottom:2px solid var(--card);margin-bottom:-2px;font-weight:500}
+.formcard{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--stamp);padding:22px 24px;margin-top:18px}
+.formcard label{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--mut);margin-top:12px}
+.formcard input{width:100%;max-width:380px;font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);background:#FCFAF5;margin-top:4px}
+.rules{font-size:13.5px;color:#4A4438;margin-top:12px;max-width:66ch}
+.rules li{margin:4px 0 4px 18px}
+.gobtn{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;background:var(--navy);color:#fff;border:none;padding:11px 22px;cursor:pointer;margin-top:16px}
+.gobtn:hover{background:#183857}
+.gobtn.green{background:var(--stamp)}
+.gobtn.green:hover{background:#256848}
+.opt.picked{border-color:var(--navy);background:#EDF2F8;box-shadow:inset 3px 0 0 var(--navy)}
+.stickybar{position:sticky;top:0;z-index:5;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.timer{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--navy);border:1px solid var(--line);background:var(--card);padding:6px 12px}
+.timer.low{color:var(--proof);border-color:var(--proof)}
+.result{background:var(--card);border:2px solid var(--stamp);padding:24px;margin-top:18px}
+.result h2{font-family:'IBM Plex Serif',serif;color:var(--stamp);font-size:26px}
+.result .big{font-family:'IBM Plex Mono',monospace;font-size:34px;color:var(--ink);margin:8px 0}
+.codebox{font-family:'IBM Plex Mono',monospace;font-size:13px;background:#F3F1E9;border:1px dashed var(--navy);padding:12px 14px;word-break:break-all;margin-top:10px;user-select:all}
+.copybtn{font-family:'IBM Plex Mono',monospace;font-size:12px;border:1px solid var(--navy);background:none;color:var(--navy);padding:7px 14px;cursor:pointer;margin-top:10px}
+.copybtn:hover{background:var(--navy);color:#fff}
+.vtable{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:7px 10px;text-align:left;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.vtable th{background:#EFEBDF;color:var(--ink)}
+.vok{color:var(--stamp);font-weight:600}
+.vbad{color:var(--proof);font-weight:600}
+.navxtra{margin-top:20px;padding-top:14px;border-top:1px solid #34455A}
+.warn{background:#FDF6E7;border-left:4px solid #C99A2E;padding:10px 14px;font-size:13px;margin-top:12px;max-width:70ch}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="mono">Practice Set · BComm</div>
+    <h1>Business Communication Practice</h1>
+  </div>
+  <div class="scorebox" id="totalbox">SESSION SCORE<br><b id="totscore">0 / 0</b> answered correct</div>
+  <select class="msel" id="msel" aria-label="Choose a chapter"></select>
+  <div class="unitwrap" id="nav"></div>
+</aside>
+<main id="main"></main>
+</div>
+<script>
+/* ============ ORIGINAL PRACTICE CONTENT — Chapters 1–14 ============ */
+/* mc item: [question, [A,B,C,D], correctIndex, explanation] */
+const UNITS=[
+ {u:"Unit 1 · Communication Foundations",chs:[1]},
+ {u:"Unit 2 · The Writing Process",chs:[2,3,4]},
+ {u:"Unit 3 · Workplace Messages",chs:[5,6,7,8]},
+ {u:"Unit 4 · Reports & Proposals",chs:[9,10]},
+ {u:"Unit 5 · Professionalism & Speaking",chs:[11,12]},
+ {u:"Unit 6 · Employment Communication",chs:[13,14]}
+];
+const DATA={
+1:{t:"Communicating in Today's Workplace",sub:"Communication foundations, listening, nonverbal cues, ethics, and professionalism in a social and mobile workplace.",
+mc:[
+["In the communication process, the receiver's verbal or nonverbal response to a message is called:",["Encoding","Feedback","Channel noise","Decoding"],1,"Feedback closes the loop and tells the sender whether the message was understood as intended."],
+["A manager must discuss a sensitive performance problem with an employee. Which channel is the best first choice?",["A quick text message","A group email","A face-to-face (or video) conversation","A comment in the team chat"],2,"Rich channels carry tone, expression, and immediate feedback — essential for sensitive, complex, or emotional topics."],
+["Which of the following is the best example of a 'soft skill' employers say they want?",["Building pivot tables in Excel","Operating an ICP-MS instrument","Listening carefully and working well on a team","Knowing a programming language"],2,"Soft skills are interpersonal — listening, teamwork, adaptability — and they travel with you across every job."],
+["Which behavior best demonstrates active listening?",["Planning your reply while the other person talks","Paraphrasing the speaker's point before responding","Checking your phone to capture notes","Interrupting to correct small errors quickly"],1,"Restating the message in your own words confirms understanding and shows the speaker they were heard."],
+["When a speaker's words and body language conflict, listeners tend to:",["Believe the words","Believe the nonverbal cues","Ignore both","Ask for the message in writing"],1,"Nonverbal signals are seen as harder to fake, so they usually win when messages conflict."],
+["A simple, practical test of whether a workplace action is ethical is to ask:",["Is it profitable?","Can I avoid getting caught?","Would I be comfortable if this appeared in the news or before my family?","Is everyone else doing it?"],2,"The 'publicity test' cuts through rationalization: if you would be ashamed to see it published, don't do it."],
+["The safest assumption to make about anything you post on social media is that it is:",["Private if your settings are private","Deleted when you delete it","Public and permanent","Invisible to employers"],2,"Screenshots outlive settings; hiring managers and employers routinely find old posts."],
+["A safety engineer uses dense technical jargon in a memo to office staff. The communication barrier this creates is best described as a:",["Physical barrier","Language/semantic barrier","Channel failure","Feedback barrier"],1,"When word choice exceeds the audience's frame of reference, meaning is lost — a semantic barrier."],
+["A weekly status report you send to your manager is an example of which communication flow?", ["Downward", "Upward", "Lateral", "External"], 1, "Information moving from subordinate to superior is upward communication."],
+["The office 'grapevine' is best described as:", ["A formal reporting channel", "The informal, unofficial communication network", "A scheduling tool", "A legal document trail"], 1, "Grapevines are fast and inevitable; management's best defense is keeping formal channels honest and quick."],
+["Two employees interpret the same memo differently because of their different backgrounds. The concept at work is:", ["Channel noise", "Frame of reference", "Feedback", "Redundancy"], 1, "Each person decodes messages through their own experience, knowledge, and expectations."],
+["A loud HVAC unit that makes a conference call hard to hear is an example of:", ["Semantic noise", "Physical noise", "Psychological noise", "Feedback"], 1, "Physical noise is environmental interference with the channel itself."],
+["In a high-context culture, meaning tends to rely more heavily on:", ["Explicit written words", "Relationships, tone, and situation", "Legal contracts", "Bullet points"], 1, "Low-context cultures spell everything out; high-context cultures encode meaning in relationships and setting."],
+["An ethical dilemma differs from an ethical lapse because a dilemma involves:", ["A clearly illegal act", "Two defensible values in genuine conflict", "Simple carelessness", "No consequences"], 1, "A lapse is choosing wrong over right; a dilemma is choosing between two rights (or two harms)."],
+["The most reliable communication habit for remote workers is to:", ["Assume silence means approval", "Overcommunicate status and decisions in writing", "Save all updates for annual review", "Rely on hallway conversations"], 1, "Distributed teams cannot see you working; visible, written updates replace the hallway."],
+["The best writer's response to today's information overload is to:", ["Write longer messages to cover everything", "Frontload the main point and keep messages concise", "Send the same message on five channels", "Use more attachments"], 1, "Overloaded readers reward writers who respect their time with clear, frontloaded brevity."]],
+wr:[
+["A frustrated coworker sends you a draft email to a client that opens: 'You obviously didn't read my last message.' Rewrite the opening two sentences so the message stays firm but professional, then explain the changes in one sentence.",["Removes accusation and 'you' blame language ('It looks like my earlier note may not have come through clearly…').","States the needed information or action plainly and courteously.","Keeps a neutral, forward-looking tone focused on solving the problem, not assigning fault."]],
+["Your team must announce a new parking policy (minor), and separately announce a department restructuring (major, emotional). Choose a communication channel for each and justify each choice in 2–3 sentences.",["Parking: lean channel (email/intranet post) — routine, factual, needs a record.","Restructuring: rich channel first (in-person or live video meeting) with written follow-up — emotional impact needs dialogue and immediate feedback.","Justification references audience impact, need for feedback, and permanence."]]]},
+2:{t:"Planning Business Messages",sub:"Purpose, audience analysis, channel selection, tone, and adaptation before you write a word.",
+mc:[
+["The first question to answer before drafting any business message is:",["How long should it be?","What is my purpose, and what do I want the reader to do?","Which font looks most professional?","Should I copy my manager?"],1,"Purpose drives everything else — content, channel, organization, and tone."],
+["The person who will act on your message is the primary audience. A secondary audience is:",["Anyone who dislikes the message","Others who may read or be affected by it later","Only executives","The person who typed it"],1,"Messages get forwarded; writing with secondary readers in mind prevents embarrassment and confusion."],
+["Which factor most strongly favors putting a message in writing rather than delivering it orally?",["The news is emotional","You need a permanent record","You want immediate feedback","The message is trivial"],1,"Written channels create documentation — key for policies, agreements, and instructions."],
+["Which sentence best reflects the 'you' view?",["We are pleased to announce our new hours.","I have decided to extend the deadline.","You can now shop weeknights until 9 p.m.","Our policy requires this form."],2,"Reader-centered writing frames information in terms of the reader's benefit, not the writer's actions."],
+["Which revision uses positive language most effectively?",["We cannot ship your order until Friday.","Your order will ship on Friday.","Unfortunately, shipment is impossible before Friday.","Do not expect your order before Friday."],1,"Say what you can do. The same fact lands better framed as a positive commitment."],
+["Adapting a message to a skeptical audience most often means:",["Making it longer","Leading with reader benefits and anticipating objections","Using more technical terms","Copying more senior people"],1,"Skeptics need to see what's in it for them and to find their objections already addressed."],
+["Which option uses bias-free, inclusive language?",["Each manager should submit his budget.","The girls at the front desk can help.","Every salesman must attend.","Each manager should submit a budget."],3,"Rewriting around the pronoun (or using 'their') removes gendered assumptions without awkwardness."],
+["You must ask 240 employees to complete an annual benefits form by June 1. The most efficient appropriate channel is:",["Individual phone calls","A company-wide email with clear subject and deadline","A hallway poster only","A single mention in one team meeting"],1,"Routine mass requests suit lean, written, trackable channels; the subject line and deadline do the heavy lifting."],
+["'To announce the new travel-reimbursement procedure' is a purpose statement for a message that is primarily:", ["Persuasive", "Informational", "Goodwill", "Negative"], 1, "Informing conveys facts and procedures; persuading seeks to change belief or behavior."],
+["The single most useful audience-analysis question before writing is:", ["What font do they prefer?", "What does the reader already know, and what do they need from me?", "How long is their commute?", "Do they outrank me?"], 1, "Knowledge level and needs determine content, vocabulary, and detail."],
+["Ranked by 'richness' (capacity for feedback and cues), the richest channel below is:", ["Email", "Text message", "Face-to-face conversation", "Posted memo"], 2, "Face-to-face carries words, tone, expression, and instant feedback — the richest medium available."],
+["The tone appropriate for most routine business messages is:", ["Stiff and legalistic", "Conversational but professional", "Slangy and casual", "Ornate and literary"], 1, "Write like a competent human talking to another: warm, plain, and professional."],
+["Which revision fixes sender-focused wording? Original: 'I need everyone to send me their forms so I can finish my report.'", ["I require your forms immediately.", "Please submit your forms by Friday so your December reimbursement arrives on time.", "My report is due, so hurry.", "Forms are needed."], 1, "Reframing around the reader's benefit turns a demand into cooperation."],
+["Writing with empathy chiefly means:", ["Agreeing with everything the reader says", "Anticipating how the message looks and feels from the reader's side", "Adding emotional language", "Apologizing often"], 1, "Empathy is perspective-taking — shaping the message for the person receiving it."],
+["Because most workplace messages can be forwarded, careful writers:", ["Include private jokes for the primary reader", "Write as though a secondary audience may read it", "Mark everything confidential", "Avoid names entirely"], 1, "Assume a wider audience: no confidential details or remarks you wouldn't want traveling."],
+["Beyond richness, sensible channel selection also weighs:", ["The writer's typing speed only", "Urgency, need for a record, formality, and cost", "The reader's astrological sign", "Whichever app is open"], 1, "Match the medium to the message: how fast, how formal, how permanent, and at what cost."]],
+wr:[
+["Write a one-sentence purpose statement for this situation: you must convince your director to fund a $2,400 software license that saves your team roughly six hours per week.",["Names the action sought (approve $2,400 license).","Names the audience (director) and the key benefit (≈6 staff-hours saved weekly ≈ payback period).","One sentence, specific and measurable."]],
+["Your lab is switching sample-tracking systems. Draft the first 2–3 sentences of the announcement twice: once for the scientists who will use it daily, once for senior leadership. Note the one biggest difference.",["Scientists' version: what changes for them, training dates, where to get help.","Leadership version: cost, risk reduction, data quality/compliance benefit.","Difference: same facts, benefits reframed for each audience's interests."]]]},
+3:{t:"Organizing and Drafting Business Messages",sub:"Direct vs. indirect organization, paragraphs that hold together, and sentences that pull their weight.",
+mc:[
+["The direct organizational pattern places the main idea:",["At the end, after full explanation","In the middle","First, followed by details","Only in the subject line"],2,"Frontloading respects the reader's time and works whenever the audience is neutral or pleased."],
+["The indirect pattern is the better choice when:",["Delivering routine information","The reader will be displeased or must be persuaded","The reader is your subordinate","Time is short"],1,"Bad news and persuasion benefit from explanation before the main point, preparing the reader."],
+["A topic sentence's job in a business paragraph is to:",["Add style","State the paragraph's main idea, usually first","Summarize the whole document","Provide a transition only"],1,"Business readers skim; a clear first sentence lets them grasp each paragraph instantly."],
+["Which choice most improves coherence between sentences?",["Longer sentences","Transitional expressions such as 'however' and 'as a result'","More adjectives","Passive voice throughout"],1,"Transitions signal the logical relationship between ideas so the reader never has to guess."],
+["Passive voice is the better choice when you want to:",["Take clear credit","Emphasize the doer of the action","De-emphasize who is at fault","Sound energetic"],2,"'The invoice was misplaced' softens blame; active voice is the default everywhere else."],
+["Which list is grammatically parallel?",["Plan the survey, distributing forms, and analysis","Planning the survey, distribute forms, to analyze data","Plan the survey, distribute the forms, and analyze the data","To plan, distributing, analysis"],2,"Parallel items share the same grammatical form — here, matching verb phrases."],
+["As a general drafting guideline, most workplace sentences are easiest to read when they average about:",["8 words","20 words","35 words","50 words"],1,"Around 20 words keeps ideas digestible; vary length for rhythm, but watch the average."],
+["A paragraph has unity when:",["It contains at least eight sentences","Every sentence develops one main idea","It begins with a quotation","It uses at least two transitions"],1,"One paragraph, one idea. New idea, new paragraph."],
+["The chief benefit of frontloading the main idea in routine messages is that it:", ["Adds suspense", "Saves the reader's time and prevents misreading", "Lengthens the message", "Softens bad news"], 1, "Readers act faster and more accurately when the point comes first."],
+["Outlining before drafting mainly helps the writer:", ["Avoid research", "Group related ideas and sequence them logically", "Pick fonts", "Meet word counts"], 1, "An outline is cheap surgery; reorganizing a finished draft is expensive."],
+["To de-emphasize a lesser idea within a sentence, place it in a:", ["Simple sentence of its own", "Subordinate (dependent) clause", "Heading", "Bulleted list"], 1, "Main ideas get main clauses; lesser ideas ride along in dependent clauses."],
+["Which technique adds emphasis mechanically (visually)?", ["Burying the idea mid-paragraph", "Bolding, headings, or bullet placement", "Passive voice", "Longer sentences"], 1, "Position and formatting signal importance — use them for the ideas that deserve it."],
+["Which sentence is in active voice?", ["The samples were logged by the technician.", "Mistakes were made.", "The technician logged the samples.", "It was decided that testing occur."], 2, "Actor-verb-object: the technician (actor) logged (verb) the samples (object)."],
+["'Walking into the lab, the alarm startled me.' The error is a:", ["Comma splice", "Dangling modifier", "Parallelism fault", "Fragment"], 1, "The opening phrase must modify the subject that follows — the alarm wasn't walking; I was."],
+["A short transitional paragraph in a longer document exists to:", ["Add word count", "Summarize what came before and preview what follows", "Repeat the introduction", "Hold citations"], 1, "Pivot paragraphs are signposts that keep readers oriented between major sections."],
+["Which wording is most concrete?", ["Sales improved substantially", "Sales rose considerably", "Sales increased 12% over Q1", "Sales did better"], 2, "Specific numbers and facts inform; vague intensifiers only gesture."]],
+wr:[
+["Reorganize this bad-order note into direct pattern (2–3 sentences): 'Our team met twice. We considered many vendors. Several had good prices. We recommend TechServe for the contract.'",["Opens with the recommendation: 'We recommend TechServe for the contract.'","Follows with the brief support: two meetings, several vendors compared, best combination of price and fit.","Main point first; evidence second."]],
+["Fix the parallelism, then explain the rule in one sentence: 'The new hires will learn safety procedures, how to file reports, and communicating with clients.'",["'…will learn safety procedures, report filing, and client communication' (or all verb forms: to follow…, to file…, to communicate…).","Rule: items in a series must share the same grammatical structure."]]]},
+4:{t:"Revising Business Messages",sub:"Conciseness, clarity, and proofreading — where good drafts become professional documents.",
+mc:[
+["The most concise revision of 'due to the fact that' is:",["In light of the fact that","Because","Owing to the situation in which","For the reason that"],1,"One word beats five. Concise writing respects the reader."],
+["'The committee will make a decision on Friday' contains a buried verb. The stronger version is:",["The committee will engage in deciding Friday.","The committee will decide on Friday.","A decision will be made by the committee Friday.","The committee's decision-making occurs Friday."],1,"Turning hidden nouns (make a decision) back into verbs (decide) sharpens and shortens sentences."],
+["Which phrase contains a redundancy?",["Final outcome","Annual report","Signed contract","Team meeting"],0,"An outcome is final by definition; 'final outcome,' 'exact same,' and 'past history' all double up."],
+["The main reason not to rely on a spellchecker alone is that it:",["Slows the computer","Misses correctly spelled wrong words ('form' for 'from')","Only works in English","Changes your formatting"],1,"Spellcheck can't catch real words used wrongly — the errors readers notice most."],
+["Which document element most improves readability at a glance?",["Longer paragraphs","Headings, white space, and bulleted lists","Smaller font","All-caps text"],1,"Visual structure lets readers find and absorb information quickly."],
+["Which expression is a dated, trite business phrase best cut from modern messages?",["Please","As per your request","Thank you","By Friday"],1,"'As per,' 'enclosed please find,' and 'pursuant to' sound like 1952; write like a person."],
+["When proofreading a finished document, the items deserving the MOST careful checking are:",["Adjectives","Names, numbers, and dates","Font choices","Paragraph indents"],1,"A wrong name, figure, or date damages credibility (and sometimes money) more than any typo."],
+["A 'reader-friendly' revision of legalistic language primarily aims for:",["Impressiveness","Plain language the audience understands on first reading","Longer sentences","More qualifiers"],1,"Clarity is the courtesy; if readers must reread, the writer has more work to do."],
+["Which revision removes the empty filler? Original: 'There are three factors that affect the results.'", ["There exist three factors affecting results.", "Three factors affect the results.", "It is three factors that affect results.", "Factors, of which there are three, affect results."], 1, "'There are/It is' openings usually hide the real subject; cut them and lead with it."],
+["'This is to inform you that the meeting has been moved' contains a:", ["Buried verb", "Long lead-in", "Redundancy", "Cliché only"], 1, "Long lead-ins delay the point; start with 'The meeting has moved to…'."],
+["For a mixed audience of specialists and non-specialists, technical jargon should be:", ["Used freely to impress", "Defined or replaced with plain equivalents", "Placed only in the subject line", "Italicized"], 1, "Clarity for the least-technical reader costs the specialist nothing."],
+["Converting a dense paragraph of steps into a numbered list mainly improves:", ["Tone", "Skim-ability and the chance steps are followed in order", "Word count", "Legal standing"], 1, "Numbered lists match how people execute procedures — one step at a time."],
+["For long, high-stakes documents, experienced proofreaders often:", ["Trust the first read", "Print the document or read it in a new format after a break", "Skip the numbers", "Proofread only on a phone"], 1, "Fresh eyes and a changed format break the brain's habit of seeing what it expects."],
+["Proofreading differs from revising because proofreading focuses on:", ["Big-picture organization", "Surface correctness: grammar, spelling, punctuation, format", "Audience analysis", "Adding new content"], 1, "Revise for substance and clarity first; proofread the final surface last."],
+["An efficient two-pass proofreading strategy is to read once for ____ and once for ____.", ["speed; fun", "meaning/clarity; mechanics", "the boss; the client", "spelling; spelling again"], 1, "Separating the passes keeps each kind of error from hiding behind the other."],
+["When collaborating on drafts, the professional practice is to:", ["Overwrite others' text silently", "Use tracked changes/comments and clear version names", "Email untitled files repeatedly", "Merge by memory"], 1, "Visible edits and disciplined versioning prevent lost work and mystery changes."]],
+wr:[
+["Cut this 43-word sentence to under 15 words without losing meaning: 'It is our intention at this point in time to conduct an examination of the various different options that are currently available to us in order to make a determination as to the best possible course of action.'",["Example: 'We will now examine our options and choose the best course.' (11 words)","Eliminates fillers ('at this point in time'), redundancies ('various different'), and buried verbs ('make a determination' → decide/choose)."]],
+["Find the five errors: 'The report, which include last months figures, are do to the manger by Friday.'",["include → includes","months → month's","are → is","do → due","manger → manager"]]]},
+5:{t:"Short Workplace Messages and Digital Media",sub:"Email, instant messages, texts, and social media — fast channels, professional standards.",
+mc:[
+["The most effective email subject line below is:",["Question","Important!!","Budget approval needed for Lab Safety Training by May 3","Hi"],2,"Specific subject lines state the topic and the action, so the message gets opened and acted on."],
+["'Reply All' is appropriate only when:",["You want visibility","Every recipient genuinely needs your response","The thread is long","You disagree with the sender"],1,"Inbox clutter is a real cost; reply to the people who need the answer."],
+["Typing a sentence in ALL CAPITALS in a work email generally reads as:",["Emphasis and enthusiasm","Shouting","Formality","Urgency handled well"],1,"Use wording, not capitals, to convey emphasis; caps read as anger."],
+["Which topic should move OUT of email and into a live conversation?",["Confirming a meeting time","A brewing interpersonal conflict with a teammate","Sharing an agenda","Sending a file"],1,"Emotion plus text is a fire hazard; disagreements de-escalate faster with voice and tone."],
+["Which practice belongs in professional instant messaging?",["Assuming the other person is always free","Checking status/presence and asking if it's a good time","Sending confidential data since chats disappear","Using IM for formal disciplinary notices"],1,"IM etiquette mirrors a knock on the door — quick, courteous, and never for sensitive formal matters."],
+["When posting about your employer on personal social media, the wisest general practice is to:",["Speak officially for the company","Share internal news early","Make clear opinions are your own and never disclose confidential information","Tag executives for reach"],2,"Personal accounts still carry professional consequences; confidentiality and disclaimers protect you."],
+["A standard internal memo or memo-style email header contains:",["To, From, Date, Subject","Dear, Sincerely, Enclosure","Greeting, body, P.S.","Logo, slogan, footer"],0,"The four-part header lets any reader instantly see who, when, and what."],
+["Texting a client is acceptable when:",["Delivering bad news formally","They have invited that channel and the matter is brief and routine","You want a paper trail","It is after business hours"],1,"Match the channel to the relationship and the stakes; texts are for brief, welcomed, routine exchanges."],
+["The most professional email greeting to a new external contact is:", ["Hey!", "Dear Ms. Rivera:", "Yo Maria", "(no greeting)"], 1, "Open formally with new or external contacts; relax only as the relationship does."],
+["A complete email signature block should include:", ["A favorite quote and emojis", "Name, title, organization, and contact information", "Just your first name", "Your home address"], 1, "The signature answers 'who is this and how do I reach them' at a glance."],
+["Before forwarding a message thread outside your team, you should:", ["Forward instantly for speed", "Get the sender's okay if sensitive and trim irrelevant history", "Add more recipients for visibility", "Change the wording inside the thread"], 1, "Threads often contain context not meant for new eyes; permission and pruning protect everyone."],
+["An effective out-of-office auto-reply states:", ["Nothing — mystery is professional", "Dates away, an alternate contact, and when to expect a reply", "Your vacation destination in detail", "A joke"], 1, "Its whole job is to redirect urgent needs and set response expectations."],
+["A question requiring rapid back-and-forth clarification is usually handled best by:", ["A dozen emails", "A brief phone or video call", "A formal letter", "A group announcement"], 1, "When each answer spawns the next question, synchronous beats asynchronous."],
+["The best internal tool for building a shared, editable knowledge base is a:", ["Wiki or shared workspace", "Mass email chain", "Voicemail box", "Printed binder"], 0, "Wikis keep living information current and findable; email buries it."],
+["Emoji in workplace writing are best treated as:", ["Mandatory for warmth", "Acceptable sparingly with familiar peers, avoided in formal or first-contact messages", "Forbidden by law", "A substitute for clarity"], 1, "Mirror the audience and the stakes; when in doubt, words carry the tone."],
+["The safest rule for confidential information and email is:", ["Email is private if marked confidential", "Do not put in email what you cannot afford to see forwarded", "Deleting removes all copies", "BCC guarantees secrecy"], 1, "Email is easily stored, forwarded, and subpoenaed; sensitive matters need secure or in-person channels."]],
+wr:[
+["Write a complete, three-sentence email (with subject line) asking your professor for a 48-hour extension on a report, offering a reason and a specific new deadline.",["Subject states topic + ask (e.g., 'Request: 48-hour extension on Unit 4 report').","Body: direct request first, brief honest reason, specific new date/time, thanks.","Professional tone; no over-explaining or emotional padding."]],
+["Your team chat has spiraled into a 30-message debate about a chart format. Write the one message you would post to resolve it, and say which channel you'd move to if it continues.",["Summarizes the two options neutrally and proposes a decision path ('Let's go with X for Friday's draft; we can revisit after review').","Names an owner and a deadline.","Escalation channel: quick call or 10-minute meeting — richer channel for genuine disagreement."]]]},
+6:{t:"Positive and Neutral Messages",sub:"Routine requests, replies, goodwill messages, and adjustments — the everyday mail of business.",
+mc:[
+["A routine request message should open with:",["Background history","The main request, politely stated","An apology","A warm personal story"],1,"Frontload the ask; details and justification follow."],
+["When replying to a customer's routine question, the best opening delivers:",["A restatement of their question","The answer itself","Your company's history","A privacy disclaimer"],1,"Readers want the answer first; frontloading is the direct pattern at work."],
+["Effective goodwill messages (thanks, congratulations, sympathy) are best when they are:",["Long and formal","Prompt, specific, and sincere","Sent by mass email","Focused on the sender"],1,"A short, timely, personal note lands harder than any generic card."],
+["When granting a customer's claim (an 'adjustment'), the message should:",["Grant grudgingly and warn the customer","Open with the good news and rebuild confidence","Bury the decision at the end","Blame a specific employee by name"],1,"Lead with the grant, explain briefly, and close by restoring the relationship."],
+["A handwritten or personally worded thank-you note after someone helps you primarily builds:",["Legal protection","Goodwill and a stronger professional relationship","A paper trail","Obligation"],1,"Gratitude expressed specifically is one of the cheapest, most durable relationship investments."],
+["An order confirmation should always include:",["A sales pitch for unrelated items","What was ordered, cost, and when/how it will arrive","The warehouse manager's name","Legal boilerplate only"],1,"Confirmations exist to remove uncertainty: item, price, timing, and next steps."],
+["The most effective closing for an action-request message includes:",["'Thanks in advance' alone","A specific action and an end date, courteously framed","A vague 'let me know'","A second copy of the request"],1,"'Please return the signed form by May 3' beats 'at your earliest convenience' every time."],
+["In a message of sympathy to a colleague, it is best to:",["Avoid mentioning the loss directly","Mention the loss simply, express genuine concern, and offer specific support","Compare it to your own losses at length","Keep it strictly business"],1,"Name the loss, keep it brief and sincere, and make the offer of help concrete."],
+["A routine claim (you received a defective product) should open with:", ["An apology for complaining", "A clear statement of the problem and the action you request", "A threat to sue", "Your customer history in full"], 1, "Routine claims use the direct pattern: what happened, what you want, politely and factually."],
+["When a reply contains mostly good news and one small negative, lead with:", ["The negative", "The good news", "An apology", "Neither — bury both"], 1, "Open with the positive; position the small negative mid-message with any softening context."],
+["Well-written instructions use:", ["Long narrative paragraphs", "Numbered steps beginning with command verbs", "Passive voice throughout", "Legal terminology"], 1, "'Insert the vial… Press START…' — one action per step, in order, in the imperative."],
+["When requesting a letter of recommendation, professional courtesy requires:", ["Demanding a quick turnaround", "Asking permission, supplying your résumé and details, and giving ample lead time", "Listing the person without asking", "Writing it yourself and forging a signature"], 1, "Make the writer's job easy and the deadline humane; you'll get a better letter."],
+["The best congratulations note is:", ["Sent months later to seem casual", "Prompt and specific about the achievement", "Generic so it can be reused", "Focused on your own news"], 1, "Speed and specificity are what make goodwill messages feel genuine."],
+["Courtesy words like 'please' and 'thank you' in routine requests:", ["Weaken authority", "Cost nothing and measurably improve cooperation", "Are legally required", "Should be replaced with urgency flags"], 1, "Politeness is a productivity tool; people move faster for writers who respect them."],
+["Anticipating and answering a customer's next logical question in your reply is called:", ["Padding", "Adding value / extra helpfulness", "Scope creep", "Overreach"], 1, "Answering the asked and the about-to-be-asked question prevents another email cycle."],
+["In routine messages, frontloading applies to:", ["Only the closing", "Both the subject line and the first sentence", "Attachments", "The signature"], 1, "Subject states the topic and action; sentence one delivers the point."]],
+wr:[
+["Write a four-sentence thank-you note to a guest speaker who visited your class or team, referencing one specific thing they said.",["Prompt and personal; names the specific insight and its effect on you/the group.","Sincere tone without flattery; closes warmly.","Short — the specificity is what makes it memorable."]],
+["A customer's $89 order arrived damaged. Draft the opening two sentences of your adjustment email granting a replacement, then list what the rest of the message must cover.",["Opens with the grant: replacement shipping (date) at no charge; brief apology without groveling.","Rest: what went wrong (briefly), what happens next, confidence-restoring close.","Avoids blame language and negative dwelling."]]]},
+7:{t:"Negative Messages",sub:"Buffers, reasons, and de-emphasis — how to deliver bad news and keep the relationship.",
+mc:[
+["In the indirect strategy, a 'buffer' is:",["A legal disclaimer","A neutral or positive opening that eases into the message","A blank line","The refusal itself, softened"],1,"A buffer finds honest common ground — agreement, appreciation, or facts — before the news."],
+["In an indirect bad-news message, the reasons for the decision appear:",["After the refusal","Before the bad news","Only if the reader asks","In a P.S."],1,"When readers understand the why first, the no lands as a conclusion rather than a blow."],
+["Which sentence best de-emphasizes bad news?",["You failed to qualify for the discount.","We must refuse your request.","Although the discount applies to orders over $500, we can offer free shipping on your order.","Your request is denied."],2,"Subordinate clauses, positive alternatives, and passive constructions all soften without hiding the news."],
+["The DIRECT pattern is appropriate for bad news when:",["The reader prefers directness, the news is minor, or safety requires immediate clarity","The news is devastating","You fear the reader's reaction","Persuasion is the goal"],0,"Directness is a tool, not a taboo — small news and urgent warnings should not be buried."],
+["When refusing a customer's request, the strongest messages usually:",["End immediately after the refusal","Offer an alternative or partial solution","Cite internal policy codes","Promise nothing"],1,"'Here is what we can do' converts a closed door into a different open one."],
+["The most effective business apology is:",["Repeated several times throughout","Sincere, made once, and paired with what happens next","Vague ('mistakes were made')","Avoided entirely for legal reasons in all cases"],1,"Own it plainly, once, then move the reader forward; endless apology re-centers the failure."],
+["When announcing bad news to employees (e.g., benefit cuts), leadership should:",["Let rumor deliver it first","Communicate honestly, promptly, and explain the reasons","Release it late Friday with no context","Delegate it to the newest hire"],1,"People can absorb hard facts; what they cannot forgive is evasion or hearing it secondhand."],
+["To reduce legal risk in negative messages, writers should avoid:",["Stating decisions clearly","Careless language such as unproven accusations or admissions of negligence","Offering alternatives","Explaining timing"],1,"Words like 'negligent' or accusatory claims can create liability; state facts, not verdicts."],
+["The conventional four-part indirect plan for bad news is:", ["Bad news, buffer, reasons, close", "Buffer, reasons, bad news, positive close", "Reasons, close, buffer, bad news", "Apology, apology, bad news, apology"], 1, "Ease in, explain, state the news once clearly, and exit forward-looking."],
+["The best buffer among these openings for denying a refund is:", ["'We have received your complaint.'", "'Thank you for eight years as a customer — we reviewed your order the day your letter arrived.'", "'Unfortunately, we must deny your request.'", "'Our policy is attached.'"], 1, "A good buffer is relevant, sincere, and neutral-to-positive without implying a yes."],
+["Stacking negative words ('unfortunately… regret… cannot… deny') mainly:", ["Adds necessary gravity", "Amplifies the sting without adding information", "Meets legal requirements", "Shortens the message"], 1, "State the news once in neutral language; piling on negatives just deepens the wound."],
+["The close of a bad-news message should:", ["Repeat the refusal for clarity", "Look forward — an alternative, next step, or goodwill — without re-apologizing", "Invite an argument", "End mid-thought"], 1, "Never end on the refusal; end on the relationship."],
+["When you must push back on a request from your own manager, the wise approach is to:", ["Simply refuse", "Present the constraint honestly with data and offer workable alternatives", "Ignore the request", "Comply and complain to peers"], 1, "Managing up on bad news means facts, options, and respect — not stonewalling."],
+["In a crisis, effective organizations communicate:", ["Slowly, after everything is certain", "Quickly and factually, through a designated spokesperson, updating as facts firm up", "Through anonymous leaks", "Only through lawyers"], 1, "Speed with honesty beats silence; a single voice prevents contradiction."],
+["Softening bad news must never cross into:", ["Explaining reasons", "Ambiguity that leaves the reader unsure the answer was no", "Offering alternatives", "Courtesy"], 1, "Kindness in delivery, clarity in content: the reader must leave knowing the decision."],
+["For serious personal bad news (e.g., ending a contract role), best practice is to:", ["Text it", "Deliver it in person or by call, then confirm essentials in writing", "Announce it publicly first", "Let rumor handle it"], 1, "Rich channel for humanity, written record for clarity — in that order."]],
+wr:[
+["A loyal customer asks you to waive a $150 restocking fee, but policy applies. Write the buffer sentence and the refusal sentence (with alternative) you would use.",["Buffer: genuine appreciation or agreement ('Thank you for eight years as a customer — we double-checked every option on this order').","Refusal embedded with reason + alternative: fee applies because the item was custom-cut; offer 15% off the reorder or store credit.","No 'unfortunately/we must deny' hammer words; forward-looking close."]],
+["Draft the first paragraph of a memo announcing that free on-site parking will end in 60 days, using the indirect approach.",["Buffer of honest context (lease change/cost pressures + what's being protected instead).","Reasons before the news; news stated once, clearly, with the effective date.","Immediately pivots to alternatives: transit subsidy, permits, carpool matching."]]]},
+8:{t:"Persuasive Messages",sub:"Attention, interest, desire, action — moving readers ethically, upward and outward.",
+mc:[
+["The classic four-part persuasive sequence is:",["Action, Interest, Desire, Attention","Attention, Interest, Desire, Action","Attention, Information, Decision, Apology","Ask, Insist, Demand, Act"],1,"Capture attention, build interest with benefits, create desire with proof, and request specific action."],
+["Which opening best gains attention for a proposal to fund ergonomic chairs?",["'This memo concerns chairs.'","'Our team filed 14 back-strain reports last year — each costing us about a week of lost work.'","'Chairs are important to offices.'","'As per my last email…'"],1,"A striking, relevant fact tied to the reader's costs beats any throat-clearing."],
+["Rational appeals work best when the audience is:",["Buying a luxury item on impulse","Making a business decision and accountable for the outcome","Uninterested in evidence","Already persuaded"],1,"Managers must justify decisions, so give them numbers, comparisons, and sources; save emotional color for consumer contexts."],
+["The most effective way to handle likely objections in a persuasive message is to:",["Ignore them","Raise and answer the strongest ones yourself","Mock them","Save them for a follow-up"],1,"Unanswered objections do not disappear; addressing them shows respect and removes exit ramps."],
+["When persuading your own manager, the strongest position emphasizes:",["Your personal preference","How the idea advances the organization's goals, with evidence","Threats to escalate","How hard you worked"],1,"Frame requests in the currency leaders spend: outcomes, cost, risk, and alignment with priorities."],
+["The tone of an effective claim (complaint) letter is:",["Angry and threatening","Confident, factual, and courteous","Apologetic and vague","Sarcastic"],1,"You are asking a reasonable company to fix a documented problem; write like you expect exactly that."],
+["A strong call to action is:",["'Let me know your thoughts sometime.'","'Please approve the pilot by June 15 so we can start with fall training.'","'Do something soon.'","'Thanks for reading.'"],1,"Specific action + specific date + a reason the date matters."],
+["Which practice crosses the ethical line in persuasion?",["Citing verified statistics","Inventing or exaggerating evidence","Acknowledging trade-offs","Quoting satisfied customers accurately"],1,"Persuasion earns consent; deception manufactures it — and destroys credibility when discovered."],
+["Effective persuasion begins not with your argument but with:", ["Your credentials", "Analysis of what the audience values, fears, and needs", "A discount", "Volume"], 1, "You persuade people from where they stand, not from where you stand."],
+["A persuader's credibility rests chiefly on perceived:", ["Height and volume", "Expertise and trustworthiness", "Seniority alone", "Vocabulary size"], 1, "Do they know their subject, and are they honest? Everything else is decoration."],
+["'Over 300 of your fellow alumni gave last year' is an appeal based on:", ["Scarcity", "Social proof", "Fear", "Authority"], 1, "People look to what similar others do; cite it truthfully and it persuades powerfully."],
+["Using urgency ('offer ends Friday') is ethical only when:", ["It creates panic", "The deadline is real", "Repeated weekly forever", "The product is expensive"], 1, "Manufactured scarcity is manipulation; real deadlines are simply information."],
+["For a skeptical reader, a persuasive request is usually organized:", ["Directly — demand first", "Indirectly — interest and reasons before the ask", "Randomly", "As a legal notice"], 1, "Build the case before presenting the bill; the direct pattern works only on friendly audiences."],
+["U.S. commercial email law (CAN-SPAM) requires that marketing emails include:", ["Emojis", "An honest subject line, sender identification, and a working unsubscribe option", "A minimum word count", "Video"], 1, "Deceptive subject lines and no opt-out aren't just rude — they're illegal."],
+["The most effective fundraising and cause messages typically pair:", ["Guilt and statistics only", "A specific human story with concrete impact ('$50 supplies one field kit')", "Long history sections", "Anonymous generalities"], 1, "Story creates feeling; concrete impact converts feeling into action."],
+["Your well-crafted persuasive email gets no reply after a week. The professional next step is:", ["Assume no forever", "A brief, courteous follow-up restating the ask and deadline", "Escalate to their boss immediately", "Resend the identical email daily"], 1, "Polite persistence wins; silence more often means busy than no."]],
+wr:[
+["Using the four-part sequence, outline (one line per part) an email persuading your supervisor to approve one work-from-home day per week for your team.",["Attention: concrete hook (focus-time data, retention risk, or commute stats).","Interest: benefits framed for the manager — productivity, coverage plan, morale.","Desire: proof — pilot results elsewhere, your team's measurable output, safeguards.","Action: specific pilot request with start date and review checkpoint."]],
+["Rewrite this weak sales opener for a campus tutoring service: 'We are writing to tell you about our company and its many services.'",["Leads with the reader's problem or a vivid benefit ('Two weeks before finals, the average student wishes they'd started one month earlier…').","Reader-focused 'you' view; specific promise; no company-centered throat-clearing."]]]},
+9:{t:"Informal Reports",sub:"Progress, trip, recommendation, and other short reports that keep organizations informed.",
+mc:[
+["A progress report should always tell the reader:",["Only what went well","Work completed, work remaining, and any problems affecting schedule or budget","The full project history","Team members' opinions of each other"],1,"Its whole job is an honest status: done, next, and obstacles — with dates."],
+["Informational reports for receptive audiences are usually organized:",["Indirectly, conclusion last","Directly, main findings first","Alphabetically","As narratives"],1,"Busy readers want the takeaway immediately; support follows."],
+["A report going to someone OUTSIDE your organization typically uses:",["Memo format","Letter format","Sticky notes","Slide format only"],1,"Internal → memo/email format; external → letter format on letterhead."],
+["'Talking' (descriptive) headings differ from functional headings because they:",["Are shorter","Reveal the section's conclusion ('Sales Rose 12% in Q2') rather than just its topic ('Sales')","Are required by law","Avoid numbers"],1,"Talking heads let a skimmer absorb the story from the headings alone."],
+["A justification/recommendation report exists primarily to:",["Record meeting minutes","Propose an action and support it with reasons and evidence","Summarize a conference","List inventory"],1,"It answers 'what should we do and why' — often the report that gets things funded."],
+["The most useful trip/conference report focuses on:",["A day-by-day travel diary","Key takeaways relevant to the organization and recommended follow-ups","Meal expenses","The weather"],1,"Readers fund trips for the value that returns; report the value, not the itinerary."],
+["For a routine weekly status update, the most natural organization of the body is:",["By chronology or by project/topic","By suspense","Alphabetical by sentence","Random"],0,"Simple structures — time order or topic order — match how status information is consumed."],
+["The credibility of any report rests most on:",["Length","Objective tone and verifiable facts","Decorative design","Confident adjectives"],1,"Separate findings from opinions, cite sources, and let evidence carry the conclusions."],
+["Report headings work best when they are:", ["Randomly styled", "Consistent in hierarchy and grammatically parallel at each level", "All caps everywhere", "Avoided"], 1, "Consistent levels let the reader see the skeleton of the document instantly."],
+["Periodic (recurring) reports exist mainly to:", ["Surprise management", "Give decision-makers regular, comparable snapshots of activity", "Fill file cabinets", "Replace meetings entirely"], 1, "Same structure every cycle makes trends and anomalies visible."],
+["A good incident report contains:", ["Speculation about motives", "A factual, time-ordered account of what happened, who was involved, and actions taken", "Blame assignments", "Opinions first"], 1, "Facts in sequence; conclusions belong to the investigation, not the report."],
+["Useful meeting minutes record:", ["Everything said verbatim", "Decisions made, action items, owners, and deadlines", "Only attendance", "The best jokes"], 1, "Minutes are a memory of commitments, not a transcript."],
+["A feasibility report answers the question:", ["Who is to blame?", "Will this proposed course of action work here, and at what cost/risk?", "What happened last year?", "Which font is best?"], 1, "It tests an idea against practical, financial, and technical reality before money moves."],
+["The difference between a summary section and a recommendations section is that recommendations:", ["Restate the data", "Tell the reader specifically what to do next", "Are optional decoration", "Come first alphabetically"], 1, "Summaries condense findings; recommendations convert findings into proposed action."],
+["Bulleted lists inside reports work best when items are:", ["Ten or more", "Parallel in form and reasonably few (roughly two to seven)", "Full paragraphs each", "Unrelated"], 1, "Parallel, limited lists scan cleanly; long ragged lists defeat the purpose."],
+["Selecting only the data that supports your preferred conclusion is called:", ["Efficiency", "Cherry-picking, and it destroys report credibility", "Executive summarizing", "Benchmarking"], 1, "Report all relevant findings — including the inconvenient ones — or the report is advocacy, not analysis."]],
+wr:[
+["Outline a one-page progress report on a group project that is one week behind schedule: give your section headings and one line on what each contains.",["Purpose/period covered; Work completed (with dates); Work remaining (with dates).","Problem + recovery plan: names the one-week slip, cause, and specific catch-up actions.","Revised timeline and any help needed — honest, no burying the delay."]],
+["Convert this finding into a recommendation with justification (2–3 sentences): 'The lab's three oldest instruments caused 70% of downtime last quarter.'",["Recommendation stated first: replace/refurbish the three units by Q4.","Justification: 70% of downtime, cost of lost runs vs. replacement cost, risk if deferred.","Includes a next step (quote request or pilot replacement)."]]]},
+10:{t:"Proposals and Formal Reports",sub:"Persuasive proposals, formal report anatomy, and using data and sources with integrity.",
+mc:[
+["A proposal written in response to an organization's published RFP is called:",["Unsolicited","Solicited","Informal","Internal only"],1,"RFP = request for proposal; solicited proposals answer stated requirements point by point."],
+["At its core, every proposal is a(n):",["Informational document","Persuasive document","Legal contract","Meeting agenda"],1,"A proposal argues that your solution, team, and price deserve the reader's yes."],
+["An executive summary exists so that:",["Designers have a cover page","Busy decision-makers can grasp the problem, solution, and cost without reading the full report","Writers can repeat the introduction","The report looks longer"],1,"Write it last, make it stand alone, and assume some approvers read nothing else."],
+["Data you gather yourself through surveys, interviews, or experiments is:",["Secondary data","Primary data","Tertiary data","Anecdotal only"],1,"Primary = firsthand. Secondary = already published by someone else."],
+["Careful documentation of sources in a report primarily protects:",["Page count","Your credibility and the ideas' original owners","Font consistency","The printer"],1,"Citations let readers verify claims and keep you clear of plagiarism."],
+["A 'scope statement' or work plan in a proposal defines:",["Everything the company has ever done","Exactly what the project will and will not include","The reader's obligations only","The font and colors"],1,"Defined boundaries prevent misunderstandings, scope creep, and disputes later."],
+["Which front-matter sequence is conventional for a formal report?",["Body, appendix, title page","Title page, letter/memo of transmittal, table of contents, executive summary","Executive summary, references, title page","Table of contents first, always"],1,"Front matter guides the reader in; body and back matter (references, appendixes) follow."],
+["To show a trend over twelve months, the clearest visual is usually a:",["Pie chart","Line chart","Organization chart","Word cloud"],1,"Lines show change over time; pies show parts of a whole at one moment."],
+["An unsolicited proposal must accomplish something a solicited one need not:", ["State a price", "Convince the reader a problem worth solving exists at all", "Include a title page", "Use headings"], 1, "No RFP means no acknowledged problem; you must establish the pain before the cure."],
+["The budget section of a proposal should be:", ["Vague to preserve flexibility", "Realistic and itemized — treated as a commitment", "Padded 300%", "Omitted until after signing"], 1, "Readers fund credible numbers; lowballs and mystery figures both destroy trust."],
+["The staffing/qualifications section exists to show:", ["Company size only", "That the people assigned can actually deliver this project", "Salary structures", "Org charts for decoration"], 1, "Projects buy people; demonstrate relevant credentials and directly applicable experience."],
+["When an RFP specifies format, page limits, and submission steps, bidders should:", ["Improve on the format creatively", "Follow the instructions exactly — deviations commonly disqualify", "Ignore limits if content is good", "Submit late with apologies"], 1, "Compliance is the first test; many proposals die unread on a technicality."],
+["Paraphrasing another author's idea without citation is:", ["Fine because the words changed", "Still plagiarism — ideas require credit, not just wording", "Encouraged for flow", "Only a problem in school"], 1, "Credit the source of ideas and data, quoted or not."],
+["Choose a direct quotation over paraphrase when:", ["You're near a deadline", "The original wording is uniquely precise, vivid, or authoritative", "The source is long", "You want fewer citations"], 1, "Quote for irreplaceable wording; paraphrase (with credit) for everything else."],
+["'Don't you agree our overpriced cafeteria needs reform?' is a poor survey question because it is:", ["Too short", "Leading — it pushes respondents toward an answer", "Anonymous", "Open-ended"], 1, "Neutral wording is the price of data you can trust."],
+["Surveying only your five closest coworkers about company-wide morale fails chiefly on:", ["Speed", "Representativeness of the sample", "Cost", "Formatting"], 1, "Conclusions can't stretch beyond the population your sample actually represents."]],
+wr:[
+["Write a three-sentence executive summary for a proposal to replace your department's aging sample-tracking software ($18,000, 4-month rollout, saves ~10 hours/week).",["Sentence 1: problem and its cost.","Sentence 2: proposed solution + total cost + timeline.","Sentence 3: benefit/payback and the approval being requested."]],
+["You're studying whether students prefer digital or print homework. Name one primary and one secondary data source you would use, and one weakness of each.",["Primary: your own survey/interviews — weakness: sample size/bias, self-report.","Secondary: published education research or platform statistics — weakness: different population/context, age of data.","Shows understanding that both need critical evaluation."]]]},
+11:{t:"Professionalism, Teamwork, and Meetings",sub:"Etiquette, ethics, team behavior, and meetings that people don't dread.",
+mc:[
+["The single biggest benefit of a distributed agenda is that it:",["Fills time","Tells attendees the purpose, topics, and preparation expected","Impresses executives","Replaces minutes"],1,"An agenda is a contract for the meeting: why we're here and what we'll decide."],
+["When team conflict arises, the most productive ground rule is:",["Attack the problem, not the person","Let the loudest voice win","Escalate everything immediately","Avoid all disagreement"],0,"Task conflict improves decisions; personal conflict destroys teams. Keep it on the issue."],
+["A professional voicemail you leave should include:",["A long story","Your name, number (twice, slowly), reason, and best callback time","Just 'call me back'","Background music"],1,"Make the callback effortless: identify, state purpose briefly, repeat the number."],
+["Accepting an expensive gift from a vendor you evaluate creates:",["Goodwill only","A conflict of interest","A tax benefit","Team spirit"],1,"Even honest judgment looks purchased; most organizations set strict gift limits for this reason."],
+["The teammate who constantly criticizes every idea without offering alternatives is playing a:",["Task-facilitating role","Relationship-building role","Blocking (dysfunctional) role","Recorder role"],2,"Healthy teams name and redirect blocking behavior; critique must come with contribution."],
+["Every effective meeting ends with:",["A joke","A summary of decisions, action items, owners, and deadlines","A longer next meeting scheduled","Silence"],1,"If no one knows who does what by when, the meeting produced conversation, not work."],
+["A key habit for virtual/hybrid teams across time zones is to:",["Assume everyone saw the chat","Document decisions in writing and rotate meeting times fairly","Schedule everything at headquarters' convenience","Rely on memory"],1,"Distributed work runs on written records and deliberate fairness."],
+["Arriving five minutes early to meetings signals:",["Nothing","Reliability and respect for others' time","Overeagerness to avoid","Poor time management"],1,"Punctuality is the cheapest professional signal there is — and the most noticed."],
+["At a business meal, the professional norm is that:", ["The loudest person orders first", "The host typically pays, and you order mid-priced items", "Phones sit face-up for urgent scrolls", "Networking waits until dessert"], 1, "Dining etiquette signals judgment; modest orders and host-pays convention keep focus on the relationship."],
+["When introducing people of different rank, the convention is to:", ["Introduce the higher-ranking person to the lower", "Present the lower-ranking person to the higher-ranking person", "Skip names to save time", "Introduce alphabetically"], 1, "'Dr. Chen, may I introduce our new analyst, Sam Ortiz' — junior is presented to senior."],
+["The core etiquette rule of open-plan and cubicle offices is:", ["Speakerphone freely", "Assume everything you say and play is heard; manage volume, calls, and strong smells", "Decorate loudly", "Drop by anytime unannounced"], 1, "Shared air and shared sound: courtesy is volume control."],
+["An employee discovering serious misconduct should generally first:", ["Post it online", "Report through internal channels (supervisor, ethics line) unless those are compromised", "Confront wrongdoers publicly", "Ignore it"], 1, "Internal reporting gives the organization the chance — and obligation — to act; external routes follow if it won't."],
+["In the classic stages of team development, open conflict over roles and ideas typically appears during:", ["Forming", "Storming", "Norming", "Performing"], 1, "Storming is normal and necessary; teams that never storm often never candidly commit."],
+["Reaching 'consensus' properly means:", ["Everyone's first choice won", "Every member can genuinely support the decision, even if it wasn't their preference", "The leader decided", "A majority outvoted the rest"], 1, "Consensus is support-ability, not unanimity of preference — and it must be tested, not assumed."],
+["A teammate who publicly supports the plan while privately undermining it has a:", ["Task role", "Hidden agenda, which corrodes trust faster than open disagreement", "Facilitator role", "Time-management issue"], 1, "Surface alignment with covert opposition is the most expensive dysfunction a team can carry."],
+["When a meeting topic veers off-agenda but matters, skilled leaders:", ["Let it run", "Note it in a 'parking lot' for later and return to the agenda", "Ban the topic forever", "End the meeting"], 1, "The parking lot honors the idea without hijacking the hour."]],
+wr:[
+["Draft an agenda (4–5 lines) for a 30-minute team meeting to choose between two software vendors.",["Header: purpose, time, attendees, pre-work (review both quotes).","Timed items: 5-min recap of criteria; 10-min comparison discussion; 10-min decision; 5-min action items/owners/dates.","Decision method named (vote/consensus/leader decides)."]],
+["One team member dominates every discussion. Write the two sentences you, as meeting leader, would use in the moment to balance participation without embarrassing them.",["Acknowledges + redirects: 'That's a strong case, Jordan — hold that thought; I want to hear the other side too.'","Direct invitation: 'Priya, you've worked with both vendors — what's your read?'","Tone stays respectful; structure ('round-robin,' timed turns) as backup."]]]},
+12:{t:"Business Presentations",sub:"Structuring talks, designing slides, controlling nerves, and presenting on camera.",
+mc:[
+["Presentation preparation begins with:",["Choosing a template","Defining your purpose and analyzing your audience","Writing the ending","Picking fonts"],1,"Everything — content, depth, examples, visuals — flows from who's listening and what you need from them."],
+["An effective introduction accomplishes three things:",["Apology, outline, joke","Capture attention, establish credibility, preview the main points","Thank, thank again, begin","Define every term"],1,"Hook them, earn the right to be heard, and give them the map."],
+["The soundest slide-design principle is:",["Fill every slide with text so you won't forget","Keep text minimal — slides support the speaker, they aren't the script","Use six fonts for variety","Read each slide aloud verbatim"],1,"Audiences can read or listen, not both; dense slides compete with you."],
+["For most speakers, the most effective delivery method is:",["Reading a manuscript word for word","Memorizing every sentence","Speaking extemporaneously from brief notes","Improvising with no preparation"],2,"Notes keep structure while leaving your eyes and energy on the audience."],
+["The most reliable cure for stage fright is:",["Avoiding practice so it feels fresh","Thorough preparation plus rehearsal (and a slow first breath)","Imagining failure","Caffeine"],1,"Confidence is mostly preparation wearing a nice shirt; nerves shrink when you know your opening cold."],
+["The body of a talk is easiest to follow when built around:",["Ten equally weighted points","Two to four main points with clear transitions","One 40-minute story","Whatever comes to mind"],1,"Working memory is small; fewer, well-marked points survive the walk to the parking lot."],
+["When you don't know the answer during Q&A, the professional response is to:",["Bluff confidently","Say you'll find out and follow up — then do","Blame the question","Change the subject"],1,"An honest 'I'll get you that by Friday' builds more trust than a fabricated answer ever could."],
+["Presenting over video, 'eye contact' means looking at:",["Your own image","The camera lens","The chat window","Your notes continuously"],1,"The lens is the audience's eyes; glance at faces and notes, but deliver key lines to the camera."],
+["Because audience attention peaks at the beginning and end of a talk, speakers should:", ["Bury key points in the middle", "Open and close with their most important material", "Save everything for Q&A", "Speak faster in the middle"], 1, "Primacy and recency are free emphasis — spend them on what must be remembered."],
+["Spoken signposts like 'first… second… finally' serve to:", ["Pad time", "Give listeners the structure their eyes can't see", "Sound academic", "Replace practice"], 1, "Listeners can't re-read; verbal markers are their table of contents."],
+["Precise figures for reference suit a ____, while a trend at a glance suits a ____.", ["chart; table", "table; line chart", "pie; pie", "paragraph; paragraph"], 1, "Tables carry exact values; charts carry shape and story."],
+["The most effective rehearsal method is to:", ["Read silently once", "Practice aloud, standing, timed, with your actual slides", "Memorize word-for-word the night before", "Skip practice to stay natural"], 1, "Rehearse the performance, not the document — voice, timing, transitions, and tech."],
+["Purposeful movement and gestures during a talk should:", ["Be constant to show energy", "Reinforce specific points, then return to stillness", "Be eliminated entirely", "Mirror the audience"], 1, "Motion draws the eye; spend it where emphasis belongs and it reads as confidence."],
+["Facing a hostile question, the skilled presenter:", ["Matches the hostility", "Stays calm, restates the concern neutrally, and answers the legitimate core", "Ignores the questioner", "Ends the session"], 1, "Composure converts an attack into a question; the audience judges your response more than the question."],
+["The mark of a well-run team presentation is:", ["Each member designing their own slides", "Smooth handoffs, one visual style, and rehearsed transitions", "The leader speaking 90%", "Members seeing slides for the first time live"], 1, "A team talk should feel like one presentation with several voices, not several presentations stapled together."],
+["The weakest possible ending for a presentation is:", ["A summary of key points", "A call to action", "A memorable closing line", "'So… yeah, that's it.'"], 3, "Endings are remembered; plan the last sentence as carefully as the first."]],
+wr:[
+["Write the first 30 seconds (3–4 sentences) of a presentation persuading classmates to complete campus career-center mock interviews.",["Hook: a statistic, question, or brief story about interview failure/success.","Credibility line (your experience) + clear preview of 2–3 points.","Conversational spoken style — short sentences, direct address."]],
+["This slide has 9 bullet points of full sentences about internship deadlines. Describe (3 bullets) how you'd redesign it.",["Cut to ≤4 short phrases or convert to a simple timeline/table visual.","Move detail to speaker notes or a handout; one idea per slide if needed.","Add a talking headline stating the takeaway ('Apply by Oct 15 for spring placements')."]]]},
+13:{t:"The Job Search and Résumés in the Digital Age",sub:"Modern search strategy, ATS-ready résumés, and an online presence that helps rather than hurts.",
+mc:[
+["To get past applicant tracking systems (ATS), the most important tactic is to:",["Use elaborate graphics and columns","Mirror the posting's key terms honestly in your résumé","Submit only PDFs with images","Apply to everything with one generic file"],1,"ATS software matches your text against the posting; clean formatting plus honest keyword alignment gets you to human eyes."],
+["A chronological résumé is usually the best choice when:",["You have steady, relevant experience to show","You are hiding gaps","You have never worked","The job is unrelated to everything you've done"],0,"Recruiters prefer reverse-chronological because it shows growth; functional formats can raise suspicion."],
+["Which bullet is strongest?",["Responsible for social media","Helped with events","Grew club Instagram from 300 to 1,900 followers in one semester, driving record event attendance","Did various marketing tasks"],2,"Accomplishment + number + outcome beats duty statements every time."],
+["The best guidance on résumé length today is:",["Always exactly one page for everyone","Concise — one to two pages, and note that U.S. federal applications now cap résumés at two pages","Five pages to show everything","Length doesn't matter"],1,"Tight documents win; even the federal government has moved to a two-page standard."],
+["If your LinkedIn profile and résumé show different job titles and dates, recruiters typically:",["Ignore it","See a red flag and question your accuracy","Prefer the résumé","Prefer LinkedIn"],1,"Inconsistency reads as carelessness or worse; audit the two side by side."],
+["The purpose of a cover letter is to:",["Repeat the résumé in paragraphs","Connect your specific evidence to this specific job and organization","List references","Discuss salary needs"],1,"It answers 'why you, why us, why now' — the fit story the résumé alone can't tell."],
+["Regarding references, the standard practice is to:",["Print them on the résumé","Prepare a separate list, ask permission first, and provide it when requested","List people without telling them","Use only relatives"],1,"Warned references give better recommendations; résumé space belongs to your accomplishments."],
+["Inflating a job title or degree on a résumé is:",["Standard practice","A serious integrity violation that background checks routinely expose","Fine if you can do the work","Only risky for executives"],1,"Verification is cheap and common; a caught lie ends candidacies and careers."],
+["A career portfolio (or e-portfolio) is most valuable because it:", ["Replaces the interview", "Shows evidence of your work rather than claims about it", "Is required by law", "Hides employment gaps"], 1, "Samples, projects, and artifacts prove what a résumé can only assert."],
+["A large share of positions are filled through referrals and networking before being widely advertised — meaning job seekers should:", ["Only refresh job boards", "Invest in relationships and informational conversations alongside applications", "Wait to be discovered", "Apply anonymously"], 1, "The hidden job market is reached through people, not postings."],
+["A 'summary of qualifications' at the top of a résumé should contain:", ["Your life story", "Three to five tailored, evidence-backed highlights matching this job", "Hobbies", "An objective like 'seeking growth'"], 1, "It's a movie trailer for the résumé — specific, relevant, and short."],
+["Résumé bullets are strongest when they begin with:", ["'Responsible for'", "Action verbs (led, built, reduced, analyzed)", "'Duties included'", "'Helped with'"], 1, "Verbs assert accomplishment; 'responsible for' merely describes a chair you sat in."],
+["The professional way to handle a genuine employment gap is to:", ["Falsify dates to hide it", "Address it briefly and honestly, noting skills or activities from the period", "Refuse to discuss it", "Explain it in the subject line"], 1, "Gaps are common; unexplained inconsistencies, not gaps, are what alarm recruiters."],
+["Video résumés and profile photos on U.S. résumés are generally:", ["Required", "Risky/uncommon for most fields — many employers avoid them over bias concerns", "Mandatory for ATS", "Best for federal jobs"], 1, "Know your field's norms; for most U.S. corporate roles, the document is the standard."],
+["When submitting your résumé file, the controlling rule is:", ["Always DOCX", "Always PDF", "Follow the employer's stated instructions exactly; when unspecified, a clean PDF is usually safest", "Google Docs links"], 2, "Instructions are the first screening test; passing it is entirely within your control."],
+["Recruiters report rejecting candidates over a single résumé typo because it signals:", ["Poor design taste", "Carelessness with details on a document you had unlimited time to perfect", "Overqualification", "Creativity"], 1, "The résumé is your work-quality sample; proofread it like your job depends on it."]],
+wr:[
+["Rewrite this duty-based bullet into an accomplishment bullet (invent a plausible metric): 'Responsible for training new employees.'",["Action verb + scope + number + outcome: 'Trained 12 new hires on lab safety and LIMS procedures, cutting onboarding time from four weeks to two.'","Quantifies people, time, money, or quality; defensible in an interview."]],
+["Pick any real job posting. List the five most important keywords/requirements it contains and, next to each, the evidence from your background you would place against it.",["Five posting terms extracted accurately (skills, tools, credentials, competencies).","Each mapped to a specific, truthful experience — or honestly marked as a gap.","This map becomes the tailoring plan for résumé and cover letter."]]]},
+14:{t:"Interviewing and Follow-Up",sub:"Interview types, STAR answers, smart questions, salary talk, and the follow-through that wins offers.",
+mc:[
+["'Tell me about a time you handled a difficult customer' is a behavioral question. The best response structure is:",["A philosophical answer about customer service","STAR: Situation, Task, Action, Result","A joke, then a pivot","'I've never had one'"],1,"A specific past story with your actions and a measurable result predicts future behavior — exactly what they're testing."],
+["Before any interview, the non-negotiable preparation step is to:",["Memorize a salary demand","Research the organization, its work, and its recent news","Buy a new car","Rehearse insults for competitors"],1,"'What do you know about us?' is a courtesy question with a career-limiting wrong answer."],
+["In a one-way (recorded) video interview, you should:",["Read answers off a second screen word-for-word","Treat it like a live interview: camera at eye level, light on your face, structured complete answers","Wear casual clothes since no one responds","Answer in one sentence to save time"],1,"Software and humans both score recordings; polish and structure matter double without a nodding listener."],
+["The strongest handling of 'What is your greatest weakness?' is:",["'I work too hard.'","A real but manageable weakness plus the specific steps you're taking to improve","'I have none.'","Attacking the question"],1,"Honest self-awareness with evidence of growth beats every rehearsed humble-brag."],
+["When the interviewer asks 'Do you have questions for us?', the best move is to:",["Say no to seem easygoing","Ask prepared, thoughtful questions about the role, team, and success measures","Ask only about vacation","Ask what the company does"],1,"Your questions are data about your thinking; 'no questions' reads as no interest."],
+["A thank-you message after an interview should be sent:",["Within 24 hours, personalized to each interviewer","Only if you're desperate","After they decide","Never — it looks needy"],0,"Prompt, specific thanks referencing the conversation keeps you memorable and courteous."],
+["If salary comes up early, a sound approach is to:",["Name a random high number","Give a researched range and ask about theirs, ideally deferring specifics until an offer","Refuse to discuss money ever","Accept anything"],1,"Ranges based on market data protect you; the strongest negotiating happens after they want you."],
+["Asked an inappropriate or unlawful question (e.g., about family plans), a composed response is to:",["Answer everything to be polite","Address the underlying job concern ('Nothing would interfere with my ability to travel for this role') or politely decline","Walk out immediately in all cases","Threaten a lawsuit on the spot"],1,"Redirecting to the legitimate concern keeps you professional while protecting your privacy."],
+["A short phone or video call early in the hiring process is typically a:", ["Panel interview", "Screening interview to filter candidates before deeper rounds", "Stress interview", "Exit interview"], 1, "Screens verify basics and fit quickly; treat them as real interviews, because they are."],
+["The reliable guideline for interview dress is:", ["Whatever you wore yesterday", "Slightly more formal than the organization's daily norm", "Always a tuxedo", "Team merchandise"], 1, "Research the culture and aim one notch above it; overdressed slightly beats underdressed always."],
+["For an in-person interview, plan to arrive:", ["Exactly on time", "Ten to fifteen minutes early — and if traveling, arrive in town the day before", "Thirty seconds late to seem busy", "An hour early and wait in the lobby"], 1, "Early arrival absorbs surprises and signals reliability before you say a word."],
+["The nonverbal trio interviewers register in the first minute is:", ["Cologne, watch, shoes", "Firm handshake (or confident greeting), eye contact, and upright open posture", "Height, humor, hobbies", "None — only words matter"], 1, "First impressions are largely nonverbal; rehearse the entrance like an answer."],
+["'Tell me about yourself' is best answered with:", ["A chronological life story from childhood", "A 60–90 second professional narrative connecting your background to this role", "One word", "Salary requirements"], 1, "It's an invitation to frame your candidacy — prepare it, aim it at the job, and land it briefly."],
+["Speaking negatively about a former employer in an interview mainly signals:", ["Honesty", "How you will someday talk about this employer", "Confidence", "Attention to detail"], 1, "Interviewers assume your past-tense complaints preview their future; stay factual and gracious."],
+["After a rejection, the response that best serves your career is:", ["Silence", "A gracious thank-you asking to be considered for future openings", "A demand for feedback", "A negative review online"], 1, "First choices fall through and roles reopen; the classy runner-up gets the call."],
+["When your candidacy advances to the reference-check stage, you should:", ["Do nothing", "Alert your references, share the job details, and thank them afterward", "Change your references", "Ask references to exaggerate"], 1, "Prepared references give sharper, faster, better recommendations — and deserve the courtesy."]],
+wr:[
+["Write a complete STAR answer (4–6 sentences) to: 'Tell me about a time you had to meet a tight deadline.'",["S/T: one or two sentences of specific context and your responsibility.","A: the concrete actions YOU took (prioritized, communicated, adjusted).","R: measurable result + one-line lesson. Entirely true and defensible."]],
+["Draft the full thank-you email (subject + 4 sentences) you would send after interviewing for an internship, referencing one specific moment from the conversation.",["Subject: 'Thank you — [Role] interview'; sent within 24 hours.","Specific reference to something discussed; brief restatement of fit/enthusiasm.","Professional close with your name and contact; no typos — this email is also a writing sample."]]]}
+};
+
+/* ================= ENGINE: practice, graded homework, timed quiz ================= */
+/* INSTRUCTOR: change this secret to any private phrase BEFORE sharing the site.
+   Completion codes are only verifiable with the same secret in the Instructor panel. */
+const SECRET='xC5HdRKpNu3k33MMQunh8YLZ';
+const QUIZ_N=10, QUIZ_MIN=12, ALL_N=20, ALL_MIN=25;
+
+const P={};                 // practice: {ch:{answered:{},correct}}
+const HW={};                // homework sessions per chapter
+const QZ={};                // quiz sessions per chapter key ('A'=comprehensive)
+let view={kind:'ch',ch:1,mode:'practice'};   // or {kind:'instructor'}
+
+function pState(ch){ if(!P[ch]) P[ch]={answered:{},correct:0}; return P[ch]; }
+function totals(){ let a=0,c=0; for(const k in P){a+=Object.keys(P[k].answered).length;c+=P[k].correct;} return [c,a]; }
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+/* ---------- completion codes ---------- */
+function djb2(s){let h=5381;for(const ch of s){h=(((h<<5)+h)+ch.codePointAt(0))>>>0;}return h.toString(16).padStart(8,'0');}
+function b64e(s){return btoa(unescape(encodeURIComponent(s))).replace(/=+$/,'');}
+function b64d(s){return decodeURIComponent(escape(atob(s)));}
+function makeCode(mode,label,score,total,id,name,secs){
+  const clean=v=>String(v).replace(/\|/g,'/').trim();
+  const payload=[mode,label,score,total,clean(id),clean(name),new Date().toISOString().slice(0,16),secs].join('|');
+  return 'BC2-'+b64e(payload)+'-'+djb2(payload+SECRET);
+}
+function verifyCode(code){
+  try{
+    const m=String(code).trim().match(/^BC2-([A-Za-z0-9+/]+)-([0-9a-f]{8})$/);
+    if(!m) return {ok:false};
+    const payload=b64d(m[1]);
+    const ok=djb2(payload+SECRET)===m[2];
+    const [mode,label,score,total,id,name,when,secs]=payload.split('|');
+    return {ok,mode,label,score,total,id,name,when,secs};
+  }catch(e){ return {ok:false}; }
+}
+function copyText(t,btn){
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(
+    ()=>{btn.textContent='COPIED ✓';setTimeout(()=>btn.textContent='COPY CODE',1600);},
+    ()=>{const r=document.createRange();r.selectNodeContents(btn.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r);});
+}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function fmtT(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+
+/* ---------- sidebar ---------- */
+function buildNav(){
+  const nav=document.getElementById('nav'); nav.innerHTML='';
+  const sel=document.getElementById('msel'); sel.innerHTML='';
+  UNITS.forEach(u=>{
+    const div=document.createElement('div'); div.className='unit';
+    div.innerHTML='<h2>'+u.u+'</h2>';
+    u.chs.forEach(ch=>{
+      const d=DATA[ch]; const s=pState(ch);
+      const n=Object.keys(s.answered).length;
+      const b=document.createElement('button'); b.className='chbtn'+(view.kind==='ch'&&ch===view.ch?' active':'');
+      b.innerHTML='<span class="n">'+String(ch).padStart(2,'0')+'</span><span class="t">'+d.t+'</span><span class="dot'+(n===d.mc.length?' done':'')+'">'+(n?s.correct+'/'+d.mc.length:'·')+'</span>';
+      b.onclick=()=>{view={kind:'ch',ch,mode:view.mode==='instructor'?'practice':(view.mode||'practice')};render();window.scrollTo({top:0});};
+      div.appendChild(b);
+      const o=document.createElement('option'); o.value=ch; o.textContent='Ch '+ch+' — '+d.t; if(view.kind==='ch'&&ch===view.ch)o.selected=true; sel.appendChild(o);
+    });
+    nav.appendChild(div);
+  });
+  const xd=document.createElement('div'); xd.className='navxtra';
+  const bq=document.createElement('button'); bq.className='chbtn'; bq.innerHTML='<span class="n">★</span><span class="t">Comprehensive Quiz ('+ALL_N+' Q, all chapters)</span>';
+  bq.onclick=()=>{view={kind:'quizAll'};render();window.scrollTo({top:0});};
+  const bi=document.createElement('button'); bi.className='chbtn'; bi.innerHTML='<span class="n">⚿</span><span class="t">Instructor Tools</span>';
+  bi.onclick=()=>{view={kind:'instructor'};render();window.scrollTo({top:0});};
+  xd.appendChild(bq); xd.appendChild(bi); nav.appendChild(xd);
+  sel.onchange=e=>{view={kind:'ch',ch:+e.target.value,mode:'practice'};render();};
+  const [c,a]=totals();
+  document.getElementById('totscore').textContent=c+' / '+a;
+}
+
+/* ---------- shared pieces ---------- */
+function memoHead(re,title,sub){
+  const today=new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+  return '<div class="memo"><table>'+
+   '<tr><td class="k">TO:</td><td>Students, Business Communication</td></tr>'+
+   '<tr><td class="k">FROM:</td><td>The Instructor</td></tr>'+
+   '<tr><td class="k">DATE:</td><td>'+today+'</td></tr>'+
+   '<tr><td class="k">RE:</td><td>'+re+'</td></tr></table>'+
+   '<h2>'+title+'</h2>'+(sub?'<p class="sub">'+sub+'</p>':'')+'</div>';
+}
+function tabsHtml(mode){
+  const t=(m,l)=>'<button class="tab'+(mode===m?' active':'')+'" data-m="'+m+'">'+l+'</button>';
+  return '<div class="tabs">'+t('practice','PRACTICE')+t('homework','HOMEWORK · GRADED')+t('quiz','QUIZ · TIMED')+'</div>';
+}
+function idForm(btnLabel,rules){
+  return '<div class="formcard"><label>FULL NAME</label><input id="f_name" autocomplete="name" placeholder="Jane Q. Student">'+
+   '<label>STUDENT ID</label><input id="f_id" placeholder="e.g., 0123456">'+
+   '<ul class="rules">'+rules.map(r=>'<li>'+r+'</li>').join('')+'</ul>'+
+   '<div class="warn">Privacy: your name, ID, and answers never leave this page — nothing is uploaded or stored. Your score is delivered to your instructor only through the completion code you submit in the LMS.</div>'+
+   '<button class="gobtn green" id="startbtn">'+btnLabel+'</button></div>';
+}
+function qBlock(q,qi,picked,locked,showKey){
+  let h='<div class="q'+(locked?' locked':'')+(showKey&&picked===q[2]?' right':'')+'" id="q'+qi+'">';
+  if(showKey&&picked===q[2]) h+='<span class="stamp">CORRECT ✓</span>';
+  h+='<div class="tag">Question '+(qi+1)+'</div><h3>'+q[0]+'</h3>';
+  q[1].forEach((opt,oi)=>{
+    let cls='opt', mark='';
+    if(showKey){
+      if(oi===q[2]){cls+=' correct';mark='<span class="mark">✓ CORRECT</span>';}
+      else if(oi===picked){cls+=' wrong';mark='<span class="mark">✗ YOUR ANSWER</span>';}
+    } else if(picked===oi){cls+=' picked';}
+    h+='<button class="'+cls+'" data-q="'+qi+'" data-o="'+oi+'" '+(locked?'tabindex="-1" aria-disabled="true"':'')+'>'+String.fromCharCode(65+oi)+'.&nbsp; '+opt+mark+'</button>';
+  });
+  if(showKey) h+='<div class="note" style="display:block"><b>'+(picked===q[2]?'WHY THIS IS RIGHT':'EDITOR\u2019S NOTE')+'</b> — '+q[3]+'</div>';
+  h+='</div>'; return h;
+}
+function resultHtml(kind,score,total,code){
+  const pct=Math.round(score/total*100);
+  return '<div class="result"><h2>'+kind+' submitted</h2><div class="big">'+score+' / '+total+' &nbsp;·&nbsp; '+pct+'%</div>'+
+   '<p class="sub" style="max-width:66ch">Copy your completion code below and paste it into the corresponding assignment in the LMS. Your instructor verifies it there. Review your answers underneath.</p>'+
+   '<div class="codebox">'+code+'</div><button class="copybtn" data-code="'+code+'">COPY CODE</button></div>';
+}
+
+/* ---------- practice ---------- */
+function renderPractice(m,d){
+  const s=pState(view.ch);
+  const answered=Object.keys(s.answered).length;
+  let h='<div class="bar"><div class="progress" aria-hidden="true"><i style="width:'+(answered/d.mc.length*100)+'%"></i></div>'+
+   '<span class="mono">'+s.correct+' correct of '+answered+' answered · '+d.mc.length+' questions</span>'+
+   '<button class="reset" id="resetbtn">RESET CHAPTER</button></div>';
+  d.mc.forEach((q,qi)=>{ h+=qBlock(q,qi,s.answered[qi],s.answered[qi]!==undefined,s.answered[qi]!==undefined); });
+  h+='<div class="memo" style="margin-top:26px;border-top-color:#2E7D5B"><h2 style="font-size:20px;color:#2E7D5B">Writing Practice</h2><p class="sub">Draft your answer, then compare with the model guidance. Nothing you type leaves this page.</p></div>';
+  d.wr.forEach((w,wi)=>{
+    h+='<div class="wr"><div class="tag mono">WRITING PROMPT '+(wi+1)+'</div><h3>'+w[0]+'</h3>'+
+     '<textarea placeholder="Draft your answer here…"></textarea>'+
+     '<details><summary>COMPARE WITH MODEL GUIDANCE</summary><div class="model"><ul>'+w[1].map(v=>'<li>'+v+'</li>').join('')+'</ul></div></details></div>';
+  });
+  m.insertAdjacentHTML('beforeend',h);
+  m.querySelectorAll('.opt').forEach(b=>{ b.onclick=()=>{
+    const qi=+b.dataset.q, oi=+b.dataset.o, st=pState(view.ch);
+    if(st.answered[qi]!==undefined) return;
+    st.answered[qi]=oi; if(oi===d.mc[qi][2]) st.correct++;
+    const keep=[]; m.querySelectorAll('textarea').forEach(t=>keep.push(t.value));
+    render(); document.querySelectorAll('#main textarea').forEach((t,i)=>t.value=keep[i]||'');
+    const el=document.getElementById('q'+qi); if(el) el.scrollIntoView({block:'center'});
+  };});
+  const rb=document.getElementById('resetbtn'); if(rb) rb.onclick=()=>{P[view.ch]={answered:{},correct:0};render();};
+}
+
+/* ---------- homework (graded, no feedback until submit) ---------- */
+function renderHomework(m,d){
+  const ch=view.ch;
+  if(!HW[ch]) HW[ch]={started:false,submitted:false,answers:{},name:'',id:'',t0:0};
+  const s=HW[ch];
+  if(!s.started){
+    m.insertAdjacentHTML('beforeend', idForm('BEGIN HOMEWORK — '+d.mc.length+' QUESTIONS',[
+      'All '+d.mc.length+' questions for this chapter; untimed; you may change answers until you submit.',
+      'No feedback appears until you submit. One completion code is generated per submission.',
+      'When finished, paste your completion code into the matching LMS assignment.']));
+    document.getElementById('startbtn').onclick=()=>{
+      const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim();
+      if(!n||!i){alert('Please enter your name and student ID.');return;}
+      s.name=n;s.id=i;s.started=true;s.t0=Date.now();render();
+    }; return;
+  }
+  if(s.submitted){
+    m.insertAdjacentHTML('beforeend', resultHtml('Homework',s.score,d.mc.length,s.code));
+    d.mc.forEach((q,qi)=>m.insertAdjacentHTML('beforeend',qBlock(q,qi,s.answers[qi],true,true)));
+    wireCopy(m); return;
+  }
+  const done=Object.keys(s.answers).length;
+  m.insertAdjacentHTML('beforeend','<div class="stickybar"><span class="mono">HOMEWORK · '+esc(s.name)+' · ID '+esc(s.id)+'</span>'+
+    '<span class="mono" id="hwcount">'+done+' / '+d.mc.length+' answered</span>'+
+    '<button class="gobtn" id="hwsubmit">SUBMIT HOMEWORK</button></div>');
+  d.mc.forEach((q,qi)=>m.insertAdjacentHTML('beforeend',qBlock(q,qi,s.answers[qi],false,false)));
+  m.querySelectorAll('.opt').forEach(b=>{ b.onclick=()=>{
+    const qi=+b.dataset.q, oi=+b.dataset.o;
+    s.answers[qi]=oi;
+    const blk=document.getElementById('q'+qi);
+    blk.querySelectorAll('.opt').forEach(o=>o.classList.remove('picked'));
+    b.classList.add('picked');
+    document.getElementById('hwcount').textContent=Object.keys(s.answers).length+' / '+d.mc.length+' answered';
+  };});
+  document.getElementById('hwsubmit').onclick=()=>{
+    const unanswered=d.mc.length-Object.keys(s.answers).length;
+    if(unanswered>0 && !confirm(unanswered+' question(s) are unanswered and will score zero. Submit anyway?')) return;
+    let sc=0; d.mc.forEach((q,qi)=>{if(s.answers[qi]===q[2])sc++;});
+    s.score=sc; s.submitted=true;
+    s.code=makeCode('HW','CH'+ch,sc,d.mc.length,s.id,s.name,Math.round((Date.now()-s.t0)/1000));
+    render(); window.scrollTo({top:0});
+  };
+}
+
+/* ---------- quiz (timed, random subset) ---------- */
+function quizKey(){ return view.kind==='quizAll' ? 'A' : 'C'+view.ch; }
+function renderQuiz(m){
+  const all=view.kind==='quizAll';
+  const key=quizKey();
+  const nQ=all?ALL_N:QUIZ_N, mins=all?ALL_MIN:QUIZ_MIN;
+  if(!QZ[key]) QZ[key]={started:false,submitted:false,answers:{},name:'',id:'',qs:[],deadline:0,timer:null};
+  const s=QZ[key];
+  if(!s.started){
+    m.insertAdjacentHTML('beforeend', idForm('START QUIZ — '+nQ+' QUESTIONS · '+mins+' MINUTES',[
+      nQ+' questions drawn at random '+(all?'from every chapter':'from this chapter\u2019s bank')+'; order varies by attempt.',
+      mins+'-minute limit; the quiz submits itself automatically when time expires.',
+      'No feedback until submission; paste the completion code into the LMS afterward.']));
+    document.getElementById('startbtn').onclick=()=>{
+      const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim();
+      if(!n||!i){alert('Please enter your name and student ID.');return;}
+      s.name=n;s.id=i;s.started=true;
+      let pool=[];
+      if(all){for(const c in DATA) DATA[c].mc.forEach((q,qi)=>pool.push({c:+c,qi}));}
+      else DATA[view.ch].mc.forEach((q,qi)=>pool.push({c:view.ch,qi}));
+      s.qs=shuffle(pool).slice(0,nQ);
+      s.deadline=Date.now()+mins*60000;
+      render();
+    }; return;
+  }
+  const total=s.qs.length;
+  if(s.submitted){
+    if(s.timer){clearInterval(s.timer);s.timer=null;}
+    m.insertAdjacentHTML('beforeend', resultHtml('Quiz',s.score,total,s.code));
+    s.qs.forEach((ref,qi)=>m.insertAdjacentHTML('beforeend',qBlock(DATA[ref.c].mc[ref.qi],qi,s.answers[qi],true,true)));
+    wireCopy(m); return;
+  }
+  m.insertAdjacentHTML('beforeend','<div class="stickybar"><span class="timer" id="qtimer">--:--</span>'+
+    '<span class="mono">QUIZ · '+esc(s.name)+' · ID '+esc(s.id)+'</span>'+
+    '<span class="mono" id="qzcount">'+Object.keys(s.answers).length+' / '+total+' answered</span>'+
+    '<button class="gobtn" id="qzsubmit">SUBMIT QUIZ</button></div>');
+  s.qs.forEach((ref,qi)=>m.insertAdjacentHTML('beforeend',qBlock(DATA[ref.c].mc[ref.qi],qi,s.answers[qi],false,false)));
+  m.querySelectorAll('.opt').forEach(b=>{ b.onclick=()=>{
+    const qi=+b.dataset.q, oi=+b.dataset.o;
+    s.answers[qi]=oi;
+    const blk=document.getElementById('q'+qi);
+    blk.querySelectorAll('.opt').forEach(o=>o.classList.remove('picked'));
+    b.classList.add('picked');
+    document.getElementById('qzcount').textContent=Object.keys(s.answers).length+' / '+total+' answered';
+  };});
+  function submit(){
+    if(s.submitted) return;
+    let sc=0; s.qs.forEach((ref,qi)=>{if(s.answers[qi]===DATA[ref.c].mc[ref.qi][2])sc++;});
+    s.score=sc; s.submitted=true;
+    const label=all?'ALL':'CH'+view.ch;
+    const left=Math.max(0,Math.round((s.deadline-Date.now())/1000));
+    s.code=makeCode('QZ',label,sc,total,s.id,s.name,(mins*60-left));
+    render(); window.scrollTo({top:0});
+  }
+  document.getElementById('qzsubmit').onclick=()=>{
+    const un=total-Object.keys(s.answers).length;
+    if(un>0 && !confirm(un+' unanswered question(s) will score zero. Submit now?')) return;
+    submit();
+  };
+  function tick(){
+    const left=Math.max(0,Math.round((s.deadline-Date.now())/1000));
+    const el=document.getElementById('qtimer');
+    if(el){el.textContent=fmtT(left); if(left<=60)el.classList.add('low');}
+    if(left<=0){submit();}
+  }
+  if(s.timer) clearInterval(s.timer);
+  s.timer=setInterval(tick,500); tick();
+}
+
+/* ---------- instructor ---------- */
+function renderInstructor(m){
+  m.innerHTML=memoHead('Instructor tools — code verification &amp; setup','Instructor Tools',
+   'Verify student completion codes, and review setup and privacy notes. This panel is part of the same static page; it has no login because it reveals nothing a student did not already generate themselves — verification simply proves a code was not altered.');
+  m.insertAdjacentHTML('beforeend',
+   '<div class="formcard" style="border-left-color:var(--navy)"><label>PASTE COMPLETION CODE(S) — ONE PER LINE</label>'+
+   '<textarea id="vin" style="width:100%;min-height:110px;font-family:\'IBM Plex Mono\',monospace;font-size:12.5px;padding:10px;border:1px solid var(--line);background:#FCFAF5" placeholder="BC2-…"></textarea>'+
+   '<button class="gobtn" id="vbtn">VERIFY CODES</button><div id="vout"></div></div>'+
+   '<div class="memo" style="margin-top:22px"><h2 style="font-size:20px">Setup &amp; privacy notes</h2><div class="rules"><ul>'+
+   '<li><b>Change the secret.</b> Open this file and edit the <span class="mono">SECRET</span> constant near the top of the script before deploying. Codes are only verifiable against the same secret, which prevents students from generating codes on an unmodified copy.</li>'+
+   '<li><b>FERPA posture.</b> This site is static: no server, no database, no analytics, no transmission. Names, IDs, answers, and scores exist only in the student\u2019s browser and vanish on reload. Grades enter your records solely through the LMS assignment where students paste their code \u2014 so all education records stay inside your institution\u2019s FERPA-covered systems. Consider having students use their university ID (not SSN or personal data) in the ID field.</li>'+
+   '<li><b>Integrity limits, honestly stated.</b> Codes are tamper-evident (editing any digit invalidates them), but this is a client-side homework tool, not a proctored exam platform: a determined student could read the page source. Appropriate for low-stakes homework and practice quizzes; run high-stakes exams in the LMS.</li>'+
+   '<li><b>Grading workflow.</b> Create one LMS text-entry assignment per homework/quiz. Students paste codes; you (or a TA) paste batches here to verify and read scores. Codes embed name, ID, score, total, date, and time-on-task.</li>'+
+   '</ul></div></div>');
+  document.getElementById('vbtn').onclick=()=>{
+    const lines=document.getElementById('vin').value.split(/\n+/).map(s=>s.trim()).filter(Boolean);
+    if(!lines.length){document.getElementById('vout').innerHTML='';return;}
+    let h='<table class="vtable"><tr><th>STATUS</th><th>TYPE</th><th>SET</th><th>SCORE</th><th>NAME</th><th>ID</th><th>DATE (UTC)</th><th>TIME</th></tr>';
+    lines.forEach(c=>{
+      const v=verifyCode(c);
+      if(v.ok) h+='<tr><td class="vok">VALID ✓</td><td>'+esc(v.mode)+'</td><td>'+esc(v.label)+'</td><td>'+esc(v.score)+' / '+esc(v.total)+'</td><td>'+esc(v.name)+'</td><td>'+esc(v.id)+'</td><td>'+esc(v.when)+'</td><td>'+fmtT(+v.secs||0)+'</td></tr>';
+      else h+='<tr><td class="vbad">INVALID ✗</td><td colspan="7">'+esc(c.slice(0,40))+'… — malformed or altered code</td></tr>';
+    });
+    document.getElementById('vout').innerHTML=h+'</table>';
+  };
+}
+
+/* ---------- top-level render ---------- */
+function wireCopy(m){ m.querySelectorAll('.copybtn').forEach(b=>b.onclick=()=>copyText(b.dataset.code,b)); }
+function render(){
+  buildNav();
+  const m=document.getElementById('main');
+  if(view.kind==='instructor'){ renderInstructor(m); return; }
+  if(view.kind==='quizAll'){
+    m.innerHTML=memoHead('Comprehensive quiz — all chapters','Comprehensive Quiz','Twenty questions drawn at random from all fourteen chapter banks. '+ALL_MIN+'-minute limit.');
+    renderQuiz(m); return;
+  }
+  const d=DATA[view.ch];
+  const modeNames={practice:'Practice questions',homework:'Graded homework',quiz:'Timed quiz'};
+  m.innerHTML=memoHead(modeNames[view.mode]+' — Chapter '+view.ch,'Chapter '+view.ch+': '+d.t,d.sub);
+  m.insertAdjacentHTML('beforeend',tabsHtml(view.mode));
+  m.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{view.mode=t.dataset.m;render();window.scrollTo({top:0});});
+  if(view.mode==='practice') renderPractice(m,d);
+  else if(view.mode==='homework') renderHomework(m,d);
+  else renderQuiz(m);
+  m.insertAdjacentHTML('beforeend','<footer><b>About this practice set.</b> All questions and model guidance are original material written for this course as supplemental practice. This site is not affiliated with, and does not reproduce content from, any textbook or publisher. Nothing you enter is uploaded or stored; scores reach your instructor only via completion codes submitted in the LMS.</footer>');
+  wireCopy(m);
+}
+render();
+</script>
+</body>
+</html>
