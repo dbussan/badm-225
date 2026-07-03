@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Business Communication — Homework, Practice &amp; Quizzes (Ch. 1–14)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* Fully self-contained: no external fonts or connections. System font stacks below. */
 :root{
   --paper:#FAF7F0; --card:#FFFFFF; --ink:#1C2B3A; --line:#D9D2C3;
   --navy:#20456B; --stamp:#2E7D5B; --proof:#B23A31; --hilite:#FFF0BF; --mut:#7C7566;
@@ -14,42 +13,42 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{font-family:'IBM Plex Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
 .wrap{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
 /* ---------- sidebar: the course file ---------- */
 aside{background:var(--ink);color:#EDE8DC;padding:26px 0 40px;position:sticky;top:0;height:100vh;overflow-y:auto}
 .brand{padding:0 22px 18px;border-bottom:1px solid #34455A}
-.brand .mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#9FB2C6;text-transform:uppercase}
-.brand h1{font-family:'IBM Plex Serif',serif;font-size:20px;line-height:1.25;margin-top:6px;color:#fff}
-.scorebox{margin:16px 22px;padding:12px 14px;border:1px dashed #4A5D74;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C9D6E4}
+.brand .mono{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:#9FB2C6;text-transform:uppercase}
+.brand h1{font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:1.25;margin-top:6px;color:#fff}
+.scorebox{margin:16px 22px;padding:12px 14px;border:1px dashed #4A5D74;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;color:#C9D6E4}
 .scorebox b{color:#fff}
 .unit{margin-top:16px}
-.unit h2{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA3B9;padding:6px 22px}
+.unit h2{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA3B9;padding:6px 22px}
 .chbtn{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;background:none;border:none;color:#E4DFD3;font:inherit;font-size:13.5px;padding:8px 22px;cursor:pointer}
 .chbtn:hover{background:#28394D}
 .chbtn.active{background:var(--navy);color:#fff}
-.chbtn .n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#93A8BE;width:26px;flex:none}
+.chbtn .n{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;color:#93A8BE;width:26px;flex:none}
 .chbtn.active .n{color:#CFE0F2}
 .chbtn .t{flex:1;padding-right:8px}
-.chbtn .dot{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#7E92A8}
+.chbtn .dot{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:10.5px;color:#7E92A8}
 .chbtn .dot.done{color:#7FD4AC}
 /* ---------- main ---------- */
 main{padding:34px clamp(20px,5vw,64px) 90px;max-width:980px}
 .memo{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--navy);padding:22px 26px;box-shadow:0 1px 0 rgba(28,43,58,.06)}
-.memo table{font-family:'IBM Plex Mono',monospace;font-size:12.5px;border-collapse:collapse}
+.memo table{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12.5px;border-collapse:collapse}
 .memo td{padding:2px 0;vertical-align:top}
 .memo td.k{color:var(--mut);width:74px;letter-spacing:.08em}
-.memo h2{font-family:'IBM Plex Serif',serif;font-size:clamp(22px,3.2vw,30px);margin-top:12px;color:var(--navy)}
+.memo h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(22px,3.2vw,30px);margin-top:12px;color:var(--navy)}
 .memo p.sub{color:var(--mut);font-size:14px;margin-top:6px;max-width:62ch}
 .bar{display:flex;gap:14px;align-items:center;margin:22px 0 8px;flex-wrap:wrap}
 .progress{flex:1;min-width:180px;height:8px;background:#E9E2D2;border:1px solid var(--line);position:relative}
 .progress i{position:absolute;inset:0;right:auto;background:var(--stamp);width:0%;transition:width .25s}
-.bar .mono, .mono{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mut)}
-.reset{font-family:'IBM Plex Mono',monospace;font-size:12px;background:none;border:1px solid var(--line);padding:6px 12px;cursor:pointer;color:var(--ink)}
+.bar .mono, .mono{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;color:var(--mut)}
+.reset{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;background:none;border:1px solid var(--line);padding:6px 12px;cursor:pointer;color:var(--ink)}
 .reset:hover{border-color:var(--proof);color:var(--proof)}
 /* ---------- questions ---------- */
 .q{background:var(--card);border:1px solid var(--line);margin-top:18px;padding:20px 24px;position:relative}
-.q .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
+.q .tag{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
 .q h3{font-size:16px;font-weight:600;margin:6px 0 14px;max-width:70ch}
 .opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;background:#FCFAF5;border:1px solid var(--line);padding:10px 14px;margin-top:8px;cursor:pointer;position:relative;color:var(--ink)}
 .opt:hover{background:var(--hilite)}
@@ -57,14 +56,14 @@ main{padding:34px clamp(20px,5vw,64px) 90px;max-width:980px}
 .q.locked .opt:hover{background:#FCFAF5}
 .opt.correct{border-color:var(--stamp);background:#EDF7F1}
 .opt.wrong{border-color:var(--proof);background:#FBEFEE;text-decoration:underline;text-decoration-color:var(--proof);text-decoration-thickness:2px;text-underline-offset:3px}
-.opt .mark{font-family:'IBM Plex Mono',monospace;font-size:11px;float:right;margin-left:10px}
+.opt .mark{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;float:right;margin-left:10px}
 .opt.correct .mark{color:var(--stamp)}
 .opt.wrong .mark{color:var(--proof)}
-.stamp{position:absolute;top:14px;right:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;border:2px solid var(--stamp);color:var(--stamp);padding:3px 9px;transform:rotate(-6deg);opacity:0;pointer-events:none}
+.stamp{position:absolute;top:14px;right:16px;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.18em;border:2px solid var(--stamp);color:var(--stamp);padding:3px 9px;transform:rotate(-6deg);opacity:0;pointer-events:none}
 .q.right .stamp{opacity:1;animation:stampIn .18s ease-out}
 @keyframes stampIn{from{transform:rotate(-6deg) scale(1.6);opacity:0}to{transform:rotate(-6deg) scale(1);opacity:1}}
 .note{display:none;margin-top:12px;padding:10px 14px;border-left:3px solid var(--proof);background:#FDF6F0;font-size:13.5px;color:#5B4A44}
-.note b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--proof)}
+.note b{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:var(--proof)}
 .q.right .note{border-left-color:var(--stamp);background:#F2F8F4}
 .q.right .note b{color:var(--stamp)}
 .q.locked .note{display:block}
@@ -73,7 +72,7 @@ main{padding:34px clamp(20px,5vw,64px) 90px;max-width:980px}
 .wr h3{font-size:16px;font-weight:600;margin:6px 0 10px;max-width:70ch}
 .wr textarea{width:100%;min-height:110px;font:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--line);background:#FCFAF5;resize:vertical}
 .wr details{margin-top:10px}
-.wr summary{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--navy);cursor:pointer}
+.wr summary{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;color:var(--navy);cursor:pointer}
 .wr .model{margin-top:8px;padding:12px 16px;background:#F3F1E9;border:1px dashed var(--line);font-size:13.5px}
 .wr .model li{margin:4px 0 4px 18px}
 footer{margin-top:44px;font-size:12.5px;color:var(--mut);max-width:72ch}
@@ -85,34 +84,34 @@ footer b{color:var(--ink)}
   .wrap{grid-template-columns:1fr}
   aside{position:static;height:auto;padding-bottom:10px}
   .unitwrap{display:none}
-  .msel{display:block;margin:14px 22px 6px;width:calc(100% - 44px);font:inherit;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:8px}
+  .msel{display:block;margin:14px 22px 6px;width:calc(100% - 44px);font:inherit;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;padding:8px}
 }
 
 /* ---------- modes / tabs ---------- */
 .tabs{display:flex;gap:0;margin-top:20px;border-bottom:2px solid var(--line)}
-.tab{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;background:none;border:1px solid var(--line);border-bottom:none;padding:9px 16px;cursor:pointer;color:var(--mut)}
+.tab{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;letter-spacing:.08em;background:none;border:1px solid var(--line);border-bottom:none;padding:9px 16px;cursor:pointer;color:var(--mut)}
 .tab.active{background:var(--card);color:var(--navy);border-color:var(--navy);border-bottom:2px solid var(--card);margin-bottom:-2px;font-weight:500}
 .formcard{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--stamp);padding:22px 24px;margin-top:18px}
-.formcard label{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--mut);margin-top:12px}
+.formcard label{display:block;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.1em;color:var(--mut);margin-top:12px}
 .formcard input{width:100%;max-width:380px;font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);background:#FCFAF5;margin-top:4px}
 .rules{font-size:13.5px;color:#4A4438;margin-top:12px;max-width:66ch}
 .rules li{margin:4px 0 4px 18px}
-.gobtn{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;background:var(--navy);color:#fff;border:none;padding:11px 22px;cursor:pointer;margin-top:16px}
+.gobtn{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;letter-spacing:.06em;background:var(--navy);color:#fff;border:none;padding:11px 22px;cursor:pointer;margin-top:16px}
 .gobtn:hover{background:#183857}
 .gobtn.green{background:var(--stamp)}
 .gobtn.green:hover{background:#256848}
 .opt.picked{border-color:var(--navy);background:#EDF2F8;box-shadow:inset 3px 0 0 var(--navy)}
 .stickybar{position:sticky;top:0;z-index:5;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.timer{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--navy);border:1px solid var(--line);background:var(--card);padding:6px 12px}
+.timer{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:15px;color:var(--navy);border:1px solid var(--line);background:var(--card);padding:6px 12px}
 .timer.low{color:var(--proof);border-color:var(--proof)}
 .result{background:var(--card);border:2px solid var(--stamp);padding:24px;margin-top:18px}
-.result h2{font-family:'IBM Plex Serif',serif;color:var(--stamp);font-size:26px}
-.result .big{font-family:'IBM Plex Mono',monospace;font-size:34px;color:var(--ink);margin:8px 0}
-.codebox{font-family:'IBM Plex Mono',monospace;font-size:13px;background:#F3F1E9;border:1px dashed var(--navy);padding:12px 14px;word-break:break-all;margin-top:10px;user-select:all}
-.copybtn{font-family:'IBM Plex Mono',monospace;font-size:12px;border:1px solid var(--navy);background:none;color:var(--navy);padding:7px 14px;cursor:pointer;margin-top:10px}
+.result h2{font-family:Georgia,'Times New Roman',serif;color:var(--stamp);font-size:26px}
+.result .big{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:34px;color:var(--ink);margin:8px 0}
+.codebox{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;background:#F3F1E9;border:1px dashed var(--navy);padding:12px 14px;word-break:break-all;margin-top:10px;user-select:all}
+.copybtn{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;border:1px solid var(--navy);background:none;color:var(--navy);padding:7px 14px;cursor:pointer;margin-top:10px}
 .copybtn:hover{background:var(--navy);color:#fff}
 .vtable{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}
-.vtable th,.vtable td{border:1px solid var(--line);padding:7px 10px;text-align:left;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:7px 10px;text-align:left;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px}
 .vtable th{background:#EFEBDF;color:var(--ink)}
 .vok{color:var(--stamp);font-weight:600}
 .vbad{color:var(--proof);font-weight:600}
@@ -701,7 +700,7 @@ function renderInstructor(m){
    'Verify student completion codes, and review setup and privacy notes. This panel is part of the same static page; it has no login because it reveals nothing a student did not already generate themselves — verification simply proves a code was not altered.');
   m.insertAdjacentHTML('beforeend',
    '<div class="formcard" style="border-left-color:var(--navy)"><label>PASTE COMPLETION CODE(S) — ONE PER LINE</label>'+
-   '<textarea id="vin" style="width:100%;min-height:110px;font-family:\'IBM Plex Mono\',monospace;font-size:12.5px;padding:10px;border:1px solid var(--line);background:#FCFAF5" placeholder="BC2-…"></textarea>'+
+   '<textarea id="vin" style="width:100%;min-height:110px;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12.5px;padding:10px;border:1px solid var(--line);background:#FCFAF5" placeholder="BC2-…"></textarea>'+
    '<button class="gobtn" id="vbtn">VERIFY CODES</button><div id="vout"></div></div>'+
    '<div class="memo" style="margin-top:22px"><h2 style="font-size:20px">Setup &amp; privacy notes</h2><div class="rules"><ul>'+
    '<li><b>Change the secret.</b> Open this file and edit the <span class="mono">SECRET</span> constant near the top of the script before deploying. Codes are only verifiable against the same secret, which prevents students from generating codes on an unmodified copy.</li>'+
