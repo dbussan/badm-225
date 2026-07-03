@@ -351,15 +351,15 @@ s = discussion_slide(prs, "Discussion questions", [
 ], D, nxt())
 notes(s, "Use in live session or as async discussion-board prompts.")
 
-# 36 — next steps
-s = bullets_slide(prs, "Before next class", [
+# 36 — next steps (delivery-neutral: works for async, online, or in-person sections)
+s = bullets_slide(prs, "Your next steps", [
     ("Practice:", "Course site → Chapter 1 → Practice questions (instant feedback, unlimited tries)."),
-    ("Graded:", "Complete the Chapter 1 homework on the site; paste your completion code into the LMS assignment."),
+    ("Graded:", "Complete the Chapter 1 homework on the site; paste your completion code into the Blackboard assignment before the weekly deadline."),
     ("Write:", "Try one Chapter 1 writing prompt and self-check it against the model guidance."),
     ("Reflect:", "Watch one speaker you admire this week — list two nonverbal habits worth stealing."),
     ("Coming next:", "Chapter 2 — planning messages: purpose, audience, and the choices before you write a word."),
 ], D, nxt())
-notes(s, "Standard closing slide pattern used across all chapter decks: practice, graded work, writing, reflection, preview.")
+notes(s, "Delivery-neutral closing slide (no 'next class' phrasing — works for asynchronous sections). Standard pattern across all chapter decks: practice, graded work, writing, reflection, preview.")
 
 out = os.path.join(os.path.dirname(__file__), "..", "ch01-communicating-in-todays-workplace.pptx")
 prs.save(out)
