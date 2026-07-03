@@ -309,6 +309,49 @@ bullets(doc, [
     ('Treating culture-style differences as character flaws.', 'Fix: curiosity first; Hall’s continuum before judgment.'),
 ])
 
+h1(doc, 'Theory corner: how our model of communication evolved')
+para(doc, 'The process model in Figure 1 has a history worth knowing, because each era’s model fixed a '
+    'blind spot in the previous one. The linear model (rooted in Shannon’s 1948 transmission '
+    'mathematics) pictured communication as a one-way pipe: sender → message → receiver. It explained '
+    'radio and telegraph beautifully — and human conversation poorly, because it had no place for '
+    'response. The interactional model added the feedback loop: sender and receiver take turns, like a '
+    'tennis rally. Closer — but still wrong about timing, because real communicators do not take turns; '
+    'they signal continuously and simultaneously. The transactional model, which underlies this course, '
+    'treats both parties as senders and receivers at once, co-creating meaning in real time inside their '
+    'contexts and relationships: while you speak, your listener’s face is already replying, and you are '
+    'already adjusting. Practically, the transactional view changes your job description. You are not a '
+    'transmitter of finished messages; you are a participant in a live, two-way construction of meaning '
+    '— which is why monitoring the other person while you communicate is not a nicety but the actual '
+    'work.')
+figure(doc, os.path.join(FIG, 'models.png'),
+    'Figure 7. Three generations of communication models — each fixed the previous one’s blind spot.',
+    'Diagram comparing three communication models. Linear model: one-way from sender through message to receiver, no response. Interactional model: sender and receiver exchange messages in turns with feedback. Transactional model: both communicators send and receive simultaneously and continuously, co-creating meaning within shared context, relationship, and culture.')
+para(doc, 'Why it matters for your writing too: even a memo is transactional — you are anticipating '
+    'reactions, objections, and questions as you draft, and the best writers hold an imagined reader in '
+    'mind the entire time. When this course tells you to “write for the reader,” it is applying the '
+    'transactional model on paper.', bold_lead='On paper.')
+
+h1(doc, 'Communication apprehension: the fear nobody admits')
+para(doc, 'A large body of research, launched by James McCroskey in the 1970s, studies communication '
+    'apprehension — the fear or anxiety associated with real or anticipated communication '
+    '(McCroskey, 1977). It is one of the most common professional anxieties: fear of speaking up in '
+    'meetings, of presenting, of making the phone call instead of hiding behind email. Two findings '
+    'should reassure you. First, apprehension is normal and nearly universal in some situations; even '
+    'seasoned executives report it before high-stakes moments. Second, it is trait-and-state: some of it '
+    'is disposition, but much of it is situational — and the situational part responds strongly to '
+    'preparation and exposure.')
+para(doc, 'What actually reduces it, according to decades of classroom and clinical practice:')
+bullets(doc, [
+    ('Preparation beats reassurance.', 'Knowing your first two sentences cold lowers anxiety more than any pep talk; uncertainty is the fuel of apprehension.'),
+    ('Graduated exposure.', 'Speak early in every meeting — a question or a small comment in the first ten minutes. The longer you wait, the higher the internal stakes climb.'),
+    ('Reframe arousal as readiness.', 'The racing heart before a presentation is physiologically close to excitement; label it “ready,” not “terrified.”'),
+    ('Practice in the actual channel.', 'If phone calls scare you, the fix is phone calls — scripted, low-stakes ones first. Avoidance rehearses the fear.'),
+    ('Focus outward.', 'Apprehension is self-attention; shifting focus to the audience’s needs (“what do they need to understand?”) crowds it out.'),
+])
+para(doc, 'If communication anxiety significantly limits you, most universities — including UND — offer '
+    'coaching, counseling, and speaking centers. Using them is a professional move, not a confession.',
+    bold_lead='Get help early.')
+
 h1(doc, 'Case study: the Riverside account')
 para(doc, 'Read the case, answer the four questions, then compare with the analysis that follows.')
 para(doc, 'Dana manages the Riverside account at a mid-size consulting firm. On Monday, a senior '
@@ -341,6 +384,42 @@ para(doc, 'The hallway update failed at encoding (“behind, but probably fine�
     'every Tuesday until we are back on track.” Bad news, early, with a plan — the most trust-building '
     'message in business.')
 
+h1(doc, 'Second case study: the lab results email')
+para(doc, 'A quality-control chemist at a food-testing lab finishes a batch of analyses late on Friday. '
+    'One sample shows a contaminant slightly above the regulatory limit. She emails her supervisor: '
+    '“Batch 47 results attached. Sample 12 exceeded threshold on lead — 1.3x limit. Also, instrument 3 '
+    'is drifting again, and the calibration logs from Tuesday look off. FYI the client called twice '
+    'today. Have a good weekend!” Then she goes home. Her supervisor, skimming on his phone at his kid’s '
+    'game, registers “calibration logs” and “client called,” and decides Monday is fine. The contaminated '
+    'sample — buried as the second item of four, in a message titled “Batch 47 results attached” — '
+    'sits unescalated for sixty hours.')
+numbered(doc, [
+    'The chemist technically reported everything. Why did the message still fail? Name at least two principles from this chapter.',
+    'Rewrite the subject line and first sentence so the message cannot be misread.',
+    'Was email even the right channel for the Sample 12 finding? What does the channel-choice matrix (Figure 4) say?',
+    'What should the lab’s standing rule be for over-limit results, so this never depends on one person’s Friday-evening judgment?',
+])
+h2(doc, 'Case analysis')
+para(doc, 'The failure is structural, not factual: the most important fact was encoded with the least '
+    'prominence. Business writing shares a rule with journalism — frontload the lead. The subject line '
+    'should carry the alarm (“ACTION NEEDED: Batch 47 Sample 12 over lead limit — needs escalation '
+    'today”), and the first sentence should state the finding, the limit, and the required action. The '
+    'channel was also wrong for the urgency: an over-limit result on a Friday evening is a phone call '
+    '(rich, immediate, confirmable) followed by the email for the record — the classic pairing. Finally, '
+    'notice the systemic fix in question 4: organizations that depend on individual message-crafting for '
+    'safety-critical communication eventually fail; a standing escalation protocol (any over-limit '
+    'result = immediate call + flagged subject line) removes the judgment call entirely. Good '
+    'communicators fix messages; good professionals also fix the system that made the message fragile.')
+
+h1(doc, 'Watch list: three short talks worth your time')
+para(doc, 'All are free, public TED/TEDx talks — search the titles. Watch with the chapter’s vocabulary '
+    'in mind and notice the speakers’ own nonverbal technique while they teach.')
+bullets(doc, [
+    ('Julian Treasure, “5 Ways to Listen Better.”', 'A sound expert’s practical exercises for re-training attention — pairs directly with this chapter’s listening techniques.'),
+    ('Celeste Headlee, “10 Ways to Have a Better Conversation.”', 'A radio interviewer’s rules for real dialogue; her rule “enter every conversation assuming you have something to learn” is the frame-of-reference idea in action.'),
+    ('Julian Treasure, “How to Speak So That People Want to Listen.”', 'The vocal toolbox — pace, pitch, pause — made concrete; useful preparation for the presentation chapters later in this course.'),
+])
+
 h1(doc, 'Listening self-assessment')
 para(doc, 'Score yourself honestly: 2 = usually, 1 = sometimes, 0 = rarely. Total below.')
 numbered(doc, [
@@ -372,6 +451,64 @@ bullets(doc, [
     ('Binding agreements, scope, or money.', 'Always ends in writing, whatever channel it started in.'),
     ('Recognition and thanks.', 'Public channel for the praise; specifics make it land.'),
     ('Anything you drafted angry.', 'No channel today. Reread tomorrow.'),
+])
+
+h1(doc, 'Your personal communication audit (worksheet)')
+para(doc, 'Complete this once now and again at the end of the course. Be specific — vague answers audit '
+    'nothing.')
+numbered(doc, [
+    'My default channel for almost everything is: __________. Two message types I should move OUT of it: __________ and __________.',
+    'The person I most often miscommunicate with is: __________. Which stage of the process usually fails between us — encoding, channel, decoding, or feedback?',
+    'My most common noise source when others talk to me (physical / semantic / psychological): __________. One concrete fix I will try: __________.',
+    'The active-listening technique I use least: __________. The next real conversation where I will deliberately use it: __________.',
+    'One nonverbal habit of mine that may contradict my words (per feedback I have received): __________.',
+    'On Hall’s continuum, my natural style is closer to (low / high) context. A person I work with from the other end: __________. One adjustment I will make with them: __________.',
+    'My communication apprehension is highest in this situation: __________. The graduated first step I will take this month: __________.',
+    'The quick ethics test most useful for my weak spot: (publicity / reversal / whole-truth / sleep). Why: __________.',
+])
+
+h1(doc, 'Journal prompts (for reflective writing practice)')
+para(doc, 'Your instructor may assign these as discussion-board or journal entries; they also make '
+    'excellent raw material for the personal-experience sections of later assignments.')
+numbered(doc, [
+    'Write about the best communicator you have ever worked with, studied under, or been coached by. Using this chapter’s vocabulary, name three specific things they did — not qualities they had, but observable behaviors.',
+    'Describe a time cultural or generational frame-of-reference differences caused a misread that neither side intended. What would the transactional model say happened?',
+    'Recall a moment when you knew something was wrong at work, on a team, or in a group project — and communicated it late or not at all. What would have made speaking up earlier feel safe? Connect your answer to the upward-communication filter.',
+    'Reread the oldest email or message you can find that you sent in a professional or academic context. Grade it with this chapter’s tools. What has changed in your communication since — and what has not yet?',
+])
+
+h1(doc, 'How your writing will be graded in this course (and at work)')
+para(doc, 'This course grades writing on a standard worth internalizing now, because it is the same one '
+    'your future supervisor will apply without ever writing it down: could this message be sent as-is? '
+    'Top marks go to documents a supervisor would gladly send with no edits — work that would make you '
+    'stand out among colleagues. One tier down: sendable with minor edits (small grammar, format, or '
+    'tone touch-ups). Below that: needs real revision before it could represent anyone. The vocabulary '
+    'of this chapter is the diagnostic layer underneath that standard — reader-centered decoding, the '
+    'right channel, zero semantic noise, aligned tone.')
+bullets(doc, [
+    ('Before submitting anything, run this four-question pass:', ''),
+    ('Purpose:', 'can a reader state, after one reading, exactly what you want them to know or do?'),
+    ('Audience:', 'is every term decodable by the least-informed person who will receive it?'),
+    ('Structure:', 'is the most important sentence first — and are owners and deadlines explicit?'),
+    ('Polish:', 'read it aloud once; anything you stumble on, a reader stumbles on.'),
+])
+
+h1(doc, 'Frequently asked questions')
+bullets(doc, [
+    ('“Isn’t this all just common sense?”', 'Then it should be common practice — and one week of watching real workplace messages will show you it is not. The gap between knowing and doing is the entire reason communication is a trainable, rewarded skill.'),
+    ('“I’m an introvert. Am I at a disadvantage?”', 'No. This chapter’s highest-value skills — listening, paraphrasing, preparing, writing clearly — are strengths introverts often develop first. Communication competence is not volume.'),
+    ('“English isn’t my first language.”', 'You hold an advantage most native speakers lack: you already know that meaning is constructed, because you build it deliberately every day. Plain structure and the feedback loop matter far more than idiomatic flair — and this course grades the former.'),
+    ('“Can’t AI just write my messages now?”', 'It can draft them. It cannot know your reader, verify your facts, or own the consequences — and your name is on the message. See Chapter 15 for the full professional playbook.'),
+    ('“What single habit should I start with?”', 'Paraphrase. It is the smallest behavior with the largest return: it fixes listening, surfaces decode errors immediately, and makes people feel heard — three chapters of value in one sentence.'),
+])
+
+h1(doc, 'Crosswalk: this chapter → your course work')
+bullets(doc, [
+    ('Practice questions (course site, Chapter 1).', 'Sixteen questions with instant feedback map directly to this guide’s sections; the graded homework draws from the same bank.'),
+    ('Writing prompts (course site).', 'The channel-choice and rewrite prompts rehearse Figures 3–4 and the email makeover pattern.'),
+    ('Your introduction assignments.', 'Apply the nonverbal section — on camera and in slide design — when you build your name-slide and introduction.'),
+    ('Later chapters.', 'The frame-of-reference idea becomes audience analysis in Chapter 2; the listening techniques return as interview skills in Chapter 14; the ethics tests return in every message you draft.'),
+    ('The lecture deck.', 'The Chapter 1 slides follow this guide section-for-section — use them as your review pass before the quiz.'),
 ])
 
 h1(doc, 'Put it to work this week')
@@ -421,7 +558,11 @@ quiz(doc, [
     ('In a high-context culture, meaning relies most on:', ['Explicit written words','Relationships, tone, and situation','Legal contracts','Bullet points']),
     ('An ethical dilemma differs from a lapse because a dilemma involves:', ['A clearly illegal act','Two defensible values in genuine conflict','Simple carelessness','No consequences']),
     ('The upward communication flow most commonly fails because:', ['Leaders talk too much','Bad news gets filtered on its way up','Email is slow','Staff have no opinions']),
-], ['b','c','b','b','b','c','b','b','b','b'])
+    ('The transactional model of communication says that:', ['Communication is a one-way pipe','Sender and receiver take clean turns','Both parties send and receive simultaneously, co-creating meaning','Only written messages count']),
+    ('According to research on communication apprehension (McCroskey, 1977), the fear of communicating is:', ['Rare and abnormal','Common, partly situational, and responsive to preparation and exposure','Permanent and untreatable','Only about public speaking']),
+    ('The lab chemist’s Friday email failed primarily because:', ['She reported false results','The most critical fact was buried mid-message with no urgency signal','She used too few technical terms','Email servers were down']),
+    ('An over-limit safety result on a Friday evening calls for:', ['A detailed email and a good weekend','A phone call first, then the email for the record','A note in Monday’s meeting agenda','A chat message']),
+], ['b','c','b','b','b','c','b','b','b','b','c','b','b','b'])
 
 h1(doc, 'Discussion questions')
 numbered(doc, [
@@ -436,6 +577,7 @@ numbered(doc, [
 references(doc, [
     'Gallup. (2025). State of the Global Workplace: 2025 report. Gallup Press. https://www.gallup.com/workplace/',
     'Hall, E. T. (1976). Beyond culture. Anchor Press/Doubleday.',
+    'McCroskey, J. C. (1977). Oral communication apprehension: A summary of recent theory and research. Human Communication Research, 4(1), 78–96.',
     'Mehrabian, A. (1971). Silent messages. Wadsworth.',
     'National Association of Colleges and Employers. (2025). Job Outlook 2025. NACE. https://www.naceweb.org/',
     'Nichols, R. G., & Stevens, L. A. (1957, September). Listening to people. Harvard Business Review, 35(5), 85–92. https://hbr.org/1957/09/listening-to-people',
