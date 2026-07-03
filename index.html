@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BADM 225 — Professional Communication for Business (UND) · Practice &amp; Homework</title>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="18" fill="%2320456B"/><text x="50" y="68" font-size="52" text-anchor="middle" fill="%23FFFFFF" font-family="Georgia">B</text><rect x="18" y="78" width="64" height="6" rx="3" fill="%23C9931A"/></svg>'>
 <style>
 /* Fully self-contained: no external fonts or connections. System font stacks below. */
 :root{
   --paper:#FAF7F0; --card:#FFFFFF; --ink:#1C2B3A; --line:#D9D2C3;
   --navy:#20456B; --stamp:#2E7D5B; --proof:#B23A31; --hilite:#FFF0BF; --mut:#7C7566;
+  --gold:#C9931A;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -16,7 +18,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
 .wrap{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
 /* ---------- sidebar: the course file ---------- */
-aside{background:var(--ink);color:#EDE8DC;padding:26px 0 40px;position:sticky;top:0;height:100vh;overflow-y:auto}
+aside{background:linear-gradient(180deg,#1C2B3A 0%,#152230 60%,#101B27 100%);color:#EDE8DC;padding:26px 0 40px;position:sticky;top:0;height:100vh;overflow-y:auto}
 .brand{padding:0 22px 18px;border-bottom:1px solid #34455A}
 .brand .mono{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:#9FB2C6;text-transform:uppercase}
 .brand h1{font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:1.25;margin-top:6px;color:#fff}
@@ -24,9 +26,9 @@ aside{background:var(--ink);color:#EDE8DC;padding:26px 0 40px;position:sticky;to
 .scorebox b{color:#fff}
 .unit{margin-top:16px}
 .unit h2{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA3B9;padding:6px 22px}
-.chbtn{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;background:none;border:none;color:#E4DFD3;font:inherit;font-size:13.5px;padding:8px 22px;cursor:pointer}
-.chbtn:hover{background:#28394D}
-.chbtn.active{background:var(--navy);color:#fff}
+.chbtn{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;background:none;border:none;border-left:3px solid transparent;color:#E4DFD3;font:inherit;font-size:13.5px;padding:8px 22px 8px 19px;cursor:pointer;transition:background .15s,border-color .15s}
+.chbtn:hover{background:#28394D;border-left-color:#8FA3B9}
+.chbtn.active{background:var(--navy);color:#fff;border-left-color:var(--gold)}
 .chbtn .n{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;color:#93A8BE;width:26px;flex:none}
 .chbtn.active .n{color:#CFE0F2}
 .chbtn .t{flex:1;padding-right:8px}
@@ -34,23 +36,24 @@ aside{background:var(--ink);color:#EDE8DC;padding:26px 0 40px;position:sticky;to
 .chbtn .dot.done{color:#7FD4AC}
 /* ---------- main ---------- */
 main{padding:34px clamp(20px,5vw,64px) 90px;max-width:980px}
-.memo{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--navy);padding:22px 26px;box-shadow:0 1px 0 rgba(28,43,58,.06)}
+.memo{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:0 0 10px 10px;padding:22px 26px;box-shadow:0 3px 14px rgba(28,43,58,.08)}
 .memo table{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12.5px;border-collapse:collapse}
 .memo td{padding:2px 0;vertical-align:top}
 .memo td.k{color:var(--mut);width:74px;letter-spacing:.08em}
 .memo h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(22px,3.2vw,30px);margin-top:12px;color:var(--navy)}
 .memo p.sub{color:var(--mut);font-size:14px;margin-top:6px;max-width:62ch}
 .bar{display:flex;gap:14px;align-items:center;margin:22px 0 8px;flex-wrap:wrap}
-.progress{flex:1;min-width:180px;height:8px;background:#E9E2D2;border:1px solid var(--line);position:relative}
-.progress i{position:absolute;inset:0;right:auto;background:var(--stamp);width:0%;transition:width .25s}
+.progress{flex:1;min-width:180px;height:9px;background:#E9E2D2;border:1px solid var(--line);border-radius:99px;position:relative;overflow:hidden}
+.progress i{position:absolute;inset:0;right:auto;background:linear-gradient(90deg,var(--stamp),#57A87E);border-radius:99px;width:0%;transition:width .25s}
 .bar .mono, .mono{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;color:var(--mut)}
 .reset{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;background:none;border:1px solid var(--line);padding:6px 12px;cursor:pointer;color:var(--ink)}
 .reset:hover{border-color:var(--proof);color:var(--proof)}
 /* ---------- questions ---------- */
-.q{background:var(--card);border:1px solid var(--line);margin-top:18px;padding:20px 24px;position:relative}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-top:18px;padding:20px 24px;position:relative;transition:box-shadow .18s,transform .18s}
+.q:not(.locked):hover{box-shadow:0 6px 18px rgba(28,43,58,.10);transform:translateY(-1px)}
 .q .tag{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
 .q h3{font-size:16px;font-weight:600;margin:6px 0 14px;max-width:70ch}
-.opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;background:#FCFAF5;border:1px solid var(--line);padding:10px 14px;margin-top:8px;cursor:pointer;position:relative;color:var(--ink)}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;background:#FCFAF5;border:1px solid var(--line);border-radius:7px;padding:10px 14px;margin-top:8px;cursor:pointer;position:relative;color:var(--ink);transition:background .12s,border-color .12s}
 .opt:hover{background:var(--hilite)}
 .q.locked .opt{cursor:default}
 .q.locked .opt:hover{background:#FCFAF5}
@@ -68,7 +71,8 @@ main{padding:34px clamp(20px,5vw,64px) 90px;max-width:980px}
 .q.right .note b{color:var(--stamp)}
 .q.locked .note{display:block}
 /* ---------- writing prompts ---------- */
-.wr{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--navy);margin-top:18px;padding:20px 24px}
+.wr{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:0 10px 10px 0;margin-top:18px;padding:20px 24px;transition:box-shadow .18s}
+.wr:hover{box-shadow:0 6px 18px rgba(28,43,58,.09)}
 .wr h3{font-size:16px;font-weight:600;margin:6px 0 10px;max-width:70ch}
 .wr textarea{width:100%;min-height:110px;font:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--line);background:#FCFAF5;resize:vertical}
 .wr details{margin-top:10px}
@@ -91,20 +95,20 @@ footer b{color:var(--ink)}
 .tabs{display:flex;gap:0;margin-top:20px;border-bottom:2px solid var(--line)}
 .tab{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;letter-spacing:.08em;background:none;border:1px solid var(--line);border-bottom:none;padding:9px 16px;cursor:pointer;color:var(--mut)}
 .tab.active{background:var(--card);color:var(--navy);border-color:var(--navy);border-bottom:2px solid var(--card);margin-bottom:-2px;font-weight:500}
-.formcard{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--stamp);padding:22px 24px;margin-top:18px}
+.formcard{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--stamp);border-radius:0 10px 10px 0;padding:22px 24px;margin-top:18px;box-shadow:0 3px 14px rgba(28,43,58,.06)}
 .formcard label{display:block;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.1em;color:var(--mut);margin-top:12px}
 .formcard input{width:100%;max-width:380px;font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);background:#FCFAF5;margin-top:4px}
 .rules{font-size:13.5px;color:#4A4438;margin-top:12px;max-width:66ch}
 .rules li{margin:4px 0 4px 18px}
-.gobtn{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;letter-spacing:.06em;background:var(--navy);color:#fff;border:none;padding:11px 22px;cursor:pointer;margin-top:16px}
-.gobtn:hover{background:#183857}
+.gobtn{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;letter-spacing:.06em;background:var(--navy);color:#fff;border:none;border-radius:7px;padding:11px 22px;cursor:pointer;margin-top:16px;transition:background .15s,box-shadow .15s}
+.gobtn:hover{background:#183857;box-shadow:0 4px 12px rgba(24,56,87,.3)}
 .gobtn.green{background:var(--stamp)}
 .gobtn.green:hover{background:#256848}
 .opt.picked{border-color:var(--navy);background:#EDF2F8;box-shadow:inset 3px 0 0 var(--navy)}
 .stickybar{position:sticky;top:0;z-index:5;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 .timer{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:15px;color:var(--navy);border:1px solid var(--line);background:var(--card);padding:6px 12px}
 .timer.low{color:var(--proof);border-color:var(--proof)}
-.result{background:var(--card);border:2px solid var(--stamp);padding:24px;margin-top:18px}
+.result{background:var(--card);border:2px solid var(--stamp);border-radius:10px;padding:24px;margin-top:18px;box-shadow:0 6px 20px rgba(46,125,91,.12)}
 .result h2{font-family:Georgia,'Times New Roman',serif;color:var(--stamp);font-size:26px}
 .result .big{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:34px;color:var(--ink);margin:8px 0}
 .codebox{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;background:#F3F1E9;border:1px dashed var(--navy);padding:12px 14px;word-break:break-all;margin-top:10px;user-select:all}
@@ -134,7 +138,7 @@ footer b{color:var(--ink)}
 <main id="main"></main>
 </div>
 <script>
-/* ============ ORIGINAL PRACTICE CONTENT — Chapters 1–14 ============ */
+/* ============ ORIGINAL PRACTICE CONTENT — Chapters 1–16 ============ */
 /* mc item: [question, [A,B,C,D], correctIndex, explanation] */
 const UNITS=[
  {u:"Unit 1 · Communication Foundations",chs:[1]},
@@ -142,7 +146,8 @@ const UNITS=[
  {u:"Unit 3 · Workplace Messages",chs:[5,6,7,8]},
  {u:"Unit 4 · Reports & Proposals",chs:[9,10]},
  {u:"Unit 5 · Professionalism & Speaking",chs:[11,12]},
- {u:"Unit 6 · Employment Communication",chs:[13,14]}
+ {u:"Unit 6 · Employment Communication",chs:[13,14]},
+ {u:"Unit 7 · Professional Development",chs:[15,16]}
 ];
 const DATA={
 1:{t:"Communicating in Today's Workplace",sub:"Communication foundations, listening, nonverbal cues, ethics, and professionalism in a social and mobile workplace.",
@@ -443,7 +448,49 @@ mc:[
 ["When your candidacy advances to the reference-check stage, you should:", ["Do nothing", "Alert your references, share the job details, and thank them afterward", "Change your references", "Ask references to exaggerate"], 1, "Prepared references give sharper, faster, better recommendations — and deserve the courtesy."]],
 wr:[
 ["Write a complete STAR answer (4–6 sentences) to: 'Tell me about a time you had to meet a tight deadline.'",["S/T: one or two sentences of specific context and your responsibility.","A: the concrete actions YOU took (prioritized, communicated, adjusted).","R: measurable result + one-line lesson. Entirely true and defensible."]],
-["Draft the full thank-you email (subject + 4 sentences) you would send after interviewing for an internship, referencing one specific moment from the conversation.",["Subject: 'Thank you — [Role] interview'; sent within 24 hours.","Specific reference to something discussed; brief restatement of fit/enthusiasm.","Professional close with your name and contact; no typos — this email is also a writing sample."]]]}
+["Draft the full thank-you email (subject + 4 sentences) you would send after interviewing for an internship, referencing one specific moment from the conversation.",["Subject: 'Thank you — [Role] interview'; sent within 24 hours.","Specific reference to something discussed; brief restatement of fit/enthusiasm.","Professional close with your name and contact; no typos — this email is also a writing sample."]]]},
+15:{t:"AI, Agents & Professional Communication",sub:"Using AI as a professional tool — drafting, verifying, disclosing, and the judgment that stays human.",
+mc:[
+["At its core, a large language model like ChatGPT or Claude:",["Looks up answers in a certified database","Generates text by predicting patterns learned from enormous amounts of training text","Copies sentences from the internet in real time","Understands truth the way a subject-matter expert does"],1,"It generates likely text from learned patterns — which is why it is fluent, fast, and capable of being confidently wrong."],
+["An AI 'hallucination' is:",["A slow response from the model","False or invented information stated confidently as fact","An error message","Text the model refuses to write"],1,"Fluency is not accuracy: models can produce invented statistics, citations, and names with complete confidence."],
+["AI drafts an email for you. The professional next step is to:",["Send it immediately — AI writes better than you","Verify any facts, then rewrite it in your own voice before sending","Delete it and start over — AI drafts are unusable","Forward it to a colleague to send"],1,"The draft is raw material. You own the message: verify the facts, fix the tone, and make it yours — your name is on it."],
+["Which prompt will get the most useful draft from an AI assistant?",["“Write an email.”","“Write a professional email to a client.”","“Write a 150-word email to a longtime client, apologizing for a one-week shipping delay, offering expedited freight at our cost, in a warm but direct tone.”","“Write the best email ever written.”"],2,"Specificity is the skill: audience, purpose, constraints, and tone in the prompt determine the quality of the draft."],
+["Which of these should you NEVER paste into a public AI chatbot?",["A press release your company already published","Confidential student records, patient data, or unreleased financials","A paragraph of your own writing to improve","A publicly available job posting"],1,"Public tools may store and learn from what you type. Confidential and regulated data stays out — period. Use approved internal tools for sensitive work."],
+["Using AI on your résumé is ethical when:",["AI invents impressive metrics for your bullet points","You supply the true accomplishments and AI helps with wording and tailoring","AI writes a résumé for a job you're not qualified for","You copy a stronger candidate's résumé as a template"],1,"You supply the truth; AI supplies the polish. Inventing accomplishments is misrepresentation — and it collapses in the first interview question."],
+["Where is the ethical line for AI in job interviews?",["Any AI use around interviews is cheating","Unlimited mock-interview practice beforehand is fair; being fed AI answers during a live interview is misrepresentation","Live AI coaching during interviews is fine if undetected","AI may only be used to research the company"],1,"Practice is preparation — the same as a friend running mock questions. Live-fed answers misrepresent who the employer is hiring, and they don't survive follow-up questions anyway."],
+["An AI 'agent' differs from a chatbot because an agent:",["Is always smarter","Plans and executes multi-step tasks using tools — searching, writing files, running programs — toward a goal","Only answers questions about schedules","Requires no human oversight at all"],1,"Chatbots answer; agents act: multi-step plans, tool use, and iteration toward a goal — which is why oversight and checkpoints matter."],
+["Your course or employer has an AI-use policy. Your obligation is to:",["Ignore it if the work is good","Know it and follow it — including disclosure requirements — for every assignment or deliverable","Assume all AI use is banned","Disclose AI use only if directly asked"],1,"AI use is governed by explicit policy now. Professionals read the policy and disclose per its terms — quietly exceeding limits is an integrity violation."],
+["An AI response includes a specific statistic you want to use in a report. You should:",["Use it — models are usually right","Find and cite the primary source yourself before repeating it","Round it off so it's safer","Attribute it to 'AI research'"],1,"Never launder an unverified number through your own credibility. Track the claim to a real source, or leave it out."],
+["“AI raises the floor, not the ceiling” of writing quality means:",["AI makes everyone's writing identical","Weak first drafts improve, but audience judgment, strategy, and knowing what to say remain human skills","AI cannot fix grammar","Only poor writers benefit from AI"],1,"The mediocre-draft problem is solved; the judgment problem is not. Knowing your reader, your goal, and what NOT to say is still your job — and now it's the differentiator."],
+["AI outputs can be biased because:",["Developers program in opinions deliberately","Models learn patterns — including human biases — from their training data","Computers are inherently unfair","Bias only appears in image generators"],1,"Models reflect the data they learned from. Review AI-assisted screening, descriptions, and evaluations for fairness before they represent you."],
+["The best way to actually get good at using AI is to:",["Wait for a formal certification course","Use it daily on low-stakes tasks, test it on subjects you know well, and keep notes on what works","Read about it but avoid using it until it's perfect","Use it only when required"],1,"It's a tool skill: reps, experimentation, and knowing its failure modes. Testing it where YOU are the expert teaches you exactly where to trust it."],
+["For which message is AI drafting LEAST appropriate?",["A routine meeting-recap email","A first draft of a product FAQ","A condolence note to a grieving colleague","A summary of a long report"],2,"Some messages carry weight precisely because a human wrote them. Authenticity is the entire content of a condolence — outsourcing it hollows it out."],
+["The most effective AI writing workflow is:",["AI writes, you send","You brief the AI, it drafts, you verify, edit, and own the final product","You write, AI sends","AI and you alternate sentences"],1,"Brief → draft → verify → edit → own. The tool accelerates the middle; the beginning (intent) and end (accountability) are yours."],
+["Refusing to learn AI tools in today's workplace is most like:",["Refusing to use social media in 2010","Refusing to learn email in the 1990s","Avoiding video calls in 2020","Skipping a software update"],1,"It's becoming baseline office literacy. The relevant comparison isn't you vs. AI — it's you vs. the colleague who uses it well."]],
+wr:[
+["Write a complete AI prompt asking for a first draft of a difficult email (you choose the scenario): include the audience, purpose, key facts, tone, and length. Then list the three things you must verify or change before the draft could be sent.",["Prompt includes: who the reader is, what outcome you need, the true facts to include, tone, and a length limit.","Verification list: factual claims checked, tone matched to relationship, message rewritten into your own voice.","Shows the brief → draft → verify → edit → own workflow."]],
+["Draft the 2–3 sentence AI-use disclosure you would attach to an assignment: what tool you used, what you used it for, and what remains your own work.",["Names the tool and the specific use (brainstorming, first draft, grammar).","Clearly separates AI contribution from your own analysis, structure, and final wording.","Matter-of-fact professional tone — disclosure is routine, not confession."]]]},
+16:{t:"Leadership Under Pressure & Influence",sub:"Communicating when stakes are high — crisis clarity, influence without authority, and correcting people while keeping them.",
+mc:[
+["The first job of a leader's message during a crisis is to:",["Assign blame quickly","Provide calm clarity: what we know, what we don't, and what happens next","Withhold everything until legal approves","Reassure everyone that nothing is wrong"],1,"Under pressure, people need structure: known facts, honest unknowns, and a next step. Calm specificity beats both panic and spin."],
+["Your project will miss its deadline. The professional move is to:",["Stay quiet and hope to catch up","Tell stakeholders early, with a recovery plan and a new date","Wait until the deadline passes, then explain","Blame the vendor in the announcement"],1,"Early bad news is a resource — people can adjust. Late bad news is a betrayal. Pair the news with a plan and ownership."],
+["Something just went wrong and the team is watching you. The strongest opening is:",["“Who did this?”","“Let's fix it first — we'll figure out what happened after things are stable.”","“I knew this would happen.”","“Everyone stop working until I say so.”"],1,"Fix first, dissect later. Blame in the moment freezes information flow exactly when you need it most."],
+["Under pressure, the most effective speaking style is:",["Faster and louder, to convey urgency","Slower and more specific, with no speculation","Vague, to preserve flexibility","Silent, to avoid mistakes"],1,"Stress makes audiences mishear. Slowing down and being concrete is how leaders sound — and stay — in control."],
+["Influence without authority is built primarily on:",["Impressive titles","Deposits before withdrawals — helping others before you need something","Copying executives on requests","Winning arguments decisively"],1,"Colleagues owe you nothing. The favor you did last month is why your request works this month."],
+["A teammate's section of the report is full of errors. The influence-preserving opening is:",["“This is careless work.”","“Walk me through how this section came together?”","“I've fixed your mistakes — again.”","Forwarding it to the boss annotated"],1,"Curiosity before critique: most 'carelessness' has a cause (missing data, unclear instructions), and questions surface it without triggering defense."],
+["Appreciation builds influence when it is:",["Frequent and general — “great job, everyone!”","Specific and true — naming exactly what the person did and its effect","Delivered only at annual reviews","Paired with a request"],1,"If you can't name the specific contribution, it reads as flattery. Specific and true is what people remember — and repeat."],
+["You won the argument in the meeting. The likely real outcome is:",["The other person adopts your view happily","You lost the person — they leave embarrassed, resentful, and unconvinced","Everyone forgets by tomorrow","You get promoted"],1,"Arguments are ego contests; nobody concedes those willingly. State your case once, respect theirs aloud, and build agreement instead."],
+["“Could we try the summary up front?” beats “Put the summary up front” because:",["It's less clear","Questions preserve the other person's ownership and dignity; orders spend authority you may not have","It avoids responsibility","It's faster"],1,"Asking recruits; ordering compels. People execute their own ideas with far more energy than your instructions."],
+["Always leave the other person a face-saving exit because:",["It's legally required","Cornered people fight; people allowed to retreat with dignity remain allies","It weakens your position","It ends meetings faster"],1,"The goal is changed behavior, not a surrender ceremony. Dignity preserved today is cooperation available tomorrow."],
+["“That catch was Jordan's” — said in front of the team — costs you nothing and:",["Weakens your standing","Gains you two allies: Jordan, and everyone who watched you give credit","Confuses the record","Obligates Jordan to return the favor"],1,"Public credit is the cheapest influence investment there is. Hoarded credit works exactly once."],
+["You're furious about an email you just received. You should:",["Reply immediately while the points are fresh","Draft if you must — then wait, edit, or delete before anything sends","CC the sender's manager","Post about it in the team channel"],1,"Never send angry. The satisfying reply costs more than it pays, every time. Time converts retaliation into strategy."],
+["Team morale is low after bad news. The effective message combines:",["Pure optimism — “everything is fine!”","Acknowledging the hard truth plus one concrete next step","Silence until things improve","A pizza party announcement"],1,"People trust leaders who name reality. Acknowledgment plus a specific path forward beats cheerleading that everyone can see through."],
+["If you want to keep hearing bad news early, you must:",["Punish the messenger so mistakes stop","Visibly thank people who bring problems while they're still small","Ask for good news only","Install more status meetings"],1,"You get more of what you reward. Shoot one messenger and the next problem arrives six weeks too late."],
+["Before proposing a big change in a meeting, skilled influencers:",["Spring it as a surprise for maximum impact","Pre-wire it — discuss it one-on-one with key people first","Send a 40-page memo the night before","Schedule the meeting without an agenda"],1,"Big asks die cold. One-on-ones surface objections privately, build ownership, and turn the meeting into a confirmation."],
+["You disagreed with your manager's decision in private; the decision stands. In public you should:",["Re-argue your case in front of the team","Support the decision and execute it well","Stay visibly neutral so everyone knows you objected","Undermine it quietly"],1,"Disagree privately, commit publicly. Relitigating lost arguments in public damages both the team and your credibility."]],
+wr:[
+["Your team will miss Friday's client deadline. Write the four-sentence message you send your manager today: own the situation, state the cause briefly, give the recovery plan with a new date, and name what you need.",["Opens with the news directly — no burying, no blame.","One-sentence honest cause; no excuse-stacking.","Concrete recovery plan with a specific new date, plus a clear ask (resources, priority call).","Supervisor test: does this message make you MORE trustworthy than silence would have?"]],
+["Rewrite this order as an influence-preserving request: “Get me those numbers by noon. No excuses.” Then explain in one sentence why your version works better.",["Uses a question and context: why the numbers matter and what they unlock.","Preserves the other person's ownership and offers a realistic out (“what would it take…?”).","Explanation references ownership, dignity, or deposits-before-withdrawals."]]]}
 };
 
 /* ================= ENGINE: practice, graded homework, timed quiz ================= */
@@ -526,7 +573,7 @@ function buildNav(){
   const xd=document.createElement('div'); xd.className='navxtra';
   const bq=document.createElement('button'); bq.className='chbtn'; bq.innerHTML='<span class="n">★</span><span class="t">Comprehensive Quiz ('+ALL_N+' Q, all chapters)</span>';
   bq.onclick=()=>{view={kind:'quizAll'};render();window.scrollTo({top:0});};
-  const bc=document.createElement('button'); bc.className='chbtn'+(view.kind==='career'?' active':''); bc.innerHTML='<span class="n">▤</span><span class="t">Instructor’s Career Series ('+CAREER.length+' decks)</span>';
+  const bc=document.createElement('button'); bc.className='chbtn'+(view.kind==='career'?' active':''); bc.innerHTML='<span class="n">▤</span><span class="t">Professional Development ('+CAREER.length+' decks)</span>';
   bc.onclick=()=>{view={kind:'career'};render();window.scrollTo({top:0});};
   const bi=document.createElement('button'); bi.className='chbtn'; bi.innerHTML='<span class="n">⚿</span><span class="t">Instructor Tools</span>';
   bi.onclick=()=>{view={kind:'instructor'};render();window.scrollTo({top:0});};
@@ -736,7 +783,7 @@ function gbData(filterSec){
     const cur=rows[key].cells[col];
     if(!cur||pct>cur.pct) rows[key].cells[col]={pct:pct,raw:v.score+'/'+v.total};
   });
-  const order=[]; for(let i=1;i<=14;i++)order.push('HW CH'+i); for(let i=1;i<=14;i++)order.push('QZ CH'+i); order.push('QZ ALL');
+  const order=[]; for(let i=1;i<=16;i++)order.push('HW CH'+i); for(let i=1;i<=16;i++)order.push('QZ CH'+i); order.push('QZ ALL');
   const colList=order.filter(c=>cols[c]).concat(Object.keys(cols).filter(c=>order.indexOf(c)<0).sort());
   return {rows:Object.values(rows).sort((a,b)=>a.name.localeCompare(b.name)), cols:colList};
 }
@@ -836,8 +883,8 @@ function render(){
   const m=document.getElementById('main');
   if(view.kind==='instructor'){ renderInstructor(m); return; }
   if(view.kind==='career'){
-    m.innerHTML=memoHead('Instructor’s career series — original presentations','Instructor’s Career Series',
-     'Presentations created by your instructor on careers, job searching, and workplace life — the practical side of professional communication. All original instructor material. Click any title to download the PowerPoint.');
+    m.innerHTML=memoHead('Professional development — instructor presentations','Professional Development',
+     'Presentations created by your instructor on careers, leadership, influence, and workplace life — the practical side of professional communication. All original instructor material. Click any title to download the PowerPoint.');
     let h='';
     CAREER.forEach(c=>{
       h+='<div class="wr" style="margin-top:14px"><div class="tag mono">'+c[3]+' SLIDES · PPTX</div>'+
@@ -849,7 +896,7 @@ function render(){
     return;
   }
   if(view.kind==='quizAll'){
-    m.innerHTML=memoHead('Comprehensive quiz — all chapters','Comprehensive Quiz','Twenty questions drawn at random from all fourteen chapter banks. '+ALL_MIN+'-minute limit.');
+    m.innerHTML=memoHead('Comprehensive quiz — all chapters','Comprehensive Quiz','Twenty questions drawn at random from every chapter bank. '+ALL_MIN+'-minute limit.');
     renderQuiz(m); return;
   }
   const d=DATA[view.ch];
