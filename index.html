@@ -465,9 +465,9 @@ function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 function djb2(s){let h=5381;for(const ch of s){h=(((h<<5)+h)+ch.codePointAt(0))>>>0;}return h.toString(16).padStart(8,'0');}
 function b64e(s){return btoa(unescape(encodeURIComponent(s))).replace(/=+$/,'');}
 function b64d(s){return decodeURIComponent(escape(atob(s)));}
-function makeCode(mode,label,score,total,id,name,secs){
+function makeCode(mode,label,score,total,id,name,secs,sec){
   const clean=v=>String(v).replace(/\|/g,'/').trim();
-  const payload=[mode,label,score,total,clean(id),clean(name),new Date().toISOString().slice(0,16),secs].join('|');
+  const payload=[mode,label,score,total,clean(id),clean(name),new Date().toISOString().slice(0,16),secs,clean(sec||'')].join('|');
   return 'BC2-'+b64e(payload)+'-'+djb2(payload+SECRET);
 }
 function verifyCode(code){
@@ -476,8 +476,8 @@ function verifyCode(code){
     if(!m) return {ok:false};
     const payload=b64d(m[1]);
     const ok=djb2(payload+SECRET)===m[2];
-    const [mode,label,score,total,id,name,when,secs]=payload.split('|');
-    return {ok,mode,label,score,total,id,name,when,secs};
+    const [mode,label,score,total,id,name,when,secs,sec]=payload.split('|');
+    return {ok,mode,label,score,total,id,name,when,secs,sec:sec||''};
   }catch(e){ return {ok:false}; }
 }
 function copyText(t,btn){
@@ -534,6 +534,7 @@ function tabsHtml(mode){
 function idForm(btnLabel,rules){
   return '<div class="formcard"><label>FULL NAME</label><input id="f_name" autocomplete="name" placeholder="Jane Q. Student">'+
    '<label>STUDENT ID</label><input id="f_id" placeholder="e.g., 0123456">'+
+   '<label>SECTION / CLASS #</label><input id="f_sec" placeholder="e.g., 12946">'+
    '<ul class="rules">'+rules.map(r=>'<li>'+r+'</li>').join('')+'</ul>'+
    '<div class="warn">Privacy: your name, ID, and answers never leave this page — nothing is uploaded or stored. Your score is delivered to your instructor only through the completion code you submit in the LMS.</div>'+
    '<button class="gobtn green" id="startbtn">'+btnLabel+'</button></div>';
@@ -589,7 +590,7 @@ function renderPractice(m,d){
 /* ---------- homework (graded, no feedback until submit) ---------- */
 function renderHomework(m,d){
   const ch=view.ch;
-  if(!HW[ch]) HW[ch]={started:false,submitted:false,answers:{},name:'',id:'',t0:0};
+  if(!HW[ch]) HW[ch]={started:false,submitted:false,answers:{},name:'',id:'',sec:'',t0:0};
   const s=HW[ch];
   if(!s.started){
     m.insertAdjacentHTML('beforeend', idForm('BEGIN HOMEWORK — '+d.mc.length+' QUESTIONS',[
@@ -597,9 +598,9 @@ function renderHomework(m,d){
       'No feedback appears until you submit. One completion code is generated per submission.',
       'When finished, paste your completion code into the matching LMS assignment.']));
     document.getElementById('startbtn').onclick=()=>{
-      const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim();
-      if(!n||!i){alert('Please enter your name and student ID.');return;}
-      s.name=n;s.id=i;s.started=true;s.t0=Date.now();render();
+      const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim(), sc2=document.getElementById('f_sec').value.trim();
+      if(!n||!i||!sc2){alert('Please enter your name, student ID, and section/class number.');return;}
+      s.name=n;s.id=i;s.sec=sc2;s.started=true;s.t0=Date.now();render();
     }; return;
   }
   if(s.submitted){
@@ -625,7 +626,7 @@ function renderHomework(m,d){
     if(unanswered>0 && !confirm(unanswered+' question(s) are unanswered and will score zero. Submit anyway?')) return;
     let sc=0; d.mc.forEach((q,qi)=>{if(s.answers[qi]===q[2])sc++;});
     s.score=sc; s.submitted=true;
-    s.code=makeCode('HW','CH'+ch,sc,d.mc.length,s.id,s.name,Math.round((Date.now()-s.t0)/1000));
+    s.code=makeCode('HW','CH'+ch,sc,d.mc.length,s.id,s.name,Math.round((Date.now()-s.t0)/1000),s.sec);
     render(); window.scrollTo({top:0});
   };
 }
@@ -636,7 +637,7 @@ function renderQuiz(m){
   const all=view.kind==='quizAll';
   const key=quizKey();
   const nQ=all?ALL_N:QUIZ_N, mins=all?ALL_MIN:QUIZ_MIN;
-  if(!QZ[key]) QZ[key]={started:false,submitted:false,answers:{},name:'',id:'',qs:[],deadline:0,timer:null};
+  if(!QZ[key]) QZ[key]={started:false,submitted:false,answers:{},name:'',id:'',sec:'',qs:[],deadline:0,timer:null};
   const s=QZ[key];
   if(!s.started){
     m.insertAdjacentHTML('beforeend', idForm('START QUIZ — '+nQ+' QUESTIONS · '+mins+' MINUTES',[
@@ -644,9 +645,9 @@ function renderQuiz(m){
       mins+'-minute limit; the quiz submits itself automatically when time expires.',
       'No feedback until submission; paste the completion code into the LMS afterward.']));
     document.getElementById('startbtn').onclick=()=>{
-      const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim();
-      if(!n||!i){alert('Please enter your name and student ID.');return;}
-      s.name=n;s.id=i;s.started=true;
+      const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim(), sc2=document.getElementById('f_sec').value.trim();
+      if(!n||!i||!sc2){alert('Please enter your name, student ID, and section/class number.');return;}
+      s.name=n;s.id=i;s.sec=sc2;s.started=true;
       let pool=[];
       if(all){for(const c in DATA) DATA[c].mc.forEach((q,qi)=>pool.push({c:+c,qi}));}
       else DATA[view.ch].mc.forEach((q,qi)=>pool.push({c:view.ch,qi}));
@@ -681,7 +682,7 @@ function renderQuiz(m){
     s.score=sc; s.submitted=true;
     const label=all?'ALL':'CH'+view.ch;
     const left=Math.max(0,Math.round((s.deadline-Date.now())/1000));
-    s.code=makeCode('QZ',label,sc,total,s.id,s.name,(mins*60-left));
+    s.code=makeCode('QZ',label,sc,total,s.id,s.name,(mins*60-left),s.sec);
     render(); window.scrollTo({top:0});
   }
   document.getElementById('qzsubmit').onclick=()=>{
@@ -699,31 +700,114 @@ function renderQuiz(m){
   s.timer=setInterval(tick,500); tick();
 }
 
-/* ---------- instructor ---------- */
+/* ---------- instructor: verification + gradebook ---------- */
+const GBKEY='bc_gb_v1';
+function gbLoad(){ try{ return JSON.parse(localStorage.getItem(GBKEY))||[] }catch(e){ return [] } }
+function gbSave(a){ try{ localStorage.setItem(GBKEY,JSON.stringify(a)) }catch(e){ alert('Browser storage unavailable — gradebook could not be saved.') } }
+function gbSections(){ const s={}; gbLoad().forEach(c=>{const v=verifyCode(c); if(v.ok) s[v.sec||'—']=1;}); return Object.keys(s).sort(); }
+function gbData(filterSec){
+  const rows={}, cols={};
+  gbLoad().forEach(c=>{ const v=verifyCode(c); if(!v.ok) return;
+    const sec=v.sec||'—';
+    if(filterSec && filterSec!=='ALL' && sec!==filterSec) return;
+    const col=v.mode+' '+v.label; cols[col]=1;
+    const key=v.id+'|'+sec;
+    if(!rows[key]) rows[key]={name:v.name,id:v.id,sec:sec,cells:{}};
+    const pct=Math.round(+v.score/+v.total*100);
+    const cur=rows[key].cells[col];
+    if(!cur||pct>cur.pct) rows[key].cells[col]={pct:pct,raw:v.score+'/'+v.total};
+  });
+  const order=[]; for(let i=1;i<=14;i++)order.push('HW CH'+i); for(let i=1;i<=14;i++)order.push('QZ CH'+i); order.push('QZ ALL');
+  const colList=order.filter(c=>cols[c]).concat(Object.keys(cols).filter(c=>order.indexOf(c)<0).sort());
+  return {rows:Object.values(rows).sort((a,b)=>a.name.localeCompare(b.name)), cols:colList};
+}
+function drawGB(){
+  const el=document.getElementById('gbout'); if(!el) return;
+  const sel=document.getElementById('gbsec'); const f=sel?sel.value:'ALL';
+  const gd=gbData(f);
+  if(!gd.rows.length){ el.innerHTML='<p class="sub" style="margin-top:12px">No stored results'+(f!=='ALL'?' for this section':'')+' yet. Paste completion codes above and click ADD TO GRADEBOOK.</p>'; return; }
+  let h='<div style="overflow-x:auto;margin-top:12px"><table class="vtable"><tr><th>STUDENT</th><th>ID</th><th>SECTION</th>'+gd.cols.map(c=>'<th>'+esc(c)+'</th>').join('')+'<th>AVG</th></tr>';
+  gd.rows.forEach(r=>{
+    const pcts=gd.cols.map(c=>r.cells[c]?r.cells[c].pct:null);
+    const have=pcts.filter(p=>p!==null);
+    const avg=have.length?Math.round(have.reduce((a,b)=>a+b,0)/have.length):null;
+    h+='<tr><td>'+esc(r.name)+'</td><td>'+esc(r.id)+'</td><td>'+esc(r.sec)+'</td>'+
+      pcts.map((p,i)=>'<td>'+(p===null?'—':p+'% <span style="color:var(--mut)">('+r.cells[gd.cols[i]].raw+')</span>')+'</td>').join('')+
+      '<td><b>'+(avg===null?'—':avg+'%')+'</b></td></tr>';
+  });
+  h+='<tr><td colspan="3"><b>CLASS AVERAGE</b></td>'+gd.cols.map(c=>{
+    const v=gd.rows.map(r=>r.cells[c]).filter(Boolean).map(x=>x.pct);
+    return '<td><b>'+(v.length?Math.round(v.reduce((a,b)=>a+b,0)/v.length)+'%':'—')+'</b></td>';
+  }).join('')+'<td></td></tr>';
+  el.innerHTML=h+'</table></div>';
+}
 function renderInstructor(m){
-  m.innerHTML=memoHead('Instructor tools — code verification &amp; setup','Instructor Tools',
-   'Verify student completion codes, and review setup and privacy notes. This panel is part of the same static page; it has no login because it reveals nothing a student did not already generate themselves — verification simply proves a code was not altered.');
+  m.innerHTML=memoHead('Instructor tools — gradebook &amp; code verification','Instructor Tools',
+   'Verify student completion codes and build a gradebook across all your sections. The gradebook is stored only in this browser on this computer — it is never uploaded anywhere. Export CSV backups for your records.');
+  const secs=gbSections();
+  const selStyle='font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12px;padding:6px 8px;border:1px solid var(--line);background:var(--card);margin:0 10px 0 6px';
   m.insertAdjacentHTML('beforeend',
    '<div class="formcard" style="border-left-color:var(--navy)"><label>PASTE COMPLETION CODE(S) — ONE PER LINE</label>'+
    '<textarea id="vin" style="width:100%;min-height:110px;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12.5px;padding:10px;border:1px solid var(--line);background:#FCFAF5" placeholder="BC2-…"></textarea>'+
-   '<button class="gobtn" id="vbtn">VERIFY CODES</button><div id="vout"></div></div>'+
+   '<button class="gobtn green" id="gaddbtn">ADD TO GRADEBOOK</button> <button class="gobtn" id="vbtn" style="margin-left:8px">VERIFY ONLY</button><div id="vout"></div></div>'+
+   '<div class="memo" style="margin-top:22px"><h2 style="font-size:20px">Gradebook</h2>'+
+   '<div class="bar" style="margin-top:12px"><span class="mono">SECTION:</span><select id="gbsec" style="'+selStyle+'">'+
+   '<option value="ALL">All sections</option>'+secs.map(s=>'<option>'+esc(s)+'</option>').join('')+'</select>'+
+   '<button class="reset" id="gbcsv">EXPORT CSV</button><button class="reset" id="gbclear" style="margin-left:8px;color:var(--proof)">CLEAR GRADEBOOK</button></div>'+
+   '<div id="gbout"></div></div>'+
    '<div class="memo" style="margin-top:22px"><h2 style="font-size:20px">Setup &amp; privacy notes</h2><div class="rules"><ul>'+
    '<li><b>Change the secret.</b> Open this file and edit the <span class="mono">SECRET</span> constant near the top of the script before deploying. Codes are only verifiable against the same secret, which prevents students from generating codes on an unmodified copy.</li>'+
    '<li><b>FERPA posture.</b> This site is static: no server, no database, no analytics, no transmission. Names, IDs, answers, and scores exist only in the student\u2019s browser and vanish on reload. Grades enter your records solely through the LMS assignment where students paste their code \u2014 so all education records stay inside your institution\u2019s FERPA-covered systems. Consider having students use their university ID (not SSN or personal data) in the ID field.</li>'+
+   '<li><b>The gradebook stays on your computer.</b> Entries you add above are saved only in this browser on this machine (localStorage) \u2014 the digital equivalent of a grade file on your desk; nothing is uploaded. Use your own computer, not a shared or public one, and export CSV backups \u2014 clearing browser data erases the gradebook.</li>'+
+   '<li><b>Sections.</b> Students enter their Section/Class # when starting graded work; it is embedded in their completion code, so one gradebook cleanly separates every section you teach. Filter with the dropdown above.</li>'+
    '<li><b>Integrity limits, honestly stated.</b> Codes are tamper-evident (editing any digit invalidates them), but this is a client-side homework tool, not a proctored exam platform: a determined student could read the page source. Appropriate for low-stakes homework and practice quizzes; run high-stakes exams in the LMS.</li>'+
-   '<li><b>Grading workflow.</b> Create one LMS text-entry assignment per homework/quiz. Students paste codes; you (or a TA) paste batches here to verify and read scores. Codes embed name, ID, score, total, date, and time-on-task.</li>'+
+   '<li><b>Grading workflow.</b> Create one LMS text-entry assignment per homework/quiz. Students paste codes there; you paste batches here and click ADD TO GRADEBOOK. Duplicates are skipped automatically, and the best score per student per assignment is shown. Codes embed name, ID, section, score, total, date, and time-on-task.</li>'+
    '</ul></div></div>');
   document.getElementById('vbtn').onclick=()=>{
     const lines=document.getElementById('vin').value.split(/\n+/).map(s=>s.trim()).filter(Boolean);
     if(!lines.length){document.getElementById('vout').innerHTML='';return;}
-    let h='<table class="vtable"><tr><th>STATUS</th><th>TYPE</th><th>SET</th><th>SCORE</th><th>NAME</th><th>ID</th><th>DATE (UTC)</th><th>TIME</th></tr>';
+    let h='<table class="vtable"><tr><th>STATUS</th><th>TYPE</th><th>SET</th><th>SCORE</th><th>NAME</th><th>ID</th><th>SECTION</th><th>DATE (UTC)</th><th>TIME</th></tr>';
     lines.forEach(c=>{
       const v=verifyCode(c);
-      if(v.ok) h+='<tr><td class="vok">VALID ✓</td><td>'+esc(v.mode)+'</td><td>'+esc(v.label)+'</td><td>'+esc(v.score)+' / '+esc(v.total)+'</td><td>'+esc(v.name)+'</td><td>'+esc(v.id)+'</td><td>'+esc(v.when)+'</td><td>'+fmtT(+v.secs||0)+'</td></tr>';
-      else h+='<tr><td class="vbad">INVALID ✗</td><td colspan="7">'+esc(c.slice(0,40))+'… — malformed or altered code</td></tr>';
+      if(v.ok) h+='<tr><td class="vok">VALID ✓</td><td>'+esc(v.mode)+'</td><td>'+esc(v.label)+'</td><td>'+esc(v.score)+' / '+esc(v.total)+'</td><td>'+esc(v.name)+'</td><td>'+esc(v.id)+'</td><td>'+esc(v.sec||'—')+'</td><td>'+esc(v.when)+'</td><td>'+fmtT(+v.secs||0)+'</td></tr>';
+      else h+='<tr><td class="vbad">INVALID ✗</td><td colspan="8">'+esc(c.slice(0,40))+'… — malformed or altered code</td></tr>';
     });
     document.getElementById('vout').innerHTML=h+'</table>';
   };
+  document.getElementById('gaddbtn').onclick=()=>{
+    const lines=document.getElementById('vin').value.split(/\n+/).map(s=>s.trim()).filter(Boolean);
+    if(!lines.length){document.getElementById('vout').innerHTML='';return;}
+    const store=gbLoad(); let added=0,dup=0,bad=0;
+    lines.forEach(c=>{ const v=verifyCode(c); if(!v.ok){bad++;return;} if(store.indexOf(c)>=0){dup++;return;} store.push(c);added++; });
+    gbSave(store);
+    document.getElementById('vout').innerHTML='<p class="sub" style="margin-top:10px"><b>'+added+' added to gradebook</b> · '+dup+' duplicate(s) skipped · '+bad+' invalid.</p>';
+    const sel=document.getElementById('gbsec'); const cur=sel.value;
+    sel.innerHTML='<option value="ALL">All sections</option>'+gbSections().map(s=>'<option>'+esc(s)+'</option>').join('');
+    sel.value=cur; if(sel.selectedIndex<0) sel.value='ALL';
+    drawGB();
+  };
+  document.getElementById('gbsec').onchange=drawGB;
+  document.getElementById('gbcsv').onclick=()=>{
+    const f=document.getElementById('gbsec').value;
+    const gd=gbData(f);
+    if(!gd.rows.length){alert('Nothing to export yet.');return;}
+    const q=s=>'"'+String(s).replace(/"/g,'""')+'"';
+    const out=[['Name','ID','Section'].concat(gd.cols).concat(['Average']).map(q).join(',')];
+    gd.rows.forEach(r=>{
+      const pcts=gd.cols.map(c=>r.cells[c]?r.cells[c].pct:'');
+      const have=pcts.filter(p=>p!=='');
+      const avg=have.length?Math.round(have.reduce((a,b)=>a+b,0)/have.length):'';
+      out.push([r.name,r.id,r.sec].concat(pcts).concat([avg]).map(q).join(','));
+    });
+    const blob=new Blob([out.join('\r\n')],{type:'text/csv'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+    a.download='badm225-gradebook'+(f!=='ALL'?'-'+f.replace(/[^A-Za-z0-9-]/g,'_'):'')+'.csv'; a.click();
+  };
+  document.getElementById('gbclear').onclick=()=>{
+    if(!confirm('Delete ALL stored gradebook entries from this browser? Export a CSV first if you need a record.')) return;
+    localStorage.removeItem(GBKEY); renderInstructor(m);
+  };
+  drawGB();
 }
 
 /* ---------- top-level render ---------- */
