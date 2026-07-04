@@ -112,6 +112,87 @@ para(doc, 'Internal proposals — the persuasive genre you will write most — c
     'company history, feature tours, and adjectives. Executives fund arithmetic attached to '
     'credible people.')
 
+h1(doc, 'Deep dive: pricing the ask — anchors, frames, and the honest use of both')
+para(doc, 'How a number is presented changes how it is judged, and persuasive writers work with '
+    'that psychology honestly or lose to those who don’t. Anchoring: the first number in a '
+    'negotiation or proposal becomes the reference point everything after is judged against '
+    '(Kahneman, 2011) — which is why the cost-of-doing-nothing belongs BEFORE your price '
+    '(“duplicate entry burns roughly $31,000 of tech time annually; the system costs $6,800”), '
+    'and why leaving the anchor to the reader’s imagination surrenders the frame. Relative '
+    'framing: $6,800 “per year” and “$130 a week” and “about the cost of one external audit '
+    'finding” are the same number wearing three coats — choose the comparison native to the '
+    'reader’s mental accounting, and choose truthfully (the “pennies a day” frame on a '
+    'multi-year commitment is technically true and reads as a trick, which prices your ethos in '
+    'for free). Loss and gain frames: prospect theory’s central finding — losses loom larger '
+    'than equivalent gains — means “stop losing 30 tech-hours a month” and “save 30 tech-hours '
+    'a month” are not the same sentence to a human reader; loss frames move risk-averse '
+    'audiences harder, and overusing them reads as fearmongering. The ethical line for all three '
+    'is the one this chapter keeps drawing: frames select among true presentations; they never '
+    'manufacture false ones. The comparison must hold up when the analyst checks it — because '
+    'the analyst checks it.')
+
+h1(doc, 'Deep dive: persuading committees — the multi-reader pitch')
+para(doc, 'Proposals increasingly face committees, and committees are not big individuals — they '
+    'are small political systems with predictable dynamics. The pre-work matters more than the '
+    'document: Chapter 16’s pre-wiring (individual conversations before the meeting) surfaces '
+    'each member’s objection while it is still cheap to address, converts the persuadable into '
+    'co-owners (“building on Dana’s suggestion…” in the proposal itself), and identifies the '
+    'one member whose skepticism anchors the others. The document then writes to the room’s '
+    'currencies at once (Chapter 2’s benefit taxonomy, deployed in parallel): the economic case '
+    'for the budget holder, the operational case for the implementer, the risk case for the '
+    'chair — each labeled, each findable by its owner in a skim. Committee-specific craft: '
+    'give the group something to decide, not something to discuss (“approve the pilot” beats '
+    '“thoughts on automation?” — committees discuss indefinitely and decide only what is '
+    'framed decidably); anticipate the tabling move (“if more data is wanted, the pilot IS the '
+    'data gathering” pre-empts the committee’s favorite non-decision); and build the summary '
+    'page as if it were the only page, because for most members it is. Win the pre-wired '
+    'members, arm the summary page, and the meeting ratifies what the process already built — '
+    'which is what experienced proposers mean when they say the meeting is the last step of '
+    'persuasion, not the first.')
+
+h1(doc, 'Persuasion workshop: five repairs (answers follow)')
+numbered(doc, [
+    '“Our firm has 47 years of combined experience and a passion for excellence. We offer end-to-end solutions across the full spectrum of your needs. We would welcome the opportunity to discuss how we can add value.”',
+    '“The new software has 14 major features including customizable dashboards, real-time sync, advanced reporting, mobile access, API integration, and much more!”',
+    '“You need to approve this by Friday or the whole project fails. There is really no alternative. Everyone agrees this is the only option.”',
+    '“This proposal will save money, improve morale, increase efficiency, boost quality, enhance our reputation, and position us for the future.”',
+    '“I know you’re busy and this probably isn’t a priority and I hate to even ask, but if you ever have a spare moment, maybe we could possibly chat about the budget idea sometime?”',
+])
+h2(doc, 'Workshop answers')
+numbered(doc, [
+    'Vendor-view hook, zero reader content: no problem named, no evidence, an ask (“discuss how we can add value”) that costs an hour and promises nothing. Repair: open with THEIR quantified problem, offer one number of proof, ask for thirty minutes with an agenda.',
+    'A feature tour where a mechanism-to-outcome chain belongs. Repair: pick the ONE feature that serves this reader’s known pain, ladder it to their outcome (“real-time sync means your Friday reconciliation disappears”), park the rest in an attachment.',
+    'Manufactured scarcity plus false consensus plus reactance bait — three ethos detonations in three sentences (Brehm, 1966: pressure this naked gets tested on principle). Repair: the real deadline with its real reason, the honest alternative and its cost, and the freedom acknowledged (“your call — here’s what each path looks like”).',
+    'Six unweighted claims — the dilution effect in its natural habitat; the reader averages them into mush. Repair: the best THREE, each with its evidence; cut “enhance our reputation and position us for the future” entirely (rung-one abstractions, Chapter 4).',
+    'The ask apologized into nonexistence: five hedges, no benefit, no size, no date. Repair: “Fifteen minutes this week on the budget idea? The Q3 numbers make it timely, and I think it saves your team real hours — Thursday afternoon work?” Confidence is not presumption; it is information about whether YOU believe the pitch.',
+])
+
+h1(doc, 'Templates appendix: three pitches to steal')
+para(doc, 'Adapt freely — the structure is the value.')
+h2(doc, '1. The internal proposal email (full AIDA in one screen)')
+para(doc, '“Subject: Cut duplicate sample entry — pilot proposal (decision by 7/18). Our techs '
+    'enter every sample twice; at current volume that’s ~400 duplicate entries a week and our '
+    'most likely audit finding. Barcode intake eliminates the second entry: the Fargo lab’s '
+    '90-day pilot cut entry time 41% with zero transcription findings. Cost: $6,800/yr against '
+    '~30 tech-hours/month currently burned — payback in about seven weeks. The honest downside: '
+    'two clunky weeks while it learns our codes; Fargo called week three ‘never going back.’ '
+    'Ask: approve a 60-day pilot on Line 2 (vendor holds the discount through 7/18). Comparison '
+    'sheet attached.”')
+h2(doc, '2. The commitment-ladder opener (cold, external)')
+para(doc, '“Subject: Question about your March webinar on LIMS validation. Dr. Alvarez — your '
+    'audit-trail segment solved a problem my lab fought all year, except one piece: amendment '
+    'logs under 21 CFR 11. If you have fifteen minutes in the next two weeks, I’d value your '
+    'answer — and I’ll send our validation checklist in return, which your team may find '
+    'useful.” (Their expertise honored, one specific question, reciprocity offered, smallest '
+    'possible rung.)')
+h2(doc, '3. The budget defense (persuading to KEEP something)')
+para(doc, '“Before the line item goes: the tutoring center cost $38K last year and retained 61 '
+    'students who cited it in exit surveys — at $9,400 tuition each, that’s $573K of retained '
+    'revenue against $38K of cost. Cutting it books the savings this quarter and the losses '
+    'next fall, where they won’t carry the center’s name. If the budget must give, the '
+    'evening-hours pilot ($6K) is the honest candidate — details attached.” (Loss frame, '
+    'earned; the counter-offer that proves good faith.)')
+
 h1(doc, 'Research corner: why fewer, stronger arguments win')
 para(doc, 'Two findings deserve their own spotlight because they cut against instinct. First, the '
     'dilution effect: when strong arguments share a message with weak ones, audiences average '
@@ -327,7 +408,9 @@ numbered(doc, [
 
 references(doc, [
     'Aristotle. (2007). On rhetoric: A theory of civic discourse (G. A. Kennedy, Trans., 2nd ed.). Oxford University Press. (Original work ca. 350 BCE)',
+    'Brehm, J. W. (1966). A theory of psychological reactance. Academic Press.',
     'Cialdini, R. B. (2021). Influence, new and expanded: The psychology of persuasion. Harper Business.',
+    'Kahneman, D. (2011). Thinking, fast and slow. Farrar, Straus and Giroux.',
     'Monroe, A. H. (1935). Principles and types of speech. Scott, Foresman.',
     'Petty, R. E., & Cacioppo, J. T. (1986). Communication and persuasion: Central and peripheral routes to attitude change. Springer-Verlag.',
 ])

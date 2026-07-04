@@ -511,6 +511,36 @@ bullets(doc, [
     ('The lecture deck.', 'The Chapter 1 slides follow this guide section-for-section — use them as your review pass before the quiz.'),
 ])
 
+h1(doc, 'Deep dive: the meeting as a communication arena')
+para(doc, 'Chapter 11 gives meetings a full treatment; Chapter 1’s foundations already equip you '
+    'for the arena where most workplace communication is publicly graded. Apply the model: '
+    'meetings are simultaneous multi-party encoding and decoding, which is why they generate more '
+    'misunderstanding per minute than any channel — everyone is transmitting, few are receiving. '
+    'Apply the listening techniques: the paraphrase (“so the blocker is the vendor file, not our '
+    'code?”) is worth more in a meeting than anywhere, because it repairs the record for everyone '
+    'at once. Apply the nonverbal awareness doubly: in rooms, your listening posture is visible to '
+    'the speaker and the room simultaneously; on video, your camera presence is your posture. And '
+    'apply the frame-of-reference discipline to the follow-up: the same meeting produces different '
+    'memories in every attendee (each decoded through their own stakes), which is why the '
+    'confirmation message afterward — three numbered points, Chapter 5’s template — is not '
+    'bureaucracy but epistemology: it converts five private meetings into one shared one. '
+    'Students who apply just these four foundations to their group-project meetings this term '
+    'will watch their teams outperform for reasons no one else can quite name.')
+
+h1(doc, 'Deep dive: building your communication practice system')
+para(doc, 'This course will hand you dozens of techniques; the professionals who actually improve '
+    'are the ones who build a practice system around a few at a time. The architecture that works: '
+    'pick ONE technique per week (this week: paraphrase; next week: channel choice), announce it to '
+    'yourself in writing, and attach it to a trigger you already have (“in every meeting, before I '
+    'respond to anything substantive, I paraphrase once”). Log the reps minimally — a tally mark, '
+    'not a diary — because measured behavior is repeated behavior. Review on Fridays: what did the '
+    'technique catch this week? One real save (the misunderstanding caught by a paraphrase, the '
+    'conflict avoided by a channel upgrade) is worth more motivation than any grade. And recruit '
+    'one witness: a classmate, colleague, or partner who knows what you are practicing will notice '
+    'your progress before you do — and their noticing is itself the feedback loop this chapter '
+    'says all communication needs. Twelve weeks of one-technique-per-week outbuilds any cram; '
+    'communication skill is compound interest, and the deposits are daily.')
+
 h1(doc, 'Put it to work this week')
 numbered(doc, [
     'In your next conversation that matters, paraphrase once before replying. Notice what it catches.',
