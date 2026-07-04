@@ -109,6 +109,81 @@ para(doc, 'Recruiters and clients meet your digital presence before they meet yo
     'presence is an asset, the standing portfolio from Chapter 1. It demands only that the person '
     'visible online and the person in the interview be colleagues, not strangers.')
 
+h1(doc, 'Deep dive: digital body language')
+para(doc, 'Chapter 1 established that nonverbal signals ride on every channel; digital channels have '
+    'evolved their own nonverbal vocabulary, and professionals read it whether or not senders manage '
+    'it. Response latency is the loudest signal: answering a peer in four minutes and their '
+    'teammate in four days announces a hierarchy nobody wrote down. Latency should track message '
+    'priority, not sender politics — and when it can’t (travel, deadline crunch), the two-line '
+    'acknowledgment resets the signal honestly. Message length carries tone: the one-word “Fine.” '
+    'under a five-paragraph proposal reads as contempt even when it means consent; match '
+    'investment, or explain the brevity (“Short answer from the road: yes — details Monday”). '
+    'Punctuation is expression: the period at the end of a one-line chat message (“ok.”) has '
+    'measurably chilled a generation of readers; the exclamation point, in moderation, is simply '
+    'how warmth survives compression. Read receipts and online-status indicators broadcast '
+    'availability claims you may not intend — the “seen at 9:14, unanswered” gap is a message you '
+    'sent without typing. None of this requires paranoia; it requires the same awareness the '
+    'in-person version does. Your digital posture is being read. Stand accordingly.')
+
+h1(doc, 'Deep dive: the acknowledgment economy')
+para(doc, 'The highest-leverage habit in digital communication costs fifteen seconds: closing '
+    'loops. Every request launched into silence generates uncertainty the sender must manage — did '
+    'it arrive? is it happening? should I follow up or would that nag? The acknowledgment kills the '
+    'whole cascade: “Got it — full answer by Friday” or even “On it” converts an open loop into a '
+    'scheduled one. Professionals who acknowledge reliably get described with the highest '
+    'compliment an inbox can award: “you never have to wonder with them.”')
+para(doc, 'The craft points: acknowledge with a commitment, not just receipt — “received” answers '
+    'arrival; “by Friday” answers the question the sender actually has. Calibrate the promise '
+    'honestly and then beat it quietly (the reverse — bold promise, silent slip — is how trust '
+    'leaks). For requests you cannot serve soon, say so at acknowledgment time: “this is behind two '
+    'client deliverables; realistic date is the 22nd — flag me if that breaks something” is '
+    'Chapter 7’s early-bad-news discipline at inbox scale. And when YOU are the requester, design '
+    'for acknowledgment: end with a question that invites the fifteen-second reply (“will Friday '
+    'work?”) rather than a mute period. Loops close twice as fast when both ends are built for '
+    'closing.', bold_lead='The craft.')
+
+h1(doc, 'Deep dive: the three-reply rule — when threads should die')
+para(doc, 'Some conversations degrade in text: each reply adds a sub-question, a tone wobble, a new '
+    'CC — and by reply seven the thread is a committee meeting conducted at typing speed. The '
+    'working heuristic: when a thread passes three substantive back-and-forths without converging, '
+    'convert channels — a ten-minute call, then one email confirming what was decided (the pairing, '
+    'as always). The math is stark: a six-person thread with eleven replies has consumed more '
+    'collective minutes than the meeting everyone was avoiding, and produced a worse record. '
+    'Convert-triggers beyond the count: visible tone escalation (each reply slightly sharper — '
+    'voice de-escalates what text inflames), genuine complexity (interdependent decisions need '
+    'working memory that threads fragment), and anything approaching conflict (Chapter 16’s '
+    'territory — nobody has ever been argued out of a position by reply-all). The inverse rule '
+    'also holds: meetings that exist to transfer information one-way should have been messages. The '
+    'channel test is interaction density — high interaction, meet; low interaction, write. Most '
+    'organizations get both wrong in both directions, which makes the professional who converts '
+    'correctly look like a time wizard.')
+
+h1(doc, 'Deep dive: urgency signaling — spend it like money')
+para(doc, 'Every channel has an urgency register — the URGENT tag, the red exclamation, the '
+    '@here, the text message itself as a channel choice — and urgency signals obey strict '
+    'inflation economics: each unearned use devalues every future one. The sender who marks routine '
+    'mail urgent trains recipients to discount the marker exactly once — permanently. The '
+    'disciplines: reserve the register for genuine time-criticality (a decision needed today, not a '
+    'preference for attention); put the deadline and its reason in the subject instead of the '
+    'adrenaline (“Approve by 3 p.m. — vendor hold expires” outperforms “URGENT!!”); and never '
+    'escalate channels as a first move — the text message about a non-urgent work matter spends '
+    'relationship capital on postage. When everything from someone is urgent, nothing is; when '
+    'nothing is, the one urgent message they ever send moves a whole office. Be the second person.')
+
+h1(doc, 'Deep dive: findability — writing for future search')
+para(doc, 'Every workplace message has a second audience Chapter 2 didn’t name: future searchers, '
+    'including future you. Six months from now, someone — probably you — will need this decision, '
+    'this number, this agreement, and will hunt it with keywords. Write for that hunt: put the '
+    'searchable nouns in the subject line (project names, vendor names, PO numbers — “Re: that '
+    'thing from the call” is unfindable by design); keep one topic per thread so the found thread '
+    'contains the whole story; restate context when threads resume after a gap (“picking up the '
+    'March decision on the Beckman purchase…” re-anchors both the reader and the search index); '
+    'and name attachments as their finders will look for them (“Okafor-Proposal-2026-07.pdf,” '
+    'never “final_v2 (3).pdf”). Organizations run on retrieved decisions; the writer whose messages '
+    'surface cleanly in search is contributing to institutional memory with every send — and '
+    'collecting the quiet reputation that goes with being the person whose email always settles '
+    'the dispute about what was agreed.')
+
 h1(doc, 'Research corner: the cost of the ping')
 para(doc, 'The always-on workplace has a measured cost. Interaction workers already spent over a '
     'quarter of the workweek inside email a decade ago (Chui et al., 2012), and psychologists '
@@ -120,6 +195,89 @@ para(doc, 'The always-on workplace has a measured cost. Interaction workers alre
     'receiver: process email in scheduled blocks rather than at each ping — triage (act now if under '
     'two minutes, schedule if longer, file or delete otherwise), and protect at least one daily '
     'stretch of unpinged work. Inbox management is attention management wearing a work costume.')
+
+h1(doc, 'Deep dive: the memo — the format that refuses to die')
+para(doc, 'Chapter 2 introduced format signals; the memo deserves its own examination, because it '
+    'keeps outliving its obituaries. A memo — whether printed, PDF’d, or living as a formatted '
+    'page in a shared drive — is defined by its header block (To / From / Date / Subject) and its '
+    'promise: this document is complete in itself, addressed to a defined audience, and built to be '
+    'filed. Email carries conversation; memos carry position. That is why policies, formal '
+    'recommendations, decision records, and anything that will be referenced by people outside the '
+    'original conversation still deserve memo form: the format tells every future reader “this was '
+    'considered, this is official, this stands alone.”')
+para(doc, 'The craft mirrors everything this course has built: subject line as the document’s job; '
+    'a one-line summary or recommendation up top (the direct pattern in its natural habitat); '
+    'informative headings; and — memo-specific — a distribution line that is itself a message '
+    '(who is on it, and who conspicuously is not, will be read as carefully as paragraph one). One '
+    'specialized species matters to know: the memo-to-file, addressed to the record itself — '
+    'written after significant meetings, decisions, or incidents, filed where the team files such '
+    'things. Nobody asks for it; everybody who has ever needed one wishes it existed. When a '
+    'dispute surfaces fourteen months later, the person who wrote the memo-to-file owns the '
+    'authoritative version of events — a quiet form of institutional power available to anyone '
+    'with ten spare minutes and the habit.', bold_lead='The craft, and the file.')
+
+h1(doc, 'Deep dive: shared documents — writing where everyone can see you type')
+para(doc, 'A growing share of workplace writing happens inside shared documents and wikis, where '
+    'drafting, commenting, and deciding collapse into one surface. The etiquette layer: comment on '
+    'the work, at the right altitude, and declare it (Chapter 4’s reviewer rules apply verbatim); '
+    'use suggestion/tracked mode in documents you don’t own — direct edits to someone else’s '
+    'draft-in-progress read as marking territory; resolve comment threads when addressed rather '
+    'than leaving archaeology for the next reader; and never conduct a side-argument in the margin '
+    'of a document the whole team reads — comment threads are the most public private conversation '
+    'in the building.')
+para(doc, 'The ownership layer matters more: every living document needs a named owner, or it '
+    'quietly becomes true-ish — edited by many, vouched for by none. The owner’s job is Chapter '
+    '4’s pass three at the document level: periodic verification that the page still matches '
+    'reality, a visible “last reviewed” date, and ruthless archiving of superseded versions. A wiki '
+    'nobody owns is a rumor with formatting. And for documents that decide things — specs, '
+    'policies, runbooks — freeze decisions OUT of the living surface into dated records (the memo '
+    'habit again), because a decision that lives only in an editable page is a decision anyone can '
+    'silently re-decide.', bold_lead='Ownership.')
+
+h1(doc, 'Deep dive: availability is a message — OOO, calendars, and status')
+para(doc, 'Your availability signals are a communication channel you are always broadcasting on. '
+    'The out-of-office reply is the most-written, least-designed message in business; the good one '
+    'answers the sender’s three questions in three lines: when you return (“back Monday, July 14”), '
+    'who covers what meanwhile (“urgent lab scheduling: Dana Reyes; everything else waits for '
+    'me”), and what happens to their message (“I’ll reply within two days of returning” — which '
+    'also licenses you not to triage from the beach). Skip the apology; absence isn’t a failing. '
+    'Calendar hygiene communicates too: blocks labeled honestly (“focus work” is a legitimate '
+    'appointment), meeting invitations carrying agendas (an inviteless meeting request is the '
+    'naked “hey” of scheduling), and declines with one-line reasons (“conflict with client audit '
+    '— send notes and I’ll comment”) that respect both the meeting and your absence from it. '
+    'Status indicators round it out: set them truthfully or not at all, because a green dot that '
+    'means nothing teaches colleagues to ping and hope — the exact uncertainty all this signaling '
+    'exists to remove.')
+
+h1(doc, 'Deep dive: designing group chat that stays useful')
+para(doc, 'Team chat degrades by default — channels multiply, topics smear, and the important '
+    'drowns in the social. Design fights the entropy. Channels get names that state their scope '
+    '(#proj-beckman-rollout, not #stuff) and a pinned purpose line including what does NOT belong; '
+    'the social channel exists so the work channels don’t absorb the memes — containment, not '
+    'prohibition. Threading discipline keeps parallel conversations parallel: reply in thread, '
+    'start new topics at top level, and resist the instinct to answer a threaded question in the '
+    'main channel (it forks the record). The @-register follows urgency economics: @person for '
+    'their action, @here sparingly for the working-now, @channel almost never — it is the fire '
+    'alarm, and fire alarms that ring weekly get ignored. And chat needs a decision-export habit: '
+    'anything decided in-channel gets its one-line confirmation in the channel AND its durable '
+    'record in email or the project doc, because chat search is where decisions go to become '
+    'arguments. A team that adopts even half of this discipline recovers hours a week; the team '
+    'that adopts none conducts its business inside a slot machine.')
+
+h1(doc, 'Worked example: the escalation email')
+para(doc, 'When the three-reply rule triggers but a call isn’t possible — or the thread must be '
+    'escalated to someone senior — the professional move is the escalation summary: a fresh email '
+    '(new subject, per thread hygiene) that compresses the mess into a decision package. The '
+    'template: “Subject: Decision needed by Thu: Beckman install date. [1] Situation: install '
+    'slipped twice; vendor now offers Aug 2 or Aug 16. [2] The disagreement: Ops prefers Aug 2 '
+    '(before audit prep); Lab prefers Aug 16 (after method validation). [3] What’s been tried: '
+    'both threads attached; no convergence after six replies. [4] Recommendation: Aug 16 — '
+    'validation risk outweighs audit-prep inconvenience, mitigations below. [5] Ask: your call by '
+    'Thursday, so we hold whichever slot.” Five numbered moves: situation, conflict, history, '
+    'recommendation, dated ask. Note what it never does: relitigate the thread, characterize '
+    'colleagues’ motives, or forward forty messages with “thoughts?” — the decider gets a '
+    'briefing, not homework. Executives fund this format’s author with something better than '
+    'budget: they start routing hard things through them.')
 
 h1(doc, 'Worked examples: three short-message makeovers')
 h2(doc, '1. The naked “hey”')
@@ -137,6 +295,71 @@ h2(doc, '3. The thanks that taxed forty people')
 para(doc, 'Before: reply-all “Thanks everyone!!” to the entire division. After: reply (sender only) '
     '“Thanks, Dana — the turnaround saved us.” Gratitude got MORE personal by getting narrower; '
     'thirty-nine inboxes got nothing, which was exactly what they were owed.')
+
+h1(doc, 'Deep dive: external email — writing to clients and strangers')
+para(doc, 'Everything in this chapter tightens one notch when the recipient is outside your '
+    'organization, because external email carries three loads internal mail doesn’t. It represents '
+    'the institution: your signature block says the company’s name, and the reader generalizes '
+    'freely — one sloppy message from you is “they’re sloppy over there.” It lacks shared context: '
+    'the acronyms, personalities, and history that lubricate internal mail are walls externally; '
+    'spell out what any insider would compress (project names, role titles, even which “Friday” — '
+    'time zones are a hidden audience). And it is discoverable by the OTHER side’s legal team too: '
+    'the permanence gradient runs in both directions, so commitments phrased casually (“we can '
+    'probably get you 10% off next round”) are commitments, and hedges must be real hedges '
+    '(“subject to the written quote”).')
+para(doc, 'The craft additions for strangers specifically: earn the open with a subject line '
+    'carrying THEIR interest, not your introduction (“Question about your March webinar on LIMS '
+    'validation” beats “Introduction — Jamie Chen”); establish the connection in sentence one '
+    '(Chapter 2’s opening playbook — the referral, the shared context, the reason for THIS '
+    'person); and make the first ask small (Chapter 8’s ladder applies to relationships too — '
+    'fifteen minutes, one question, not “pick your brain sometime,” which prices itself as '
+    'unlimited). First messages to strangers get exactly one reading and no benefit of the doubt: '
+    'they are the highest-revision-tier messages of their size in your professional life '
+    '(Chapter 4’s budgets apply).', bold_lead='Cold craft.')
+
+h1(doc, 'Deep dive: the recurring update — cadence as communication')
+para(doc, 'The status update is the most repeated message in professional life, and its secret is '
+    'that the CADENCE is half the message: an update that arrives every Friday at 4:00, '
+    'identically formatted, communicates control before a word is read — and the Friday it fails '
+    'to arrive communicates louder than anything in it. Design the recurring update once, then let '
+    'the format compound: a fixed skeleton (On track / Slipping / Need from you / Next milestone), '
+    'the same order every time so readers’ eyes learn the layout, deltas over restatements '
+    '(“unchanged from last week” is a complete and excellent line item), and honest color-coding '
+    'discipline — the project that goes red only after death has trained everyone to ignore its '
+    'green (Chapter 7’s calibration rule, on a schedule). Two temptations to resist: the '
+    'novel-length update that proves effort instead of reporting status (nobody rereads last '
+    'week’s essay; everybody scans this week’s skeleton), and cadence inflation — daily updates '
+    'nobody asked for teach recipients to filter you. Agree the cadence with the audience once, '
+    'deliver it like a metronome, and break format only when something has genuinely broken: on '
+    'that day, the format break itself is your siren.')
+
+h1(doc, 'Deep dive: mobile-first means thumb-first')
+para(doc, 'A majority of business email gets its first reading on a phone, and many messages get '
+    'their ONLY reading there — which imposes design constraints stricter than any this chapter '
+    'has named. The phone screen shows roughly your subject line plus thirty words before scrolling '
+    'begins; that preview either wins the open or loses it, and either carries the point or wastes '
+    'the reader’s only glance. The disciplines: front-load harder than desktop habits suggest '
+    '(subject + first sentence must survive alone); prefer short paragraphs and lists even more '
+    'aggressively (a five-line desktop paragraph is a twelve-line phone wall); place the ask where '
+    'a thumb-scroller decelerates — the end — AND flag it early (“decision needed by Thu — '
+    'details below”); and never bury required action inside an attachment a phone reader will '
+    'defer opening (“see attached” as the whole message is a desktop assumption wearing '
+    'confidence). Test your own high-stakes messages by sending them to yourself and reading on '
+    'your phone first: if the point doesn’t survive the preview, it doesn’t survive the morning '
+    'commute triage where messages live or die.')
+
+h1(doc, 'Deep dive: reactions and emoji — the smallest messages')
+para(doc, 'The thumbs-up reaction is now a load-bearing piece of workplace infrastructure, and it '
+    'deserves two minutes of actual thought. Reactions solve a real problem — acknowledgment '
+    'without inbox noise (a 👍 on “meeting moved to 3” closes the loop at zero cost, better than '
+    'six “ok!” replies). Their limits: a reaction confirms receipt, not commitment — “can you own '
+    'the vendor follow-up?” answered with 👍 is ambiguous exactly where ambiguity is expensive; '
+    'anything with a deliverable deserves words. Emoji in prose follow the register rules from '
+    'Chapter 2: they scale warmth in channels that have adopted them, they never carry load-bearing '
+    'meaning alone, and they exit entirely for first contact, external formality, bad news '
+    '(Chapter 7 — a 😊 near a refusal reads as mockery), and anything that might be forwarded '
+    'upward. The meta-rule: mirror the register of the specific room, one notch more conservative '
+    'than the median. Nobody was ever marked down for warmth delivered in words.')
 
 h1(doc, 'Case study 1: the reply-all storm')
 para(doc, 'An HR coordinator sends a benefits reminder to an all-company list — 1,400 names — with '
@@ -215,6 +438,64 @@ para(doc, 'Scoring: 16–20, your digital footprint is an asset — maintain it.
     'lowest items; subject lines and reply-all discipline pay fastest. Below 10, start with one '
     'habit: write the subject line last, and make it the message’s job. Retake at midterm.')
 
+h1(doc, 'Deep dive: attachments and links — the cargo layer')
+para(doc, 'Messages increasingly exist to deliver cargo — files and links — and the cargo layer '
+    'has its own etiquette. Announce what you attach and why it matters (“Attached: the signed '
+    'quote — the $28,570 figure on page 2 is the one we verified”), because an unexplained '
+    'attachment demands the reader open it to learn whether they needed to. Choose attachment '
+    'versus link deliberately: attachments freeze a moment (right for records, quotes, anything '
+    'that must not drift) while links point at living documents (right for collaboration, wrong '
+    'for “the version we agreed to” — a link to a living doc is a moving target wearing a '
+    'timestamp). Check link permissions BEFORE sending — the “request access” bounce is the most '
+    'common self-inflicted delay in modern work, and it always lands at the worst moment. Name '
+    'files for their finders (the recipient’s conventions, not your desktop chaos), keep sizes '
+    'courteous (compress or link anything over a few megabytes — mobile readers pay for your '
+    'attachment twice), and never let required action live ONLY inside the cargo: the message body '
+    'carries the ask and the deadline; the attachment carries the detail. The last-thing check '
+    '(Chapter 4) already guards the classic failure — the missing attachment — but its modern '
+    'sibling deserves equal billing: the wrong-permissions link is the missing attachment that '
+    'looks attached.')
+
+h1(doc, 'Deep dive: the weekly reset — maintenance for your communication system')
+para(doc, 'Triage handles the daily flow; a weekly fifteen-minute reset keeps the whole system '
+    'honest. The ritual, ideally Friday afternoon: sweep the inbox for open loops YOU owe — every '
+    'message where someone awaits your answer gets its acknowledgment-with-commitment now, even if '
+    'the commitment is “next Wednesday”; sweep for loops OWED you that have gone quiet — one '
+    'gentle, assumption-of-good-faith nudge each (“resending in case this got buried”); clear the '
+    'flag/star backlog, because a flagging system where everything is flagged is a decoration '
+    'scheme; file or archive the settled threads so Monday’s search space is clean; and — the '
+    'compounding step — harvest the week into your systems: decisions worth a memo-to-file get '
+    'one, recurring questions worth a template get drafted once, and anything you explained twice '
+    'this week becomes a document you link next time. Fifteen minutes. The professionals whose '
+    'inboxes never seem to own them are not faster typists; they run maintenance on a schedule, '
+    'the way labs calibrate instruments — because an uncalibrated communication system drifts '
+    'exactly the same way, just less visibly.')
+
+h1(doc, 'Templates appendix: five messages to steal')
+para(doc, 'Adapt freely — the structure is the value.')
+h2(doc, '1. The acknowledgment with a commitment')
+para(doc, '“Got it — thanks. Full answer by Thursday noon; flag me if you need it sooner.” '
+    '(Receipt, date, escape valve. Fifteen seconds; closes the loop completely.)')
+h2(doc, '2. The out-of-office that actually helps')
+para(doc, '“I’m out through Monday, July 14. Urgent lab scheduling: Dana Reyes (dreyes@…). '
+    'Everything else: I’ll reply within two days of returning.” (Return date, coverage by topic, '
+    'expectation set. No apology — absence isn’t a failing.)')
+h2(doc, '3. The cold contact')
+para(doc, '“Subject: Question about your March webinar on LIMS validation. Dr. Alvarez — your '
+    'segment on audit trails answered a problem my lab has fought for a year, except one piece: '
+    'how do you handle amendment logs under 21 CFR 11? If you have fifteen minutes in the next two '
+    'weeks, I’d value the answer — happy to work around your calendar.” (Their work first, one '
+    'specific question, one small dated ask.)')
+h2(doc, '4. The decision confirmation')
+para(doc, '“Confirming today’s call: (1) install moves to Aug 16; (2) I’ll send revised validation '
+    'specs by Friday; (3) weekly check-ins each Tuesday until launch. Corrections welcome — '
+    'otherwise this stands as our plan.” (Numbered, complete, self-ratifying. The pairing’s written '
+    'half, every time anything is decided aloud.)')
+h2(doc, '5. The channel-convert move')
+para(doc, '“This thread has outgrown email — six replies and we’re circling. Ten minutes at 2:00 '
+    'to settle it? I’ll send the confirmation after.” (Names the pattern without blame, proposes '
+    'the fix, promises the record. The three-reply rule, operationalized in two sentences.)')
+
 h1(doc, 'The short-message playbook')
 bullets(doc, [
     ('Routine ask →', 'email, one screen, subject = the job, act+date at the end.'),
@@ -224,7 +505,27 @@ bullets(doc, [
     ('Time-critical logistics →', 'text, if invited into that channel; nothing sensitive.'),
     ('Frustration →', 'voice, off platform, outside the org chart — or a walk.'),
     ('Anything you hesitated before sending →', 'that hesitation is data. Cool it overnight (Chapter 4).'),
+    ('Thread past three rounds →', 'convert to voice; confirm in writing after (template 5).'),
+    ('Anything decided aloud →', 'the decision confirmation, same day (template 4).'),
+    ('Friday afternoon →', 'the fifteen-minute reset: close loops, nudge loops, harvest templates.'),
 ])
+
+h1(doc, 'Deep dive: when the channel IS the message')
+para(doc, 'A closing synthesis: channel choice is never neutral, because the medium announces the '
+    'weight before the words load. A phone call about a routine matter signals “this matters more '
+    'than you thought”; an email about something you always discuss in person signals distance or '
+    'documentation — and the recipient will wonder which; a calendar invitation titled “quick '
+    'sync” from HR is an anxiety generator regardless of its innocent content. Skilled '
+    'communicators read this second-order layer before sending: not just “which channel serves '
+    'this message” (Figure 4’s matrix) but “what does choosing this channel SAY?” Three habitual '
+    'checks: does the channel shift itself carry news (the manager who suddenly emails what she '
+    'used to say in person is communicating something — make sure it’s intended)? does the '
+    'formality of the container match the stakes of the content (a termination by chat, an FYI by '
+    'certified letter — both are container-content mismatches that become the story)? and is the '
+    'channel choice comfortable for you but costly for them (the classic: calling because typing '
+    'is slower for you, interrupting because waiting is slower for you)? The reader experiences '
+    'your channel choice as part of the message because it IS part of the message — the first '
+    'part, delivered before a single word.')
 
 h1(doc, 'Journal prompts')
 numbered(doc, [
@@ -232,6 +533,8 @@ numbered(doc, [
     'Track one workday’s interruptions: every ping, every check. What did the always-on tax cost you, and which two defenses from this chapter would recover the most?',
     'Find the oldest message of yours still retrievable (any platform). Apply the permanence gradient: what does it teach you about the next ten years of your digital writing?',
     'Describe a reply-all storm, group-chat misfire, or screenshot incident you have witnessed. Which rule in this chapter was the missing one?',
+    'Read your last ten messages on your phone, as their recipients did. How many survive the preview test — subject plus thirty words carrying the point?',
+    'Map your team’s channel ecology: what actually lives where, versus where each thing SHOULD live by the record/coordination/live split? Draft the one-paragraph channel charter you wish existed.',
 ])
 
 h1(doc, 'How your writing will be graded (and read at work)')
@@ -260,6 +563,11 @@ bullets(doc, [
     ('“How fast must I really reply?”', 'Figure 5 is the custom: acknowledge external mail same-day even if the answer comes later; answer your manager in hours; owe nothing to CC. Predictability beats raw speed — the reputation that matters is “always closes the loop.”'),
     ('“Can AI write my email?”', 'It drafts well at exactly this scale — and every Chapter 15 rule applies: verify facts, own the tone, never paste confidential content into public tools. The subject line and the ask are still decisions, and those are yours.'),
     ('“Is my personal social media really my employer’s business?”', 'Legally it depends on jurisdiction and contract; practically, Figure 7 is the answer — public is public, screenshots are forever, and hiring managers look. Curate the layer you want doing the talking.'),
+    ('“My manager sends one-word replies. Should I match?”', 'Match their channel and speed preferences; keep your own completeness standards. Senior brevity is a prerogative of context (they hold the background you must spell out) — mirroring it upward usually reads as underexplaining, not efficiency. Answer the question their one word asked, fully, in three lines.'),
+    ('“How many channels is too many?”', 'When the team debates where to post instead of what to decide, consolidation is overdue. The working set is three: a record channel (email/docs), a coordination channel (chat), and a live channel (calls). Every additional platform must replace one, not join them — tools multiply; attention doesn’t.'),
+    ('“What about voice notes?”', 'Rich in tone, hostile to search and skimming — the recipient must consume them linearly, at your pace, often unable to play them aloud. Fine for warmth among consenting colleagues; wrong for decisions, details, or anything a future reader must find. If it matters, it needs to be text somewhere.'),
+    ('“I inherited a chaotic inbox/channel culture. Where do I start?”', 'With your own output only — model the subject lines, the acknowledgments, the confirmations, without a single sermon. Culture changes are adopted from examples that visibly work, not from etiquette memos (which this chapter’s reply-all case should make permanently suspicious). After a month of modeling, propose ONE norm, in the room’s own channel, framed as an experiment.'),
+    ('“Does any of this matter if my team is five people who sit together?”', 'The volumes shrink; the physics don’t. Small teams skip the record-keeping because everyone “was there” — until someone leaves, someone new arrives, or two memories of the same decision diverge in month six. The decision confirmation and the memo-to-file are cheapest exactly when teams are small enough to think they don’t need them.'),
 ])
 
 h1(doc, 'Crosswalk: this chapter → your course work')
@@ -282,6 +590,11 @@ keyterms(doc, [
     ('Triage', 'processing messages in batches: act (<2 min), schedule, file, delete.'),
     ('Schedule-send', 'composing now, delivering at a respectful hour — boundary maintenance built into the tool.'),
     ('Professional presence', 'the curated public layer — profile, headline, activity — that interviews before you do.'),
+    ('Digital body language', 'the nonverbal layer of digital channels: latency, length, punctuation, read-receipts.'),
+    ('Acknowledgment with commitment', '“got it — full answer Friday”: receipt plus a date; the fifteen-second trust builder.'),
+    ('Three-reply rule', 'when a thread passes three substantive rounds without converging, convert to voice — then confirm in writing.'),
+    ('Memo-to-file', 'the record written for the record: dated, filed, and authoritative when memory fails.'),
+    ('Escalation summary', 'the fresh-thread decision package: situation, conflict, history, recommendation, dated ask.'),
 ])
 
 h1(doc, 'Chapter summary')
@@ -319,6 +632,8 @@ numbered(doc, [
     'Argue both sides: “after-hours messages with schedule-send are considerate” versus “they still normalize after-hours work.” Where do you land, and why?',
     'What is your personal permanence-gradient policy — what will you never type on a logged platform? Be specific.',
     'Design the ideal company policy for mass email. What technical and behavioral rules does it need, in what order?',
+    'Your team decides things in chat and loses them there. Design the decision-export habit: who confirms, where, in what format, triggered by what?',
+    'Pick one template from the appendix and adapt it to your own voice and situation. What did you change, and what did you learn was load-bearing?',
 ])
 
 references(doc, [
