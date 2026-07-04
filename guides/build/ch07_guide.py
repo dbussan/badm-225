@@ -120,6 +120,61 @@ para(doc, 'Chapter 1’s pairing rule reaches its most important application her
     'never on a Friday at 4:55 as avoidance, and never “after the holidays” when the decision is '
     'already made and the reader is planning around a fiction.')
 
+h1(doc, 'Deep dive: refusing by relationship — customers, colleagues, bosses, friends')
+para(doc, 'The indirect pattern is constant; its execution bends by relationship. Refusing '
+    'customers is the most-scripted case (Case 2 below), where the pivot carries the commercial '
+    'weight: what you CAN do is the difference between a lost sale and a converted one, and the '
+    'refusal that teaches (“the reinforced case prevents exactly this break”) leaves the customer '
+    'more capable than it found them. Refusing colleagues is a relationship transaction: the '
+    'reason must be real and checkable (they will see your calendar), the pivot should share the '
+    'load you cannot carry (a name, a brief, an offer to onboard your replacement), and the '
+    'refusal must arrive fast — a slow no steals the time they needed to find someone else, which '
+    'converts your scheduling problem into their crisis. Refusing upward is the delicate art '
+    'Chapter 7’s FAQ opened: almost never a flat no, almost always a constraint surface — “I can '
+    'deliver A by Friday or B by Friday; which should lead?” hands the trade-off to its owner '
+    'without refusing anything, and “yes, and here’s what it displaces” is a yes that carries its '
+    'own invoice. Refusing friends-at-work adds one hazard: the relationship tempts you to skip '
+    'the structure and improvise on warmth — which is exactly how good friendships acquire vague '
+    'resentments. The pattern protects friendships precisely because it is impersonal: honest '
+    'buffer, real reason, clean no, generous pivot, same as anyone — plus the one sentence '
+    'friendship earns: “I hate saying no to you specifically.”')
+
+h1(doc, 'Deep dive: the language of bad news — words that wound and words that work')
+para(doc, 'Below the pattern level, individual word choices carry disproportionate weight in '
+    'negative messages, because wounded readers read closely. The lexicon of unnecessary pain: '
+    '“unfortunately” (the most overused word in refusals — it performs sympathy while adding '
+    'none; the reasons should make the regret evident); “policy” as a standalone reason (“per '
+    'company policy” is where accountability goes to hide — cite the policy’s REASON or expect '
+    'the reader to appeal past you); “you claim / you state” (converts their report into an '
+    'accusation of lying); “must understand / need to realize” (commands aimed at feelings never '
+    'land); and any repetition of the wound’s vocabulary — a rejection letter that uses '
+    '“rejected/rejection” four times grinds where once informed. The working lexicon: “although / '
+    'while” (subordination that softens without hiding); “what we can do” (the pivot’s native '
+    'tongue); “going forward” deployed honestly (future-facing, but only after the past is dealt '
+    'with — premature pivoting reads as evasion); and the reader’s own words for their situation, '
+    'echoed accurately in the buffer (proof of listening, Chapter 1’s cheapest trust move). One '
+    'revision drill covers all of it: reread your draft refusal marking every word the reader '
+    'could experience as a second cut, and ask of each whether it carries information or just '
+    'edge. Information stays. Edge goes.')
+
+h1(doc, 'Deep dive: bad news to groups — layoffs, changes, and the all-hands')
+para(doc, 'When bad news addresses many people at once — restructurings, benefit cuts, program '
+    'cancellations — the pattern holds but three dynamics intensify. Fairness perception '
+    'dominates: groups process bad news by comparing (why our team? why not theirs?), so the '
+    'reasons section must address the selection logic explicitly or the grapevine will supply a '
+    'worse one. Survivors are an audience: the layoff message is read most closely by the people '
+    'staying, who are learning what this organization does to people — the dignity you extend '
+    'the affected is the loyalty pitch you are making to the rest. And timing compresses: with '
+    'groups, the rich-first pairing becomes a same-hour sequence (live meeting with questions → '
+    'written version → manager talking points), because gaps between tellings create '
+    'first-class and second-class recipients, and the second class finds out from the first '
+    'within minutes. Two group-specific disciplines: never let logistics carry the emotional '
+    'load (the calendar invite titled “Org Update — mandatory” has already delivered the bad '
+    'news, badly), and prepare the FAQ before the announcement, not after — the questions are '
+    'predictable, and “we’ll get back to you” on the obvious ones reads as either unprepared or '
+    'evasive. Groups forgive hard decisions delivered well with remarkable consistency; what '
+    'they file permanently is carelessness about the delivery.')
+
 h1(doc, 'Worked examples: three refusals, done properly')
 h2(doc, '1. Refusing a colleague’s request')
 para(doc, '“Thanks for thinking of me for the interview panel — I’ve enjoyed the past two rounds. '
@@ -202,12 +257,182 @@ para(doc, '“Why alarm them with maybes” fails on both of its own terms: the 
     'control is whether they find out from you, early, with a plan — or from the grapevine, late, '
     'with a grievance.')
 
+h1(doc, 'Deep dive: rejections that recruit — declining candidates')
+para(doc, 'The hiring rejection is the negative message organizations send most and invest in '
+    'least — a template so hollow (“we received many qualified applications…”) that its arrival '
+    'is a small insult. The craft opportunity is real: rejected candidates become customers, '
+    'referrers, and future applicants, and research on candidate experience consistently finds '
+    'the rejection’s quality shapes all three. The upgrades, in ascending investment: speed '
+    '(the rejection that arrives promptly respects the candidate’s search; the one that arrives '
+    'after their start date elsewhere announces they never mattered); specificity where scale '
+    'allows (finalists earn a human sentence — “the committee was impressed by your validation '
+    'portfolio; the offer went to a candidate with direct FDA-submission experience” — which '
+    'converts a door slam into a data point); the honest pivot (“we’d welcome your application '
+    'for the QC lead posting in the fall” only when true — the reflexive “we’ll keep your resume '
+    'on file” is the false-hope buffer’s cousin); and the door left open with dignity regardless. '
+    'What never belongs: feedback on the candidate’s interview performance unless requested '
+    '(unsolicited critique in a rejection reads as justification), and any sentence implying the '
+    'decision was hard if it was not. For your own job search, the mirror lesson: read rejections '
+    'as calibration data where they offer any, and never as verdicts — Chapter 13 takes that '
+    'thread.')
+
+h1(doc, 'Deep dive: when the bad news is public — crisis statements')
+para(doc, 'Sometimes the audience for bad news is everyone: the recall, the breach, the outage, '
+    'the public mistake. External crisis statements compress this chapter into its highest-stakes '
+    'form, and the structure is settled craft: acknowledge fast (the vacuum fills with '
+    'speculation at internet speed — a holding statement within hours beats a polished one '
+    'tomorrow: “we are aware, we are investigating, next update by 6 p.m.”); state what happened '
+    'in plain declarative language (every hedge — “alleged,” “apparent,” “may have” — will be '
+    'read aloud on the news with raised eyebrows; if you know, say; if you don’t, say that); own '
+    'your share without the passive camouflage (“we misconfigured the transfer” — companies that '
+    'write “mistakes were made” become case studies titled Mistakes Were Made); center the '
+    'affected before the institution (the statement that leads with “our reputation for quality” '
+    'while customers hold recalled product has chosen its priority publicly); and carry the '
+    'prevention sentence at institutional scale — what specifically changes, by when, verified '
+    'how. The internal corollary: employees hear the public statement too, and they know the '
+    'facts — a public statement that spins converts the whole staff into fact-checkers with '
+    'group chats. One honest rule covers both audiences: write the statement you could defend '
+    'line-by-line at the deposition, because that is now a standard scenario, not a paranoid '
+    'one.')
+
+h1(doc, 'Deep dive: documenting performance — when the bad news needs a paper trail')
+para(doc, 'A specialized genre sits at the intersection of this chapter and HR reality: the '
+    'written record of a performance problem. Its double audience defines it — the employee, who '
+    'deserves clarity and a path; and the file, which may someday need to demonstrate fairness. '
+    'The craft threads that needle with behavioral specificity: “missed the March 3 and March 17 '
+    'reporting deadlines after two verbal reminders” is checkable, fair, and file-worthy; '
+    '“continues to display a poor attitude toward deadlines” is an opinion wearing a verdict, '
+    'unfair to the employee and useless to the file. The structure mirrors the adjustment letter '
+    'inverted: the concern stated plainly (once, per the news-sentence rules), the expectation '
+    'made explicit with dates and measures, the support offered concretely (training, check-ins, '
+    'resources — the path back is not optional decoration; it is the document’s legitimacy), '
+    'and the consequences of no change stated without threat theater. Tone discipline is '
+    'absolute: the document will be reread by its subject many times and possibly by lawyers '
+    'once — write it so both readings find the same fair author. And pair it (rich first, '
+    'always): the conversation happens before the memo arrives; a written warning that IS the '
+    'first notice converts a performance process into an ambush, and ambushes teach organizations '
+    'nothing except fear.')
+
+h1(doc, 'Deep dive: receiving bad news like a professional')
+para(doc, 'You will receive every message this chapter teaches, and the receiving seat has its '
+    'own craft. When the no arrives: respond — silence after a refusal reads as sulking, while '
+    'the gracious acknowledgment (“understood — thanks for the clear reasons and the September '
+    'option”) is so rare it gets remembered; mine the reasons — a well-built refusal contains a '
+    'map of what would change the answer (the path back is yours to walk); and never make the '
+    'refuser pay for honesty, because the colleague punished for a clean no learns to deliver '
+    'foggy ones. When criticism arrives: the counterintuitive move is to extract the useful core '
+    'BEFORE processing the sting — “what specifically would make this sendable?” converts even '
+    'clumsy criticism into specification; defensiveness, however justified, teaches the critic to '
+    'route future feedback around you, which is how professionals end up surprised at review '
+    'time (the MUM effect, aimed at you personally). And when the bad news is big — the role '
+    'eliminated, the project killed — the professional receipt is composure plus one day: '
+    'acknowledge, ask what you need to know now, and schedule the substantive conversation for '
+    'tomorrow, when the questions you ask will be the ones you actually need answered. How you '
+    'receive bad news is watched as closely as how you deliver it — and it is the cheaper '
+    'reputation to build, because the opportunities arrive free.')
+
+h1(doc, 'Refusal workshop: five repairs (answers follow)')
+para(doc, 'Diagnose each against the pattern before checking the answers. Name the failing stage '
+    '— buffer, reasons, news, or pivot — as you go.')
+numbered(doc, [
+    '“Great news! While we were extremely impressed with your proposal, unfortunately after careful consideration we have decided not to move forward at this juncture. We wish you the best of luck!”',
+    '“Your request for remote work has been denied per section 4.2 of the employee handbook. Please direct any questions to HR.”',
+    '“I’m so sorry, I feel terrible about this, I know I should have told you sooner, I’m the worst — the report isn’t done and honestly I’ve just been drowning, I’m really really sorry.”',
+    '“We can’t issue a refund. We also can’t offer store credit at this time. The warranty doesn’t apply. Thank you for being a valued customer!”',
+    '“Due to circumstances, it may prove difficult to accommodate the March cohort as originally envisioned, though every effort will be made going forward.”',
+])
+h2(doc, 'Workshop answers')
+numbered(doc, [
+    'The false-hope buffer (“Great news!”), an unfindable size-zero reason (“careful consideration” explains nothing), and a luck-wish where a pivot belongs. Repair: true buffer about the proposal’s specific strength, the real constraint, one clear no, and a path back with coordinates.',
+    'A no wearing a citation: no buffer, the policy invoked without its reason, and the pivot outsourced to HR. Repair: the reason BEHIND 4.2 (coverage requirements, precedent), an owned no, and whatever partial yes exists — hybrid days, a review date, the criteria that would change the answer.',
+    'The apology anatomy inverted: five apologies, zero impact statement, zero fix, zero prevention — the reader must now manage the writer’s feelings AND the missing report. Repair: “The report is two days late, which delayed your review. It arrives tomorrow noon; I’ve moved my Thursday block to finish it, and you’ll hear from me the day any future deadline wobbles — not after.”',
+    'Three nos and a fossil, no reasons, no pivot — the reader learns what is impossible and nothing else. Repair: reasons for the warranty boundary, then the pivot that exists (repair at cost? replacement discount? the prevention accessory?) — and if genuinely nothing exists, a respectful close without the “valued customer” garnish on a bare refusal.',
+    'Pure evasion: the reader cannot find the no, the size of it, or the date of anything. Repair: “We can’t fund the March cohort. September has space, and I can hold a seat until Friday” — eleven words of news, ten of pivot, zero fog.',
+])
+
 h1(doc, 'Watch list: three short talks worth your time')
 bullets(doc, [
     ('Frances Frei, “How to build (and rebuild) trust” (TED).', 'Authenticity, logic, empathy — and why trust repair starts with naming the wobble. The apology section’s theory, live.'),
     ('Adam Galinsky, “How to speak up for yourself” (TED).', 'The range of acceptable assertiveness and how to expand yours — directly useful for delivering unwelcome truths upward.'),
     ('Susan David, “The gift and power of emotional courage” (TED).', 'Why discomfort tolerance — yours — is the hidden prerequisite for every honest hard conversation.'),
 ])
+
+h1(doc, 'Worked example: the price increase, start to finish')
+para(doc, 'The price increase letter is the negative-message genre every business eventually '
+    'writes, and it rewards the full machinery. The draft nobody should send: “Dear Valued '
+    'Customer, Due to unprecedented increases in raw material and logistics costs, we are '
+    'unfortunately compelled to adjust our pricing effective immediately. We appreciate your '
+    'understanding.” Every failure in one paragraph: the fossil salutation, the passive '
+    'compulsion (“we are compelled” — by whom?), the unfindable size of the increase, the '
+    'effective-immediately ambush, and a closing that requests understanding while offering '
+    'none.')
+para(doc, 'The rebuilt version: “Dear Dr. Alvarez — For three years we’ve held your reagent '
+    'pricing flat while carrier surcharges and solvent costs rose around it. [buffer: true, '
+    'relevant, and quietly establishing the credit the request draws on] We can’t absorb the gap '
+    'any longer: effective September 1, catalog prices increase 6% — your typical monthly order '
+    'moves from $2,340 to about $2,480. [the news: findable, sized in THEIR numbers, dated with '
+    'runway] Two things stay unchanged: your locked contract pricing through its December '
+    'renewal, and same-week delivery. [what survives — the anxious reader’s question, answered] '
+    'If it helps your budgeting, orders placed before September 1 hold current pricing, and '
+    'annual contracts lock the new rate against further changes. [the pivot: two real levers '
+    'handed to the reader] Questions on your specific pricing → me directly, this week. '
+    '[named owner, dated availability]” The anatomy is Chapter 7 complete: honest buffer, '
+    'checkable reasons, one clear no (to the old price), survivors named, pivots real, and '
+    'runway that converts an ambush into a plannable event. Customers leave price increases over '
+    'the delivery far more often than over the digits.')
+
+h1(doc, 'Deep dive: the strategic no — refusing good ideas')
+para(doc, 'The hardest refusals are not of bad requests but of good ones: the genuinely promising '
+    'project that doesn’t fit this year’s three priorities, the strong candidate for the wrong '
+    'role, the improvement worth doing that would displace something worth more. Strategy IS '
+    'refusal (Chapter 17’s simplicity discipline — ten priorities equal none), which makes the '
+    'strategic no a leadership genre. Its distinct requirements: honor the idea explicitly and '
+    'mean it (“this is the best automation proposal the committee has seen” — the buffer here is '
+    'not softening but justice); locate the refusal in the portfolio, not the proposal (“the two '
+    'funded initiatives tie to the compliance deadline” — the idea lost to context, not to '
+    'quality, and the difference determines whether its author proposes again); preserve the '
+    'idea’s future concretely (the resubmission date, the data that would strengthen it, your '
+    'flag to the chair — Case 3’s path back, with real coordinates); and protect the proposer’s '
+    'standing in the room where the no lands (“I want this back in front of us in Q3” said '
+    'publicly costs nothing and keeps a good thinker thinking). Organizations that refuse good '
+    'ideas badly train their best people to stop having them — the innovation death spiral '
+    'nobody schedules a meeting about. The strategic no, delivered with this care, does the '
+    'opposite: it teaches the organization that ideas are safe here even when budgets are '
+    'finite.')
+
+h1(doc, 'Templates appendix: five refusals to steal')
+para(doc, 'Adapt freely — the structure is the value.')
+h2(doc, '1. Declining a meeting invitation')
+para(doc, '“Thanks for including me — the agenda looks useful. I can’t contribute much to the '
+    'vendor discussion and I’m protecting Thursday for the audit prep, so I’ll pass this round. '
+    'Dana has the current pricing context if you need that thread covered; send me the notes and '
+    'I’ll flag anything from my side.” (Honest reason, named alternative, loop kept closed.)')
+h2(doc, '2. Refusing a discount request')
+para(doc, '“Thanks for the direct question — I’d rather give you a straight answer than a slow '
+    'one. We can’t move on the unit price; it’s set by volume tiers we apply uniformly, which is '
+    'also your protection as a customer. What I can do: waive the installation fee ($900) at your '
+    'current volume, and the price drops automatically at 50 units if your usage grows. Want me '
+    'to model both paths?” (Reason with a principle behind it; two real pivots; forward '
+    'question.)')
+h2(doc, '3. The candidate rejection, finalist version')
+para(doc, '“Thank you for the time and preparation you brought to three rounds — the committee '
+    'was genuinely impressed by your validation portfolio. We’ve offered the role to a candidate '
+    'with direct FDA-submission experience, and they’ve accepted. That was the deciding factor, '
+    'and it’s a narrow one: if the QC lead posting opens this fall as expected, we’d welcome '
+    'your application, and I’m glad to be a reference contact for your search in the meantime.” '
+    '(Specific praise, honest reason, true pivot, dignity intact.)')
+h2(doc, '4. Saying no upward')
+para(doc, '“I can get you the full validation package by Friday, or the summary plus the raw '
+    'data by Wednesday — but not the full package by Wednesday without pulling Dana off the '
+    'audit. Which trade works better for the client meeting?” (No refusal anywhere; the '
+    'constraint surfaced, the decision routed to its owner.)')
+h2(doc, '5. The apology for a real error')
+para(doc, '“I missed the deadline I committed to for the stability data, which held up your '
+    'submission by two days. The gap was mine — I underestimated the reprocessing time and '
+    'didn’t flag it when I knew. The data is attached now; going forward I’m building a '
+    'half-day buffer into anything touching submissions, and you’ll hear from me the day a '
+    'timeline wobbles, not after. Thanks for your patience with this one.” (Own, impact, fix, '
+    'prevention, stop. No third apology.)')
 
 h1(doc, 'Bad-news self-assessment')
 para(doc, 'Score yourself: 2 = usually, 1 = sometimes, 0 = rarely.')
@@ -227,12 +452,56 @@ para(doc, 'Scoring: 16–20, you are the person organizations trust with hard me
     'rare asset. 10–15, drill the news sentence and the early-reporting habit. Below 10, adopt one '
     'rule: the reader must be able to find the no, and hear it only once. Retake at midterm.')
 
+h1(doc, 'Deep dive: after the no — managing the aftermath')
+para(doc, 'The message sends; the episode doesn’t end. Three aftermath disciplines complete the '
+    'craft. Hold the line kindly: some recipients appeal — new arguments, escalations, emotional '
+    'renegotiation — and the professional response distinguishes new information (which honestly '
+    'reopens the question) from new pressure (which doesn’t): “if the Q3 data changes the '
+    'payback math, bring it to me — but the budget constraint itself won’t move this cycle” '
+    'respects both the person and the decision. Repair the temperature: after a hard refusal, '
+    'the next routine interaction carries outsized weight — the ordinary friendly message about '
+    'ordinary business, sent within days, tells the recipient the no was about the request, not '
+    'the relationship (goodwill capital, Chapter 6, deployed at the exact moment it matters '
+    'most). And audit your own aftermath: if a refusal keeps generating appeals, the reasons '
+    'section failed; if recipients keep being surprised, the buffer overpromised or the news '
+    'sentence hid; if relationships keep cooling, the pivots weren’t real. Bad news is the one '
+    'genre where the feedback arrives reliably — every response to your refusals is a grade on '
+    'your delivery. Read them.')
+
+h1(doc, 'Deep dive: bad news across cultures')
+para(doc, 'Hall’s continuum (Chapter 1) bends every stage of the indirect pattern. In high-context '
+    'settings, the buffer and reasons carry more of the message — a no may never be spoken '
+    'directly at all, arriving instead as “this presents difficulties” or “we will study it,” '
+    'phrases that ARE the refusal to a fluent reader; demanding a blunter no (“so is that a yes '
+    'or a no?”) forces a face-loss that damages the relationship past the transaction. Reading '
+    'indirect refusals is therefore a skill: delay, deflection to committees, and enthusiasm that '
+    'never converts to dates are answers. In low-context settings, the inverse hazard: your '
+    'carefully-buffered indirect refusal may simply not register as a no, generating follow-ups '
+    'you experience as pressure and they experience as diligence — with such readers, the news '
+    'sentence must be findable even at the cost of feeling abrupt to you. Apologies vary even '
+    'more: in some business cultures apology is relational maintenance offered freely and '
+    'implying little fault; in others it is a formal admission spent carefully — calibrate '
+    'before you export your default. The meta-rule survives everywhere: reasons before refusal, '
+    'dignity throughout, the pivot forward. The dial settings are local; the machine is not.')
+
+h1(doc, 'Put it to work this week')
+numbered(doc, [
+    'Deliver one small refusal you have been avoiding, using the full pattern. Notice which stage was hardest — that stage is your growth edge.',
+    'Report one problem to its stakeholder while it is still small, paired with a plan. Log what the early telling cost versus what you feared.',
+    'Write (send optional) the apology anatomy for something real: own, impact, prevention, stop.',
+    'Practice one gracious receipt: acknowledge a no, mine its reasons, thank the refuser for the clarity.',
+    'Find your organization’s or university’s last public bad-news statement and grade it against the crisis structure.',
+])
+
 h1(doc, 'Journal prompts')
 numbered(doc, [
     'Recall the worst-delivered bad news you ever received. Map it against Figure 1 — what was missing, and what did the delivery add to the injury?',
     'Write the refusal you have been avoiding (a request, an invitation, a commitment you must exit). Full pattern. Sending is optional; drafting is not.',
     'Recall a time you sat on bad news. What did the MUM effect whisper, how long did you wait, and what did the delay cost?',
     'Find a public corporate apology (recall, outage, scandal). Grade it against Figure 5: what does it own, what does it dodge, and where does the passive voice hide?',
+    'Recall a no you received that you still respect. Reconstruct its anatomy — then recall one you still resent, and locate the exact sentence where it went wrong.',
+    'Which seat is harder for you: delivering bad news or receiving it? What does your answer suggest about which deep dive to reread?',
+    'You must someday deliver bad news you disagree with. Write the version you could deliver honestly — and identify what conversation you’d need with your own manager first.',
 ])
 
 h1(doc, 'How your writing will be graded (and read at work)')
@@ -260,6 +529,9 @@ bullets(doc, [
     ('“How do I say no to my boss?”', 'As a constraint conversation, not a refusal: “I can deliver A by Friday or B by Friday — which should lead?” You are not declining; you are surfacing the trade-off they are implicitly choosing. Chapter 16’s question-not-order, aimed upward.'),
     ('“Should apologies ever be public?”', 'Match the audience to the injury: private errors get private apologies; public errors (the reply-all, the meeting comment) get their repair in the same room. Never wider than the wound — a broadcast apology for a private slight re-injures.'),
     ('“Can AI draft bad news?”', 'It can structure a draft — the pattern is mechanical. But tone under stress is the product, the empathy must be real, and for personal bad news the human authorship IS part of the message (Chapters 6 and 15). Draft with help if you must; deliver as yourself, always.'),
+    ('“The recipient will be angry no matter how well I write it. Why bother?”', 'Because the anger has a half-life, and the delivery determines what remains after it decays: a grievance about the decision, or a grievance about YOU. Well-delivered bad news is regularly forgiven; badly-delivered good news sometimes isn’t. You are writing for the reader they’ll be in three weeks.'),
+    ('“How much emotion belongs in my apology?”', 'Enough to be human, less than would make the reader manage YOUR feelings. “I’m genuinely sorry” carries; a paragraph of self-recrimination transfers the emotional labor to the injured party — the apology equivalent of the blame opera. The fix and the prevention are where sincerity shows.'),
+    ('“What if I disagree with the decision I must deliver?”', 'Deliver it honestly and own the delivery without theatrical distance (“they decided…” with an eye-roll buys you nothing and costs the organization coherence). You may say a decision was contested where true and useful; you may not recruit the recipient into your dissent. If you can’t deliver it without deception, that’s a Chapter 1 ethics conversation with your own manager — before the delivery, not during it.'),
 ])
 
 h1(doc, 'Crosswalk: this chapter → your course work')
@@ -282,6 +554,11 @@ keyterms(doc, [
     ('MUM effect', 'the documented reluctance to transmit bad news, producing delay and distortion (Rosen & Tesser, 1970).'),
     ('Rich-first pairing', 'conversation for the delivery, same-day writing for the record.'),
     ('Calm-clarity structure', 'known · unknown · plan · next update — bad news as a managed process.'),
+    ('Strategic no', 'refusing a good idea for portfolio reasons — honored, located in context, given a path back.'),
+    ('Holding statement', 'the fast public acknowledgment that fills the vacuum before the full statement can: aware, investigating, next update at [time].'),
+    ('Behavioral specificity', 'documenting performance in checkable acts and dates, never traits — fair to the person, useful to the file.'),
+    ('Survivor audience', 'the people watching how bad news treats its recipients — the loyalty pitch inside every layoff message.'),
+    ('The gracious receipt', 'acknowledging a refusal, mining its reasons, and never punishing the honesty — the reputation built for free.'),
 ])
 
 h1(doc, 'Chapter summary')
@@ -320,7 +597,23 @@ numbered(doc, [
     'Why do organizations reward MUM-effect behavior even while claiming to want transparency? What would actually change the incentive?',
     'Take a public corporate apology and rewrite its worst sentence to pass Figure 5.',
     'Your team must announce a price increase to loyal customers. Draft the structure: what buffers, reasons, and pivots honestly exist?',
+    'The chapter claims survivors read layoff messages more closely than the laid-off. Test the claim against any organizational bad news you’ve witnessed: what did the watchers learn?',
+    'Is the strategic no genuinely different from an ordinary refusal, or just a flattering frame? Argue from the proposer’s side of the desk.',
 ])
+
+h1(doc, 'A closing word: the messages that define you')
+para(doc, 'Nobody remembers who wrote the smooth announcement in a good quarter. The messages '
+    'that get retold — in exit interviews, at retirement dinners, in the stories organizations '
+    'tell about themselves — are disproportionately this chapter’s: the layoff handled with '
+    'dignity, the refusal that kept a door open, the apology that owned everything, the bad news '
+    'delivered early when hiding was available. That is not because negative messages matter '
+    'more than positive ones; it is because they are the only messages written under conditions '
+    'that reveal character — when the writer’s interests and the reader’s comfort genuinely '
+    'diverge, and craft is the only bridge. Every technique in this chapter is learnable in an '
+    'afternoon and practicable for a career. The professionals who master them are not the ones '
+    'who enjoy delivering bad news; they are the ones who decided that if it must be delivered, '
+    'it will be delivered well — and were quietly promoted, decade after decade, by the people '
+    'who received it.')
 
 references(doc, [
     'Lazare, A. (2004). On apology. Oxford University Press.',
