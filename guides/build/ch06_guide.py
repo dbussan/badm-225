@@ -103,6 +103,38 @@ para(doc, 'Instructional messages — how to submit the expense report, how to b
     'before the step they protect — a caution after the damage line is an autopsy. Test on one real '
     'novice before shipping to fifty; their first confusion is your revision list.')
 
+h1(doc, 'Deep dive: requests upward, downward, and sideways')
+para(doc, 'The direct request pattern is universal; its calibration is directional. Upward requests '
+    '(to managers, sponsors, senior stakeholders) compress everything: the ask and its '
+    'decision-relevant context must survive a phone-screen skim, options beat open questions '
+    '(“A or B?” outperforms “what should we do?” — you are buying a decision, so package it for '
+    'purchase), and the cost of what you are asking should arrive pre-counted (“needs two hours of '
+    'Dana’s week through March”). Downward requests carry authority whether you invoke it or not, '
+    'which is exactly why Chapter 16’s ask-don’t-order discipline matters most here: the request '
+    'that preserves choice recruits judgment, while the order recruits compliance — and you want '
+    'the judgment. Explain the why even when you could skip it (“the client moved the audit, so I '
+    'need the logs Thursday instead of Monday”): people execute reasons better than instructions, '
+    'and the habit compounds into a team that can act without you. Sideways requests — peers who '
+    'owe you nothing — run entirely on the account balance from the goodwill section: lead with '
+    'acknowledgment of the imposition (“I know month-end is your crunch”), size the ask precisely '
+    'so it can be evaluated (“about twenty minutes, before Friday”), and make returning the favor '
+    'easy to invoke. The pattern is identical in all three directions; what changes is which line '
+    'carries the persuasive weight.')
+
+h1(doc, 'Deep dive: the request stack — sequencing multiple asks')
+para(doc, 'One message, one job — but real work sometimes requires several related asks of one '
+    'person. The stack disciplines: never bury asks in prose where they compete for survival; '
+    'number them, each with its own deadline, so the reply can address them by number (“1: done; '
+    '2: Thursday; 3: need to check”); order by deadline, not importance, unless one ask blocks the '
+    'others — then lead with the blocker and say so (“#1 gates the rest”); and cap the stack at '
+    'three, because the fourth ask converts a request into a workload negotiation that deserves a '
+    'conversation instead. If the asks serve different purposes (one needs action, one needs '
+    'information, one needs a decision), label them so: “Decision needed: … / FYI only: … / '
+    'Action requested: …” — the reader triages instantly, and nothing dies of ambiguity. The '
+    'anti-pattern to retire: the paragraph containing three implicit asks, none marked, followed '
+    'six days later by “per my last email…” — the fossil that blames the reader for the '
+    'writer’s buried cargo.')
+
 h1(doc, 'Research corner: why granting well beats never failing')
 para(doc, 'The counterintuitive finding behind adjustment strategy is that well-recovered failures '
     'can leave customers more loyal than uninterrupted service — the recovery demonstrates the '
@@ -114,6 +146,82 @@ para(doc, 'The counterintuitive finding behind adjustment strategy is that well-
     'grant fast, because speed is read as sincerity; and never make the customer litigate — a grant '
     'delivered grudgingly (“as a one-time courtesy, although our records show…”) spends the money '
     'and forfeits the credit.')
+
+h1(doc, 'Deep dive: confirmations — the message that prevents the dispute')
+para(doc, 'The confirmation is the positive message most often skipped, because at sending time it '
+    'feels redundant — everyone was there, everyone agreed, why write it down? Chapter 5 gave the '
+    'template; this chapter supplies the genre’s full logic. A confirmation converts a fragile '
+    'shared memory into a durable shared artifact, and its three properties do the work: it is '
+    'numbered (three points, addressable by number in any future discussion), it is complete '
+    '(dates, amounts, owners — the future reader has no context, per the record-purpose rules '
+    'from Chapter 2), and it is self-ratifying (“corrections welcome — otherwise this stands as '
+    'our plan” converts silence into agreement, gently and legitimately). Send it the same day '
+    'while memories still match; a confirmation sent Friday for Monday’s call invites the very '
+    'divergence it exists to prevent. And notice the relationship effect, which is why this genre '
+    'belongs in the goodwill chapter: consistent confirmers are experienced as trustworthy rather '
+    'than bureaucratic, because the confirmation protects BOTH parties — the colleague who '
+    'benefits from your record the first time a dispute dissolves against it becomes its second '
+    'adopter. Institutional memory is built by exactly this habit, one same-day message at a '
+    'time.')
+
+h1(doc, 'Deep dive: the reference pair — asking for one, writing one')
+para(doc, 'Two connected genres every professional faces from both sides. Asking for a '
+    'recommendation or reference is a direct request with elevated stakes and one governing '
+    'kindness: make the yes easy and the no graceful. The craft: ask early (three weeks minimum '
+    '— a rushed reference is a weak reference); ask with an escape hatch (“if your schedule or '
+    'familiarity with my work makes this a bad fit, no explanation needed” — a lukewarm reference '
+    'hurts more than none, so you WANT the graceful exit used); and arm the writer — attach the '
+    'posting, your resume, and three bullet reminders of specific shared work (“the Q3 validation '
+    'project where we cut turnaround 40%”). You are not flattering yourself; you are doing their '
+    'prewriting, and every recommender alive is grateful for it.')
+para(doc, 'Writing one reverses the seat. Say yes only when you can write specifics — the '
+    'five-S logic applies: a recommendation made of adjectives (“hardworking, reliable, a '
+    'pleasure”) is read by every experienced recipient as polite noise, while one concrete story '
+    '(“when the calibration drift appeared mid-audit, she caught it, retraced two weeks of logs, '
+    'and presented the correction to the assessor herself”) outweighs a page of praise. Structure: '
+    'your relationship and its duration (the credibility line), two or three specific '
+    'accomplishments with visible stakes, one honest dimension of growth if the context permits '
+    'candor (it strengthens everything else), and an unambiguous bottom line (“I would hire her '
+    'again without hesitation” — hedged closings are read at full volume). Decline gracefully '
+    'when you cannot clear that bar: “I don’t think I’m the strongest reference for this '
+    'particular role — you deserve someone who has seen that side of your work” is a kindness '
+    'wearing a refusal (Chapter 7’s craft, deployed for the requester’s own good).',
+    bold_lead='The writing seat.')
+
+h1(doc, 'Deep dive: announcements — informing at scale without spin')
+para(doc, 'The announcement is a positive/neutral genre with a built-in temptation: because it '
+    'goes to everyone, it gets written for no one, and because it represents the institution, it '
+    'drifts toward promotion. The disciplines: lead with the reader’s operative fact, not the '
+    'institution’s pride (“Starting March 1, submit expenses in Concur” beats “We are excited to '
+    'announce our digital transformation journey continues”); put what-changes-for-you above '
+    'how-we-got-here (the history paragraph, if it survives at all, goes last); answer the three '
+    'questions every announcement reader asks — what changed, when, what must I do — in the '
+    'first three sentences, visibly; and anticipate the anxious stakeholder (Chapter 2): if the '
+    'announcement touches jobs, money, or workload, address the personal-impact question '
+    'explicitly, because “what does this mean for me?” unanswered becomes the grapevine’s opening '
+    'act (the wellness-memo case, permanently on file). Two operational habits: give every '
+    'announcement a single named owner for questions (“questions → Dana Reyes,” not '
+    '“contact the team”), and archive announcements where future searchers will look — the '
+    'announcement that cannot be found six months later generates the exact confusion it existed '
+    'to prevent.')
+
+h1(doc, 'Deep dive: the shared-fault claim')
+para(doc, 'Chapter 6’s claim anatomy assumes clean hands; reality is often messier — the '
+    'equipment was mishandled AND the packaging was inadequate; the deadline was missed partly '
+    'because your specs arrived late. Claims with shared fault require one addition and one '
+    'discipline. The addition: acknowledge your share first, briefly and specifically (“our team '
+    'stored the unit outside the recommended range for two days before discovering the fault”), '
+    'because the reader’s file has your fingerprints in it anyway and preemption converts a '
+    'gotcha into a credibility deposit (Chapter 8’s two-sided logic in claim form). The '
+    'discipline: keep the remedy request proportionate to THEIR share — asking for full '
+    'replacement when you contributed to the failure invites the itemized rebuttal; asking for '
+    'the repair at cost, or the split, signals the fairness that makes a yes easy. The same '
+    'geometry governs responses to shared-fault claims from the other side: grant your share '
+    'fully and immediately, name the customer’s contribution once and without relish, and let '
+    'the prevention sentence cover both parties’ next time (“the updated handling card ships '
+    'with every unit — and we’ve reinforced the housing”). Shared fault handled cleanly often '
+    'builds MORE trust than clean-hands cases, because both sides watched each other be fair '
+    'under ambiguity — which is the only condition where fairness is informative.')
 
 h1(doc, 'Worked examples: four everyday messages, done properly')
 h2(doc, '1. The complete request')
@@ -133,7 +241,17 @@ para(doc, '“A replacement unit ships today by expedited freight, at no charge 
     'packaging we use for lab equipment so this doesn’t recur. Thanks for the clear photos, which '
     'made this fast. We appreciate the chance to make it right.” Grant, cause without opera, '
     'prevention, forward close.')
-h2(doc, '4. The goodwill note that costs five minutes')
+h2(doc, '4. The confirmation after a verbal agreement')
+para(doc, '“Confirming our hallway conversation: (1) I’ll draft the SOP revision by Wednesday; '
+    '(2) you’ll route it to QA the same day; (3) we present jointly at the safety meeting on the '
+    '19th. Corrections welcome — otherwise this is our plan.” Thirty seconds after any decision '
+    'made aloud; the hallway evaporates, the record remains.')
+h2(doc, '5. The order acknowledgment that prevents the ticket')
+para(doc, '“Order 4471 confirmed: one Beckman Coulter Allegra X-30R, $28,570 installed, delivery '
+    'week of Aug 11 (exact date confirmed 48 hours ahead). To change anything before Aug 1, reply '
+    'here; after Aug 1, call Dana Reyes at 555-0114. Your quote and warranty terms are attached '
+    'for your records.” Every follow-up question answered before it forms.')
+h2(doc, '6. The goodwill note that costs five minutes')
 para(doc, '“Dana — your catch on the calibration drift saved us a failed audit finding; the '
     'assessor specifically noted the logs were clean. I’ve told Dr. Reyes the same. Thank you.” '
     'Specific act, named effect, credit passed upward, no agenda. Five sentences would have been '
@@ -197,12 +315,204 @@ para(doc, 'One 68-word sentence contains five actions, two branches, and a warni
     'QR-forward step in the first five minutes. Forty tickets are what “test on one novice” costs '
     'when skipped.')
 
+h1(doc, 'Deep dive: goodwill across the org chart')
+para(doc, 'The five-S test is universal; the deployment is positional. Thanks upward is the '
+    'trickiest register — it must never scan as flattery, which means the specific-and-true bar '
+    'rises: thank managers for particular decisions and their concrete effects (“the deadline '
+    'extension let us re-run the failed batch — the client got clean data”), never for qualities '
+    '(“your great leadership”). Credit upward, meanwhile, is the professional’s quiet art: when '
+    'your manager’s suggestion worked, saying so in the room where it matters (“this was Dana’s '
+    'catch”) costs nothing and is remembered disproportionately. Thanks downward and sideways is '
+    'the highest-yield deployment and chronically undersupplied — the analyst who stays late, the '
+    'peer who covered the demo; these are the notes that get kept in desk drawers. Public versus '
+    'private is its own calibration: praise publicly when the achievement is public-safe and the '
+    'person tolerates spotlight (some genuinely don’t — ask once, remember forever); correct '
+    'privately, always (Chapter 16). And the register nobody teaches: thanks to the invisible — '
+    'the coordinator, the technician, the person whose name is on no slide. Consistent, specific '
+    'gratitude to people who can do nothing for your career is, besides being decent, the single '
+    'most-watched behavior in any workplace: colleagues who see it extend you trust on credit. '
+    'The receptionist test from your instructor’s book applies to email exactly as it applies to '
+    'lobbies.')
+
+h1(doc, 'Deep dive: form responses that don’t feel like forms')
+para(doc, 'Recurring requests deserve template responses — and templates deserve engineering, '
+    'because a response that FEELS templated subtracts the goodwill it was built to deliver. The '
+    'craft: write the skeleton once, at your best (the complete answer, the anticipations, the '
+    'forward close), then personalize three points per use — the name (verified, Chapter 4), one '
+    'sentence that proves you read THEIR message (“since your cohort starts in March, the timing '
+    'works”), and the closing line. Sixty seconds of personalization on a five-minute template '
+    'beats both alternatives: the fully-artisanal reply (unsustainable at volume) and the naked '
+    'boilerplate (readable as such from orbit, especially when it answers questions the sender '
+    'didn’t ask while missing the one they did — the tell of every unread-message template). '
+    'Maintain the fleet like code: when a template generates the same follow-up question twice, '
+    'the template has a bug; fix it at the source. And never template the untemplatable: '
+    'condolences, apologies, and anything Chapter 6’s five-S test governs — the entire value of '
+    'those messages is that they could not have been reused.')
+
 h1(doc, 'Watch list: three short talks worth your time')
 bullets(doc, [
     ('Adam Grant, “Are you a giver or a taker?” (TED).', 'The research behind goodwill capital — and why givers with boundaries finish first (Grant, 2013).'),
     ('Laura Trice, “Remember to say thank you” (TED).', 'Three minutes on why people secretly need the praise they never request — the case for sending the note you keep drafting mentally.'),
     ('Drew Dudley, “Everyday leadership” (TED).', 'The “lollipop moment”: the outsized impact of small acknowledgments — this chapter’s thesis in a story.'),
 ])
+
+h1(doc, 'Deep dive: the everyday message and AI — where drafting help belongs')
+para(doc, 'This chapter’s genres are the safest territory in the book for AI-assisted drafting — '
+    'and the clearest illustration of its boundaries. Requests, replies, confirmations, '
+    'announcements, and transactional mail are structural genres: an assistant given the pattern '
+    'and the facts drafts them competently, and the templates appendix above works beautifully as '
+    'a prompt library (“draft a reference request using this structure, with these three '
+    'accomplishments”). The verification load stays yours (Chapter 15): every name, date, figure, '
+    'and commitment in an AI draft gets checked against sources, because fluent wrongness is the '
+    'failure mode — the draft that confidently promises Wednesday delivery nobody offered. The '
+    'personalization stays yours too: the one sentence proving you read THEIR message is exactly '
+    'what generic drafting cannot supply, and its absence is what makes AI-scented mail feel like '
+    'AI-scented mail. And the exclusion zone stands absolute: sympathy, personal congratulations, '
+    'apologies — the five-S genres where the entire payload is that a human paused. The clean '
+    'division: let tools accelerate the structural genres so you can spend the recovered minutes '
+    'on the human ones. That trade — machine speed purchasing human presence — is this whole '
+    'course’s AI position in a single sentence.')
+
+h1(doc, 'Deep dive: saying yes well — the underrated art')
+para(doc, 'Chapter 7 will spend twenty pages on saying no; saying yes deserves at least one, '
+    'because a yes can be delivered so poorly it functions as a debit. The grudging yes (“fine, I '
+    'suppose I can squeeze it in”) grants the favor and forfeits the credit — the adjustment-'
+    'letter mistake at conversational scale; if you are going to spend the time anyway, deliver '
+    'the yes with both hands (“glad to — the timing actually works”). The vague yes (“sure, at '
+    'some point this week”) obligates you while informing no one; a yes is only complete when it '
+    'carries the same specifics a good ask does — what, by when, at what scope (“yes: summary '
+    'tab plus raw sheet, Thursday noon”). The overloaded yes — agreeing beyond your actual '
+    'capacity — is the most dangerous species, because it converts today’s goodwill into next '
+    'week’s missed deadline plus a Chapter 7 conversation; the partial yes exists precisely for '
+    'this (“I can do the analysis but not the deck — does that still help?”), and colleagues '
+    'trust the person whose yes means yes far more than the person whose yes means probably. '
+    'Finally, the yes with visible cost: when granting something genuinely expensive, letting the '
+    'cost be quietly visible — not performed, just honest (“I’ll move my Thursday block to fit '
+    'this”) — prices the favor accurately and keeps the reciprocity ledger truthful. Say yes the '
+    'way this chapter says everything else: first, specifically, and on time.')
+
+h1(doc, 'Deep dive: timing — when positive messages land hardest')
+para(doc, 'Content and structure decided, one variable remains: when. Positive-message timing has '
+    'its own physics. Speed multiplies goodwill — the congratulations sent within hours of the '
+    'announcement participates in the moment; the same note three weeks later is an apology '
+    'wearing a compliment (five-S’s “spontaneous,” given a clock). Grants accelerate for the same '
+    'reason: an adjustment approved in one day reads as conviction; the identical grant after '
+    'eleven days of silence reads as reluctant surrender — speed IS part of the message '
+    '(reciprocity research consistently finds promptness read as sincerity; Cialdini, 2021). '
+    'Requests, inversely, respect the reader’s calendar: the complete-ask sent during their '
+    'month-end close, however perfect, arrives as a burden — where timing is free, spend it '
+    '(Tuesday morning beats Friday 4 p.m. for anything needing thought). Two calendar habits '
+    'formalize the advantage: a beat sheet of your recurring goodwill occasions (work '
+    'anniversaries, project completions, the audit your colleague dreads annually), and the '
+    'two-minute Friday scan for the week’s unmarked wins — the promotion buried in a memo, the '
+    'defense passed, the first client call survived. The professionals people describe as '
+    '“thoughtful” are mostly just people with a system; the thought is real, but the system is '
+    'what delivers it on time.')
+
+h1(doc, 'Deep dive: transactional mail — orders, receipts, and the automated voice')
+para(doc, 'A last positive-message species runs mostly on rails: order confirmations, shipping '
+    'notices, appointment reminders, payment receipts. Most are automated — and someone writes '
+    'the automation, which makes this a writing genre with a hidden author: possibly you. The '
+    'principles compress everything in this chapter to system scale. Completeness: the '
+    'confirmation that answers every follow-up question (what, when, how much, how to change it, '
+    'who to contact) prevents thousands of support tickets — the complete-ask test, inverted and '
+    'multiplied. Findability: transactional messages get retrieved months later; subject lines '
+    'carry order numbers and dates (Chapter 5’s search rules, at volume). Tone: even automated '
+    'mail has a register — “Your order shipped!” and “SHIPMENT NOTIFICATION #4471-B” describe '
+    'the same event in two company voices; choose one deliberately, then hold it everywhere. And '
+    'the human handoff: the automated message’s most important line is the one that says how to '
+    'reach a person when the rails fail — burying it is the corporate equivalent of the '
+    'unfindable no. When you inherit responsibility for transactional messaging — and in a small '
+    'organization, everyone eventually does — audit it against these four; the fixes are '
+    'one-time and the returns are permanent.')
+
+h1(doc, 'Put it to work this week')
+numbered(doc, [
+    'Send one request built to the complete-ask standard and count the clarifying questions it generates. Zero is the score to beat.',
+    'Answer your next yes/no question with the answer as the first word. Notice the thread end.',
+    'Send one five-S goodwill note — a real one, to a real person, today.',
+    'Write the confirmation for the next thing your team decides aloud. Watch who starts relying on it.',
+    'Draft — not necessarily send — the follow-up you have been avoiding, using the good-faith template. Notice what the tone rule changes.',
+])
+
+h1(doc, 'Deep dive: how routine mail is actually scored')
+para(doc, 'Nobody grades your everyday messages — and everybody scores them. The scoring is '
+    'implicit, cumulative, and category-based: colleagues unconsciously file you as someone whose '
+    'requests are effortless or extractive, whose replies end threads or extend them, whose thanks '
+    'mean something or nothing. Three properties of this ledger are worth knowing. It is '
+    'asymmetric: one incomplete request costs more than three complete ones earn, because friction '
+    'is remembered and smoothness is invisible — the tax of the everyday genres is that '
+    'excellence merely avoids debits. It is transitive: your scores travel through the grapevine '
+    'ahead of you (“just forward it to Dana, she actually answers”) — meaning your everyday mail '
+    'is recruiting or repelling future collaborators you have never met. And it compounds at '
+    'promotion time: when managers describe someone as “easy to work with” or “high-maintenance,” '
+    'they are usually summarizing hundreds of routine messages, not any single event. This is the '
+    'quiet answer to “why does a communication course spend a chapter on ordinary email”: the '
+    'ordinary is where reputations are actually manufactured, keystroke by keystroke, while '
+    'everyone’s attention is on the extraordinary.')
+
+h1(doc, 'Deep dive: the follow-up — nudging without nagging')
+para(doc, 'Every request writer eventually faces the silence, and the follow-up is its own '
+    'positive-message genre with a narrow path between doormat and pest. The timing rule: follow '
+    'up after the stated deadline passes, or after a week for undated asks — sooner reads as '
+    'pressure, much later reads as your own indifference. The tone rule: assume good faith, '
+    'always and explicitly — “resending in case this got buried” (Chapter 2’s playbook) '
+    'attributes the silence to the inbox, not the person, and leaves every exit dignified. The '
+    'content rule: make the second message EASIER to answer than the first — restate the ask in '
+    'one line (never “see below,” which assigns homework), narrow it if possible (“even a yes/no '
+    'on the date would unblock us”), and re-anchor the deadline with its reason. The arithmetic '
+    'rule: two follow-ups, then change something — the channel (a thirty-second call resolves '
+    'what three emails couldn’t), the ask (smaller), or the recipient (the escalation summary '
+    'from Chapter 5, without heat: “flagging that this is now blocking the March validation — '
+    'how should we route it?”). What never works: the guilt ledger (“as per my previous THREE '
+    'emails”), which converts your legitimate claim on their attention into their legitimate '
+    'grievance about your tone. Persistence is professional; scorekeeping is not.')
+
+h1(doc, 'Deep dive: goodwill across cultures')
+para(doc, 'The five-S test is universal; its execution crosses Hall’s continuum (Chapter 1) with '
+    'predictable adjustments. In high-context settings, goodwill messages carry MORE relational '
+    'weight and less optional character — the congratulations skipped, the holiday greeting '
+    'unsent, the thanks unwritten register as statements, not omissions; build the calendar '
+    'awareness (local holidays, naming conventions, gift-and-greeting norms) that lets you '
+    'participate correctly. Formality floors differ: the first-name warmth that reads as friendly '
+    'in one business culture reads as presumption in another — when unsure, one register more '
+    'formal, and let them lower it first (the same asymmetry rule as Chapter 5’s greetings). '
+    'Directness of praise varies too: public individual praise delights some cultures and '
+    'mortifies others where the team is the honored unit — praise the team publicly, the '
+    'individual privately, until you know. And sympathy crosses cultures on the same principle '
+    'everywhere — presence over eloquence — but its forms (flowers, donations, silence, food, '
+    'attendance) are intensely local: when a colleague from another culture suffers a loss, the '
+    'one-line question to a mutual colleague (“what would be right?”) is itself an act of '
+    'respect. The constant across all of it: sincerity survives translation; formula doesn’t.')
+
+h1(doc, 'Templates appendix: five to steal')
+para(doc, 'Adapt freely — the structure is the value.')
+h2(doc, '1. The reference request')
+para(doc, '“Dr. Alvarez — I’m applying for the QC supervisor role at Meridian (posting attached), '
+    'and your view of my validation work would carry real weight. Would you be willing to serve as '
+    'a reference? Three reminders that might help: the Q3 audit-trail project, the 40% turnaround '
+    'improvement, and the retraining program I ran after the calibration incident. The form takes '
+    'about ten minutes; deadline is the 25th. And if your schedule or familiarity makes this a bad '
+    'fit, no explanation needed — I appreciate you either way.”')
+h2(doc, '2. The congratulations that lands')
+para(doc, '“Dana — saw the announcement: lead on the Meridian account. Nobody worked harder for '
+    'it, and the client is getting the person who caught the drift error everyone else missed. '
+    'Congratulations.” (Specific, sincere, short, prompt, selfless — and no “let’s catch up '
+    'sometime” smuggled in.)')
+h2(doc, '3. The sympathy note')
+para(doc, '“Jamie — I was so sorry to hear about your father. No reply needed, and nothing at work '
+    'requires a thought from you right now — we have it covered. You and your family are in my '
+    'thoughts.” (Brief, warm, unhurried; the coverage line is the practical gift.)')
+h2(doc, '4. The adjustment grant')
+para(doc, '“A replacement ships today by expedited freight at no charge — arriving Wednesday. The '
+    'damage occurred in transit; your account now ships in the reinforced packaging we use for lab '
+    'equipment, so this doesn’t recur. Thank you for the clear photos — they made this fast.” '
+    '(Grant, cause, prevention, gratitude. No opera.)')
+h2(doc, '5. The graceful follow-up')
+para(doc, '“Resending in case this got buried in the month-end crunch: could you confirm the '
+    'vendor list by Thursday? Even a yes/no on TechServe alone would unblock the renewal. '
+    'Thursday keeps us inside the discount window — thank you!” (Good faith assumed, ask '
+    'restated and narrowed, deadline re-anchored to its reason.)')
 
 h1(doc, 'Everyday-message self-assessment')
 para(doc, 'Score yourself: 2 = usually, 1 = sometimes, 0 = rarely.')
@@ -217,6 +527,10 @@ numbered(doc, [
     'My adjustment messages include the prevention sentence.',
     'I send goodwill notes promptly — and they pass the five-S test.',
     'My instructions are numbered, imperative, one action per line, tested on a novice.',
+    'I confirm verbal decisions in writing the same day.',
+    'My follow-ups assume good faith and narrow the ask.',
+    'My yeses are specific — what, by when, at what scope — and sized to my real capacity.',
+    'I check AI-drafted routine mail for names, dates, figures, and the one personal sentence.',
 ])
 para(doc, 'Scoring: 16–20, your everyday mail is building a reputation on purpose. 10–15, adopt '
     '“answer first” and the five-S habit this week. Below 10, start with one rule: the ask or the '
@@ -228,6 +542,8 @@ numbered(doc, [
     'Recall the best complaint outcome you ever got. Which elements of Figure 3 were present — and which tone choices helped?',
     'Write (and actually send) one five-S goodwill note this week. Record what it cost you and what came back.',
     'Take instructions you recently struggled to follow. Autopsy them against Figure 7: where were the preconditions, checkpoints, and warnings?',
+    'Ask two colleagues (or classmates) what it is like to receive requests from you — really ask, and don’t defend. Compare their answers against this chapter’s ledger categories.',
+    'Write the recommendation letter you hope someone could honestly write about you in two years. What specific stories would it need — and which of them exist yet?',
 ])
 
 h1(doc, 'How your writing will be graded (and read at work)')
@@ -255,6 +571,11 @@ bullets(doc, [
     ('“Handwritten notes: charming or outdated?”', 'For milestone goodwill — a mentor’s retirement, a colleague’s loss — ink is the costly signal that lands hardest precisely because it’s rare. For routine thanks, fast beats fancy: send the email today rather than the card never.'),
     ('“Can AI draft these?”', 'Requests, replies, instructions: yes, with your verification (Chapter 15). Adjustment grants: draft carefully — tone is the product. Sympathy and personal goodwill: no. The entire message is that a human paused.'),
     ('“What if my claim deadline passes with no response?”', 'Escalate one level with the original attached, same calm anatomy, new sentence: “I’d like to resolve this before involving [card issuer / consumer bureau].” Confidence, not threat — you’re still recruiting an advocate, now a more senior one.'),
+    ('“Isn’t all this goodwill machinery just transactional niceness?”', 'Only if you run it transactionally. The five-S test’s “sincere” and “selfless” are load-bearing: notes sent to be owed something are invoices, and readers can smell the ledger. Send because the act deserved marking; the compounding is a byproduct you never mention — including to yourself.'),
+    ('“How do I decline being a reference without burning the bridge?”', 'The graceful exit you offer others, used on yourself: “I don’t think I’m the strongest reference for this role — my view of your work is mostly [X], and this job is about [Y]; you deserve a recommender who has seen that side.” True, kind, and it hands them a better strategy instead of a wound.'),
+    ('“My company requires legal-approved language for adjustments. Doesn’t that kill the craft?”', 'It constrains the middle, not the ends. The grant can still lead, the prevention sentence usually survives review, and the human close is yours. Within any template, sequence and warmth remain writer’s choices — which is why two agents with identical scripts produce opposite customer reviews.'),
+    ('“I sent a five-S note and got no response. Was it wasted?”', 'No — “selfless” means no response was owed; requesting one (even silently) converts the gift back into a transaction. The note was received, filed in the ledger, and will surface in ways you won’t trace. Send the next one on the same terms, or examine whether you were sending notes or invoices.'),
+    ('“Which everyday genre should I master first?”', 'The reply, answer-first. It is the highest-volume genre, the fastest habit to install, and the most immediately visible — colleagues feel a thread-ending replier within a week. Requests second, confirmations third; goodwill throughout, because the calendar won’t wait for your curriculum.'),
 ])
 
 h1(doc, 'Crosswalk: this chapter → your course work')
@@ -277,6 +598,11 @@ keyterms(doc, [
     ('Reciprocity', 'the robust human tendency to repay treatment in kind (Cialdini, 2021) — the economics of generous adjustments.'),
     ('Giver advantage', 'habitual, boundaried generosity predicting long-run success (Grant, 2013).'),
     ('Checkpoint', 'the “you’ll see a green banner” line telling instruction-followers they are still on the path.'),
+    ('Confirmation', 'the same-day, numbered, self-ratifying record of anything decided aloud.'),
+    ('Request stack', 'multiple asks of one person: numbered, dated, capped at three, blocker first.'),
+    ('Graceful exit', 'the escape hatch built into high-stakes asks — a lukewarm yes is worse than a clean no.'),
+    ('Follow-up arithmetic', 'deadline passes → good-faith nudge → narrowed second nudge → change channel, ask, or recipient.'),
+    ('The reputation ledger', 'the implicit, cumulative, transitive scoring of your everyday messages — where “easy to work with” is manufactured.'),
 ])
 
 h1(doc, 'Chapter summary')
@@ -314,7 +640,19 @@ numbered(doc, [
     'Why do so few professionals send goodwill notes, when everyone agrees they matter? Name the frictions honestly — and the one you’ll remove for yourself.',
     'Find instructions in your workplace or university that generate repeated questions. Which Figure 7 element is missing?',
     'Debate: “Companies should empower front-line staff to grant borderline claims without approval.” Costs, risks, and the reciprocity math.',
+    'The reputation ledger is asymmetric — friction remembered, smoothness invisible. Is that unfair, and does it matter? What follows for how you budget effort across message types?',
+    'Automated transactional mail increasingly speaks for organizations. Find one automated message you received recently that failed this chapter’s standards, and rewrite its worst two sentences.',
 ])
+
+h1(doc, 'A closing word: the ordinary as practice field')
+para(doc, 'Every skill this course teaches gets its daily repetitions in this chapter’s genres. The '
+    'direct strategy is rehearsed in every request; audience analysis in every reply; revision '
+    'discipline in every message that matters slightly; goodwill in every note you remember to '
+    'send. Musicians have scales; communicators have routine mail. The professionals whose '
+    'high-stakes documents impress were not saving their skill for the big occasions — they were '
+    'practicing on the small ones, dozens of times a day, until the habits held under pressure '
+    'automatically. Treat your ordinary inbox as the practice field it is, and the extraordinary '
+    'moments will find you already trained.')
 
 references(doc, [
     'Cialdini, R. B. (2021). Influence, new and expanded: The psychology of persuasion. Harper Business.',
