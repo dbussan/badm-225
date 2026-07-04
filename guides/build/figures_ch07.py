@@ -25,7 +25,7 @@ steps=[('BUFFER','Honest common ground —\nnot a decoy of false hope'),
        ('PIVOT FORWARD','Alternatives, next steps,\nwhat you CAN do')]
 for j,(t,sub) in enumerate(steps):
     box(ax,0.3+j*2.45,1.7,2.2,1.05,t,fc=GREEN if j%2==0 else MOSS,fs=9.5)
-    ax.text(0.3+j*2.45+1.1,1.48,sub,ha='center',va='top',fontsize=8.6,color=INK)
+    ax.text(0.3+j*2.45+1.1,1.48,sub,ha='center',va='top',fontsize=9.3,color=INK)
     if j<3: arr(ax,0.3+j*2.45+2.22,2.22,0.3+(j+1)*2.45-0.02,2.22)
 ax.text(5.0,3.3,'The indirect pattern: reasons before refusal',ha='center',fontsize=11.5,color=GREEN,weight='bold')
 save(fig,'ch7_indirect.png')
@@ -85,7 +85,7 @@ fig, ax = plt.subplots(figsize=(8.6,3.0)); ax.set_xlim(0,10); ax.set_ylim(0,3.4)
 xs=[1.2,3.2,5.2,7.2,9.0]; ys=[2.6,2.2,1.7,1.1,0.6]
 ax.plot(xs,ys,color=PROOF,lw=2.5,marker='o',ms=5)
 for x,y,l in [(1.2,2.6,'problem found\n(small, fixable)'),(5.2,1.7,'delay: “next week,\nafter the demo”'),(9.0,0.6,'problem surfaces itself\n(large, public)')]:
-    ax.text(x,y+0.18,l,fontsize=8.6,color=INK,ha='center')
+    ax.text(x,y+0.18,l,fontsize=9.3,color=INK,ha='center')
 ax.text(5.0,3.15,'The MUM effect: bad news travels slowest when it matters most (Rosen & Tesser, 1970)',ha='center',fontsize=10.5,color=GREEN,weight='bold')
 save(fig,'ch7_mum.png')
 

@@ -46,12 +46,9 @@ fig, ax = plt.subplots(figsize=(7.0,4.6)); ax.set_xlim(0,10); ax.set_ylim(0,7); 
 for r,c,a in [(3.3,'#DFE9E2',1),(2.4,'#BDD4C4',1),(1.5,MOSS,1),(0.75,GREEN,1)]:
     ax.add_patch(Circle((5,3.4),r,fc=c,ec='white',lw=2))
 ax.text(5,3.4,'PRIMARY\nacts on it',ha='center',va='center',color='white',fontsize=9.5,weight='bold')
-ax.text(5,5.1,'SECONDARY — will read it later (the forward, the file)',ha='center',fontsize=9.5,color=INK)
-ax.text(5,5.95,'GATEKEEPERS — decide whether it reaches the primary reader',ha='center',fontsize=9.5,color=INK)
-ax.text(5,6.7,'HIDDEN — legal, HR, competitors, the public record',ha='center',fontsize=9.5,color=INK)
-ax.annotate('',xy=(5,4.05),xytext=(5,4.85),arrowprops=dict(arrowstyle='-|>',color=INK))
-ax.annotate('',xy=(5,4.95),xytext=(5,5.75),arrowprops=dict(arrowstyle='-|>',color=INK))
-ax.annotate('',xy=(5,5.85),xytext=(5,6.5),arrowprops=dict(arrowstyle='-|>',color=INK))
+ax.text(5,5.15,'SECONDARY — will read it later (the forward, the file)',ha='center',fontsize=9.5,color=INK)
+ax.text(5,6.0,'GATEKEEPERS — decide whether it reaches the primary reader',ha='center',fontsize=9.5,color=INK)
+ax.text(5,6.75,'HIDDEN — legal, HR, competitors, the public record',ha='center',fontsize=9.5,color=INK)
 save(fig,'ch2_audience.png')
 
 # 4 — you-view transformation
@@ -78,13 +75,13 @@ save(fig,'ch2_tone.png')
 
 # 6 — message planner canvas
 fig, ax = plt.subplots(figsize=(8.6,4.2)); ax.set_xlim(0,10); ax.set_ylim(0,5); ax.axis('off')
-cells=[(0.3,3.4,'1 · PURPOSE\nWhat should the reader\nKNOW or DO?'),(3.55,3.4,'2 · AUDIENCE\nWhat do they know, feel,\nfear, want?'),(6.8,3.4,'3 · BENEFIT\nWhy would THEY\nwant to say yes?'),
-       (0.3,1.0,'4 · CHANNEL\nRich or lean?\nRecord needed?'),(3.55,1.0,'5 · OPENING\nThe main point,\nstated first'),(6.8,1.0,'6 · CALL TO ACTION\nSpecific act + deadline\n(“reply with your date”)')]
-for x,y,t in cells:
-    box(ax,x,y,2.95,1.9,t,fc=TINT,tc=INK,fs=10)
-    ax.add_patch(FancyBboxPatch((x,y+1.55),2.95,0.35,boxstyle='round,pad=0.01,rounding_size=0.02',fc=GREEN,ec='none'))
-    ax.text(x+1.475,y+1.72,t.split('\n')[0],ha='center',va='center',color='white',fontsize=10,weight='bold')
-ax.text(5.0,0.35,'Six boxes, two minutes — cheaper than one misunderstood email',ha='center',fontsize=10.5,color=GOLD,style='italic')
+cells=[(0.3,2.8,'1 · PURPOSE','What should the reader\nKNOW or DO?'),(3.55,2.8,'2 · AUDIENCE','What do they know,\nfeel, fear, want?'),(6.8,2.8,'3 · BENEFIT','Why would THEY\nwant to say yes?'),
+       (0.3,0.7,'4 · CHANNEL','Rich or lean?\nRecord needed?'),(3.55,0.7,'5 · OPENING','The main point,\nstated first'),(6.8,0.7,'6 · CALL TO ACTION','Specific act + deadline\n(“reply with your date”)')]
+for x,y,head,body in cells:
+    box(ax,x,y,2.95,1.25,body,fc=TINT,tc=INK,fs=9.6)
+    box(ax,x,y+1.28,2.95,0.5,head,fc=GREEN,fs=10)
+ax.text(5.0,0.25,'Six boxes, two minutes — cheaper than one misunderstood email',ha='center',fontsize=10.5,color=GOLD,style='italic')
+ax.text(5.0,4.75,'The message planner canvas',ha='center',fontsize=11.5,color=GREEN,weight='bold')
 save(fig,'ch2_planner.png')
 
 # 7 — resistance loop

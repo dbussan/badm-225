@@ -25,7 +25,7 @@ steps=[('ATTENTION','A hook that belongs\nto the READER:\nproblem, stat, questio
        ('ACTION','One small, specific,\ndated ask —\nyes made easy')]
 for j,(t,sub) in enumerate(steps):
     box(ax,0.3+j*2.45,1.7,2.2,1.05,t,fc=GREEN if j%2==0 else MOSS,fs=10)
-    ax.text(0.3+j*2.45+1.1,1.48,sub,ha='center',va='top',fontsize=8.6,color=INK)
+    ax.text(0.3+j*2.45+1.1,1.48,sub,ha='center',va='top',fontsize=9.3,color=INK)
     if j<3: arr(ax,0.3+j*2.45+2.22,2.22,0.3+(j+1)*2.45-0.02,2.22)
 ax.text(5.0,3.3,'The AIDA sequence: a persuasion pipeline, not a paint-by-numbers',ha='center',fontsize=11.5,color=GREEN,weight='bold')
 save(fig,'ch8_aida.png')
@@ -79,7 +79,7 @@ for x,t,c in [(1.6,'HOSTILE',PROOF),(3.7,'SKEPTICAL',GOLD),(5.8,'NEUTRAL',INK),(
     ax.text(x,1.85,t,ha='center',va='center',fontsize=10,color=c,weight='bold')
 notes=[(1.6,'goal: reduce hostility,\nnot win today'),(3.7,'two-sided + evidence;\nsmall first ask'),(5.8,'benefits + clear action'),(8.2,'make acting easy NOW')]
 for x,t in notes:
-    ax.text(x,0.95,t,ha='center',va='top',fontsize=8.6,color=INK)
+    ax.text(x,0.95,t,ha='center',va='top',fontsize=9.3,color=INK)
 ax.text(5.0,2.85,'Calibrate the ask to the audience’s starting position',ha='center',fontsize=11.5,color=GREEN,weight='bold')
 save(fig,'ch8_spectrum.png')
 

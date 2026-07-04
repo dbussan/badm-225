@@ -58,7 +58,7 @@ y=3.0
 for label,a,b,c in props:
     box(ax,0.3,y,1.95,0.6,label,fc=MOSS,fs=9)
     for j,v in enumerate([a,b,c]):
-        box(ax,2.4+j*2.55,y,2.35,0.6,v,fc=TINT,tc=INK,fs=8.6)
+        box(ax,2.4+j*2.55,y,2.35,0.6,v,fc=TINT,tc=INK,fs=9.3)
     y-=0.72
 save(fig,'ch5_channels.png')
 
@@ -70,7 +70,7 @@ rules=[('Reply vs Reply-All','Reply-all only when every name\nneeds every word')
        ('BCC = exit ramp','Moving someone off a thread?\n“Moving Dana to BCC with thanks”')]
 for j,(t,sub) in enumerate(rules):
     box(ax,0.3+j*2.45,1.9,2.2,1.1,t,fc=GREEN if j%2==0 else MOSS,fs=9.5)
-    ax.text(0.3+j*2.45+1.1,1.7,sub,ha='center',va='top',fontsize=8.6,color=INK)
+    ax.text(0.3+j*2.45+1.1,1.7,sub,ha='center',va='top',fontsize=9.3,color=INK)
 ax.text(5.0,3.35,'Thread hygiene: the etiquette that keeps inboxes navigable',ha='center',fontsize=11.5,color=GREEN,weight='bold')
 save(fig,'ch5_threads.png')
 
@@ -101,7 +101,7 @@ save(fig,'ch5_response.png')
 
 # 7 — professional presence pyramid
 fig, ax = plt.subplots(figsize=(7.6,3.8)); ax.set_xlim(0,10); ax.set_ylim(0,4.4); ax.axis('off')
-tiers=[(3.4,3.2,3.2,0.75,'PUBLIC POSTS\nassume permanent, employer-visible',PROOF,'white'),
+tiers=[(2.9,3.2,4.2,0.75,'PUBLIC POSTS\nassume permanent, employer-visible',PROOF,'white'),
        (2.4,2.3,5.2,0.75,'WORK PLATFORMS\nemployer property — logged, exportable',GREEN,'white'),
        (1.4,1.4,7.2,0.75,'PROFESSIONAL PROFILES (LinkedIn etc.)\nyour standing portfolio — curate it',MOSS,'white'),
        (0.4,0.5,9.2,0.75,'PRIVATE CHANNELS\nstill one screenshot from public',TINT,INK)]

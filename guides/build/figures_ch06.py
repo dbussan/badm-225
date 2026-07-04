@@ -25,7 +25,7 @@ steps=[('OPEN with the ask','“Could you send the Q2\nvendor report by Thursday
        ('CLOSE with date + goodwill','“By Thursday noon keeps us\non schedule — thank you!”')]
 for j,(t,sub) in enumerate(steps):
     box(ax,0.3+j*2.45,1.7,2.2,1.0,t,fc=GREEN if j%2==0 else MOSS,fs=9.5)
-    ax.text(0.3+j*2.45+1.1,1.5,sub,ha='center',va='top',fontsize=8.6,color=INK)
+    ax.text(0.3+j*2.45+1.1,1.5,sub,ha='center',va='top',fontsize=9.3,color=INK)
     if j<3: arr(ax,0.3+j*2.45+2.22,2.2,0.3+(j+1)*2.45-0.02,2.2)
 ax.text(5.0,3.3,'The direct request: ask, explain, detail, close',ha='center',fontsize=11.5,color=GREEN,weight='bold')
 save(fig,'ch6_request.png')
@@ -48,7 +48,7 @@ fig, ax = plt.subplots(figsize=(8.6,3.2)); ax.set_xlim(0,10); ax.set_ylim(0,3.6)
 steps=[('GRANT\nimmediately','“A replacement ships\ntoday, free.”'),('EXPLAIN\nwithout excuses','What went wrong,\nbriefly — no blame opera'),('REPAIR\nthe confidence','What prevents a\nrepeat'),('RESTORE\nthe relationship','Forward-looking close;\nno groveling')]
 for j,(t,sub) in enumerate(steps):
     box(ax,0.3+j*2.45,1.7,2.2,1.1,t,fc=GREEN if j%2==0 else MOSS,fs=9.5)
-    ax.text(0.3+j*2.45+1.1,1.48,sub,ha='center',va='top',fontsize=8.6,color=INK)
+    ax.text(0.3+j*2.45+1.1,1.48,sub,ha='center',va='top',fontsize=9.3,color=INK)
     if j<3: arr(ax,0.3+j*2.45+2.22,2.25,0.3+(j+1)*2.45-0.02,2.25)
 ax.text(5.0,3.3,'Granting a claim: the adjustment message that keeps the customer',ha='center',fontsize=11.5,color=GREEN,weight='bold')
 save(fig,'ch6_adjust.png')
@@ -84,7 +84,7 @@ rows=[('One step, one action, one line','numbered, imperative verbs first: “Cl
       ('Preconditions before step 1','what they need in hand BEFORE starting'),
       ('Results after key steps','“You’ll see a green banner” — confirmation checkpoints'),
       ('Warnings BEFORE the step they protect','never after the damage line')]
-y=2.9
+y=2.6
 for t,sub in rows:
     box(ax,0.4,y,3.6,0.58,t,fc=GREEN,fs=9)
     ax.text(4.2,y+0.29,sub,ha='left',va='center',fontsize=9.3,color=INK)
@@ -98,7 +98,7 @@ xs=[1.0,2.6,4.2,5.8,7.4,9.0]; ys=[0.8,1.05,1.45,1.9,2.35,2.75]
 ax.plot(xs,ys,color=GREEN,lw=2.5,marker='o',ms=5)
 labels=['a thank-you','a congrats note','credit given\npublicly','a favor\nbefore any ask','the reference\nyou didn’t request','the door that\nopens itself']
 for x,y,l in zip(xs,ys,labels):
-    ax.text(x,y+0.16,l,fontsize=8.4,color=INK,ha='center')
+    ax.text(x,y+0.16,l,fontsize=9.3,color=INK,ha='center')
 ax.text(5.0,0.3,'small deposits, compounding for years →',ha='center',fontsize=9.5,color=GOLD,style='italic')
 save(fig,'ch6_capital.png')
 print('ch6 figures complete')
