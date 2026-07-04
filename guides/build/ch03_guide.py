@@ -151,6 +151,72 @@ para(doc, 'Before: “The new hires will learn safety procedures, how to file re
     'communication” — or, all verbs: “…will learn to follow safety procedures, file reports, and '
     'communicate with clients.” Either form works; mixing forms never does.')
 
+h1(doc, 'Deep dive: four more organizational patterns (and when each serves)')
+para(doc, 'Direct and indirect are the master strategies, but inside a message’s body, content '
+    'organizes itself along one of several logics — and choosing deliberately beats inheriting '
+    'whichever order your notes happened to arrive in.')
+bullets(doc, [
+    ('Order of importance', '— the business default. Most decision-relevant first, descending. Serves deciders and skimmers; the inverted pyramid at section scale. Choose it unless a reason exists not to.'),
+    ('Problem → solution', '— name the pain, then the remedy. The natural skeleton for proposals and recommendations; it front-loads the reader’s motivation to keep reading. Weakness: overused as drama when the reader already knows the problem — then it reads as padding before the point.'),
+    ('Chronological', '— time order. Right for procedures (do this, then this), incident reports (what happened when), and project histories. Wrong — seductively wrong — for recommendations, where “the order I did the work” buries the conclusion (the analyst’s heartbreak from Case 1).'),
+    ('Spatial / categorical', '— by location, division, or component: the facilities report walking building by building, the review covering product line by product line. Serves completeness and lookup; pair it with an importance-ordered summary so the reader gets a verdict, not just a tour.'),
+    ('Comparison', '— alternative by alternative against shared criteria. The vendor evaluation’s natural shape. The craft decision: organize by option (easy to write, hard to compare) or by criterion (harder to write, and exactly how the reader thinks). Choose by criterion when a decision is being made.'),
+])
+para(doc, 'The meta-rule underneath all five: organize by the reader’s use of the document, not by '
+    'the writer’s process of producing it. Every pattern above is legitimate somewhere; the '
+    'chronology of your effort is legitimate almost nowhere.', bold_lead='The meta-rule.')
+
+h1(doc, 'Deep dive: the coherence machinery, annotated')
+para(doc, 'Old-to-new flow is easier to admire than to build, so here is a paragraph with its '
+    'machinery exposed. The sample: “The committee approved the pilot program. THAT APPROVAL came '
+    'with two conditions. THE FIRST CONDITION caps enrollment at forty students; THE SECOND requires '
+    'a midterm report. THAT REPORT — due March 15 — will decide whether the pilot becomes '
+    'permanent.”')
+para(doc, 'Watch the handoffs: each sentence opens by grabbing the previous sentence’s news '
+    '(approval → that approval; two conditions → the first… the second; a report → that report) '
+    'and closes by delivering new cargo into the stress position (two conditions; forty students; '
+    'March 15; permanent). The reader is never asked to hold an orphaned fact — every new item is '
+    'delivered into a hand the previous sentence already opened. Now the broken version: “The pilot '
+    'program was approved by the committee. Enrollment caps at forty students as one of two '
+    'conditions. March 15 is when a report is due, which is the second condition, and permanence '
+    'depends on it.” Same facts; every handoff dropped; the reader assembles the relationships '
+    'themselves. Grammatical, complete — and exhausting. When your prose “feels choppy” and you '
+    'cannot say why, audit the handoffs first.', bold_lead='The handoffs.')
+
+h1(doc, 'Deep dive: verbs are the engines')
+para(doc, 'The fastest single upgrade to drafting is promoting real verbs. Three audits, in rising '
+    'order of ambition.')
+para(doc, 'The be-verb audit: circle every is/are/was/were. Each is a junction where a stronger verb '
+    'may be hiding: “The new policy is a source of confusion for staff” → “The new policy confuses '
+    'staff.” Not every be-verb deserves eviction — “the deadline is Friday” is perfect — but a '
+    'paragraph running four be-verbs deep has parked its engines.', bold_lead='Audit one.')
+para(doc, 'The nominalization audit, refined: Chapter 3 taught unfreezing; here is the taxonomy. '
+    'Guilty nominalizations bury the action of THIS sentence (“made a decision” → “decided”). '
+    'Innocent ones name established things: “the decision” as a known object under discussion '
+    '(“the decision reached Legal on Tuesday”) is a noun doing honest noun work. The test: is the '
+    'action happening in this sentence, or being referred to? Unfreeze the first; keep the second.',
+    bold_lead='Audit two.')
+para(doc, 'The actor audit: for each sentence, ask “who does what?” — then check whether the '
+    'grammatical subject is the who and the verb is the what. “There was agreement among the leads '
+    'regarding the postponement of testing” has actors (the leads) and an action (agreeing to '
+    'postpone) — both exiled from their grammatical posts. Reinstate them: “The leads agreed to '
+    'postpone testing.” Prose whose subjects are characters and whose verbs are actions is what '
+    'readers experience as “clear” — the Williams principle from the research corner, now as a '
+    'drill (Williams & Bizup, 2017).', bold_lead='Audit three.')
+
+h1(doc, 'Deep dive: paragraph rhythm at document scale')
+para(doc, 'Sentence-length variety has a document-level twin: paragraph rhythm. A page of uniform '
+    'five-line paragraphs reads as a gray wall even when each paragraph is internally sound; '
+    'variety — a three-line opener, a longer development paragraph, a one-line pivot — gives the '
+    'page a pulse and gives emphasis somewhere to live. The one-sentence paragraph is the strongest '
+    'move in the kit.')
+para(doc, 'Used once per document, it lands like a gavel.')
+para(doc, 'Used constantly, it is confetti — and its power dies with inflation (the same economics '
+    'as Chapter 3’s emphasis toolbox). Deploy it for the verdict, the turn, or the single fact '
+    'everything else serves. One more document-scale habit: let white space do structural work — '
+    'the gap between sections is a breath the reader needs, not wasted paper. Dense pages read as '
+    'hard even when the sentences are easy; layout is part of drafting, not decoration after it.')
+
 h1(doc, 'Headings: the skeleton that skims')
 para(doc, 'Anything longer than a screen needs headings — they are the document’s outline, left '
     'visible for the reader. Two crafts matter. First, make headings informative, not categorical: '
@@ -160,6 +226,43 @@ para(doc, 'Anything longer than a screen needs headings — they are the documen
     'two levels serve almost every business document; four levels is a filing system, not a message. '
     'Headings also discipline the writer: a section that cannot be honestly summarized in its heading '
     'is usually two sections, or none.')
+
+h1(doc, 'Deep dive: lists — the most abused structure in business writing')
+para(doc, 'Lists earn their power from three properties prose lacks: they promise parallel items, '
+    'they expose count (“three risks” is verifiable at a glance), and they give scanners handholds. '
+    'Every abuse of lists breaks one of those promises. The semantics come first: numbered lists '
+    'promise sequence or rank — steps that happen in order, priorities that descend; bulleted lists '
+    'promise siblings — items of equal standing in no meaningful order. Numbering non-sequential '
+    'items falsely implies priority; bulleting a procedure hides that order matters. Choose the '
+    'marker by the logic, not the aesthetic.')
+para(doc, 'Depth discipline: every item in one list should live at the same altitude — a list '
+    'mixing “restructure the supply chain” with “fix the typo on page 4” has broken its sibling '
+    'promise, and the reader can no longer trust the count. Length discipline: list items are '
+    'compressed prose, not paragraphs wearing bullets; when an item sprawls past two lines, either '
+    'compress it or promote it to a headed paragraph. And the density ceiling: a document that is '
+    'ALL lists has abdicated — lists excerpt and structure; prose argues, connects, and persuades. '
+    'The strongest business pages alternate: a short paragraph that thinks, a list that lands, a '
+    'paragraph that draws the consequence. When you cannot decide which to use, ask what the reader '
+    'does with the content: scan, count, or execute → list; follow reasoning → prose.',
+    bold_lead='Three disciplines.')
+
+h1(doc, 'Deep dive: engineering the drafting session')
+para(doc, 'Drafting fast is partly psychology and partly logistics, and both can be engineered. The '
+    'psychology first: the blank-page dread that stalls drafts is almost always premature judging '
+    '— the internal editor auditioning sentences before they exist. The professional’s trick is '
+    'giving the draft explicit permission to be bad: label the file DRAFT-UGLY, tell yourself '
+    'nobody sees version one, and remember that revision (Chapter 4) is scheduled — the safety net '
+    'is real, so the tightrope can be fast. Perfectionism at the drafting stage is not high '
+    'standards; it is judging done at the wrong time, and it produces both worse drafts and fewer '
+    'of them.')
+para(doc, 'The logistics: draft in sessions sized to the work — 25 to 45 minutes of genuinely '
+    'unpinged time (Chapter 5’s attention rules are drafting rules too), with the outline visible '
+    'and sources already gathered, because mid-draft research trips are where momentum goes to die. '
+    'If a fact is missing, type [GET Q2 NUMBER] and keep moving; collection is a different errand '
+    'than composition. End every session mid-thought with a note about what comes next — “next: '
+    'the risk section, lead with the vendor dependency” — and tomorrow’s restart costs thirty '
+    'seconds instead of twenty minutes. Writers who manage momentum outproduce writers who manage '
+    'sentences, at identical talent.', bold_lead='Session design.')
 
 h1(doc, 'The transitions toolbox')
 para(doc, 'Coherence between paragraphs is built with the same two tools as coherence within them: '
@@ -304,6 +407,9 @@ numbered(doc, [
     '“Employees must complete the form. The form is available on the portal. The portal requires your ID badge number. Badge numbers are printed on the badge back.”',
     '“Although the budget, which had been under review for several weeks by the committee that oversees departmental spending, was approved.”',
     '“The meeting is at 3. Bring the numbers. Don’t be late. It’s important. See you there.”',
+    '“There was agreement among the leads regarding the postponement of testing.”',
+    '“Although costs rose 8%, the project finished on schedule.” (You are the CFO’s analyst, flagging the budget.)',
+    '“The system, which was installed in 2019 by the previous vendor whose contract was terminated for performance issues that were documented extensively, needs replacement.”',
 ])
 h2(doc, 'Workshop answers')
 numbered(doc, [
@@ -317,7 +423,52 @@ numbered(doc, [
     'Chunk and sequence: one numbered list, four steps, in doing-order — the reader should never assemble your process from prose shards.',
     'The sentence never lands: “Although” promises a contrast that never arrives. “After several weeks of committee review, the budget was approved.”',
     'Rhythm inverted: five staccato sentences bury the one that matters. “The 3:00 meeting decides next year’s budget — bring the numbers.” One verdict sentence beats five fragments.',
+    'The actor audit: reinstate the who and the what. “The leads agreed to postpone testing.” Eleven words become six, and the sentence acquires a pulse.',
+    'Subordination serves the reader’s job: for a budget flag, the cost fact takes the main clause — “Although the project finished on schedule, costs rose 8%.” Same facts, correct emphasis for THIS reader.',
+    'The freight-train relative clause: split and sequence. “The system needs replacement. Installed in 2019 by a vendor later terminated for documented performance issues, it has outlived its support.” Main point first; history subordinated — or cut entirely if the reader doesn’t need it.',
 ])
+
+h1(doc, 'Deep dive: subordination — deciding what rides in back')
+para(doc, 'Complex sentences make a structural claim: the main clause carries the point; subordinate '
+    'clauses carry context. Which is why the same two facts produce opposite sentences. “Although '
+    'costs rose 8%, the project finished on schedule” is a success story with a footnote; “Although '
+    'the project finished on schedule, costs rose 8%” is a budget problem wearing a consolation. '
+    'Neither is dishonest — both facts appear in both — but each tells the reader what to weigh, '
+    'and choosing is not optional: one clause WILL be main. Writers who subordinate at random are '
+    'assigning emphasis at random, and their readers walk away weighing the wrong facts.')
+para(doc, 'The drill: for any two-fact sentence, ask which fact the reader should act on — that '
+    'fact gets the main clause and, ideally, the stress position at the end. Context, concession, '
+    'and background ride in the subordinate clause, usually up front where the topic position '
+    'expects the familiar. This is also the honest version of “spin”: emphasis assignment is a '
+    'legitimate editorial power exactly as long as both facts remain visible and true. Burying the '
+    'material fact in a subordinate clause of sentence nine is where emphasis management crosses '
+    'into concealment — the Oakhurst lesson (Chapter 4) has a syntax edition.', bold_lead='The drill.')
+para(doc, 'Punctuation completes the structural toolkit, because the marks between clauses are '
+    'signals, not decoration. The colon promises delivery: what follows explains or itemizes what '
+    'preceded. The semicolon claims siblinghood; it joins two complete thoughts of equal weight and '
+    'implies the reader should feel the connection. The em-dash interrupts — for emphasis, for an '
+    'aside that deserves attention — and loses its force with repetition, like every emphasis '
+    'device in this chapter. Parentheses whisper (context the reader may skip). Choosing among them '
+    'is choosing how loudly the connection speaks; the writer who knows the difference controls '
+    'volume at a resolution most colleagues never notice — but every reader feels.',
+    bold_lead='The marks as signals.')
+
+h1(doc, 'Deep dive: closings — the document’s stress position')
+para(doc, 'Everything Gopen and Swan teach about sentence ends scales to the whole document: the '
+    'final position is where emphasis naturally lands, which makes closings too valuable to waste on '
+    'ceremony. Yet most business documents end with their weakest material — “please don’t '
+    'hesitate to reach out,” “thank you for your time and consideration” — boilerplate occupying '
+    'the message’s most memorable real estate. The professional closing does one of three jobs. The '
+    'action close restates the ask with its date, one final time, standing alone: after everything, '
+    'the reader’s eyes leave the document holding exactly what to do (this is why the site’s email '
+    'anatomy puts the call to action last). The consequence close names what the recommendation '
+    'buys: “Approved this week, the renewal locks $22,000 in annual savings before the discount '
+    'expires” — the stakes, freshly framed, as the parting image. The forward close, for messages '
+    'without asks, points at the path ahead: “Next update Tuesday; escalation call Thursday if the '
+    'fix slips.” All three share a property: they contain information. If your final sentence could '
+    'be deleted with no loss, it is not a closing — it is upholstery sitting in the emphasis seat. '
+    'Write closings the way you now write topic sentences: deliberately, and last, once the document '
+    'has told you what deserves the final word.')
 
 h1(doc, 'Research corner II: measuring readability')
 para(doc, 'Readability can be estimated, and Word will do it for you (File → Options → Proofing → '
@@ -360,6 +511,8 @@ numbered(doc, [
     'Collect three passive sentences from real documents around you and classify each: legitimate tool or camouflage? What does each hide?',
     'Take one paragraph you are proud of and map its topic/stress positions. Does information flow old → new? Where does it break?',
     'Time yourself drafting 200 words with editing forbidden, then 200 words editing as you go. Compare the clocks — and the drafts.',
+    'Take two facts from your current work — one favorable, one not — and write the sentence both ways, subordinating each in turn. Which version would you send, and what does that choice reveal about the line between emphasis and concealment for you?',
+    'Rewrite the closing sentence of the last three documents you produced. What was sitting in the stress position, and what deserved to be?',
 ])
 
 h1(doc, 'How your writing will be graded (and read at work)')
@@ -388,6 +541,9 @@ bullets(doc, [
     ('“How long should a paragraph be?”', 'One claim long. On screens that usually means 3–6 lines. If unity is intact, length is style; if unity is broken, even three sentences are too many.'),
     ('“Do these micro-rules matter once AI drafts for me?”', 'More. AI produces grammatical prose with generic structure; the value you add is exactly this chapter — strategy, emphasis, and rhythm chosen for a real reader (Chapter 15).'),
     ('“Three main points always?”', 'No — but if you have nine, the reader will remember three of them chosen at random. Better you choose which three, and group the rest beneath them.'),
+    ('“Does organization matter in a two-line email?”', 'Yes, in miniature: which of the two lines comes first is still a strategy call, and the last words still sit in the stress position. The units shrink; the physics don’t.'),
+    ('“I organize fine in outlines but my drafts drift.”', 'Keep the outline physically visible while drafting and copy each family name in as the topic sentence BEFORE writing the paragraph — drift usually means the outline left the room. If a paragraph still insists on becoming something else, the outline may be wrong; stop and re-group rather than fighting the prose.'),
+    ('“Are semicolons too formal for email?”', 'They read formal, not wrong. In quick email the period is the workhorse; save semicolons for documents where their siblinghood signal earns its keep. No reader ever complained that two short sentences were too clear.'),
 ])
 
 h1(doc, 'Crosswalk: this chapter → your course work')

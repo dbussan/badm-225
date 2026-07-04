@@ -156,6 +156,117 @@ figure(doc, os.path.join(FIG, 'ch2_planner.png'),
     'Figure 7. The six-box message planner. Two minutes here is cheaper than one misunderstood email.',
     'Message planner canvas with six boxes: purpose (what should the reader know or do), audience (what they know, feel, fear, want), benefit (why they would say yes), channel (rich or lean, record needed), opening (main point first), and call to action (specific act plus deadline).')
 
+h1(doc, 'Deep dive: the four purposes, and the hidden fifth')
+para(doc, 'The inform/persuade split from earlier deserves finer teeth, because misdiagnosing purpose '
+    'is the most common root cause of failed messages. Business messages actually pursue four '
+    'purposes, often in combination. Informing transfers knowledge and asks nothing: the outage '
+    'notice, the schedule, the minutes. Its success test is comprehension — could the reader answer '
+    'a quiz? Persuading seeks a decision the reader is free to refuse: the proposal, the request, '
+    'the pitch. Its success test is behavior — did they do it? Building goodwill maintains the '
+    'relationship itself: thanks, congratulations, the check-in note. Its test is affective — does '
+    'the reader feel valued? And creating a record protects the future: the confirmation email, the '
+    'documented decision, the memo-to-file. Its test may not arrive for years — will this document '
+    'defend us when memory fails or disputes arise?')
+para(doc, 'Each purpose has a signature architecture. Information wants maximal findability: '
+    'frontloaded, chunked, skimmable. Persuasion wants sequenced benefit logic (Chapter 8 gives it a '
+    'whole architecture). Goodwill wants brevity and specificity — ceremony smothers it. Records '
+    'want completeness and precision: full names, full dates, exact figures, because the future '
+    'reader has no context. Diagnose before drafting, because the architectures conflict: the '
+    'precision that makes a good record makes a bloated goodwill note; the warmth that carries '
+    'goodwill dilutes a record.')
+para(doc, 'Then there is the hidden fifth purpose, the one nobody writes in a planning box: '
+    'self-presentation. Every message you send is also a performance of your competence, and '
+    'pretending otherwise is naive. The mature handling is to let self-presentation ride as a '
+    'passenger, never drive: the message that exists mainly to display its writer — the '
+    'jargon-dense reply-all, the unnecessary weigh-in — is read by everyone as exactly what it is. '
+    'Paradoxically, the strongest professional image comes from messages ruthlessly organized around '
+    'the reader; competence displayed through usefulness is the only display that does not look '
+    'like one.', bold_lead='The fifth purpose.')
+
+h1(doc, 'Deep dive: the audience analysis protocol')
+para(doc, 'When stakes justify more than the 60-second plan, run the full protocol. Twelve questions, '
+    'four clusters — the answers write half your message.')
+h2(doc, 'Cluster 1: Knowledge')
+numbered(doc, [
+    'What does the reader already know about this topic? (Sets your starting altitude — background they have is insult to repeat, background they lack is a wall to hit.)',
+    'What vocabulary is native to them? (Their words, not yours: a CFO hears “payback period,” a chemist hears “detection limit,” and each hears the other’s term as fog.)',
+    'What do they think they know that is actually wrong? (Misconceptions must be dislodged gently BEFORE the new information has anywhere to land.)',
+])
+h2(doc, 'Cluster 2: Feelings')
+numbered(doc, [
+    'What is their likely first emotional reaction to this message? (Receptive, neutral, resistant — the strategy switch from Chapter 3.)',
+    'What is their history with this topic — and with you? (A proposal that failed twice before does not arrive new; your last interaction is your current ethos.)',
+    'What are they afraid of? (Fear unaddressed becomes the grapevine’s raw material — the wellness-memo lesson.)',
+])
+h2(doc, 'Cluster 3: Needs')
+numbered(doc, [
+    'What must they have in order to act — authority, budget, information, cover? (A reader who cannot act on your ask needed a different message, or a different reader.)',
+    'What does saying yes cost them — time, money, risk, face? (Price the yes honestly; your message must be worth it.)',
+    'What is their preferred format and channel? (Some readers decide from tables; some from narratives; asking once — “how do you like updates?” — pays for years.)',
+])
+h2(doc, 'Cluster 4: Context')
+numbered(doc, [
+    'When will they read this — and in what state? (Monday 8 a.m. triage differs from Thursday afternoon; month-end differs from mid-cycle.)',
+    'Who else will see it? (The rings: secondary, gatekeeper, hidden.)',
+    'What else is competing for their attention right now? (Your message is not read in a vacuum but in a stack; its design must survive the stack.)',
+])
+para(doc, 'The protocol’s value is not filling boxes — it is the question you cannot answer. Every '
+    'blank is a finding: something to learn before sending, or a risk you are knowingly accepting. '
+    'Experts do not know all twelve answers; they know WHICH answers they are missing.',
+    bold_lead='Read the blanks.')
+
+h1(doc, 'Deep dive: a taxonomy of reader benefits')
+para(doc, 'The “which means” ladder ends at a reader benefit — but benefits come in four currencies, '
+    'and matching the currency to the reader is its own skill.')
+bullets(doc, [
+    ('Economic benefits', '— money saved, revenue gained, budget protected. The currency of owners, executives, and anyone with a P&L. Strongest when concrete: “$1,800 per external review, twice a year.”'),
+    ('Operational benefits', '— time saved, errors prevented, friction removed. The currency of managers and practitioners: “no more Friday reconstruction of the week.” Often more persuasive than money to the people who live the friction.'),
+    ('Psychological benefits', '— pride, security, recognition, reduced anxiety. The currency of everyone, admitted by no one: “your team’s results go in front of the VP.” Handle with sincerity; manufactured flattery reads instantly.'),
+    ('Political benefits', '— cover, credit, alliance, safe precedent. The currency of organizational life: “finance has already signed off on the framework” removes the risk of going first. Legitimate when true; toxic when fabricated.'),
+])
+para(doc, 'Mixed audiences need mixed currencies — the proposal skimmed by an executive (economic), '
+    'implemented by a manager (operational), and lived by a team (psychological) should carry all '
+    'three, each where its reader will look. And note the ethical constant across currencies: a '
+    'benefit is something the reader would still recognize as a benefit after saying yes. Anything '
+    'else is bait.')
+
+h1(doc, 'Deep dive: one message, four registers')
+para(doc, 'The tone dial deserves a demonstration. One fact — a project deadline is moving from '
+    'Friday to Wednesday — rendered at four settings:')
+para(doc, 'Formal report register: “The delivery milestone has been rescheduled from May 16 to '
+    'May 14 to accommodate the client’s revised audit window. All workstream leads have confirmed '
+    'feasibility of the compressed timeline.” Complete sentences, no contractions, third-person '
+    'distance, documentation-grade precision. For: records, external formality, anything legal '
+    'might read.', bold_lead='Register 1.')
+para(doc, 'Client letter register: “To align with your revised audit window, we’ve moved delivery '
+    'up to Wednesday, May 14. Our leads have confirmed the earlier date is comfortable — you’ll '
+    'have everything before your auditors arrive.” Warm, contractions permitted, you-view forward, '
+    'still precise. For: external professional relationships.', bold_lead='Register 2.')
+para(doc, 'Internal email register: “Heads up — delivery moves to Wednesday 5/14 (client’s audit '
+    'window shifted). All leads have confirmed we’re good. Flag me by tomorrow if that breaks '
+    'anything on your end.” Compressed, direct, action-oriented, but complete: dates, reason, ask. '
+    'For: colleagues who share your context.', bold_lead='Register 3.')
+para(doc, 'Team chat register: “FYI deadline now Wed 5/14 — client audit moved. Leads confirmed '
+    'OK. Problems → tell me by tmrw.” Telegraphic but still carrying every load-bearing fact. For: '
+    'rapid coordination with people who trust you.', bold_lead='Register 4.')
+para(doc, 'Study what stays constant: the facts, the reason, and the ask survive every register — '
+    'only ceremony scales. That is the whole discipline of tone: the dial adjusts formality, never '
+    'completeness, and never accuracy. A writer who drops the reason in chat, or the ask in the '
+    'formal version, has changed the message, not the register.', bold_lead='The invariants.')
+
+h1(doc, 'Deep dive: why pressure backfires — reactance')
+para(doc, 'One more piece of psychology completes the skeptical-reader toolkit. When people feel '
+    'their freedom to choose being squeezed, they push back to reassert it — a reflex psychologists '
+    'call reactance (Brehm, 1966). It is why hard-sell messages generate not just refusal but '
+    'resentment, why “you must” produces less compliance than “you can,” and why the deadline that '
+    'reads as a threat gets tested while the deadline that reads as information gets met. The '
+    'planning consequences: preserve visible choice wherever choice truly exists (“two options that '
+    'both work — your call”); frame constraints as facts of the world rather than exertions of your '
+    'will (“registration closes Friday” beats “you need to register by Friday”); and never '
+    'manufacture pressure you cannot back, because reactance plus discovery equals a reader who now '
+    'opposes you on principle. The skeptical reader is not just weighing your evidence; they are '
+    'monitoring their own autonomy. Messages that respect it get read with the guard down.')
+
 h1(doc, 'Research corner: what readers actually do with your message')
 para(doc, 'Plan for the reading you will actually get, not the reading you deserve. Eye-tracking '
     'research on screen reading famously found that users scan in rough F-shaped patterns — reading '
@@ -328,6 +439,27 @@ para(doc, 'Version A is a writer-view message: its subject is the writer’s gro
     '(growth, ambition) are legitimate — but the message’s reasons must be the reader’s. Plan the '
     'overlap, and both people get what they want.')
 
+h1(doc, 'Planning documents with multiple masters')
+para(doc, 'Some documents cannot pick one primary reader: the project charter read by sponsors, '
+    'engineers, and finance; the policy read by employees, managers, and someday a lawyer. '
+    'Multi-audience planning has its own craft. Layer the document so each audience has a designed '
+    'path: an executive summary for deciders, labeled sections for implementers, appendices for '
+    'verifiers — the layering IS the audience analysis, expressed as structure. Segregate '
+    'vocabulary: body text at the least-expert reader’s altitude, technical precision quarantined in '
+    'clearly-marked sections where experts will look and others may skip. Resolve benefit conflicts '
+    'explicitly: when what delights one audience alarms another (automation thrills finance and '
+    'threatens the team), address both in their own sections rather than hoping neither notices the '
+    'other’s. And when audiences genuinely conflict — the document cannot serve both — split it: '
+    'two short documents beat one document at war with itself. The instinct to “just send everyone '
+    'the same thing” is a planning decision too; it is simply usually the wrong one.')
+para(doc, 'Professionals who write frequently keep a planning file: the audience protocol answers '
+    'for their recurring readers (the CFO wants tables, hates adjectives, reads at 6 a.m.), the '
+    'purpose templates for their recurring genres, and their own best openings and calls to action '
+    'for reuse. Chapter 1 suggested notes after conversations; this is the writing twin. Ten minutes '
+    'of curation a month turns planning from a per-message tax into a compounding asset — and it is '
+    'exactly the kind of personal knowledge base that makes AI assistance sharper, since your '
+    'planning file is the context no model has (Chapter 15).', bold_lead='The planning file.')
+
 h1(doc, 'Teardown: the finished email, annotated')
 para(doc, 'Here is the faculty-judges message from the worked example, drafted from its plan — with '
     'the planning visible in brackets.')
@@ -347,6 +479,34 @@ para(doc, 'Count what the plan bought: the ask is in the subject line and first 
     'skimmer served), the effort objection is answered inside (expert scrutinizer served), every '
     'benefit belongs to the reader, and the yes has a date to land on. One hundred twenty words, '
     'nothing wasted — because the deciding happened before the drafting.', bold_lead='The point.')
+
+h1(doc, 'Deep dive: where tailoring ends and pandering begins')
+para(doc, 'Everything in this chapter teaches adaptation — and adaptation has an ethical edge worth '
+    'mapping precisely, because your credibility lives on it. Three tests separate legitimate '
+    'audience adaptation from its corrupt twin.')
+para(doc, 'The facts test: adaptation changes emphasis, order, vocabulary, and framing; it never '
+    'changes the facts. Telling the CFO about cost savings and the team about workload relief is '
+    'tailoring — both are true. Telling the CFO the system is proven while telling the team it is '
+    'experimental is lying twice. If two of your audiences compared notes, would they find different '
+    'perspectives on one truth, or two truths? Only the first survives the comparison — and '
+    'audiences do compare notes.', bold_lead='Test one.')
+para(doc, 'The commitment test: adapted messages make different arguments; they never make '
+    'incompatible promises. The classic career wound is the writer who, adapting enthusiastically to '
+    'each room, commits to finance that the project needs no new headcount and to the team that help '
+    'is coming. Each message was locally persuasive; jointly they are a time bomb. Before sending '
+    'any adapted message, ask what its promises look like laid beside the promises of its siblings.',
+    bold_lead='Test two.')
+para(doc, 'The respect test: tailoring serves the audience’s interests; pandering serves their '
+    'prejudices. Framing automation as job-enriching because it genuinely removes drudge work is '
+    'tailoring. Framing it that way while planning the layoffs is contempt with good manners. The '
+    'difference is invisible in the text and obvious in the outcome — which is why this test, '
+    'unlike the others, is applied to your intentions rather than your prose. Chapter 16’s '
+    'visibility question is the portable version: if the audience could watch you plan this '
+    'message, would they thank you for the care or resent you for the management?', bold_lead='Test three.')
+para(doc, 'Held together: adapt the presentation, never the substance; vary the arguments, never '
+    'the commitments; serve their interests, never merely their comfort. Writers who hold that line '
+    'discover a compounding advantage — audiences who have compared notes and found one consistent '
+    'truth begin extending trust in advance, which is the cheapest persuasion there is.')
 
 h1(doc, 'Watch list: three short talks worth your time')
 para(doc, 'All free, public TED talks — search the titles. Watch for how each speaker plans around an '
@@ -468,6 +628,7 @@ numbered(doc, [
 references(doc, [
     'Aristotle. (2007). On rhetoric: A theory of civic discourse (G. A. Kennedy, Trans., 2nd ed.). Oxford University Press. (Original work ca. 350 BCE)',
     'Bitzer, L. F. (1968). The rhetorical situation. Philosophy & Rhetoric, 1(1), 1–14.',
+    'Brehm, J. W. (1966). A theory of psychological reactance. Academic Press.',
     'Flower, L., & Hayes, J. R. (1981). A cognitive process theory of writing. College Composition and Communication, 32(4), 365–387.',
     'Hall, E. T. (1976). Beyond culture. Anchor Press/Doubleday.',
     'Kahneman, D. (2011). Thinking, fast and slow. Farrar, Straus and Giroux.',
