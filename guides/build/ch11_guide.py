@@ -92,7 +92,7 @@ figure(doc, os.path.join(FIG, 'ch11_trust.png'),
     'withdrawals (surprises, spin, hoarded credit, missed deadlines gone quiet), above a banner: high balance means cheap '
     'communication; an empty account means every message needs two pages of proof.')
 para(doc, 'Every interaction with a colleague deposits into or withdraws from an account held in their memory. '
-    'Kept promises, early warnings about slipping work, credit passed downward, the five-S thank-you note '
+    'Kept promises, early warnings about slipping work, credit passed downward, the five-quality thank-you note '
     '(Chapter 6) — deposits. Surprises, spin, hoarded credit, the deadline that slid without a word — withdrawals. '
     'The account’s cruel arithmetic is asymmetry: deposits are small and must be constant; withdrawals are large '
     'and remembered. One “they knew and didn’t tell us” can spend a year of reliability in an afternoon.')
@@ -601,7 +601,7 @@ bullets(doc, [
      'visible task list from the freeloader protocol is now your source document. This is what the list '
      'was FOR.'),
     ('Give the strong performers their specifics.', '“Priya’s export template saved every later phase” is '
-     'a deposit that costs nothing and follows her — the five-S rules apply to evaluations too.'),
+     'a deposit that costs nothing and follows her — the five-quality rules apply to evaluations too.'),
     ('Write nothing you haven’t said.', 'The evaluation should surprise no one (the escalation ladder’s '
      'rung one guarantees this). A grievance appearing first in a peer evaluation convicts two people, '
      'and one of them is you.'),

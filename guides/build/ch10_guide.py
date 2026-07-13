@@ -10,7 +10,7 @@ doc = new_doc(10, 'Proposals and Formal Reports',
 h1(doc, 'How to use this guide')
 para(doc, 'Chapter 9 built the analytical engine; this chapter adds the formal apparatus and the '
     'proposal genre — the documents organizations use to commit serious resources. Your capstone '
-    'feasibility study and its executive summary live here. Read with the Berry Dunn project in '
+    'feasibility study and its executive summary live here. Read with your own capstone project in '
     'mind: every section of this guide maps to a section you will write.')
 
 h1(doc, 'The formal report: architecture for three readers')
@@ -174,7 +174,7 @@ para(doc, 'Each front-matter element has a job and a failure mode. The transmitt
 h1(doc, 'Worked example: the capstone executive summary, annotated')
 para(doc, 'Here is a one-page executive summary in your capstone’s required shape — intro, '
     'methodology, key findings, recommendations, conclusion — annotated against this chapter.')
-para(doc, '“The Berry Dunn municipal broadband feasibility study asked whether a city-owned fiber '
+para(doc, '“The Cedarview municipal broadband feasibility study asked whether a city-owned fiber '
     'network can serve 12,400 households at sustainable cost. [situation: one sentence, the '
     'question itself] Our team analyzed municipal filings, comparable-city outcomes in four '
     'markets, and vendor cost models across three build scenarios. [methodology: one sentence, '
@@ -564,21 +564,49 @@ numbered(doc, [
 ])
 
 quiz(doc, [
-    ('The executive summary is written:', ['First, as an outline','Last — you cannot summarize what does not exist','By the most junior team member','Only for reports over 50 pages']),
-    ('“This report examines X, reviews the literature, and offers recommendations” is:', ['A strong summary','The furniture failure — sections summarized instead of the case','Required by APA','A transmittal letter']),
-    ('Conclusions and recommendations are separated because:', ['Templates require it','Readers can accept your interpretation while rejecting your commitment — the graceful fallback','Conclusions are optional','Recommendations need citations']),
-    ('In a solicited proposal, the requester’s structure is:', ['A suggestion','Absolute — evaluators score with checklists built on it','Negotiable after submission','Only for government RFPs']),
-    ('A compliance matrix maps:', ['Costs to benefits','Every requirement to where it is addressed and the page number','Team members to sections','Risks to mitigations']),
-    ('The proposal section that most signals real project experience is:', ['The cover letter','Evaluation and risks — named unprompted','The staffing bios','The table of contents']),
-    ('The 24-page proposal against a 20-page limit was:', ['Scored on its merits','Marked non-compliant and scored zero — limits are cliffs','Given partial credit','Returned for revision']),
-    ('A budget line inviting a raised eyebrow should be:', ['Deleted','Justified where it stands','Moved to the appendix','Rounded up']),
-    ('On the credibility ladder, AI output and unsourced web claims:', ['Rank above vendor material','Never bear load — trace to a real source or drop the claim','Are fine with a disclaimer','Count as primary data']),
-    ('A paraphrased idea from a source requires:', ['Nothing — the words are yours','A citation — paraphrase transfers wording, not ownership','Quotation marks','Italics']),
-    ('The invented citation poisoned the document because:', ['The number was wrong','One caught fabrication forces re-verification of everything — the credibility ledger goes into receivership','APA format was violated','The source was too old']),
-    ('Technical content for mixed readers should be:', ['Written at the expert level throughout','Layered by altitude: jargon-free summary, defined-terms body, full-fidelity appendix','Simplified everywhere','Moved entirely to appendices']),
-    ('Tables of contents should be:', ['Typed carefully','Generated from heading styles — typed TOCs drift','Omitted under 30 pages','Placed after the summary']),
-    ('“Basically true” failed on appeal because:', ['The number was actually false','Integrity regimes protect process — a forgiven fabrication teaches gambling','The team missed the deadline','Appeals never succeed']),
-], ['b','b','b','b','b','b','b','b','b','b','b','b','b','b'])
+    ('The executive summary is written:',
+     ['Last — you cannot summarize what does not exist', 'First, as an outline',
+      'By the most junior team member', 'Only for reports over 50 pages']),
+    ('“This report examines X, reviews the literature, and offers recommendations” is:',
+     ['A strong summary', 'Required by APA',
+      'The furniture failure — sections summarized instead of the case', 'A transmittal letter']),
+    ('Conclusions and recommendations are separated because:',
+     ['Templates require it', 'Readers can accept your interpretation while rejecting your commitment — the graceful fallback',
+      'Conclusions are optional', 'Recommendations need citations']),
+    ('In a solicited proposal, the requester’s structure is:',
+     ['A suggestion', 'Only for government RFPs',
+      'Negotiable after submission', 'Absolute — evaluators score with checklists built on it']),
+    ('A compliance matrix maps:',
+     ['Every requirement to where it is addressed and the page number', 'Costs to benefits',
+      'Team members to sections', 'Risks to mitigations']),
+    ('The proposal section that most signals real project experience is:',
+     ['The cover letter', 'The staffing bios',
+      'Evaluation and risks — named unprompted', 'The table of contents']),
+    ('The 24-page proposal against a 20-page limit was:',
+     ['Scored on its merits', 'Marked non-compliant and scored zero — limits are cliffs',
+      'Given partial credit', 'Returned for revision']),
+    ('A budget line inviting a raised eyebrow should be:',
+     ['Deleted', 'Rounded up',
+      'Moved to the appendix', 'Justified where it stands']),
+    ('On the credibility ladder, AI output and unsourced web claims:',
+     ['Never bear load — trace to a real source or drop the claim', 'Rank above vendor material',
+      'Are fine with a disclaimer', 'Count as primary data']),
+    ('A paraphrased idea from a source requires:',
+     ['Nothing — the words are yours', 'Quotation marks',
+      'A citation — paraphrase transfers wording, not ownership', 'Italics']),
+    ('The invented citation poisoned the document because:',
+     ['The number was wrong', 'One caught fabrication forces re-verification of everything — the credibility ledger goes into receivership',
+      'APA format was violated', 'The source was too old']),
+    ('Technical content for mixed readers should be:',
+     ['Written at the expert level throughout', 'Moved entirely to appendices',
+      'Simplified everywhere', 'Layered by altitude: jargon-free summary, defined-terms body, full-fidelity appendix']),
+    ('Tables of contents should be:',
+     ['Generated from heading styles — typed TOCs drift', 'Typed carefully',
+      'Omitted under 30 pages', 'Placed after the summary']),
+    ('“Basically true” failed on appeal because:',
+     ['The number was actually false', 'The team missed the deadline',
+      'Integrity regimes protect process — a forgiven fabrication teaches gambling', 'Appeals never succeed']),
+], ['a', 'c', 'b', 'd', 'a', 'c', 'b', 'd', 'a', 'c', 'b', 'd', 'a', 'c'])
 
 h1(doc, 'Discussion questions')
 numbered(doc, [
@@ -595,7 +623,7 @@ numbered(doc, [
 
 h1(doc, 'A closing word: the documents that outlive their meetings')
 para(doc, 'Everything else in this course is conversation; this chapter is architecture. The '
-    'formal report you write for the Berry Dunn study — like the proposals and studies you will '
+    'formal report you write for your capstone study — like the proposals and studies you will '
     'write for employers — will be read by people who never attended a single meeting about it, '
     'years after everyone who did has changed jobs. That is the genre’s burden and its gift: '
     'the document must carry everything, and in exchange it carries YOU — your name on the '

@@ -113,8 +113,8 @@ para(doc, 'Fourteen requirements in a paragraph is a memory test; three headed l
 
 h1(doc, 'Drafting: permission to write badly, briefly')
 para(doc, 'With plan and outline in hand, draft fast and forgive yourself. The draft’s only job is to '
-    'exist — judging while generating stalls both (the phase separation from Figure 1 of the '
-    'chapter’s process). Practical drafting habits: write the easy section first, not necessarily the '
+    'exist — judging while generating stalls both, which is why drafting and revising stay separate '
+    'jobs, done in separate passes. Practical drafting habits: write the easy section first, not necessarily the '
     'opening — momentum transfers; keep the outline visible and let topic sentences come straight '
     'from it; when a wording fight breaks out, type the clumsy version, mark it [FIX], and keep '
     'moving; and never stop at the end of a section — park mid-thought so re-entry is easy tomorrow. '
@@ -190,7 +190,7 @@ para(doc, 'The be-verb audit: circle every is/are/was/were. Each is a junction w
     'may be hiding: “The new policy is a source of confusion for staff” → “The new policy confuses '
     'staff.” Not every be-verb deserves eviction — “the deadline is Friday” is perfect — but a '
     'paragraph running four be-verbs deep has parked its engines.', bold_lead='Audit one.')
-para(doc, 'The nominalization audit, refined: Chapter 3 taught unfreezing; here is the taxonomy. '
+para(doc, 'The nominalization audit, refined: the section above taught unfreezing; here is the taxonomy. '
     'Guilty nominalizations bury the action of THIS sentence (“made a decision” → “decided”). '
     'Innocent ones name established things: “the decision” as a known object under discussion '
     '(“the decision reached Legal on Tuesday”) is a noun doing honest noun work. The test: is the '
@@ -212,7 +212,7 @@ para(doc, 'Sentence-length variety has a document-level twin: paragraph rhythm. 
     'move in the kit.')
 para(doc, 'Used once per document, it lands like a gavel.')
 para(doc, 'Used constantly, it is confetti — and its power dies with inflation (the same economics '
-    'as Chapter 3’s emphasis toolbox). Deploy it for the verdict, the turn, or the single fact '
+    'covered in the emphasis toolbox later in this chapter). Deploy it for the verdict, the turn, or the single fact '
     'everything else serves. One more document-scale habit: let white space do structural work — '
     'the gap between sections is a breath the reader needs, not wasted paper. Dense pages read as '
     'hard even when the sentences are easy; layout is part of drafting, not decoration after it.')

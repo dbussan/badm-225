@@ -187,7 +187,8 @@ para(doc, 'Every workplace message has a second audience Chapter 2 didn’t name
 h1(doc, 'Research corner: the cost of the ping')
 para(doc, 'The always-on workplace has a measured cost. Interaction workers already spent over a '
     'quarter of the workweek inside email a decade ago (Chui et al., 2012), and psychologists '
-    'studying conversation argue that continuous partial attention — the phone on the table, the '
+    'studying conversation argue that continuous partial attention (a term coined by researcher '
+    'Linda Stone) — the phone on the table, the '
     'chat window blinking — degrades even the interactions we stay in (Turkle, 2015). For '
     'communicators the implication is double. As a sender: every message you emit spends someone '
     'else’s focus, so batch the small stuff and make each message complete enough to be answered '
@@ -586,7 +587,7 @@ keyterms(doc, [
     ('Thread hygiene', 'reply-all discipline, new-topic-new-thread, To=act / CC=know, and the BCC exit ramp.'),
     ('Response-time norms', 'the customary reply windows each channel and audience expects (Figure 5).'),
     ('Permanence gradient', 'the spectrum from archived email to “disappearing” messages — all of it one screenshot from public.'),
-    ('Continuous partial attention', 'the divided state produced by always-on channels (Turkle, 2015).'),
+    ('Continuous partial attention', 'the divided state produced by always-on channels (term coined by Linda Stone; effects discussed in Turkle, 2015).'),
     ('Triage', 'processing messages in batches: act (<2 min), schedule, file, delete.'),
     ('Schedule-send', 'composing now, delivering at a respectful hour — boundary maintenance built into the tool.'),
     ('Professional presence', 'the curated public layer — profile, headline, activity — that interviews before you do.'),
@@ -617,7 +618,7 @@ quiz(doc, [
     ('A consequential decision reached in chat should be:', ['Left in chat — it’s logged','Confirmed by email — the channel of record','Texted to the manager','Screenshotted']),
     ('Mass announcements avoid reply-all storms primarily through:', ['Polite requests in the message','BCC or no-reply distribution tools','Shorter messages','Sending after hours']),
     ('The permanence gradient teaches that workplace chat is:', ['Private between participants','Logged, exportable, and discoverable','Deleted nightly','Legally protected venting']),
-    ('“Continuous partial attention” (Turkle, 2015) refers to:', ['Multitasking productivity','The divided state produced by always-on channels','A meeting technique','An email filter']),
+    ('“Continuous partial attention” (a term coined by Linda Stone) refers to:', ['Multitasking productivity','The divided state produced by always-on channels','A meeting technique','An email filter']),
     ('The professional response to external client email is:', ['Reply within minutes always','Acknowledge the same business day, even if the full answer comes later','Reply within a week','No norm exists']),
     ('A senior employee messaging at 9 p.m. should:', ['Expect immediate replies','Schedule-send for morning or mark it no-response-needed','Use all caps for urgency','Call instead']),
     ('The safe channel for venting workplace frustration is:', ['A private DM','A group chat of allies','Voice, off platform, outside the org chart','A disappearing-message app']),
@@ -640,6 +641,7 @@ references(doc, [
     'Chui, M., Manyika, J., Bughin, J., Dobbs, R., Roxburgh, C., Sarrazin, H., Sands, G., & Westergren, M. (2012). The social economy: Unlocking value and productivity through social technologies. McKinsey Global Institute.',
     'Nielsen, J. (2006). F-shaped pattern for reading web content. Nielsen Norman Group. https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/',
     'Radicati Group. (2024). Email statistics report, 2024–2028. The Radicati Group, Inc. https://www.radicati.com/',
+    'Stone, L. (1998). Continuous partial attention. https://lindastone.net/qa/continuous-partial-attention/',
     'Turkle, S. (2015). Reclaiming conversation: The power of talk in a digital age. Penguin Press.',
 ])
 

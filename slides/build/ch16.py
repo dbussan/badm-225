@@ -110,7 +110,7 @@ notes(s, "Framing Carnegie as pre-discovered audience analysis unifies the cours
 
 s = icon_rows_slide(prs, "The Carnegie core, translated", [
     ("🚫", "Don't criticize, condemn, or complain", "Criticism triggers defense, not change (Chapter 7's psychology) — diagnose systems, correct behavior, skip the character verdicts."),
-    ("💎", "Give honest, sincere appreciation", "The five-S goodwill note (Chapter 6) IS this principle with a stamp — specific, true, and wanted more than almost anything."),
+    ("💎", "Give honest, sincere appreciation", "The five-quality goodwill note (Chapter 6) IS this principle with a stamp — specific, true, and wanted more than almost anything."),
     ("🎯", "Arouse an eager want", "Frame every ask in THEIR interests — Chapter 8's entire persuasion engine, stated in 1936."),
     ("😊", "Become genuinely interested in people", "Six weeks of real interest in others outperforms two years of trying to be interesting — in networking (Chapter 13), sales, and teams."),
 ], D, nxt(), kicker="Attributed to Dale Carnegie, How to Win Friends and Influence People (1936) — restated for the inbox era.")
@@ -150,7 +150,7 @@ s = bullets_slide(prs, "'You're wrong' — the sentence that never works", [
     ("Correct with questions and evidence:", "'how does that square with the March numbers?' lets the facts do the confronting while you stay the colleague."),
     ("When you must contradict on the record:", "contradict the CLAIM, cite the source, skip the victory lap — 'the export shows 4%, not 14%' needs no editorial (Chapter 9)."),
 ], D, nxt())
-notes(s, "The 'I may be wrong' opener is Carnegie verbatim and still the best de-escalating preface in professional life. The on-the-record exception keeps this honest — some corrections must land publicly.")
+notes(s, "The 'I may be wrong' opener is a paraphrase of Carnegie's advice and still the best de-escalating preface in professional life. The on-the-record exception keeps this honest — some corrections must land publicly.")
 
 s = bullets_slide(prs, "Admit your errors fast and emphatically", [
     ("Beat the accusation to the punch:", "'before anyone checks — the Q2 figure was mine and it was wrong' converts a prosecution into a footnote (Chapter 7's apology anatomy)."),
@@ -161,7 +161,7 @@ s = bullets_slide(prs, "Admit your errors fast and emphatically", [
 notes(s, "Fast-emphatic error admission is where Carnegie, the MUM effect, and apology anatomy all converge — three chapters, one behavior.")
 
 s = bullets_slide(prs, "Begin friendly, get to yes early, let them talk", [
-    ("The friendly opening is load-bearing:", "a drop of honey before the business (Carnegie's phrase) is the buffer (Chapter 7) applied to every hard conversation, not just bad news."),
+    ("The friendly opening is load-bearing:", "a drop of honey before the business (the Lincoln line Carnegie loved to quote) is the buffer (Chapter 7) applied to every hard conversation, not just bad news."),
     ("Engineer the early yes:", "open on what you agree about — 'we both need this shipped by Q4' — and the psychology of consistency (Chapter 8) starts working FOR the conversation."),
     ("Let them talk themselves out:", "uninterrupted airing IS the concession most people actually want — and their full case tells you exactly which objection is real (Chapter 8's inventory, for free)."),
     ("Then respond to what was said,", "not what you rehearsed — the listening chapter (1), cashed in at its highest-value moment."),

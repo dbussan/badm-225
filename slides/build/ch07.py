@@ -101,7 +101,7 @@ s = stat_slide(prs, "Bad news travels slowest when it matters most", "MUM",
      ("The formula:", "own it → cause in one line → recovery plan with a date → the ask."),
      ("The career math:", "leaders trust big things to the people who told the truth about small things, early, on purpose."),
     ], D, nxt())
-notes(s, "Fifty-five years of replication. Chapter 1's upward filter, explained.")
+notes(s, "More than fifty years of replication. Chapter 1's upward filter, explained.")
 
 s = bullets_slide(prs, "Channel and timing for consequential news", [
     ("Rich first:", "conversation or call — empathy has bandwidth, questions get absorbed, dignity stays private."),

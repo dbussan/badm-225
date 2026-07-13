@@ -96,12 +96,12 @@ h1(doc, 'Delivering bad news upward and early: the MUM effect')
 figure(doc, os.path.join(FIG, 'ch7_mum.png'),
     'Figure 6. The MUM effect: bad news travels slowest exactly when it matters most (Rosen & Tesser, 1970).',
     'Downward curve showing how a small fixable problem, delayed by reluctance to report — next week, after the demo — grows until it surfaces itself, large and public. Labeled the MUM effect after Rosen and Tesser 1970.')
-para(doc, 'Fifty years ago, psychologists documented what every workplace confirms: people are '
+para(doc, 'More than fifty years ago, psychologists documented what every workplace confirms: people are '
     'reluctant to transmit bad news — they delay it, soften it, or route it to someone else, even '
     'when they bear no blame for the news itself (Rosen & Tesser, 1970). The MUM effect is why your '
     'manager hears about problems six weeks late and why Chapter 1’s upward filter exists. Beating '
     'it in your own career is a competitive advantage with a simple protocol: report the problem '
-    'while it is small, pair it with a plan (Chapter 16’s formula — own it, cause in one line, '
+    'while it is small, pair it with a plan (own it, cause in one line, '
     'recovery plan, ask), and calibrate honestly — “yellow, trending red” beats both silence and '
     'panic. The professionals leaders trust with big things are the ones who told the truth about '
     'small things, early, on purpose.')
@@ -129,8 +129,8 @@ para(doc, 'The indirect pattern is constant; its execution bends by relationship
     'reason must be real and checkable (they will see your calendar), the pivot should share the '
     'load you cannot carry (a name, a brief, an offer to onboard your replacement), and the '
     'refusal must arrive fast — a slow no steals the time they needed to find someone else, which '
-    'converts your scheduling problem into their crisis. Refusing upward is the delicate art '
-    'Chapter 7’s FAQ opened: almost never a flat no, almost always a constraint surface — “I can '
+    'converts your scheduling problem into their crisis. Refusing upward is a delicate art: '
+    'almost never a flat no, almost always a constraint surface — “I can '
     'deliver A by Friday or B by Friday; which should lead?” hands the trade-off to its owner '
     'without refusing anything, and “yes, and here’s what it displaces” is a yes that carries its '
     'own invoice. Refusing friends-at-work adds one hazard: the relationship tempts you to skip '
@@ -312,6 +312,13 @@ para(doc, 'A specialized genre sits at the intersection of this chapter and HR r
     'always): the conversation happens before the memo arrives; a written warning that IS the '
     'first notice converts a performance process into an ambush, and ambushes teach organizations '
     'nothing except fear.')
+para(doc, 'The behavioral-specificity habit above has a name worth learning: SBI — Situation, '
+    'Behavior, Impact. State the situation concretely (“in Tuesday’s client call”), the observed '
+    'behavior without adjectives (“the pricing slide had last quarter’s numbers”), and the impact '
+    'it had (“the client caught it, and we spent ten minutes rebuilding credibility”). SBI is what '
+    'converts feedback from a character verdict into a checkable, fixable fact pattern — the same '
+    'discipline this chapter’s documentation genre already runs, given a label you can carry into '
+    'any feedback conversation, not just the written ones.', bold_lead='SBI, named.')
 
 h1(doc, 'Deep dive: receiving bad news like a professional')
 para(doc, 'You will receive every message this chapter teaches, and the receiving seat has its '
@@ -574,21 +581,49 @@ numbered(doc, [
 ])
 
 quiz(doc, [
-    ('The indirect pattern exists because:', ['Bad news should be hidden','Reasons delivered before the no reach a mind not yet defending itself','It is more formal','Length softens everything']),
-    ('A buffer must be:', ['Optimistic','True, relevant, and brief — promising nothing','At least a paragraph','An apology']),
-    ('“Great news about your application process!” before a rejection is:', ['A strong buffer','A false-hope buffer — disappointment converted to betrayal','Required courtesy','A forward pivot']),
-    ('The reasons section works best when it:', ['Cites the policy manual and stops','States the real constraint in checkable facts','Blames the committee','Apologizes repeatedly']),
-    ('The news sentence should be:', ['Repeated for emphasis','Findable, unambiguous, said once','Implied rather than stated','In the postscript']),
-    ('“It may prove difficult at this juncture to accommodate…” fails because:', ['Too short','The reader cannot even find the no — and must seek their rejection twice','Too direct','Wrong salutation']),
-    ('A forward pivot is:', ['A second apology','The concrete alternative, partial yes, path back, or referral','A subject line','A buffer']),
-    ('An apology that says “if you were offended”:', ['Shows sensitivity','Relocates the offense into the reader’s feelings instead of owning the act','Is legally safer','Meets Lazare’s anatomy']),
-    ('The sentence that repairs trust in an apology is:', ['The remorse sentence','The prevention sentence — what stops a repeat','The greeting','The third apology']),
-    ('The MUM effect (Rosen & Tesser, 1970) describes:', ['Quiet offices','Reluctance to transmit bad news, producing delay and distortion','A meeting format','Email overload']),
-    ('Beating the MUM effect in your career means:', ['Never reporting problems','Reporting problems small and early, paired with a plan','Waiting for certainty','Routing news through colleagues']),
-    ('Consequential personal bad news should be delivered:', ['Email only, for the record','Rich channel first, written record the same day','On Fridays at 4:55','After the holidays']),
-    ('In the tuition case, “future requests should be submitted with closer attention…” converted the denial into:', ['A pivot','A reprimand — the relationship books the loss','A buffer','A partial yes']),
-    ('The slipping-launch case shows that client trust was staked on:', ['The outcome never worsening','The reporting — which held even as the news worsened','The contract terms','The account lead’s optimism']),
-], ['b','b','b','b','b','b','b','b','b','b','b','b','b','b'])
+    ('The indirect pattern exists because:',
+     ['Bad news should be hidden', 'Reasons delivered before the no reach a mind not yet defending itself',
+      'It is more formal', 'Length softens everything']),
+    ('A buffer must be:',
+     ['Optimistic', 'An apology',
+      'At least a paragraph', 'True, relevant, and brief — promising nothing']),
+    ('“Great news about your application process!” before a rejection is:',
+     ['A false-hope buffer — disappointment converted to betrayal', 'A strong buffer',
+      'Required courtesy', 'A forward pivot']),
+    ('The reasons section works best when it:',
+     ['Cites the policy manual and stops', 'Blames the committee',
+      'States the real constraint in checkable facts', 'Apologizes repeatedly']),
+    ('The news sentence should be:',
+     ['Repeated for emphasis', 'Findable, unambiguous, said once',
+      'Implied rather than stated', 'In the postscript']),
+    ('“It may prove difficult at this juncture to accommodate…” fails because:',
+     ['Too short', 'Wrong salutation',
+      'Too direct', 'The reader cannot even find the no — and must seek their rejection twice']),
+    ('A forward pivot is:',
+     ['The concrete alternative, partial yes, path back, or referral', 'A second apology',
+      'A subject line', 'A buffer']),
+    ('An apology that says “if you were offended”:',
+     ['Shows sensitivity', 'Is legally safer',
+      'Relocates the offense into the reader’s feelings instead of owning the act', 'Meets Lazare’s anatomy']),
+    ('The sentence that repairs trust in an apology is:',
+     ['The remorse sentence', 'The prevention sentence — what stops a repeat',
+      'The greeting', 'The third apology']),
+    ('The MUM effect (Rosen & Tesser, 1970) describes:',
+     ['Quiet offices', 'Email overload',
+      'A meeting format', 'Reluctance to transmit bad news, producing delay and distortion']),
+    ('Beating the MUM effect in your career means:',
+     ['Reporting problems small and early, paired with a plan', 'Never reporting problems',
+      'Waiting for certainty', 'Routing news through colleagues']),
+    ('Consequential personal bad news should be delivered:',
+     ['Email only, for the record', 'On Fridays at 4:55',
+      'Rich channel first, written record the same day', 'After the holidays']),
+    ('In the tuition case, “future requests should be submitted with closer attention…” converted the denial into:',
+     ['A pivot', 'A reprimand — the relationship books the loss',
+      'A buffer', 'A partial yes']),
+    ('The slipping-launch case shows that client trust was staked on:',
+     ['The outcome never worsening', 'The account lead’s optimism',
+      'The contract terms', 'The reporting — which held even as the news worsened']),
+], ['b', 'd', 'a', 'c', 'b', 'd', 'a', 'c', 'b', 'd', 'a', 'c', 'b', 'd'])
 
 h1(doc, 'Discussion questions')
 numbered(doc, [

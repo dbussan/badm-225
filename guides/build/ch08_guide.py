@@ -20,8 +20,8 @@ para(doc, 'A persuasive message asks a reader to spend something — money, time
     'follow. First, the reader’s interests are the only fuel available — Chapter 2’s you-view stops '
     'being good manners and becomes the entire engine. Second, ethics stay load-bearing: influence '
     'built on true claims and real overlap survives scrutiny and repeat encounters; anything else is '
-    'manipulation on a timer (the visibility test from Chapter 16 applies to every technique in this '
-    'chapter).')
+    'manipulation on a timer (the visibility test below applies to every technique in this '
+    'chapter, and Chapter 16 leans on it too).')
 
 h1(doc, 'The appeals: ethos, pathos, logos — balanced')
 figure(doc, os.path.join(FIG, 'ch8_appeals.png'),
@@ -55,8 +55,9 @@ h1(doc, 'The evidence layer: how desire is actually built')
 figure(doc, os.path.join(FIG, 'ch8_cialdini.png'),
     'Figure 3. Cialdini’s six levers — each ethical only when the underlying claim is true.',
     'Cialdini’s six influence principles: reciprocity (give first), consistency (small yeses grow), social proof (four of five regional labs already switched), liking (rapport as groundwork), authority (cite credentials, data, experts), scarcity (real deadlines and limits, never invented ones).')
-para(doc, 'Decades of experimental work identify recurring levers that move decisions (Cialdini, '
-    '2021), and each maps onto message craft. Reciprocity: the favor precedes the ask — the '
+para(doc, 'Decades of experimental work identify recurring levers that move decisions — six in '
+    'Cialdini’s original framework, with a seventh (unity) added in the 2021 expanded edition — '
+    'and each maps onto message craft. Reciprocity: the favor precedes the ask — the '
     'analysis you attach free is why the meeting request lands (Chapter 6’s goodwill capital, '
     'cashing a check). Consistency: people honor their own prior commitments, which is why pilots '
     'precede rollouts and why the commitment ladder (below) works. Social proof: “four of the five '
@@ -381,21 +382,49 @@ numbered(doc, [
 ])
 
 quiz(doc, [
-    ('The defining condition of a persuasive message is:', ['A hostile reader','A reader free to refuse','A large budget','An external audience']),
-    ('Aristotle’s three appeals are:', ['Attention, interest, desire','Ethos, pathos, logos','Hook, evidence, ask','Buffer, reasons, news']),
-    ('A pitch with brilliant logic that still died most likely lacked:', ['Length','Ethos — permission to be believed','Formatting','More features']),
-    ('The attention stage of AIDA belongs to:', ['The writer’s company','The reader — their problem, stake, or question','The product','The call to action']),
-    ('“We are pleased to introduce our innovative solutions…” fails as a hook because:', ['Too short','It is vendor-view — the reader owns no part of it','Too informal','It lacks scarcity']),
-    ('Two-sided arguments outperform one-sided ones with:', ['No audiences','Every audience not already convinced','Only hostile audiences','Only executives']),
-    ('The dilution effect means:', ['Long messages persuade more','Weak arguments average down strong ones — prune to your best','Repetition persuades','Evidence dilutes emotion']),
-    ('Durable agreement comes from the central route because:', ['It is faster','Scrutinized arguments survive later counterargument; cue-based agreement evaporates (Petty & Cacioppo, 1986)','It requires no evidence','Charm fades']),
-    ('The commitment ladder works through which lever?', ['Scarcity','Consistency — each small yes makes the next natural','Authority','Liking']),
-    ('“Four of the five regional labs have already switched” is:', ['Scarcity','Social proof — legitimate exactly because it is checkable','Reciprocity','A buffer']),
-    ('Manufactured scarcity is a mistake because:', ['Deadlines never persuade','Its discovery is certain and detonates ethos','It is illegal everywhere','It shortens messages']),
-    ('Cost in a proposal should be framed:', ['In a footnote','Against the cost of doing nothing — the honest comparison','After signature','Never']),
-    ('In the timesheet case, “week one is clumsy” bought:', ['Sympathy','The credibility spent on “never going back” — the two-sided move','Time','Nothing']),
-    ('The calibrated ask for a skeptical audience is:', ['Team-wide adoption now','The smallest real rung — with the two-sided case beside it','No ask at all','A mandate citation']),
-], ['b','b','b','b','b','b','b','b','b','b','b','b','b','b'])
+    ('The defining condition of a persuasive message is:',
+     ['A hostile reader', 'A large budget',
+      'A reader free to refuse', 'An external audience']),
+    ('Aristotle’s three appeals are:',
+     ['Ethos, pathos, logos', 'Attention, interest, desire',
+      'Hook, evidence, ask', 'Buffer, reasons, news']),
+    ('A pitch with brilliant logic that still died most likely lacked:',
+     ['Length', 'More features',
+      'Formatting', 'Ethos — permission to be believed']),
+    ('The attention stage of AIDA belongs to:',
+     ['The writer’s company', 'The reader — their problem, stake, or question',
+      'The product', 'The call to action']),
+    ('“We are pleased to introduce our innovative solutions…” fails as a hook because:',
+     ['Too short', 'Too informal',
+      'It is vendor-view — the reader owns no part of it', 'It lacks scarcity']),
+    ('Two-sided arguments outperform one-sided ones with:',
+     ['Every audience not already convinced', 'No audiences',
+      'Only hostile audiences', 'Only executives']),
+    ('The dilution effect means:',
+     ['Long messages persuade more', 'Evidence dilutes emotion',
+      'Repetition persuades', 'Weak arguments average down strong ones — prune to your best']),
+    ('Durable agreement comes from the central route because:',
+     ['It is faster', 'Scrutinized arguments survive later counterargument; cue-based agreement evaporates (Petty & Cacioppo, 1986)',
+      'It requires no evidence', 'Charm fades']),
+    ('The commitment ladder works through which lever?',
+     ['Scarcity', 'Authority',
+      'Consistency — each small yes makes the next natural', 'Liking']),
+    ('“Four of the five regional labs have already switched” is:',
+     ['Social proof — legitimate exactly because it is checkable', 'Scarcity',
+      'Reciprocity', 'A buffer']),
+    ('Manufactured scarcity is a mistake because:',
+     ['Deadlines never persuade', 'It shortens messages',
+      'It is illegal everywhere', 'Its discovery is certain and detonates ethos']),
+    ('Cost in a proposal should be framed:',
+     ['In a footnote', 'Against the cost of doing nothing — the honest comparison',
+      'After signature', 'Never']),
+    ('In the timesheet case, “week one is clumsy” bought:',
+     ['Sympathy', 'Time',
+      'The credibility spent on “never going back” — the two-sided move', 'Nothing']),
+    ('The calibrated ask for a skeptical audience is:',
+     ['The smallest real rung — with the two-sided case beside it', 'Team-wide adoption now',
+      'No ask at all', 'A mandate citation']),
+], ['c', 'a', 'd', 'b', 'c', 'a', 'd', 'b', 'c', 'a', 'd', 'b', 'c', 'a'])
 
 h1(doc, 'Discussion questions')
 numbered(doc, [

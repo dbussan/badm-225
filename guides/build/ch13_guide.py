@@ -88,14 +88,14 @@ para(doc, 'The ask: “Could I take twenty minutes to ask how you got from QA te
     'everybody remembers.', bold_lead='The informational interview.')
 para(doc, 'The cold or lukewarm outreach message is Chapter 8’s cold email at personal scale, and it is '
     'five sentences long. The connection element goes first — “Dr. Reyes suggested I reach out,” '
-    '“fellow UND grad working in med devices” — because warmth is the subject line’s job. Then one '
+    '“fellow alum working in med devices” — because warmth is the subject line’s job. Then one '
     'sentence of who you are, one of why THEM specifically (“your path from bench to management is the '
     'one I’m trying to understand”), the small dated ask, and the friction remover: “any twenty minutes '
     'in the next two weeks — I’ll work around your calendar.” The life story stays home. This is a '
     'knock, not a memoir.', bold_lead='The outreach message.')
 para(doc, 'Networks run on Chapter 11’s trust-account arithmetic, which means the maintenance is '
     'give-first: send the article that fits their project, make the introduction they would want, '
-    'congratulate the promotion (five-S rules, Chapter 6) — all with no ask attached. Keep loose ties '
+    'congratulate the promotion (five-quality rules, Chapter 6) — all with no ask attached. Keep loose ties '
     'warm cheaply: a two-line check-in twice a year keeps a contact live, while five years of silence '
     'followed by a favor request reads as exactly what it is. The research backs the practice twice '
     'over: weak ties carry a disproportionate share of job information (Granovetter’s classic finding), '
@@ -509,7 +509,7 @@ para(doc, 'The creativity myth — “you have to stand out visually.” You hav
     'story you will ever hear stood out on evidence.', bold_lead='Myth two.')
 para(doc, 'The modesty myth — “the work speaks for itself.” The work is not in the room; the document '
     'is. Accurate, specific claims about real results are not bragging — they are the reader’s only '
-    'access to the work (Chapter 13’s whole thesis, and the two-candidates case in one line).',
+    'access to the work (this chapter’s whole thesis, and the two-candidates case in one line).',
     bold_lead='Myth three.')
 para(doc, 'The permission myth — “I’m not qualified until I meet every requirement.” Postings are wish '
     'lists (the funnel section); 60–70% with the load-bearing items covered is an application, not '
@@ -532,7 +532,7 @@ para(doc, 'Include it while current or strong and recent (above roughly 3.5, wit
 para(doc, 'Legally and practically, no — omit graduation years a decade or more back if age signaling '
     'concerns you, and current norms support dropping early-career entries entirely as they lose '
     'relevance. The chronology must stay honest for what it includes; it owes no completeness to '
-    ' decades that no longer predict your work.', bold_lead='Do I have to date everything?')
+    'decades that no longer predict your work.', bold_lead='Do I have to date everything?')
 para(doc, 'Use AI the way Chapter 15 teaches everywhere else: critique loops on YOUR drafts (“find the '
     'weakest three bullets”), keyword harvesting from postings, first-pass phrasings you then verify '
     'and re-voice. Never let it invent numbers, inflate titles, or write claims you cannot interview '

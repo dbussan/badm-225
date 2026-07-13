@@ -20,7 +20,7 @@ s = bullets_slide(prs, "What you'll be able to do after this chapter", [
     ("Reply", "answer-first, anticipate the next question, and end the thread."),
     ("File", "claims that recruit an advocate: record, facts, specific remedy, deadline, calm."),
     ("Grant", "claims the way that keeps customers: fix first, prevention sentence included."),
-    ("Send", "goodwill that passes the five-S test — the highest-return mail there is."),
+    ("Send", "goodwill that passes the five-quality test — the highest-return mail there is."),
 ], D, nxt())
 notes(s, "Objectives map to the Chapter 6 bank and the introductory-letter assignment.")
 
@@ -76,7 +76,7 @@ s = section_slide(prs, "03", "Goodwill",
     "The highest-return mail you will ever send.", D, nxt())
 notes(s, "Section 3.")
 
-s = icon_rows_slide(prs, "The five-S test", [
+s = icon_rows_slide(prs, "The five-quality test", [
     ("S", "Specific", "“Your triage of Saturday's outage saved the launch” — the named act proves you noticed."),
     ("S", "Sincere", "No agenda in the envelope. A thank-you that pivots to a favor was an invoice."),
     ("S", "Short", "Three sentences beat three paragraphs."),
@@ -97,7 +97,7 @@ s = stat_slide(prs, "Goodwill capital compounds", "5 min",
     "A specific thank-you costs five minutes and deposits for years: credit given publicly, favors before asks, references you never requested.",
     [("The research:", "habitual givers — generous WITH boundaries — end up overrepresented at the top of success distributions (Grant, 2013)."),
      ("The mechanism:", "reciprocity, among the most robust findings in influence science (Cialdini, 2021)."),
-     ("The move:", "send one five-S note this week. Actually send it."),
+     ("The move:", "send one five-quality note this week. Actually send it."),
     ], D, nxt())
 notes(s, "Chapter 16's deposits-before-withdrawals, at everyday scale.")
 
@@ -206,7 +206,7 @@ s = bullets_slide(prs, "Praise travels up, credit travels down", [
     ("Praise in public, correct in private.", "The goodwill note's public cousin: recognition in the channel, the meeting, the newsletter."),
     ("CC the manager — as a gift.", "'CCing Dr. Reyes so she knows what your triage saved us' turns a thank-you into a career artifact."),
     ("Pass credit downward relentlessly.", "'The analysis is Maya's' costs nothing and is remembered forever — hoarded credit is remembered too."),
-    ("Written praise is permanent praise.", "The five-S note that reaches a personnel file outlives every hallway compliment."),
+    ("Written praise is permanent praise.", "The five-quality note that reaches a personnel file outlives every hallway compliment."),
 ], D, nxt())
 notes(s, "The routing rules of goodwill: direction and visibility multiply the same five minutes of writing. Ties to Grant's giver research from the stat slide.")
 
@@ -223,7 +223,7 @@ s = takeaways_slide(prs, [
     "Answer in the first word; anticipate the next question; end the thread.",
     "Claims: record, facts, specific remedy, deadline — confidence recruits an advocate.",
     "Adjustments: grant first, explain without opera, include the prevention sentence.",
-    "Goodwill passes five-S; ink for milestones; never AI — the pause is the message.",
+    "Goodwill passes five-quality; ink for milestones; never AI — the pause is the message.",
     "Instructions: numbered, imperative, preconditions first, warnings before their steps, tested on a novice.",
 ], D, nxt(), site_note="Practice now: course site → Chapter 6 → Practice, then the graded homework before the weekly deadline.")
 notes(s, "Recap.")
@@ -246,7 +246,7 @@ s = bullets_slide(prs, "Your next steps", [
     ("Practice:", "Course site → Chapter 6 → Practice questions (instant feedback, unlimited tries)."),
     ("Graded:", "Complete the Chapter 6 homework on the site; paste your completion code into the Blackboard assignment before the weekly deadline."),
     ("Write:", "Your introductory letter (this unit's assignment) — Figure 1's request pattern in letter dress."),
-    ("Send:", "One real five-S goodwill note this week. Note what comes back."),
+    ("Send:", "One real five-quality goodwill note this week. Note what comes back."),
     ("Coming next:", "Chapter 7 — negative messages: when the answer is no and the reader's day is about to get worse."),
 ], D, nxt())
 notes(s, "Delivery-neutral closing.")

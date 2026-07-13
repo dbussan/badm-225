@@ -38,7 +38,7 @@ para(doc, 'Fresh from drafting, you cannot proofread your own work — not from 
     'because your brain already knows what the text is supposed to say and helpfully shows you that '
     'instead of what is on the page. Researchers who study typos describe exactly this: writers work '
     'from the meaning they intended, so the brain fills gaps and glides over transpositions that leap '
-    'out at any stranger (Stafford, quoted in Dean, 2014). Distance is the antidote. Overnight is '
+    'out at any stranger (Stafford, quoted in Stockton, 2014). Distance is the antidote. Overnight is '
     'ideal for anything substantial; even twenty minutes and a coffee resets the eyes meaningfully. '
     'Plan the cooling period into deadlines: a document due Friday is drafted Wednesday for exactly '
     'this reason.')
@@ -222,7 +222,7 @@ para(doc, 'The blindness is not sloppiness — it is expertise misfiring. Writin
     'the brain — an aggressive prediction machine — displays the intended sentence rather than the '
     'typed one. Psychologist Tom Stafford, who has studied the phenomenon, notes that this is the same '
     'generalization that makes skilled reading fast: we extract meaning from surface features and skip '
-    'the details, which is wonderful until the details are wrong (Dean, 2014). Every effective '
+    'the details, which is wonderful until the details are wrong (Stockton, 2014). Every effective '
     'proofreading routine in Figure 7 is an attack on that prediction: aloud slows the eye to speech '
     'speed; unfamiliar fonts break the memory match; single-error sweeps replace reading with '
     'searching. You are not trying to read more carefully. You are trying to stop reading and start '
@@ -549,7 +549,7 @@ keyterms(doc, [
 h1(doc, 'Chapter summary')
 numbered(doc, [
     'Revision is a system of three passes at three altitudes — structure, sentences, proof — never one anxious reread.',
-    'Cool the draft: your brain shows you what you meant to write until distance resets it (Dean, 2014).',
+    'Cool the draft: your brain shows you what you meant to write until distance resets it (Stockton, 2014).',
     'Conciseness hunts six targets: lead-ins, there-is openers, redundant pairs, flabby phrases, hedges, and noun stacks — “omit needless words” (Strunk & White, 2000).',
     'Clarity climbs down the abstraction ladder until claims are checkable; concrete survives forwarding.',
     'Spellcheck cannot see real-word errors, homophones, names, or numbers — verify the high-stakes categories against sources.',
@@ -584,7 +584,7 @@ numbered(doc, [
 ])
 
 references(doc, [
-    'Dean, J. (2014, August 12). What’s up with that: Why it’s so hard to catch your own typos. Wired. https://www.wired.com/2014/08/wuwt-typos/',
+    'Stockton, N. (2014, August 12). What’s up with that: Why it’s so hard to catch your own typos. Wired. https://www.wired.com/2014/08/wuwt-typos/',
     'Flesch, R. (1949). The art of readable writing. Harper & Brothers.',
     'O’Connor v. Oakhurst Dairy, 851 F.3d 69 (1st Cir. 2017).',
     'Strunk, W., Jr., & White, E. B. (2000). The elements of style (4th ed.). Longman.',

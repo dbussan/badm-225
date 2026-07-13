@@ -289,7 +289,7 @@ para(doc, 'The most common way this chapter’s principles get skipped in practi
     'habit this chapter can leave you with: treat every AI-assisted draft as though it took as long to '
     'produce as it will take to verify, and schedule accordingly.')
 
-h1(doc, 'Frequently asked questions, continued')
+h1(doc, 'Frequently asked questions')
 para(doc, 'Rarely a full rewrite — usually the small tells this chapter has already named: the house '
     'style’s hedge-and-pad rhythm, an oddly even tone across topics that should carry different '
     'emotional weight, and transitions that connect ideas a little too smoothly. None of these prove '
@@ -350,7 +350,7 @@ para(doc, 'Two responses matter for you specifically, whichever side of that tra
 h1(doc, 'If you have to write your team’s AI policy')
 para(doc, 'Sooner than expected, someone in your career will be asked to draft the AI usage guidelines '
     'for a team, and the temptation is to either ban everything (unenforceable and self-defeating) or '
-    'say nothing (the disclosure vacuum that produced the consulting-analyst case above). A workable '
+    'say nothing (the disclosure vacuum that produced the consulting-analyst case later in this chapter). A workable '
     'policy fits on one page and answers five questions plainly, in Chapter 11’s ground-rules style.')
 numbered(doc, [
     'Which tools are approved, and for what data? Name the enterprise-licensed tool and state '
@@ -643,7 +643,7 @@ para(doc, 'Retired by the appreciation portfolio: judgment, verification, briefi
     'autocomplete. The tools changed the floor. They did not touch the ceiling, and the ceiling is '
     'what careers are actually built on.', bold_lead='Myth: AI makes communication courses obsolete.')
 
-h1(doc, 'Frequently asked questions')
+h1(doc, 'Frequently asked questions, continued')
 para(doc, 'When the stakes are yours to own regardless: use it freely for drafting, critique, and '
     'research assistance, provided you verify and can defend every claim. Skip it — or disclose '
     'explicitly — when the assignment is specifically assessing your unaided skill, per your '

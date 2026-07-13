@@ -212,8 +212,8 @@ para(doc, 'It would be dishonest to close a capstone chapter without naming the 
     'research with no clear near-term application, care for people that produces no measurable '
     'retention benefit, art and culture pursued for reasons unrelated to any customer’s willingness '
     'to pay — sits partly or entirely outside this chapter’s vocabulary, and forcing every human '
-    'activity into stick language would itself be a kind of category error, the same error this '
-    'chapter warned against when discussing nonprofit mission and ethical limits.')
+    'activity into stick language would itself be a kind of category error — the same error this '
+    'chapter warns against later, when discussing nonprofit mission and ethical limits.')
 para(doc, 'The honest scope of the claim: within the domain of organizational resource allocation — '
     'which proposal gets funded, which initiative gets prioritized, which role gets the next '
     'headcount — this framework describes the actual mechanism with unusual clarity, and learning to '
@@ -453,7 +453,7 @@ para(doc, 'Retired by the value stick itself: cost and price sit in the MIDDLE o
     'entire WTP side of the equation to whatever the product happens to already deliver — durable '
     'advantage lives in the WTP and WTS ends, where competitors find it hardest to simply match a '
     'number.', bold_lead='Myth: strategy is fundamentally about being cheaper than competitors.')
-para(doc, 'Retired by the nonprofit section above: WTP and WTS apply to donor gifts, volunteer time, '
+para(doc, 'Retired by the nonprofit section later in this chapter: WTP and WTS apply to donor gifts, volunteer time, '
     'and mission-driven retention exactly as they apply to customer purchases and employee '
     'compensation. The vocabulary changes; the arithmetic of where value comes from does not.',
     bold_lead='Myth: value-based strategy only applies to for-profit companies.')
@@ -461,7 +461,7 @@ para(doc, 'Retired by the trade-offs section: a strategy that never requires giv
     'never a strategy, only a wish list. The discomfort of explicitly declining a market segment or a '
     'feature request is not a sign the strategy is wrong — it is frequently the sign that a real '
     'choice was actually made.', bold_lead='Myth: a good strategy should please every stakeholder.')
-para(doc, 'Retired by the ethics section immediately above: the durable, positive-sum version of '
+para(doc, 'Retired by the ethics section later in this chapter: the durable, positive-sum version of '
     'every lever makes the other party genuinely better off. A lever pulled through squeeze rather '
     'than genuine improvement fails Chapter 16’s ethical test and typically proves unstable the '
     'moment alternatives appear.', bold_lead='Myth: lowering WTS just means paying people less.')
@@ -495,7 +495,7 @@ para(doc, 'A mid-size project-management software company faced a strategic cros
     'reasonable, each collectively pulling the product toward exactly the straddle this chapter warns '
     'against.')
 para(doc, 'The founding team ran a stick analysis on their actual customer base rather than their '
-    'loudest feature requests (the vocal-minority warning from the measurement section above, applied '
+    'loudest feature requests (the vocal-minority warning developed in the measurement section later in this chapter, applied '
     'directly): their highest-WTP, highest-retention customers were small teams who valued speed of '
     'setup and simplicity above all else, and their WTP for the product dropped, not rose, as '
     'complexity increased. The enterprise features, largely requested by a small number of prospective '

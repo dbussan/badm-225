@@ -129,16 +129,16 @@ para(doc, 'Most careers run substantially on influence rather than authority —
 figure(doc, os.path.join(FIG, 'ch16_carnegie.png'),
     'Figure 3. The Carnegie core — four foundations, attributed to How to Win Friends and Influence People (1936).',
     'Four rows: don’t criticize, condemn, or complain (diagnose systems, correct behavior); give honest sincere '
-    'appreciation (the five-S note IS this principle); arouse an eager want (frame every ask in their interests); and '
+    'appreciation (the five-quality note IS this principle); arouse an eager want (frame every ask in their interests); and '
     'become genuinely interested in people (outperforms trying to be interesting).')
 para(doc, 'Criticism triggers defense rather than change — the psychology Chapter 7 already covered '
     'in detail — so the practical move is diagnosing systems and correcting behavior rather than '
-    'issuing character verdicts. The five-S goodwill note from Chapter 6 IS honest appreciation, '
+    'issuing character verdicts. The five-quality goodwill note from Chapter 6 IS honest appreciation, '
     'stamped and delivered; the principle was already in the course before this chapter named its '
     'source. Arousing an eager want is Chapter 8’s entire persuasion engine, stated eighty-plus years '
     'earlier: frame every ask in the other person’s interests, never in your own convenience. And '
-    'becoming genuinely interested in people — Carnegie’s claim that six weeks of real interest in '
-    'others outperforms two years spent trying to be interesting — shows up validated in networking '
+    'becoming genuinely interested in people — Carnegie’s claim that two months of real interest in '
+    'others wins more friends than two years spent trying to be interesting — shows up validated in networking '
     '(Chapter 13), sales, and team leadership alike.')
 para(doc, 'Three daily practices carry the foundation into ordinary weeks. A person’s name remains, in '
     'Carnegie’s phrase, the sweetest sound they know: spell it right (Chapter 4’s verification '
@@ -171,8 +171,8 @@ para(doc, 'Carnegie’s rule that the only way to win an argument is to avoid on
     'socially — spend it rarely, and it means something when spent.', bold_lead='You can’t win an argument.')
 para(doc, 'Direct contradiction — “you’re wrong” — locks the defense reflex from Chapter 7 every time; '
     'no one in recorded history has replied “good point, I’ll abandon my position.” Carnegie’s '
-    'alternative costs nothing and opens everything: “I may be wrong — I often am. Let’s look at the '
-    'data together.” Correct with questions and evidence — “how does that square with the March '
+    'alternative, paraphrased for the workplace, costs nothing and opens everything: “I may be wrong '
+    '— I often am. Let’s look at the data together.” Correct with questions and evidence — “how does that square with the March '
     'numbers?” — and let facts do the confronting while the correcting party stays a colleague rather '
     'than a prosecutor. When a correction genuinely must land on the record, contradict the claim, cite '
     'the source, and skip the victory lap: “the export shows 4%, not 14%” needs no editorial '
@@ -187,7 +187,7 @@ para(doc, 'Admitting an error fast and emphatically beats every alternative, inc
     'trust gets staked on how a person handles being wrong, precisely because everyone already knows '
     'they sometimes are.', bold_lead='Admit your errors fast.')
 para(doc, 'Three tactical moves round out the set. Begin friendly: a drop of honey before business, in '
-    'Carnegie’s phrase, is Chapter 7’s buffer applied to every hard conversation, not only bad-news '
+    'the Lincoln line Carnegie loved to quote, is Chapter 7’s buffer applied to every hard conversation, not only bad-news '
     'ones. Engineer the early yes: opening on genuine agreement — “we both need this shipped by Q4” — '
     'starts the psychology of consistency (Chapter 8) working in the conversation’s favor rather than '
     'against it. And let the other person talk first and fully: uninterrupted airing is frequently the '
@@ -308,7 +308,7 @@ bullets(doc, [
      'sincerity warning, failing to land because it was skipped rather than because the principle '
      'itself is unsound.'),
     ('The underlying interest genuinely conflicted.', 'Not every disagreement has a shared interest '
-     'waiting to be discovered underneath it (unlike the mediation case above, where one existed). '
+     'waiting to be discovered underneath it (unlike the mediation case later in this chapter, where one existed). '
      'Sometimes the interests are actually opposed, and no amount of eager-want framing manufactures '
      'alignment that is not there — in those cases, the honest move is naming the real conflict '
      'rather than continuing to search for false harmony.'),
@@ -334,7 +334,7 @@ para(doc, 'How to Win Friends and Influence People was written for a world of fa
 para(doc, 'What DOES need updating, and what this chapter has tried to supply throughout, is the '
     'application layer: how "become genuinely interested in people" operates across a Slack channel '
     'instead of a dinner conversation, how "give honest appreciation" survives translation into a '
-    'five-S email instead of a handwritten note, how "let the idea be theirs" functions when the idea '
+    'five-quality email instead of a handwritten note, how "let the idea be theirs" functions when the idea '
     'is co-developed across a shared document rather than a single meeting. The principles are '
     'Carnegie’s. The channels are this course’s. Both halves matter, and neither substitutes for the '
     'other — a leader fluent in Slack norms but indifferent to genuine interest in people will '
@@ -370,7 +370,7 @@ bullets(doc, [
      'in high-stakes ones.'),
     ('Reading others accurately', 'underlies both the crisis section (sensing when a team needs more '
      'reassurance versus more information) and the influence section (sensing what someone’s real '
-     'interest is, per the mediation case above). Chapter 1’s listening skills are the practical '
+     'interest is, per the mediation case later in this chapter). Chapter 1’s listening skills are the practical '
      'entry point — most emotional-intelligence failures are actually attention failures first.'),
     ('Regulating one’s own response', 'is the skill behind composure’s performability: the finding '
      'that calm can be produced deliberately even under genuine internal stress depends on a learnable '
@@ -451,7 +451,7 @@ bullets(doc, [
      'to substitute for that visibility entirely.'),
     ('One-on-one check-ins carry more weight, not less, during distributed crises.', 'A leader who '
      'makes time for individual video calls during a stressful stretch signals investment that a '
-     'group email cannot — the physical-presence principle from the nonverbal-leadership section, '
+     'group email cannot — the physical-presence principle from the nonverbal-leadership section later in this chapter, '
      'translated to the tools remote leadership actually has available.'),
 ])
 

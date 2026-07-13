@@ -149,7 +149,7 @@ bullets(doc, [
 ])
 para(doc, 'The deck you present and the document you send afterward are different artifacts, and one deck '
     'cannot do both jobs. The presentation deck is billboards — deliberately meaningless without you. The '
-    'leave-behind (Chapter 9’s slide-doc) carries sections, takeaway titles, and the full evidence, readable '
+    'leave-behind (the slide-doc) carries sections, takeaway titles, and the full evidence, readable '
     'alone by the absent, the forwarded-to, and the archive. Build both when stakes justify it, and announce '
     'the leave-behind in your first minute: “a full copy comes to you after this.” That one sentence buys '
     'back every eye that would otherwise spend your talk transcribing it.', bold_lead='The two artifacts.')
@@ -424,7 +424,7 @@ para(doc, 'Slide A gets the takeaway title “Support held steady through Q3 —
     'direct label. The claim, the evidence, the cause candidate — three seconds, readable from the back.',
     bold_lead='Pass two: rebuild as billboards.')
 para(doc, 'The eleven bullets, the staffing notes, and the full six-series data move to the leave-behind, '
-    'where they gain headings and takeaway titles of their own (Chapter 9’s slide-doc rules). The '
+    'where they gain headings and takeaway titles of their own (the slide-doc rules above). The '
     'presenter’s speaking notes absorb the connective tissue. Total content lost: zero. Total content '
     'findable: all of it, for the first time. The makeover took eleven minutes, and the Meridian fire — '
     'the thing the original slide had buried in bullet nine — became the meeting’s decision item, which '
@@ -554,7 +554,7 @@ para(doc, 'Sooner than you expect, someone will hand you a glass or a microphone
     'the meaning (what that detail says about the person or the moment), and the raise (“to Dana — who '
     'never once made a question feel small”). Thirty to sixty seconds, no biography, no inside jokes '
     'that exclude half the room, and absolutely no improvised roasting — the recognition moment runs on '
-    'Chapter 6’s five-S rules, spoken, and “specific” is what separates the toast people remember from '
+    'Chapter 6’s five-quality rules, spoken, and “specific” is what separates the toast people remember from '
     'the generic warmth they forget before the glasses land. Prepare it in the hallway if that is all '
     'the notice you get: one detail, one meaning, one raise. PREP’s gentler cousin.')
 
@@ -587,7 +587,7 @@ para(doc, 'The talk ends; the genre does not. Within the hour, the promised arti
     'leave-behind to the full list, the decision confirmation to the approvers, the “I’ll get you that '
     'number by Friday” items into your own tracker with dates (Chapter 11’s follow-through list — the '
     'place presentation reputations are actually finished). Within the day, the specific thank-yous: the '
-    'colleague who staged the demo, the sponsor who pre-wired the room (five-S rules, Chapter 6). And '
+    'colleague who staged the demo, the sponsor who pre-wired the room (five-quality rules, Chapter 6). And '
     'within the week, the self-review: watch the recording once if one exists, note the two joints that '
     'stuck, and file the improvements where your NEXT talk’s checklist will find them. Presenters improve '
     'between talks or not at all — the room only ever sees the result.')
@@ -698,33 +698,33 @@ quiz(doc, [
      ['Choosing a slide template', 'Writing the one repeatable takeaway sentence',
       'Drafting the opening story', 'Booking the room']),
     ('Slides come last in the build order because:',
-     ['Slide software is unreliable', 'The slide tool imposes template-shaped structure on talks born inside it',
+     ['The slide tool imposes template-shaped structure on talks born inside it', 'Slide software is unreliable',
       'Slides are optional in business talks', 'Designers should build them instead']),
     ('A talk should end with:',
-     ['Q&A, so the audience leaves engaged', 'The echo of the takeaway plus a concrete, dated ask — after questions',
-      '“Thank you” and contact information', 'A summary of every slide']),
+     ['Q&A, so the audience leaves engaged', 'A summary of every slide',
+      '“Thank you” and contact information', 'The echo of the takeaway plus a concrete, dated ask — after questions']),
     ('The billboard rule exists because:',
-     ['Projectors distort small text', 'Audiences read faster than speakers talk and cannot read and listen at once',
-      'Templates default to large fonts', 'Executives dislike detail']),
+     ['Projectors distort small text', 'Templates default to large fonts',
+      'Audiences read faster than speakers talk and cannot read and listen at once', 'Executives dislike detail']),
     ('“Pilot cut intake time 38%” beats “Pilot Results” as a slide title because:',
      ['It is shorter', 'It carries the claim — surviving both the skim and the room’s three-second read',
       'It includes a number, which templates require', 'It avoids the passive voice']),
     ('The rehearsal spec calls for cutting the talk to 90% of its slot because:',
-     ['Rehearsals always run fast', 'Q&A and reality eat the margin — the exactly-fitting talk runs over',
+     ['Q&A and reality eat the margin — the exactly-fitting talk runs over', 'Rehearsals always run fast',
       'Shorter talks need less evidence', 'Timers are unreliable']),
     ('When stumped in Q&A, the professional move is:',
-     ['A confident approximate answer', 'Acknowledging, committing to a dated follow-up, and delivering it',
-      'Deferring to a teammate immediately', 'Ruling the question out of scope']),
+     ['A confident approximate answer', 'Ruling the question out of scope',
+      'Deferring to a teammate immediately', 'Acknowledging, committing to a dated follow-up, and delivering it']),
     ('The hostile-question protocol caps direct exchanges at two because:',
-     ['Three exchanges exceed most time limits', 'Longer duels hijack the room from everyone who owns it',
-      'Hostile questioners tire quickly', 'Moderators require it']),
+     ['Three exchanges exceed most time limits', 'Hostile questioners tire quickly',
+      'Longer duels hijack the room from everyone who owns it', 'Moderators require it']),
     ('For recorded (async) presentations, the takeaway belongs in the first thirty seconds because:',
      ['Recording software trims openings', 'Viewers hold a skip bar — unearned patience does not exist asynchronously',
       'Async audiences are less intelligent', 'Titles cannot carry takeaways']),
     ('The demo case’s deepest lesson is that:',
-     ['Live demos should be abandoned', 'Audiences price the worst moment — and a rehearsed recovery can outsell a flawless run',
+     ['Audiences price the worst moment — and a rehearsed recovery can outsell a flawless run', 'Live demos should be abandoned',
       'Staging servers are unreliable', 'Backup recordings are legally required']),
-], ['b','b','b','b','b','b','b','b','b','b']),
+], ['b', 'a', 'd', 'c', 'b', 'a', 'd', 'c', 'b', 'a'])
 
 references(doc, [
     'Anderson, C. (2016). TED talks: The official TED guide to public speaking. Houghton Mifflin Harcourt.',

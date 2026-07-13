@@ -50,7 +50,7 @@ save(fig,'ch16_firsthour.png')
 fig, ax = plt.subplots(figsize=(8.6,3.8)); ax.set_xlim(0,10); ax.set_ylim(0,4.4); ax.axis('off')
 ax.text(5.0,4.1,'THE CARNEGIE CORE — attributed to How to Win Friends (1936)',ha='center',fontsize=11,color=GREEN,weight='bold')
 rows=[('DON’T CRITICIZE, CONDEMN, COMPLAIN','triggers defense, not change — diagnose systems, correct behavior',GREEN),
-      ('GIVE HONEST, SINCERE APPRECIATION','the five-S goodwill note IS this principle, stamped',MOSS),
+      ('GIVE HONEST, SINCERE APPRECIATION','the five-quality goodwill note IS this principle, stamped',MOSS),
       ('AROUSE AN EAGER WANT','frame every ask in THEIR interests',GREEN),
       ('BECOME GENUINELY INTERESTED IN PEOPLE','outperforms trying to be interesting, everywhere',MOSS)]
 y=3.4

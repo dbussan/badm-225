@@ -205,7 +205,7 @@ figure(doc, os.path.join(FIG, 'ch14_followup.png'),
 para(doc, 'The thank-you message is a working document, not a courtesy stamp. Within 24 hours, to each '
     'interviewer individually — pull the names from your panel notes; the identical CC’d blast undoes '
     'the gesture. Reference a specific moment from the conversation (“your point about the '
-    'supplier-audit backlog”), because specificity proves presence (the five-S rules, Chapter 6). And '
+    'supplier-audit backlog”), because specificity proves presence (the five-quality rules, Chapter 6). And '
     'let it do one useful thing: reinforce your strongest fit, or repair a stumble — “I gave a thin '
     'answer on LIMS; the fuller picture is two sentences: I ran its closest competitor for two years, '
     'and the migration playbook I wrote is in my portfolio.” The repair function is the underused '

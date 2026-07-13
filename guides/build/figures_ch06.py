@@ -62,7 +62,7 @@ for j,(t,sub) in enumerate(items):
     y=3.3-j*0.62
     box(ax,0.5,y-0.15,2.3,0.5,t,fc=GREEN,fs=10)
     ax.text(3.05,y+0.1,sub,ha='left',va='center',fontsize=9.8,color=INK)
-ax.text(5.0,3.85,'Goodwill messages: the five S test',ha='center',fontsize=11.5,color=GREEN,weight='bold')
+ax.text(5.0,3.85,'Goodwill messages: the five-quality test',ha='center',fontsize=11.5,color=GREEN,weight='bold')
 save(fig,'ch6_5s.png')
 
 # 5 — claim (complaint) anatomy

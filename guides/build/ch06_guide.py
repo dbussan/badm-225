@@ -70,10 +70,10 @@ para(doc, 'When you are granting a claim, the news is good — so the message is
 
 h1(doc, 'Goodwill messages: the highest-return mail you will ever send')
 figure(doc, os.path.join(FIG, 'ch6_5s.png'),
-    'Figure 5. The five-S test for goodwill messages: specific, sincere, short, spontaneous, selfless.',
-    'Five S test for goodwill messages: specific (names the exact act and its effect), sincere (no flattery or smuggled agenda), short (five sentences beat five paragraphs), spontaneous (sent promptly, not at review season), selfless (about them, with no reply requested).')
+    'Figure 5. The five-quality test for goodwill messages: specific, sincere, short, spontaneous, selfless.',
+    'Five-quality test for goodwill messages: specific (names the exact act and its effect), sincere (no flattery or smuggled agenda), short (five sentences beat five paragraphs), spontaneous (sent promptly, not at review season), selfless (about them, with no reply requested).')
 para(doc, 'Thanks, congratulations, and sympathy are the messages nobody requires and everybody '
-    'remembers. The five-S test keeps them potent. Specific: “your triage of Saturday’s outage saved '
+    'remembers. The five-quality test keeps them potent. Specific: “your triage of Saturday’s outage saved '
     'the launch” — the named act is the proof you actually noticed (the appreciation-versus-flattery '
     'line from Chapter 16). Sincere: no agenda in the envelope; a thank-you that pivots to a favor '
     'was an invoice all along. Short, spontaneous, selfless complete the set. Two notes on the hard '
@@ -175,7 +175,7 @@ para(doc, 'Two connected genres every professional faces from both sides. Asking
     'project where we cut turnaround 40%”). You are not flattering yourself; you are doing their '
     'prewriting, and every recommender alive is grateful for it.')
 para(doc, 'Writing one reverses the seat. Say yes only when you can write specifics — the '
-    'five-S logic applies: a recommendation made of adjectives (“hardworking, reliable, a '
+    'five-quality logic applies: a recommendation made of adjectives (“hardworking, reliable, a '
     'pleasure”) is read by every experienced recipient as polite noise, while one concrete story '
     '(“when the calibration drift appeared mid-audit, she caught it, retraced two weeks of logs, '
     'and presented the correction to the assessor herself”) outweighs a page of praise. Structure: '
@@ -316,7 +316,7 @@ para(doc, 'One 68-word sentence contains five actions, two branches, and a warni
     'when skipped.')
 
 h1(doc, 'Deep dive: goodwill across the org chart')
-para(doc, 'The five-S test is universal; the deployment is positional. Thanks upward is the '
+para(doc, 'The five-quality test is universal; the deployment is positional. Thanks upward is the '
     'trickiest register — it must never scan as flattery, which means the specific-and-true bar '
     'rises: thank managers for particular decisions and their concrete effects (“the deadline '
     'extension let us re-run the failed batch — the client got clean data”), never for qualities '
@@ -331,8 +331,8 @@ para(doc, 'The five-S test is universal; the deployment is positional. Thanks up
     'the coordinator, the technician, the person whose name is on no slide. Consistent, specific '
     'gratitude to people who can do nothing for your career is, besides being decent, the single '
     'most-watched behavior in any workplace: colleagues who see it extend you trust on credit. '
-    'The receptionist test from your instructor’s book applies to email exactly as it applies to '
-    'lobbies.')
+    'The same test that applies to how you treat a receptionist in a lobby applies to email just as '
+    'directly: how you treat people who can do nothing for you is the tell.')
 
 h1(doc, 'Deep dive: form responses that don’t feel like forms')
 para(doc, 'Recurring requests deserve template responses — and templates deserve engineering, '
@@ -346,7 +346,7 @@ para(doc, 'Recurring requests deserve template responses — and templates deser
     'didn’t ask while missing the one they did — the tell of every unread-message template). '
     'Maintain the fleet like code: when a template generates the same follow-up question twice, '
     'the template has a bug; fix it at the source. And never template the untemplatable: '
-    'condolences, apologies, and anything Chapter 6’s five-S test governs — the entire value of '
+    'condolences, apologies, and anything Chapter 6’s five-quality test governs — the entire value of '
     'those messages is that they could not have been reused.')
 
 h1(doc, 'Watch list: three short talks worth your time')
@@ -368,7 +368,7 @@ para(doc, 'This chapter’s genres are the safest territory in the book for AI-a
     'personalization stays yours too: the one sentence proving you read THEIR message is exactly '
     'what generic drafting cannot supply, and its absence is what makes AI-scented mail feel like '
     'AI-scented mail. And the exclusion zone stands absolute: sympathy, personal congratulations, '
-    'apologies — the five-S genres where the entire payload is that a human paused. The clean '
+    'apologies — the five-quality genres where the entire payload is that a human paused. The clean '
     'division: let tools accelerate the structural genres so you can spend the recovered minutes '
     'on the human ones. That trade — machine speed purchasing human presence — is this whole '
     'course’s AI position in a single sentence.')
@@ -395,7 +395,7 @@ h1(doc, 'Deep dive: timing — when positive messages land hardest')
 para(doc, 'Content and structure decided, one variable remains: when. Positive-message timing has '
     'its own physics. Speed multiplies goodwill — the congratulations sent within hours of the '
     'announcement participates in the moment; the same note three weeks later is an apology '
-    'wearing a compliment (five-S’s “spontaneous,” given a clock). Grants accelerate for the same '
+    'wearing a compliment (five-quality’s “spontaneous,” given a clock). Grants accelerate for the same '
     'reason: an adjustment approved in one day reads as conviction; the identical grant after '
     'eleven days of silence reads as reluctant surrender — speed IS part of the message '
     '(reciprocity research consistently finds promptness read as sincerity; Cialdini, 2021). '
@@ -430,7 +430,7 @@ h1(doc, 'Put it to work this week')
 numbered(doc, [
     'Send one request built to the complete-ask standard and count the clarifying questions it generates. Zero is the score to beat.',
     'Answer your next yes/no question with the answer as the first word. Notice the thread end.',
-    'Send one five-S goodwill note — a real one, to a real person, today.',
+    'Send one five-quality goodwill note — a real one, to a real person, today.',
     'Write the confirmation for the next thing your team decides aloud. Watch who starts relying on it.',
     'Draft — not necessarily send — the follow-up you have been avoiding, using the good-faith template. Notice what the tone rule changes.',
 ])
@@ -469,7 +469,7 @@ para(doc, 'Every request writer eventually faces the silence, and the follow-up 
     'grievance about your tone. Persistence is professional; scorekeeping is not.')
 
 h1(doc, 'Deep dive: goodwill across cultures')
-para(doc, 'The five-S test is universal; its execution crosses Hall’s continuum (Chapter 1) with '
+para(doc, 'The five-quality test is universal; its execution crosses Hall’s continuum (Chapter 1) with '
     'predictable adjustments. In high-context settings, goodwill messages carry MORE relational '
     'weight and less optional character — the congratulations skipped, the holiday greeting '
     'unsent, the thanks unwritten register as statements, not omissions; build the calendar '
@@ -525,7 +525,7 @@ numbered(doc, [
     'I keep claim tone confident — the reader becomes my advocate, not my adversary.',
     'When granting, the grant is my first sentence.',
     'My adjustment messages include the prevention sentence.',
-    'I send goodwill notes promptly — and they pass the five-S test.',
+    'I send goodwill notes promptly — and they pass the five-quality test.',
     'My instructions are numbered, imperative, one action per line, tested on a novice.',
     'I confirm verbal decisions in writing the same day.',
     'My follow-ups assume good faith and narrow the ask.',
@@ -533,14 +533,14 @@ numbered(doc, [
     'I check AI-drafted routine mail for names, dates, figures, and the one personal sentence.',
 ])
 para(doc, 'Scoring: 16–20, your everyday mail is building a reputation on purpose. 10–15, adopt '
-    '“answer first” and the five-S habit this week. Below 10, start with one rule: the ask or the '
+    '“answer first” and the five-quality habit this week. Below 10, start with one rule: the ask or the '
     'answer goes in sentence one. Retake at midterm.')
 
 h1(doc, 'Journal prompts')
 numbered(doc, [
     'Find the last request you sent that generated a clarifying question. What was missing against Figure 1, and what did the round trip cost?',
     'Recall the best complaint outcome you ever got. Which elements of Figure 3 were present — and which tone choices helped?',
-    'Write (and actually send) one five-S goodwill note this week. Record what it cost you and what came back.',
+    'Write (and actually send) one five-quality goodwill note this week. Record what it cost you and what came back.',
     'Take instructions you recently struggled to follow. Autopsy them against Figure 7: where were the preconditions, checkpoints, and warnings?',
     'Ask two colleagues (or classmates) what it is like to receive requests from you — really ask, and don’t defend. Compare their answers against this chapter’s ledger categories.',
     'Write the recommendation letter you hope someone could honestly write about you in two years. What specific stories would it need — and which of them exist yet?',
@@ -550,7 +550,7 @@ h1(doc, 'How your writing will be graded (and read at work)')
 para(doc, 'These are the messages the course rubric was built for: routine, sendable, judged '
     'instantly. Top-band work here means the ask or answer in sentence one, completeness that ends '
     'threads, remedies and deadlines made specific, grants that lead with the grant, and goodwill '
-    'that passes five-S. The introductory-letter assignment in this unit is graded exactly on '
+    'that passes five-quality. The introductory-letter assignment in this unit is graded exactly on '
     'Figure 1’s pattern plus Chapter 4’s zero-error standard.')
 
 h1(doc, 'Common mistakes and their fixes')
@@ -571,10 +571,10 @@ bullets(doc, [
     ('“Handwritten notes: charming or outdated?”', 'For milestone goodwill — a mentor’s retirement, a colleague’s loss — ink is the costly signal that lands hardest precisely because it’s rare. For routine thanks, fast beats fancy: send the email today rather than the card never.'),
     ('“Can AI draft these?”', 'Requests, replies, instructions: yes, with your verification (Chapter 15). Adjustment grants: draft carefully — tone is the product. Sympathy and personal goodwill: no. The entire message is that a human paused.'),
     ('“What if my claim deadline passes with no response?”', 'Escalate one level with the original attached, same calm anatomy, new sentence: “I’d like to resolve this before involving [card issuer / consumer bureau].” Confidence, not threat — you’re still recruiting an advocate, now a more senior one.'),
-    ('“Isn’t all this goodwill machinery just transactional niceness?”', 'Only if you run it transactionally. The five-S test’s “sincere” and “selfless” are load-bearing: notes sent to be owed something are invoices, and readers can smell the ledger. Send because the act deserved marking; the compounding is a byproduct you never mention — including to yourself.'),
+    ('“Isn’t all this goodwill machinery just transactional niceness?”', 'Only if you run it transactionally. The five-quality test’s “sincere” and “selfless” are load-bearing: notes sent to be owed something are invoices, and readers can smell the ledger. Send because the act deserved marking; the compounding is a byproduct you never mention — including to yourself.'),
     ('“How do I decline being a reference without burning the bridge?”', 'The graceful exit you offer others, used on yourself: “I don’t think I’m the strongest reference for this role — my view of your work is mostly [X], and this job is about [Y]; you deserve a recommender who has seen that side.” True, kind, and it hands them a better strategy instead of a wound.'),
     ('“My company requires legal-approved language for adjustments. Doesn’t that kill the craft?”', 'It constrains the middle, not the ends. The grant can still lead, the prevention sentence usually survives review, and the human close is yours. Within any template, sequence and warmth remain writer’s choices — which is why two agents with identical scripts produce opposite customer reviews.'),
-    ('“I sent a five-S note and got no response. Was it wasted?”', 'No — “selfless” means no response was owed; requesting one (even silently) converts the gift back into a transaction. The note was received, filed in the ledger, and will surface in ways you won’t trace. Send the next one on the same terms, or examine whether you were sending notes or invoices.'),
+    ('“I sent a five-quality note and got no response. Was it wasted?”', 'No — “selfless” means no response was owed; requesting one (even silently) converts the gift back into a transaction. The note was received, filed in the ledger, and will surface in ways you won’t trace. Send the next one on the same terms, or examine whether you were sending notes or invoices.'),
     ('“Which everyday genre should I master first?”', 'The reply, answer-first. It is the highest-volume genre, the fastest habit to install, and the most immediately visible — colleagues feel a thread-ending replier within a week. Requests second, confirmations third; goodwill throughout, because the calendar won’t wait for your curriculum.'),
 ])
 
@@ -594,7 +594,7 @@ keyterms(doc, [
     ('Claim', 'a request wearing a grievance: record, facts, specific remedy, deadline, calm confidence.'),
     ('Adjustment', 'the response granting a claim: grant first, explain without excuses, prevent, restore.'),
     ('Prevention sentence', 'the line naming what stops a repeat — the sentence that actually restores confidence.'),
-    ('Goodwill message', 'thanks, congratulations, or sympathy passing the five-S test: specific, sincere, short, spontaneous, selfless.'),
+    ('Goodwill message', 'thanks, congratulations, or sympathy passing the five-quality test: specific, sincere, short, spontaneous, selfless.'),
     ('Reciprocity', 'the robust human tendency to repay treatment in kind (Cialdini, 2021) — the economics of generous adjustments.'),
     ('Giver advantage', 'habitual, boundaried generosity predicting long-run success (Grant, 2013).'),
     ('Checkpoint', 'the “you’ll see a green banner” line telling instruction-followers they are still on the path.'),
@@ -612,7 +612,7 @@ numbered(doc, [
     'Replies: answer in the first word, anticipate the next question, end the thread.',
     'Claims: record, facts, specific remedy, deadline — delivered with the confidence that recruits an advocate.',
     'Adjustments: grant first, explain without opera, include the prevention sentence, close forward. Generosity is economics (Cialdini, 2021).',
-    'Goodwill: five-S — specific, sincere, short, spontaneous, selfless. Send it; ink for milestones; never AI (the pause is the message).',
+    'Goodwill: five-quality — specific, sincere, short, spontaneous, selfless. Send it; ink for milestones; never AI (the pause is the message).',
     'Instructions: numbered, imperative, one action per line, preconditions first, checkpoints included, warnings before the step — tested on one novice.',
 ])
 
@@ -627,7 +627,7 @@ quiz(doc, [
     ('The sentence that actually restores customer confidence is:', ['The apology','The prevention sentence — what stops a repeat','The discount offer','The greeting']),
     ('“While our packaging meets industry standards, we are willing on this occasion…” fails because:', ['It’s too short','It defends the company first and makes the grant grudging — spending the money and forfeiting the credit','It lacks a signature','It’s passive voice']),
     ('Generous adjustments pay because of:', ['Tax deductions','Reciprocity — customers repay treatment in kind (Cialdini, 2021)','Legal precedent','Faster shipping']),
-    ('The five-S test for goodwill messages is:', ['Specific, sincere, short, spontaneous, selfless','Smart, swift, simple, safe, signed','Subject, salutation, summary, signature, send','Specific, serious, structured, standard, sent']),
+    ('The five-quality test for goodwill messages is:', ['Specific, sincere, short, spontaneous, selfless','Smart, swift, simple, safe, signed','Subject, salutation, summary, signature, send','Specific, serious, structured, standard, sent']),
     ('The one message category AI should never draft is:', ['Meeting recaps','Instructions','Personal sympathy and goodwill — the pause is the message','Routine requests']),
     ('In instructions, warnings belong:', ['At the end, as notes','Before the step they protect','After the step, as review','In an appendix']),
     ('The cheapest way to catch instruction failures is:', ['Longer review meetings','Testing on one real novice before shipping to fifty','Adding more warnings','A FAQ section']),

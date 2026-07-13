@@ -155,7 +155,7 @@ notes(s, "Section 4: everything after the handshake — the genre work that Chap
 
 s = bullets_slide(prs, "The thank-you that does work", [
     ("Within 24 hours, to each interviewer, individually", "— pull the names from the panel; the identical CC'd blast undoes the gesture."),
-    ("Reference a specific moment:", "'your point about the supplier audit backlog' — specificity proves presence (the five-S rules, Chapter 6)."),
+    ("Reference a specific moment:", "'your point about the supplier audit backlog' — specificity proves presence (the five-quality rules, Chapter 6)."),
     ("Do one useful thing:", "reinforce your strongest fit, or repair a stumble: 'I gave a thin answer on LIMS — here's the fuller picture in two sentences.'"),
     ("Email is the norm;", "a mailed note on top is the costly signal for the roles that merit it (Chapter 6's ink rule)."),
 ], D, nxt())

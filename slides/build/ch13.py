@@ -97,7 +97,7 @@ s = bullets_slide(prs, "The informational interview", [
 notes(s, "The no-ambush rule is ethical AND tactical: the informational that stays informational produces more referrals than the one that pivots.")
 
 s = bullets_slide(prs, "The outreach message, engineered", [
-    ("Subject or opener names the connection:", "'Dr. Reyes suggested I reach out' or 'Fellow Bison in med devices' — the warm element goes first."),
+    ("Subject or opener names the connection:", "'Dr. Reyes suggested I reach out' or 'Fellow alum working in med devices' — the warm element goes first."),
     ("One sentence of who you are,", "one of why THEM specifically ('your path from bench to management'), then the small dated ask."),
     ("Make yes effortless:", "'any twenty minutes in the next two weeks — I'll work around your calendar' (Chapter 8's friction rule)."),
     ("Five sentences, total.", "The life story goes in the conversation, not the cold message — this is a knock, not a memoir."),
@@ -105,7 +105,7 @@ s = bullets_slide(prs, "The outreach message, engineered", [
 notes(s, "The five-sentence spec with the cold-email anatomy from Chapter 8. Students can template this today.")
 
 s = bullets_slide(prs, "Maintain the network: give first, always", [
-    ("Send value with no ask attached:", "the article that fits their project, the intro they'd want, congratulations on the promotion (Chapter 6's five-S notes)."),
+    ("Send value with no ask attached:", "the article that fits their project, the intro they'd want, congratulations on the promotion (Chapter 6's five-quality notes)."),
     ("Deposit before you need to withdraw", "(Chapter 11's trust account, career edition) — the network built during employment is the one that works between jobs."),
     ("Keep loose ties warm cheaply:", "a two-line check-in twice a year keeps a contact live; silence for five years then a favor request reads exactly like what it is."),
     ("Track it lightly:", "a birthdays-and-projects note per contact turns 'networking' into remembering — which is all it ever was."),
