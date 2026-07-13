@@ -64,11 +64,14 @@ main{padding:34px clamp(20px,5vw,64px) 90px;max-width:980px}
 .opt.wrong .mark{color:var(--proof)}
 .stamp{position:absolute;top:14px;right:16px;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.18em;border:2px solid var(--stamp);color:var(--stamp);padding:3px 9px;transform:rotate(-6deg);opacity:0;pointer-events:none}
 .q.right .stamp{opacity:1;animation:stampIn .18s ease-out}
+.q.unanswered .stamp{opacity:1;border-color:var(--mut);color:var(--mut);animation:stampIn .18s ease-out}
 @keyframes stampIn{from{transform:rotate(-6deg) scale(1.6);opacity:0}to{transform:rotate(-6deg) scale(1);opacity:1}}
 .note{display:none;margin-top:12px;padding:10px 14px;border-left:3px solid var(--proof);background:#FDF6F0;font-size:13.5px;color:#5B4A44}
 .note b{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:var(--proof)}
 .q.right .note{border-left-color:var(--stamp);background:#F2F8F4}
 .q.right .note b{color:var(--stamp)}
+.q.unanswered .note{border-left-color:var(--mut);background:#F4F3EE}
+.q.unanswered .note b{color:var(--mut)}
 .q.locked .note{display:block}
 /* ---------- writing prompts ---------- */
 .wr{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:0 10px 10px 0;margin-top:18px;padding:20px 24px;transition:box-shadow .18s}
@@ -638,18 +641,20 @@ function idForm(btnLabel,rules){
    '<button class="gobtn green" id="startbtn">'+btnLabel+'</button></div>';
 }
 function qBlock(q,qi,picked,locked,showKey){
-  let h='<div class="q'+(locked?' locked':'')+(showKey&&picked===q[2]?' right':'')+'" id="q'+qi+'">';
+  const unanswered=showKey&&picked===undefined;
+  let h='<div class="q'+(locked?' locked':'')+(showKey&&picked===q[2]?' right':'')+(unanswered?' unanswered':'')+'" id="q'+qi+'">';
   if(showKey&&picked===q[2]) h+='<span class="stamp">CORRECT ✓</span>';
+  else if(unanswered) h+='<span class="stamp">NOT ANSWERED</span>';
   h+='<div class="tag">Question '+(qi+1)+'</div><h3>'+q[0]+'</h3>';
   q[1].forEach((opt,oi)=>{
     let cls='opt', mark='';
     if(showKey){
-      if(oi===q[2]){cls+=' correct';mark='<span class="mark">✓ CORRECT</span>';}
+      if(oi===q[2]){cls+=' correct';mark='<span class="mark">✓ CORRECT ANSWER</span>';}
       else if(oi===picked){cls+=' wrong';mark='<span class="mark">✗ YOUR ANSWER</span>';}
     } else if(picked===oi){cls+=' picked';}
     h+='<button class="'+cls+'" data-q="'+qi+'" data-o="'+oi+'" '+(locked?'tabindex="-1" aria-disabled="true"':'')+'>'+String.fromCharCode(65+oi)+'.&nbsp; '+opt+mark+'</button>';
   });
-  if(showKey) h+='<div class="note" style="display:block"><b>'+(picked===q[2]?'WHY THIS IS RIGHT':'EDITOR\u2019S NOTE')+'</b> — '+q[3]+'</div>';
+  if(showKey) h+='<div class="note" style="display:block"><b>'+(picked===q[2]?'WHY THIS IS RIGHT':(unanswered?'NOT ANSWERED':'EDITOR\u2019S NOTE'))+'</b> — '+q[3]+'</div>';
   h+='</div>'; return h;
 }
 function resultHtml(kind,score,total,code){
