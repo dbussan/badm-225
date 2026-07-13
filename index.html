@@ -119,6 +119,10 @@ footer b{color:var(--ink)}
 .vtable th{background:#EFEBDF;color:var(--ink)}
 .vok{color:var(--stamp);font-weight:600}
 .vbad{color:var(--proof);font-weight:600}
+.gbgroup{text-align:center;background:#E3DDC9}
+.sortcol{cursor:pointer;user-select:none}
+.sortcol:hover{color:var(--navy)}
+.gbtable td{vertical-align:top}
 .navxtra{margin-top:20px;padding-top:14px;border-top:1px solid #34455A}
 .warn{background:#FDF6E7;border-left:4px solid #C99A2E;padding:10px 14px;font-size:13px;margin-top:12px;max-width:70ch}
 
@@ -799,41 +803,80 @@ const GBKEY='bc_gb_v1';
 function gbLoad(){ try{ return JSON.parse(localStorage.getItem(GBKEY))||[] }catch(e){ return [] } }
 function gbSave(a){ try{ localStorage.setItem(GBKEY,JSON.stringify(a)) }catch(e){ alert('Browser storage unavailable — gradebook could not be saved.') } }
 function gbSections(){ const s={}; gbLoad().forEach(c=>{const v=verifyCode(c); if(v.ok) s[v.sec||'—']=1;}); return Object.keys(s).sort(); }
+function chapterUnit(ch){ for(const u of UNITS){ if(u.chs.indexOf(ch)>=0) return u.u; } return 'Comprehensive'; }
+function colLabel(c){
+  const m=c.match(/^(HW|QZ) CH(\d+)$/);
+  if(m) return 'Chapter '+String(+m[2]).padStart(2,'0')+' '+(m[1]==='HW'?'Homework':'Quiz');
+  if(c==='QZ ALL') return 'Comprehensive Quiz';
+  return c;
+}
 function gbData(filterSec){
-  const rows={}, cols={};
+  const rows={}, cols={}, colTotal={};
   gbLoad().forEach(c=>{ const v=verifyCode(c); if(!v.ok) return;
     const sec=v.sec||'—';
     if(filterSec && filterSec!=='ALL' && sec!==filterSec) return;
     const col=v.mode+' '+v.label; cols[col]=1;
     const key=v.id+'|'+sec;
     if(!rows[key]) rows[key]={name:v.name,id:v.id,sec:sec,cells:{}};
-    const pct=Math.round(+v.score/+v.total*100);
+    const score=+v.score, total=+v.total, pct=Math.round(score/total*100);
     const cur=rows[key].cells[col];
-    if(!cur||pct>cur.pct) rows[key].cells[col]={pct:pct,raw:v.score+'/'+v.total};
+    if(!cur||pct>cur.pct) rows[key].cells[col]={pct:pct,raw:v.score+'/'+v.total,earn:score,tot:total};
+    colTotal[col]=total;
   });
-  const order=[]; for(let i=1;i<=17;i++)order.push('HW CH'+i); for(let i=1;i<=17;i++)order.push('QZ CH'+i); order.push('QZ ALL');
+  const order=[]; for(let i=1;i<=17;i++){ order.push('HW CH'+i); order.push('QZ CH'+i); } order.push('QZ ALL');
   const colList=order.filter(c=>cols[c]).concat(Object.keys(cols).filter(c=>order.indexOf(c)<0).sort());
-  return {rows:Object.values(rows).sort((a,b)=>a.name.localeCompare(b.name)), cols:colList};
+  const groups=[]; let curGroup=null;
+  colList.forEach(c=>{
+    const m=c.match(/CH(\d+)$/);
+    const label=m?chapterUnit(+m[1]):'Comprehensive';
+    if(!curGroup||curGroup.label!==label){ curGroup={label:label,cols:[]}; groups.push(curGroup); }
+    curGroup.cols.push(c);
+  });
+  const rowList=Object.values(rows).map(r=>{
+    let earnSum=0,totSum=0;
+    colList.forEach(c=>{ const cell=r.cells[c]; if(cell){ earnSum+=cell.earn; totSum+=cell.tot; } });
+    r.earnSum=earnSum; r.totSum=totSum; r.overallPct=totSum?Math.round(earnSum/totSum*1000)/10:null;
+    return r;
+  });
+  return {rows:rowList, cols:colList, groups:groups, colTotal:colTotal};
 }
+let gbFilterText='', gbSortKey='name', gbSortDir=1;
 function drawGB(){
   const el=document.getElementById('gbout'); if(!el) return;
   const sel=document.getElementById('gbsec'); const f=sel?sel.value:'ALL';
   const gd=gbData(f);
-  if(!gd.rows.length){ el.innerHTML='<p class="sub" style="margin-top:12px">No stored results'+(f!=='ALL'?' for this section':'')+' yet. Paste completion codes above and click ADD TO GRADEBOOK.</p>'; return; }
-  let h='<div style="overflow-x:auto;margin-top:12px"><table class="vtable"><tr><th>STUDENT</th><th>ID</th><th>SECTION</th>'+gd.cols.map(c=>'<th>'+esc(c)+'</th>').join('')+'<th>AVG</th></tr>';
-  gd.rows.forEach(r=>{
-    const pcts=gd.cols.map(c=>r.cells[c]?r.cells[c].pct:null);
-    const have=pcts.filter(p=>p!==null);
-    const avg=have.length?Math.round(have.reduce((a,b)=>a+b,0)/have.length):null;
-    h+='<tr><td>'+esc(r.name)+'</td><td>'+esc(r.id)+'</td><td>'+esc(r.sec)+'</td>'+
-      pcts.map((p,i)=>'<td>'+(p===null?'—':p+'% <span style="color:var(--mut)">('+r.cells[gd.cols[i]].raw+')</span>')+'</td>').join('')+
-      '<td><b>'+(avg===null?'—':avg+'%')+'</b></td></tr>';
+  let rows=gd.rows;
+  if(gbFilterText) rows=rows.filter(r=>r.name.toLowerCase().indexOf(gbFilterText.toLowerCase())>=0);
+  rows=rows.slice().sort((a,b)=>{
+    let av,bv;
+    if(gbSortKey==='name'){ av=a.name.toLowerCase(); bv=b.name.toLowerCase(); }
+    else { av=a.overallPct===null?-1:a.overallPct; bv=b.overallPct===null?-1:b.overallPct; }
+    if(av<bv) return -1*gbSortDir; if(av>bv) return 1*gbSortDir; return 0;
   });
-  h+='<tr><td colspan="3"><b>CLASS AVERAGE</b></td>'+gd.cols.map(c=>{
-    const v=gd.rows.map(r=>r.cells[c]).filter(Boolean).map(x=>x.pct);
-    return '<td><b>'+(v.length?Math.round(v.reduce((a,b)=>a+b,0)/v.length)+'%':'—')+'</b></td>';
-  }).join('')+'<td></td></tr>';
+  if(!rows.length){ el.innerHTML='<p class="sub" style="margin-top:12px">No stored results'+(f!=='ALL'?' for this section':'')+(gbFilterText?' matching “'+esc(gbFilterText)+'”':'')+' yet. Paste completion codes above and click ADD TO GRADEBOOK.</p>'; return; }
+  const arrow=k=>gbSortKey===k?(gbSortDir>0?' ↑':' ↓'):' ↕';
+  let h='<div style="overflow-x:auto;margin-top:12px"><table class="vtable gbtable"><tr>'+
+   '<th rowspan="3" class="sortcol" data-sort="name">STUDENT'+arrow('name')+'</th><th rowspan="3">ID</th><th rowspan="3">SECTION</th>'+
+   '<th rowspan="3" class="sortcol" data-sort="overall">OVERALL'+arrow('overall')+'</th>';
+  gd.groups.forEach(g=>{ h+='<th colspan="'+g.cols.length+'" class="gbgroup">'+esc(g.label)+'</th>'; });
+  h+='</tr><tr>';
+  gd.groups.forEach(g=>{ g.cols.forEach(c=>{ h+='<th>'+esc(colLabel(c))+'</th>'; }); });
+  h+='</tr><tr>';
+  gd.cols.forEach(c=>{ h+='<th class="mono" style="color:var(--mut);font-weight:400">'+(gd.colTotal[c]!==undefined?gd.colTotal[c]:'—')+' pts</th>'; });
+  h+='</tr>';
+  rows.forEach(r=>{
+    h+='<tr><td>'+esc(r.name)+'</td><td>'+esc(r.id)+'</td><td>'+esc(r.sec)+'</td>'+
+      '<td><b>'+(r.overallPct===null?'—':r.overallPct+'%')+'</b>'+(r.totSum?'<div style="color:var(--mut);font-size:11px">'+r.earnSum+' of '+r.totSum+'</div>':'')+'</td>'+
+      gd.cols.map(c=>{ const cell=r.cells[c]; return '<td>'+(cell?cell.pct+'% <span style="color:var(--mut)">('+cell.raw+')</span>':'—')+'</td>'; }).join('')+
+      '</tr>';
+  });
+  const classEarn=rows.reduce((a,r)=>a+r.earnSum,0), classTot=rows.reduce((a,r)=>a+r.totSum,0);
+  h+='<tr><td colspan="3"><b>CLASS AVERAGE</b></td><td><b>'+(classTot?Math.round(classEarn/classTot*1000)/10+'%':'—')+'</b></td>'+
+    gd.cols.map(c=>{ const v=rows.map(r=>r.cells[c]).filter(Boolean).map(x=>x.pct); return '<td><b>'+(v.length?Math.round(v.reduce((a,b)=>a+b,0)/v.length)+'%':'—')+'</b></td>'; }).join('')+'</tr>';
   el.innerHTML=h+'</table></div>';
+  el.querySelectorAll('.sortcol').forEach(th=>th.onclick=()=>{
+    const k=th.dataset.sort; if(gbSortKey===k) gbSortDir*=-1; else { gbSortKey=k; gbSortDir=1; } drawGB();
+  });
 }
 function renderInstructor(m){
   m.innerHTML=memoHead('Instructor tools — gradebook &amp; code verification','Instructor Tools',
@@ -847,6 +890,7 @@ function renderInstructor(m){
    '<div class="memo" style="margin-top:22px"><h2 style="font-size:20px">Gradebook</h2>'+
    '<div class="bar" style="margin-top:12px"><span class="mono">SECTION:</span><select id="gbsec" style="'+selStyle+'">'+
    '<option value="ALL">All sections</option>'+secs.map(s=>'<option>'+esc(s)+'</option>').join('')+'</select>'+
+   '<span class="mono">FILTER BY NAME:</span><input id="gbfilter" placeholder="Student name…" style="'+selStyle+'width:160px">'+
    '<button class="reset" id="gbcsv">EXPORT CSV</button><button class="reset" id="gbclear" style="margin-left:8px;color:var(--proof)">CLEAR GRADEBOOK</button></div>'+
    '<div id="gbout"></div></div>'+
    '<div class="memo" style="margin-top:22px"><h2 style="font-size:20px">Setup &amp; privacy notes</h2><div class="rules"><ul>'+
@@ -881,21 +925,22 @@ function renderInstructor(m){
     drawGB();
   };
   document.getElementById('gbsec').onchange=drawGB;
+  document.getElementById('gbfilter').oninput=e=>{gbFilterText=e.target.value; drawGB();};
   document.getElementById('gbcsv').onclick=()=>{
     const f=document.getElementById('gbsec').value;
     const gd=gbData(f);
-    if(!gd.rows.length){alert('Nothing to export yet.');return;}
+    let rows=gd.rows;
+    if(gbFilterText) rows=rows.filter(r=>r.name.toLowerCase().indexOf(gbFilterText.toLowerCase())>=0);
+    if(!rows.length){alert('Nothing to export yet.');return;}
     const q=s=>'"'+String(s).replace(/"/g,'""')+'"';
-    const out=[['Name','ID','Section'].concat(gd.cols).concat(['Average']).map(q).join(',')];
-    gd.rows.forEach(r=>{
+    const out=[['Name','ID','Section','Overall %','Points Earned','Points Possible'].concat(gd.cols.map(colLabel)).map(q).join(',')];
+    rows.forEach(r=>{
       const pcts=gd.cols.map(c=>r.cells[c]?r.cells[c].pct:'');
-      const have=pcts.filter(p=>p!=='');
-      const avg=have.length?Math.round(have.reduce((a,b)=>a+b,0)/have.length):'';
-      out.push([r.name,r.id,r.sec].concat(pcts).concat([avg]).map(q).join(','));
+      out.push([r.name,r.id,r.sec,r.overallPct===null?'':r.overallPct,r.earnSum,r.totSum].concat(pcts).map(q).join(','));
     });
     const blob=new Blob([out.join('\r\n')],{type:'text/csv'});
     const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
-    a.download='badm225-gradebook'+(f!=='ALL'?'-'+f.replace(/[^A-Za-z0-9-]/g,'_'):'')+'.csv'; a.click();
+    a.download='badm225-gradebook'+(f!=='ALL'?'-'+f.replace(/[^A-Za-z0-9-]/g,'_'):'')+(gbFilterText?'-filtered':'')+'.csv'; a.click();
   };
   document.getElementById('gbclear').onclick=()=>{
     if(!confirm('Delete ALL stored gradebook entries from this browser? Export a CSV first if you need a record.')) return;
