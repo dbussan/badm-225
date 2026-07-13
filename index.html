@@ -884,6 +884,24 @@ function drawGB(){
     const k=th.dataset.sort; if(gbSortKey===k) gbSortDir*=-1; else { gbSortKey=k; gbSortDir=1; } drawGB();
   });
 }
+function instructorUnlocked(){ try{ return sessionStorage.getItem('bc_instr_ok')==='1'; }catch(e){ return false; } }
+function renderInstructorGate(m){
+  m.innerHTML=memoHead('Instructor tools — passcode required','Instructor Access',
+   'Enter the instructor passcode to continue. This is a light deterrent for a shared or public computer, not strong security — anyone who reads this page’s source can bypass it.');
+  m.insertAdjacentHTML('beforeend',
+   '<div class="formcard"><label>PASSCODE</label><input id="instrpass" type="password" autocomplete="off">'+
+   '<button class="gobtn green" id="instrgo" style="margin-top:14px">UNLOCK</button><div id="instrerr"></div></div>');
+  const go=()=>{
+    if(document.getElementById('instrpass').value===INSTRUCTOR_PASSCODE){
+      try{ sessionStorage.setItem('bc_instr_ok','1'); }catch(e){}
+      render();
+    } else {
+      document.getElementById('instrerr').innerHTML='<p class="sub" style="color:var(--proof);margin-top:8px">Incorrect passcode.</p>';
+    }
+  };
+  document.getElementById('instrgo').onclick=go;
+  document.getElementById('instrpass').onkeydown=e=>{ if(e.key==='Enter') go(); };
+}
 function renderInstructor(m){
   m.innerHTML=memoHead('Instructor tools — gradebook &amp; code verification','Instructor Tools',
    'Verify student completion codes and build a gradebook across all your sections. The gradebook is stored only in this browser on this computer — it is never uploaded anywhere. Export CSV backups for your records.');
@@ -960,7 +978,7 @@ function wireCopy(m){ m.querySelectorAll('.copybtn').forEach(b=>b.onclick=()=>co
 function render(){
   buildNav();
   const m=document.getElementById('main');
-  if(view.kind==='instructor'){ renderInstructor(m); return; }
+  if(view.kind==='instructor'){ if(instructorUnlocked()) renderInstructor(m); else renderInstructorGate(m); return; }
   if(view.kind==='career'){
     m.innerHTML=memoHead('Professional development — instructor presentations','Professional Development',
      'Presentations created by your instructor on careers, leadership, influence, and workplace life — the practical side of professional communication. All original instructor material. Click any title to download the PowerPoint.');

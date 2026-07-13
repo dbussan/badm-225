@@ -29,3 +29,11 @@ const SECTIONS=[
   'UND · BADM 225 · Fall 2026 · CRN ????? · Section 001',
   'KYSU · BADM 225 · Fall 2026 · CRN ????? · Section 001',
 ];
+
+/* INSTRUCTOR: passcode for Instructor Tools (the gradebook, in index.html) and the
+   exam-link builder (in exam.html, when visited with no link parameters). Change it
+   to anything you like. This is a light deterrent for a shared or public computer —
+   like SECRET above, it lives in this file's plain text, so it stops casual clicking,
+   not someone who reads the page source. Unlocking is remembered only for the current
+   browser tab session (it clears when the tab/browser closes). */
+const INSTRUCTOR_PASSCODE='badm225-instructor';

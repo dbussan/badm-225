@@ -234,6 +234,23 @@ const params=new URLSearchParams(location.search);
 function header(title,sub){return '<header class="bar"><div class="mono">BADM 225 · Professional Communication for Business</div><h1>'+esc(title)+'</h1>'+(sub?'<div class="sub" style="color:#C6CDD6;margin-top:4px">'+esc(sub)+'</div>':'')+'</header>';}
 
 /* ---------- instructor setup (no params) ---------- */
+function instructorUnlocked(){ try{ return sessionStorage.getItem('bc_instr_ok')==='1'; }catch(e){ return false; } }
+function renderSetupGate(){
+  document.title='BADM 225 — Instructor Access';
+  app.innerHTML=header('Instructor Access','Enter the instructor passcode to build an exam link. This is a light deterrent for a shared computer, not strong security.')+
+  '<div class="card"><label>Passcode</label><input id="gatepass" type="password" autocomplete="off">'+
+  '<div style="margin-top:14px"><button class="btn" id="gategbo">UNLOCK</button></div><div id="gateerr"></div></div>'+footerHTML();
+  const go=()=>{
+    if(document.getElementById('gatepass').value===INSTRUCTOR_PASSCODE){
+      try{ sessionStorage.setItem('bc_instr_ok','1'); }catch(e){}
+      renderSetup();
+    } else {
+      document.getElementById('gateerr').innerHTML='<div class="warn danger" style="margin-top:10px">Incorrect passcode.</div>';
+    }
+  };
+  document.getElementById('gategbo').onclick=go;
+  document.getElementById('gatepass').onkeydown=e=>{ if(e.key==='Enter') go(); };
+}
 function renderSetup(){
   document.title='BADM 225 — Exam Setup (Instructor)';
   app.innerHTML=header('Timed Exam — Instructor Setup','Build a dated exam link to post in the LMS when you are ready.')+
@@ -386,7 +403,7 @@ function renderDone(st){
 }
 
 /* ---------- route ---------- */
-if(!cfg){renderSetup();}
+if(!cfg){ if(instructorUnlocked()) renderSetup(); else renderSetupGate(); }
 else if(cfg.bad){app.innerHTML=header('Exam link invalid')+'<div class="card"><div class="warn danger">This exam link is invalid or has been altered. Ask your instructor for the correct link.</div></div>'+footerHTML();}
 else{renderGate();}
 </script>
