@@ -47,6 +47,7 @@ a{color:var(--navy)}
 </head>
 <body>
 <div class="wrap" id="app"></div>
+<script src="config.js"></script>
 <script>
 'use strict';
 /* ============================================================
@@ -54,9 +55,8 @@ a{color:var(--navy)}
    FERPA-safe: nothing entered here is uploaded or stored on any
    server. Scores travel only via completion codes (same scheme
    and SECRET as the course practice site's gradebook).
+   SECRET and SECTIONS live in config.js, shared with index.html.
    ============================================================ */
-const SECRET='xC5HdRKpNu3k33MMQunh8YLZ';   // must match index.html
-const SECTIONS=['Section 1','Section 2'];   // must match index.html, or the gradebook fragments
 const DEFAULT_MIN=120;
 
 /* ---------- completion codes (identical to index.html) ---------- */
