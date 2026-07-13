@@ -348,7 +348,7 @@ bullets(doc, [
     ('Practice in the actual channel.', 'If phone calls scare you, the fix is phone calls — scripted, low-stakes ones first. Avoidance rehearses the fear.'),
     ('Focus outward.', 'Apprehension is self-attention; shifting focus to the audience’s needs (“what do they need to understand?”) crowds it out.'),
 ])
-para(doc, 'If communication anxiety significantly limits you, most universities — including UND — offer '
+para(doc, 'If communication anxiety significantly limits you, most universities offer '
     'coaching, counseling, and speaking centers. Using them is a professional move, not a confession.',
     bold_lead='Get help early.')
 

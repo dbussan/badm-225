@@ -1,4 +1,4 @@
-# Chapter 3 — Organizing and Drafting Business Messages (33 slides, original, delivery-neutral)
+# Chapter 3 — Organizing and Drafting Business Messages (34 slides, original, delivery-neutral)
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from decklib import *
@@ -171,6 +171,90 @@ s = bullets_slide(prs, "Measuring readability (and its limits)", [
 ], D, nxt())
 notes(s, "Automated metrics as sanity check; human structure judgment remains the skill.")
 
+s = section_slide(prs, "06", "Structure the eye can see",
+    "Lists, tables, transitions — and the way screens are actually read.", D, nxt())
+notes(s, "Section 6: visible structure. The outline made the logic; this section makes the logic visible at scanning speed.")
+
+s = stat_slide(prs, "How screens are actually read", "F",
+    "Eye-tracking research shows readers scan web pages and email in an F-shape: across the top, a shorter sweep lower down, then straight down the left edge (Nielsen Norman Group).",
+    [("The top line gets read.", "Your first sentence is the only sentence you can count on — which is why the direct pattern wins on screens."),
+     ("The left edge gets scanned.", "Paragraph openers, bolded lead-ins, and list items live on the scan path; mid-sentence content does not."),
+     ("Design for the F:", "front-load sentences, front-load paragraphs, and put keywords where the eye actually travels."),
+    ], D, nxt())
+notes(s, "The F-pattern is why the topic-sentence rule and bolded lead-ins are not decoration — they sit exactly where attention goes. Everything off the F-path is optional reading.")
+
+s = two_col_slide(prs, "Bullets or numbers? Each has a job",
+    "BULLETED list — unordered", [
+        "Items are parallel and interchangeable in order",
+        "Options, features, criteria, examples",
+        "Signals: 'these belong together; sequence doesn't matter'",
+        ("Limit:", "4–8 items; past that, group into labeled sub-lists"),
+    ],
+    "NUMBERED list — ordered", [
+        "Sequence, ranking, or priority is the point",
+        "Steps, instructions, ranked recommendations",
+        "Numbers let readers reference: 'see item 3'",
+        ("Rule:", "never number a list whose order is arbitrary — numbers promise meaning"),
+    ], D, nxt())
+notes(s, "The choice broadcasts a claim about the content. A numbered list of unranked options invites the question 'why is this one first?'")
+
+s = bullets_slide(prs, "List discipline: what separates a list from a fragment pile", [
+    ("Lead-in sentence.", "Every list needs a sentence that tells the reader what the items are: 'The proposal has three risks:'"),
+    ("Parallel form.", "All items start the same part of speech — all verbs, all nouns. One broken item breaks the rhythm of all of them."),
+    ("Comparable weight.", "A six-word item next to a sixty-word item signals the list wasn't designed — split or trim."),
+    ("One level, maybe two.", "Nested bullet forests three levels deep are outlines that never got written into prose. Flatten or restructure."),
+    ("Punctuate consistently.", "Fragments: no periods. Full sentences: periods. Never a mix within one list."),
+], D, nxt())
+notes(s, "Lists get skimmed precisely because readers trust their structure — sloppy lists spend that trust. Parallelism review from Section 4 applies item-by-item.")
+
+s = two_col_slide(prs, "When a table beats prose",
+    "Use a TABLE when readers need to…", [
+        "Compare options across the same dimensions",
+        "Look up exact values (prices, dates, specs)",
+        "Check completeness — every cell visibly filled or empty",
+        ("Test:", "if you're writing 'X is $40, while Y is $55, whereas Z…' — that sentence wants to be a table"),
+    ],
+    "Keep PROSE when readers need to…", [
+        "Follow causation — why something happened",
+        "Weigh an argument with qualifications and exceptions",
+        "Hear tone: goodwill, apology, persuasion",
+        ("Test:", "if every cell would hold a paragraph, the table is a cage, not a tool"),
+    ], D, nxt())
+notes(s, "Tables are for comparison and lookup; prose is for reasoning and relationship. Chapter 9 develops data displays fully — this is the drafting-level decision.")
+
+s = icon_rows_slide(prs, "Transitions: the traffic signals of prose", [
+    ("＋", "Addition", "also · moreover · in addition — 'more of the same direction ahead.'"),
+    ("↔", "Contrast", "however · yet · on the other hand — 'turn coming; slow down.'"),
+    ("∴", "Cause & consequence", "therefore · as a result · consequently — 'this follows from that.'"),
+    ("№", "Sequence", "first · next · finally — 'you are here' markers in a process."),
+    ("◉", "Example & proof", "for instance · specifically · in particular — 'the claim is about to get concrete.'"),
+], D, nxt(), kicker="Readers decode transitions before they decode the sentence — a wrong signal misroutes the whole paragraph.")
+notes(s, "Transitions are promises. 'However' followed by agreement is a broken promise, and readers feel it even when they can't name it. Echoed key words (old-to-new) do the same work invisibly.")
+
+s = bullets_slide(prs, "Openings that earn the reader's next ten seconds", [
+    ("The subject line is sentence zero.", "'Budget approval needed by Friday' outworks 'Question' — the decision to open, defer, or delete is made right there."),
+    ("Direct messages: main point, sentence one.", "Request, recommendation, or news — before any background."),
+    ("One sentence of context is a courtesy;", "three paragraphs of context is a hostage situation."),
+    ("Never open with the archaeology:", "'I was reviewing the files from last quarter and noticed…' — start with what you found, not the story of finding it."),
+], D, nxt())
+notes(s, "Openings are where the buried-recommendation failure begins. The reader's first question is always 'what is this and what do you need from me?' — answer it immediately.")
+
+s = bullets_slide(prs, "Closings that move the work forward", [
+    ("Action, owner, date.", "'Please send the revised figures to me by Thursday, March 12' — every request needs all three or it isn't a request, it's a wish."),
+    ("Make the next step frictionless.", "Attach the form, link the calendar, include the number — every step you remove doubles the odds of action."),
+    ("End with goodwill that is specific.", "'Thanks for turning this around during inventory week' beats the upholstery of 'Thanks in advance!'"),
+    ("Don't reopen the case in the closing.", "New arguments in the last paragraph un-decide everything above them."),
+], D, nxt())
+notes(s, "Closings are the stress position of the whole message — what sits there is what gets remembered and acted on. Deadlines without dates are decorations.")
+
+s = bullets_slide(prs, "Case: the email that became a table", [
+    ("Before:", "Nine sentences comparing three vendors' prices, support hours, and contract terms — every fact true, no fact findable twice."),
+    ("The reply:", "'Can you summarize the differences?' — the writer had summarized them. In prose. That was the problem."),
+    ("After:", "A three-column table (vendor × price, support, term) plus TWO sentences of prose: the recommendation and the reason."),
+    ("The lesson:", "prose carries the argument; the table carries the facts. When you make readers hold six numbers in working memory, they hold none (Miller, 1956)."),
+], D, nxt())
+notes(s, "Common real-world repair: the writer did the analysis and hid it in paragraph form. The rewrite splits the jobs — table for lookup, sentences for judgment.")
+
 s = takeaways_slide(prs, [
     "One decision first: direct for receptive readers, indirect for resistance and bad news.",
     "Outline in three moves — dump, group into named families, sequence — and cut the orphans.",
@@ -178,6 +262,7 @@ s = takeaways_slide(prs, [
     "The stress position at the sentence's end is your emphasis dial (Gopen & Swan, 1990).",
     "Active by default; passive on purpose; never as camouflage. Keep series parallel; chunk for 7±2.",
     "Draft fast, judge later — generating and judging are different jobs.",
+    "Design for the F-pattern: front-load sentences and paragraphs; lists and tables where comparison lives.",
 ], D, nxt(), site_note="Practice now: course site → Chapter 3 → Practice, then the graded homework before the weekly deadline.")
 notes(s, "Recap.")
 

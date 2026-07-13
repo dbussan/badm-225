@@ -7,7 +7,7 @@ from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
 
-# ---- palette: deep forest green (professional, UND-adjacent, distinctly not-publisher)
+# ---- palette: deep forest green (professional, distinctly not-publisher)
 INK      = RGBColor(0x21, 0x2A, 0x26)   # near-black green for body text
 GREEN    = RGBColor(0x0E, 0x4D, 0x33)   # deep forest — dominant
 MOSS     = RGBColor(0x5C, 0x8A, 0x6E)   # supporting tone

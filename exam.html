@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BADM 225 — Timed Exam</title>
+<style>
+:root{--navy:#1C2B3A;--navy2:#28394D;--gold:#C9931A;--paper:#F6F4EE;--card:#FFFFFF;--ink:#22252A;--line:#DDD8CC;--ok:#2E6B46;--bad:#B23A31;--mut:#6B7280}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+.wrap{max-width:880px;margin:0 auto;padding:28px 20px 80px}
+header.bar{background:linear-gradient(180deg,#1C2B3A,#152230);color:#EDE8DC;padding:18px 22px;border-radius:10px;margin-bottom:22px}
+header.bar .mono{font-family:Consolas,monospace;font-size:12px;letter-spacing:.14em;color:#C9B37E;text-transform:uppercase}
+header.bar h1{font-size:21px;margin-top:4px;font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(28,43,58,.06)}
+.card h2{font-size:17px;color:var(--navy);margin-bottom:10px}
+.sub{color:var(--mut);font-size:14px}
+label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin:12px 0 4px}
+input,select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:7px;font:inherit;font-size:14.5px;background:#FDFCF9}
+input:focus,select:focus{outline:2px solid var(--gold)}
+button{font:inherit;cursor:pointer;border:none;border-radius:7px;padding:11px 20px;font-weight:600}
+.btn{background:var(--navy);color:#fff}
+.btn:hover{background:var(--navy2)}
+.btn[disabled]{background:#9AA3AD;cursor:not-allowed}
+.btn2{background:#EFEBE0;color:var(--navy);border:1px solid var(--line)}
+.warn{background:#FBF6E7;border:1px solid #E4D5A9;border-radius:8px;padding:12px 14px;font-size:13.5px;margin:14px 0}
+.danger{background:#FBEDEB;border-color:#E7C0BB}
+.timerbar{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-radius:0 0 10px 10px;padding:10px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.timerbar b{font-family:Consolas,monospace;font-size:20px;letter-spacing:.06em}
+.timerbar.low{background:var(--bad)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.q .qt{font-weight:600;margin-bottom:10px}
+.q .qn{color:var(--gold);font-family:Consolas,monospace;margin-right:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid transparent;border-radius:7px;cursor:pointer;font-size:14.5px}
+.opt:hover{background:#F4F1E8}
+.opt input{width:auto;margin-top:4px}
+.opt.sel{background:#EEF3EE;border-color:#BCD3C2}
+.progress{font-size:13px;color:var(--mut)}
+.codebox{font-family:Consolas,monospace;font-size:13px;background:#F1EEE5;border:1px dashed #BBB29B;border-radius:8px;padding:12px;word-break:break-all;margin:10px 0}
+.big{font-size:30px;font-weight:700;color:var(--navy)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+footer{margin-top:26px;font-size:12.5px;color:var(--mut);border-top:1px solid var(--line);padding-top:14px}
+a{color:var(--navy)}
+.mono{font-family:Consolas,monospace}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+'use strict';
+/* ============================================================
+   BADM 225 timed exams — midterm & final (multiple choice)
+   FERPA-safe: nothing entered here is uploaded or stored on any
+   server. Scores travel only via completion codes (same scheme
+   and SECRET as the course practice site's gradebook).
+   ============================================================ */
+const SECRET='xC5HdRKpNu3k33MMQunh8YLZ';   // must match index.html
+const DEFAULT_MIN=120;
+
+/* ---------- completion codes (identical to index.html) ---------- */
+function djb2(s){let h=5381;for(const ch of s){h=(((h<<5)+h)+ch.codePointAt(0))>>>0;}return h.toString(16).padStart(8,'0');}
+function b64e(s){return btoa(unescape(encodeURIComponent(s))).replace(/=+$/,'');}
+function b64d(s){return decodeURIComponent(escape(atob(s)));}
+function makeCode(mode,label,score,total,id,name,secs,sec){
+  const clean=v=>String(v).replace(/\|/g,'/').trim();
+  const payload=[mode,label,score,total,clean(id),clean(name),new Date().toISOString().slice(0,16),secs,clean(sec||'')].join('|');
+  return 'BC2-'+b64e(payload)+'-'+djb2(payload+SECRET);
+}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function fmtT(s){s=Math.max(0,Math.floor(s));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(x).padStart(2,'0');}
+
+/* ---------- seeded shuffle so option order survives refresh ---------- */
+function seedFrom(str){let h=2166136261;for(const c of str){h=(h^c.codePointAt(0))*16777619>>>0;}return h;}
+function rng(seed){let s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+function seededOrder(n,seed){const a=[...Array(n).keys()];const r=rng(seed);for(let i=n-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+/* ============================================================
+   QUESTION BANKS — 60 each, all original course material.
+   {q, o:[4 options], a:index of correct in o}
+   ============================================================ */
+const MIDTERM=[
+/* Ch1 */
+{q:"A manager emails detailed instructions, but staff interpret them very differently than intended. In the communication-process model, the failure happened primarily at which stage?",o:["Decoding — receivers reconstructed the meaning through their own frames of reference","Feedback — the staff responded too slowly","Encoding only — the sender chose a channel poorly","Transmission — the channel physically distorted the message"],a:0},
+{q:"Which situation calls for the RICHEST communication channel?",o:["Announcing next month's parking-lot repaving","Distributing the agenda for a routine meeting","Telling a teammate their project role is being eliminated","Reminding staff that timesheets are due Friday"],a:2},
+{q:"Jargon that the audience decodes differently than the writer intended is best classified as:",o:["Feedback failure","Psychological noise","Physical noise","Semantic noise"],a:3},
+{q:"Why do skilled communicators deliver hard news in a rich channel and then confirm it in writing?",o:["Company policy usually requires two identical messages","Written messages are always more persuasive than conversations","The conversation carries empathy and questions; the written follow-up creates the record","It doubles the chance the receiver agrees with the decision"],a:2},
+{q:"During a briefing, a listener silently rehearses his rebuttal while the speaker is still talking. Which listening barrier is this?",o:["The speed gap between speech and thought","An external barrier — environmental distraction","An internal barrier — rehearsing a reply instead of processing","Semantic noise in the speaker's wording"],a:2},
+{q:"Paraphrasing a speaker ('So the deadline moves only if the client signs by Tuesday — did I get that right?') is valuable mainly because it:",o:["Replaces the need to ask any questions","Catches misunderstanding immediately, when correction is cheapest","Politely signals that the speaker should stop talking","Proves you were taking complete notes"],a:1},
+{q:"When a speaker's words and body language conflict, audiences generally:",o:["Assume the speaker is being deliberately deceptive","Believe the words, which are more precise","Discount both and wait for written confirmation","Believe the nonverbal signals, which are harder to fake"],a:3},
+{q:"A colleague asks you to word a status report so a slipping deadline 'doesn't come up.' The report would contain only true sentences. This is best described as:",o:["Acceptable diplomacy, since nothing false is stated","A channel-selection problem rather than an ethics problem","An ethical lapse — literal truth arranged to mislead is still deception","An ethical dilemma — two defensible values in conflict"],a:2},
+/* Ch2 */
+{q:"The single most useful question to answer BEFORE drafting any business message is:",o:["Which template does the company prefer for this genre?","Which greeting matches the reader's seniority?","How long should the finished message be?","What should the reader know, do, or feel when they finish?"],a:3},
+{q:"A message that fails because it assumes the reader knows background they don't have reflects a failure of:",o:["Channel richness","Audience analysis","Formatting","Proofreading"],a:1},
+{q:"Which revision best converts writer-view into you-view?",o:["'We require your W-9 before processing' → 'To receive your payment, send your W-9'","'Please find attached the W-9 form' → 'Attached is the W-9 form'","'Send the W-9 today' → 'The W-9 must be sent today'","'Your payment is delayed' → 'We have delayed your payment'"],a:0},
+{q:"A writer preparing a message for both a technical expert and an executive should:",o:["Send two contradictory versions and let them compare","Write only for the expert, since accuracy decides","Layer it: a plain-language summary up front, technical detail beneath or attached","Write only for the executive, since rank decides"],a:2},
+{q:"Anticipating the reader's likely objections during planning primarily helps the writer:",o:["Address resistance inside the message before it hardens into a no","Avoid ever having to state bad news","Skip audience profiling for future messages","Make the message longer and more impressive"],a:0},
+{q:"Which opening best front-loads a routine request?",o:["'I hope this message finds you well as summer winds down.'","'Could you approve the revised Q3 travel budget by Friday, July 10?'","'As you may recall from several previous conversations…'","'Let me begin with some context about our department's history.'"],a:1},
+{q:"Conversational-professional tone is best described as:",o:["Formal and impersonal, to signal seriousness","Dense and technical, to demonstrate expertise","Plain, warm, and precise — contractions fine, slang not","Casual and playful, to build rapport quickly"],a:2},
+/* Ch3 */
+{q:"The direct organizational strategy is the right default when the reader is expected to be:",o:["Emotionally devastated by the news","Hostile to the writer personally","Unwilling to read anything at all","Receptive or neutral to the main point"],a:3},
+{q:"The chief danger of putting a routine request behind three paragraphs of background is that:",o:["The background will contain grammatical errors","Scanning readers never find the request at all","The message becomes impossible to forward","Email systems truncate long messages"],a:1},
+{q:"In the three-move outlining method (dump, group, sequence), the names given to the grouped families become:",o:["The distribution list for the message","Keywords for the subject line only","The message's closing paragraph","The message's headings and topic sentences"],a:3},
+{q:"A paragraph violates UNITY when it:",o:["Contains sentences supporting more than one distinct claim","Opens with its topic sentence","Runs shorter than four lines","Uses transitions like 'however' and 'therefore'"],a:0},
+{q:"According to the old-before-new principle, the STRESS position — where readers place emphasis — is:",o:["The first word of the sentence","Wherever bold formatting appears","The exact middle of the sentence","The end of the sentence"],a:3},
+{q:"'Mistakes were made in the reconciliation process.' The main professional objection to this sentence is that the passive voice:",o:["Uses too many syllables","Is grammatically incorrect","Cannot appear in formal reports","Conceals who is accountable"],a:3},
+{q:"When is passive voice the BETTER choice?",o:["When the actor is unknown or irrelevant — 'The shipment was damaged in transit'","Whenever the reader outranks the writer","When the writer wants to sound more sophisticated","Whenever the news is negative"],a:0},
+{q:"'The committee reviewed safety procedures, report filing, and how clients should be communicated with.' The flaw is:",o:["Broken parallelism — the third item changes grammatical form","A missing serial comma only","A dangling modifier at the start","Passive voice throughout"],a:0},
+/* Ch4 */
+{q:"The three-pass revision system orders its passes as structure → sentences → proof because:",o:["There is no point polishing paragraphs that the structure pass may delete","Sentence errors are rarer than structural ones","Software handles the structure pass automatically","Proofreading is the most important pass"],a:0},
+{q:"Writers struggle to proofread their own fresh drafts mainly because:",o:["They lack sufficient grammar training","The brain shows them the intended meaning instead of the actual text","Their vocabulary is too advanced for self-checking","Screens make all text harder to read"],a:1},
+{q:"'Due to the fact that the meeting was moved, please be advised that in order to attend you must re-register.' The best single repair is:",o:["Add a courteous opening sentence before it","Convert it entirely to passive voice","Cut the flab: 'Because the meeting moved, please re-register.'","Split it into four separate sentences"],a:2},
+{q:"'Sales showed significant improvement in Q2.' The strongest revision replaces the abstraction with:",o:["A stronger intensifier: 'truly remarkable improvement'","A hedge: 'somewhat significant improvement'","A checkable number: 'Sales rose 12% in Q2'","An exclamation point for emphasis"],a:2},
+{q:"Which error category does spellcheck reliably MISS?",o:["Misspelled brand names in all caps","Words missing a vowel","Real words in the wrong place — 'manger' for 'manager'","Doubled letters inside long words"],a:2},
+{q:"The 'last-thing check' before sending guards specifically against:",o:["Wrong recipients, a bad subject line, and the missing attachment","Excessive paragraph length","Comma splices in the body text","An unclear organizational strategy"],a:0},
+{q:"Names, numbers, and dates should be VERIFIED against their sources rather than reread because:",o:["Sources are always available in one click","Rereading is how the error survived in the first place","These items never contain errors anyway","Verification is faster than reading"],a:1},
+/* Ch5 */
+{q:"The best subject line for a message asking a committee to approve revised vendor terms by Thursday is:",o:["'Approve revised vendor terms by Thu 7/9'","'Quick question'","'IMPORTANT!!!'","'Vendor situation — thoughts?'"],a:0},
+{q:"Reply-all is appropriate only when:",o:["You want witnesses to your response","The original sender used reply-all first","Your reply contains good news","Every person on the thread needs every word of your reply"],a:3},
+{q:"In professional email convention, being in the To line rather than the CC line signals that you:",o:["Are expected to act or respond","Wrote the original message","Should archive the message immediately","Are the most senior person on the thread"],a:0},
+{q:"A decision with consequences gets made in a chat thread. The professional next step is to:",o:["Confirm it in email — 'confirming what we agreed' — so a record exists","Assume the platform's log is record enough","Screenshot the chat and save it privately","Re-decide it at the next meeting"],a:0},
+{q:"The safest operating assumption about messages on employer systems is that they are:",o:["Visible only to IT administrators","Logged, searchable, and potentially discoverable in disputes","Deleted permanently when you delete them","Private as long as they're marked personal"],a:1},
+{q:"A colleague sends 'hey' … 'you there?' … and nothing else. The chat habit being violated is:",o:["Failing to use reply-all","Writing during business hours","Front-loading — state the question and the deadline in the first message","Using too few emoji to signal tone"],a:2},
+{q:"An out-of-office reply does its whole job when it states:",o:["An apology for the inconvenience of your absence","Your return date and who covers what while you're gone","A promise to answer within the hour anyway","Your reasons for taking leave"],a:1},
+{q:"A status update reads: 'On track except one item. Slipping: data migration (3 days; fix due Wed). Need from you: nothing yet.' Its key strength is:",o:["Its use of technical vocabulary","Withholding the slip until the meeting","Its length","Leading with the exception so the manager never has to excavate for it"],a:3},
+/* Ch6 */
+{q:"The 'complete-ask test' for a request message asks whether:",o:["The request appears in the final paragraph","The reader outranks the writer","The reader can comply without asking a single clarifying question","The request uses the word 'please' at least twice"],a:2},
+{q:"The best reply to 'Can we use the conference room Friday 2–4?' begins:",o:["'Per building policy 7.3, room requests are processed…'","'There are several factors to consider regarding availability.'","'Yes — the room is yours, 2–4 Friday.'","'Thank you for your interest in the conference room.'"],a:2},
+{q:"An effective claim (complaint) message leads with:",o:["A statement of how angry you are","A threat to involve an attorney","A request that the company 'do better'","The order number, dates, and facts a rep can find in their system"],a:3},
+{q:"When granting a customer's claim, the adjustment message should state the grant:",o:["Only after the customer acknowledges partial fault","In the first sentence — delay manufactures dread","After fully explaining company policy","In the postscript, to soften it"],a:1},
+{q:"The 'prevention sentence' in an adjustment ('We've switched your account to reinforced packaging') matters because it:",o:["Legally limits the company's liability","Proves the customer caused the problem","Rebuilds confidence that the problem won't recur","Pads the message to a professional length"],a:2},
+{q:"A thank-you note that pivots to a favor request fails which of the five S's most directly?",o:["Specific","Spontaneous","Selfless","Short"],a:2},
+{q:"In written instructions, warnings must appear BEFORE the steps they protect because:",o:["Readers expect all warnings in the final section","Warnings are legally required to be in bold","It shortens the total document","A caution discovered after the damage is an autopsy, not a warning"],a:3},
+/* Ch7 */
+{q:"The indirect pattern for bad news is best defended as:",o:["Padding — length signals seriousness","Delay — giving the writer time to reconsider","Sequencing — reasons reach the reader before defenses go up, and every fact still arrives","Evasion — softening what the reader is told"],a:2},
+{q:"A buffer that opens 'Great news about your application!' before a rejection commits the failure of:",o:["Irrelevance — discussing an unrelated topic","False hope — converting disappointment into betrayal","Padding — taking too long to reach the point","Bluntness — stating the no too early"],a:1},
+{q:"In a refusal, the reasons should come BEFORE the no because:",o:["It makes the message look longer and more considered","A mind not yet defending itself can still hear them","Readers skip everything after a no anyway","Company templates require that order"],a:1},
+{q:"'Although we couldn't fund the March cohort, September has open seats I can hold until Friday.' This sentence demonstrates:",o:["An apology followed by an excuse","The direct pattern applied to good news","A buffer followed by a second buffer","The no stated once, softened by a subordinate clause, followed by a concrete pivot"],a:3},
+{q:"'I apologize if anyone was offended by my remarks' fails apology anatomy because it:",o:["Is too short to be sincere","Names the impact too specifically","Relocates the offense into the audience's sensitivity instead of owning the act","Should have been delivered in writing"],a:2},
+{q:"The MUM effect describes the tendency to:",o:["Exaggerate bad news to get attention","Delay, soften, or reroute bad news — even when blameless for it","Repeat bad news more often than necessary","Deliver bad news only in writing"],a:1},
+{q:"The professional protocol for reporting a project problem upward is:",o:["Route it through a peer so it arrives indirectly","Report it small and early, paired with a recovery plan","Wait until you're certain of every detail","Mention it casually after it's fixed"],a:1},
+{q:"For consequential personal bad news (a role elimination), the correct channel sequence is:",o:["Rich conversation first, written confirmation the same day","Announce to the team first, then tell the person","Written notice only, to keep the record clean","Email first so the person can react privately, then silence"],a:0},
+/* Ch8 */
+{q:"What distinguishes persuasion from simple instruction is that in persuasion the reader:",o:["Outranks the writer","Will read the message more than once","Has never met the writer","Is free to refuse — you are earning a decision, not announcing one"],a:3},
+{q:"In the AIDA sequence, an opening that leads with the READER'S quantified problem is doing the work of:",o:["Action","Attention","Interest only","Desire"],a:1},
+{q:"A pitch with strong evidence and passion that still fails because the audience doesn't trust the presenter is missing which appeal?",o:["Ethos","Pathos","Kairos","Logos"],a:0},
+{q:"'Four of the five regional labs have already switched' is an appeal to:",o:["Social proof","Authority","Reciprocity","Scarcity"],a:0},
+{q:"Inventing a deadline ('offer ends Friday' when it doesn't) is self-defeating because:",o:["It violates AIDA's ordering","Deadlines never influence decisions","Discovery is certain, and it detonates the writer's credibility","Readers prefer open-ended offers"],a:2},
+{q:"Conceding your proposal's strongest real objection ('Yes, it costs $2,400 — here's the six-week payback') is effective because:",o:["Readers skip concessions anyway","It transfers blame to the budget","Two-sided arguments earn credibility exactly at the point of concession","It makes the message longer"],a:2},
+{q:"The 'commitment ladder' recommends opening with a small ask (a 20-minute demo) rather than the full contract because:",o:["Large asks are illegal in cold outreach","Small asks are easier to write","Small yeses build consistency that makes larger yeses natural","It hides the true cost from the reader"],a:2},
+];
+
+const FINAL=[
+/* Ch9 */
+{q:"A report that ends in a recommendation is governed by ANALYTICAL report rules, which primarily add:",o:["Persuasive machinery plus a duty of completeness — the skeptic must be able to check you","Longer paragraphs and formal vocabulary","Chronological organization of the writer's work","A ban on tables and charts"],a:0},
+{q:"In the pyramid (Minto) structure, the top of the pyramid must be:",o:["An answer — 'Renew with TechServe' — never a topic label","The writer's job title and department","A list of every source consulted","The history of the investigation"],a:0},
+{q:"Reasons that read 'cost, price, and budget' fail the MECE test because they are:",o:["In the wrong order of importance","Too short to be professional","Insufficiently emotional","Overlapping — one reason wearing three costumes"],a:3},
+{q:"A status dashboard shows green for five months, then jumps to red. The most likely organizational cause is:",o:["The dashboard software malfunctioned","'Green' quietly drifted from 'on track' to 'I can still fix this privately'","The project genuinely failed within thirty days","Status colors are inherently meaningless"],a:1},
+{q:"Decision-style meeting minutes record:",o:["Attendance and adjournment time only","Everything each attendee said, in order","Only items the chair considers flattering","Decisions, owners, and deadlines — one page, same day"],a:3},
+{q:"An incident report that stops its analysis at 'technician error' has failed because:",o:["Root causes belong in the appendix","It stopped one 'why' short of the system cause that lets recurrence be prevented","Errors should be described in passive voice","Technicians cannot legally be named in reports"],a:1},
+{q:"A chart's title should carry:",o:["The takeaway — 'Response times fell 41% after barcode intake'","The name of the software that produced it","The figure number and data source only","A neutral topic label to avoid bias"],a:0},
+/* Ch10 */
+{q:"An UNSOLICITED proposal must spend its opening proving:",o:["That competitors are inferior","That the problem exists and costs money — before any solution appears","That the price is negotiable","That the writer's firm is the oldest in the field"],a:1},
+{q:"In RFP evaluation, compliance with the RFP's structure and format is best understood as:",o:["Optional for clearly superior solutions","A courtesy that evaluators rarely check","The entry requirement — scored before your content quality is even weighed","A tiebreaker used only for identical scores"],a:2},
+{q:"A compliance matrix maps:",o:["Your budget lines to your staffing plan","Every 'shall/must' in the RFP → where your proposal addresses it → the page number","The evaluators' names to their departments","Your competitors' weaknesses to your strengths"],a:1},
+{q:"The executive summary of a formal report should be written:",o:["First, to guide the drafting of the body","Only when the report exceeds fifty pages","Last, placed first, and able to stand completely alone","By the most junior team member as practice"],a:2},
+{q:"'This report examines three vendor options across several criteria' fails as an executive summary sentence because it is:",o:["A preview of the table of contents rather than a verdict","Missing a citation","Written in active voice","Too specific about the report's contents"],a:0},
+{q:"In the three-reader model of formal reports, the appendices exist primarily for:",o:["Legal compliance with records laws","The auditor — the reader who verifies your method and data","Readers who enjoy supplementary material","The decider — the reader who approves the recommendation"],a:1},
+{q:"On the source credibility ladder, unsourced web content and raw AI output share the rule:",o:["Acceptable in internal documents only","Usable if quoted exactly","Never load-bearing — trace the claim to a real source or drop it","Usable if two AI tools agree"],a:2},
+/* Ch11 */
+{q:"Workplace professionalism is most accurately described as:",o:["Predictability plus respect, shown in small repeated behaviors","Never disagreeing with management","Working longer hours than colleagues","Formality in dress and vocabulary"],a:0},
+{q:"A team's ground rules ('drafts circulate 24 hours before meetings; disagreements argued in the room, not after') exist primarily to:",o:["Eliminate all disagreement","Satisfy HR documentation requirements","Protect senior members from criticism","Make conflict productive and decisions durable by agreeing on process before stakes rise"],a:3},
+{q:"The highest-value contribution to a meeting you did NOT organize is usually:",o:["Taking the longest turn speaking","Arriving prepared — pre-reads read, data ready, positions thought through","Asking many questions to signal engagement","Summarizing your department's history"],a:1},
+{q:"Constructive disagreement in a team differs from personal conflict because it:",o:["Attacks the idea's weaknesses while protecting the person's standing","Happens only in private messages","Is delivered exclusively by team leads","Avoids specifics to spare feelings"],a:0},
+{q:"A hidden agenda item — a decision maneuvered through a meeting without appearing on the agenda — damages teams mainly because:",o:["It violates parliamentary procedure","Meetings run slightly longer","Minutes become harder to format","Members learn the stated process isn't the real one, and stop trusting both"],a:3},
+{q:"The professional response to receiving credit for work a teammate did is:",o:["Redirect it publicly and immediately — 'the analysis is Maya's'","Accept it and thank the teammate privately later","Stay silent to avoid awkwardness","Split the credit evenly regardless of contribution"],a:0},
+{q:"Virtual-team etiquette treats camera presence, mute discipline, and visible attention as:",o:["Optional courtesies for junior staff","Relevant only for client-facing calls","Matters of personal style","The digital replacements for the body language a room provides"],a:3},
+/* Ch12 */
+{q:"The most reliable cure for presentation anxiety is:",o:["Preparation and rehearsal in realistic conditions — competence quiets nerves","Imagining the audience in embarrassing situations","Memorizing the talk word for word","Speaking faster to shorten exposure"],a:0},
+{q:"A presentation's structure should be built around:",o:["The slide template's default sections","One clear takeaway the audience can repeat afterward, supported by a few memorable points","Everything the presenter knows about the topic","The chronological order of the presenter's research"],a:1},
+{q:"The 'slide as billboard' rule holds that a slide should:",o:["Make one point, readable in seconds — with the speaker, not the slide, carrying the detail","Display the speaker's complete notes","Contain full paragraphs so absent colleagues can read it later","Use every color the template offers"],a:0},
+{q:"Reading dense slides aloud to an audience fails because:",o:["It shortens the presentation too much","Audiences read faster than speakers talk, then disengage while the speaker catches up","Slides are legally the property of the audience","Audiences cannot read and listen simultaneously under any conditions"],a:1},
+{q:"The strongest opening for a business presentation is typically:",o:["'Let me introduce myself and my department's org chart'","The audience's problem or a striking, relevant fact — earning attention before agenda","An apology for the presentation's length","A detailed preview of every section"],a:1},
+{q:"When a hostile question you can't answer arrives during Q&A, the professional move is:",o:["Rule the question out of scope","Bluff a plausible answer confidently","Acknowledge it, commit to a specific follow-up — 'I'll have that number to you by Friday'","Redirect to a friendlier questioner"],a:2},
+{q:"On camera, the closest equivalent of eye contact is:",o:["Turning the camera off to reduce distraction","Looking at the lens when speaking","Watching your own preview window","Looking at the questioner's video tile"],a:1},
+/* Ch13 */
+{q:"The modern job search is most effective when treated as:",o:["A targeted campaign — researched employers, tailored materials, tracked follow-ups","A volume game — identical applications to hundreds of postings","A passive process — posting a profile and waiting","A single event rather than a pipeline"],a:0},
+{q:"Applicant tracking systems (ATS) make it essential that résumés:",o:["Are submitted as photographs of printed pages","Avoid naming specific skills","Use elaborate graphics to stand out","Mirror the posting's actual keywords in clean, parseable formatting"],a:3},
+{q:"The strongest résumé bullets follow the pattern:",o:["Objective statements about career hopes","Duty listing — 'Responsible for various administrative tasks'","Action verb + task + measurable result — 'Cut intake errors 38% by redesigning the checklist'","Trait claims — 'Hardworking team player with great attitude'"],a:2},
+{q:"A tailored cover letter earns its space by:",o:["Connecting your specific evidence to THIS employer's specific need — not restating the résumé","Explaining every job change since graduation","Discussing salary expectations early","Repeating the résumé in paragraph form"],a:0},
+{q:"Employers who search a candidate's name should find:",o:["Whatever exists; employers rarely look","Only private, locked accounts","Nothing at all — invisibility is safest","A professional layer consistent with the application — the person online and on paper are colleagues"],a:3},
+{q:"Gaps or job changes on a résumé are best handled by:",o:["Adjusting dates so gaps disappear","Explaining them at length in the first interview minute","Leaving all dates off the résumé","Honest, brief framing focused on what was built or learned — never fabrication"],a:3},
+{q:"Networking outreach ('I'm exploring quality roles in medical devices — could I ask you two questions about your path?') works because it:",o:["Directly requests a job referral from a stranger","Makes a small, specific, answerable ask of someone positioned to help","Attaches a full résumé for forwarding","Flatters the recipient at length"],a:1},
+/* Ch14 */
+{q:"The STAR structure for behavioral interview answers stands for:",o:["Skills, Training, Attitude, Reliability","Situation, Task, Action, Result","Strengths, Talents, Achievements, References","Story, Theme, Argument, Resolution"],a:1},
+{q:"The most common failure in STAR answers is:",o:["Describing the situation too specifically","Vague, collective actions — 'we handled it' — with no measurable result","Including a numeric result","Naming the employer where it happened"],a:1},
+{q:"Asking the interviewer 'What does success in this role look like at ninety days?' signals:",o:["That you didn't research the company","That you're worried about probation periods","That you're already thinking like someone doing the job","That you expect rapid promotion"],a:2},
+{q:"When salary comes up early and you'd rather anchor later, the professional response is:",o:["A calm range based on researched market data for the role and region","Asking what the interviewer personally earns","Refusing to discuss compensation at any stage","Naming the lowest number you'd accept"],a:0},
+{q:"The post-interview thank-you message is most effective when it:",o:["Arrives a week later so you seem unhurried","Arrives within a day and references a specific moment from the conversation","Restates your entire résumé","Is sent to every employee you met, identically worded"],a:1},
+{q:"If an interviewer asks a question that seems designed to elicit protected personal information, the composed response is to:",o:["Answer the legitimate concern beneath it — 'If you're asking about availability, my schedule fully covers the role's hours'","Answer completely to avoid awkwardness","End the interview immediately","Refuse loudly and cite statutes"],a:0},
+{q:"After a rejection, the highest-value professional move is:",o:["A demand for detailed feedback","Silence — the relationship is over","A gracious reply that thanks them and keeps the door open — plus a request for the next opening","A complaint to the hiring manager's supervisor"],a:2},
+/* Ch15 */
+{q:"The governing rule for professional AI use in writing is:",o:["AI use must always be concealed","AI output needs checking only for spelling","Your name ships on it — the judgment, verification, and accountability stay yours","Whatever the tool produces may be sent as-is"],a:2},
+{q:"AI tools state falsehoods fluently and confidently. The professional consequence is:",o:["Confident phrasing signals accuracy","Verification is needed only for legal documents","Facts, numbers, names, and citations from AI get verified against real sources before use","AI should never be used for drafting"],a:2},
+{q:"Pasting confidential data (client names, unreleased figures) into a public AI tool is best understood as:",o:["Harmless, since chatbots forget conversations","A problem only for regulated industries","Acceptable if the account is password-protected","Disclosure to an external service — the same confidentiality rules as any outside party apply"],a:3},
+{q:"The message category where AI drafting defeats the entire purpose is:",o:["Personal goodwill — condolences and thanks, where the human pause IS the content","Technical documentation","Meeting agendas","Routine scheduling confirmations"],a:0},
+{q:"An AI agent that acts on your behalf (sending, scheduling, filing) differs from a drafting tool because:",o:["It cannot make errors","It requires no instructions","Its actions are yours the moment they execute — supervision and limits must be designed in advance","It removes your accountability"],a:2},
+{q:"The most durable communication skills as AI drafting becomes universal are:",o:["Vocabulary size","Memorized templates for every genre","Judgment: knowing what matters, what's true, and what the moment requires","Typing speed and formatting knowledge"],a:2},
+/* Ch16 */
+{q:"In a crisis, the leader's first communication should:",o:["Route all questions to legal","Wait until every fact is confirmed","Arrive fast, own what's known and unknown, and promise a specific update cadence","Minimize the event to prevent panic"],a:2},
+{q:"Influence built by genuinely getting interested in other people's problems (the Carnegie principle) works because:",o:["People move for those who demonstrably understand and serve their interests","It avoids all disagreement","Flattery is universally effective","It creates debts people must repay"],a:0},
+{q:"'Talk in terms of the other person's interests' translates, in business writing, to:",o:["Avoiding your own recommendations","Mentioning the reader's hobbies in openings","The you-view: framing every message around the reader's stakes and gains","Agreeing with whatever the reader believes"],a:2},
+{q:"The leadership habit of admitting your own errors quickly and emphatically earns influence because:",o:["It transfers blame efficiently","It makes your praise credible and your standards livable — people follow what's real","It preempts formal discipline","It lowers expectations for everyone"],a:1},
+{q:"Under pressure, the leader's communication discipline of 'clarity over reassurance' means:",o:["Never offering comfort in hard moments","Sharing every fear you privately hold","People can act on accurate hard news; they can't act on comfortable fog","Delivering all news in writing only"],a:2},
+{q:"Letting the other person save face after an error — correcting privately, criticizing the act not the person — preserves:",o:["Your plausible deniability","Their capacity and willingness to keep contributing, which the team needs tomorrow","Seniority-based privilege","The illusion that nothing happened"],a:1},
+/* Ch17 */
+{q:"In value-based strategy, a firm creates value by:",o:["Cutting prices below all competitors","Advertising more than rivals","Widening the gap between customers' willingness to pay and suppliers'/employees' willingness to sell","Maximizing the number of product features"],a:2},
+{q:"A proposal argues that new software 'raises customer willingness to pay by cutting their audit prep time.' This frames the purchase as:",o:["Value creation the buyer can verify — the strongest commercial argument available","A feature comparison against rivals","A discount negotiation","A cost the buyer must absorb"],a:0},
+{q:"'Willingness to sell' falls (creating value for employees) when a firm:",o:["Outsources the function entirely","Raises salaries across the board","Makes work genuinely better — flexibility, growth, meaning — so people would accept the job at lower total cost","Requires longer hours for the same pay"],a:2},
+{q:"The strategic insight that 'no' is never free means:",o:["The status quo has costs — a proposal's best paragraph often prices the do-nothing option","Rejecting proposals is always wrong","Budgets should never be cut","Every proposal deserves funding"],a:0},
+{q:"A communicator who understands the firm's strategy writes proposals that:",o:["Connect their ask to the value drivers leadership already cares about — WTP up or costs down","Avoid mentioning money entirely","Focus on their department's convenience","Are longer and more detailed than rivals'"],a:0},
+{q:"Value-based thinking treats price as:",o:["The only lever that matters","Fixed by industry convention","Irrelevant to strategy","A split of created value between parties — not the source of value itself"],a:3},
+];
+
+/* ============================================================ */
+const EXAMS={midterm:{label:"Midterm Exam",bank:MIDTERM,cover:"Chapters 1–8"},final:{label:"Final Exam",bank:FINAL,cover:"Chapters 9–17"}};
+const app=document.getElementById('app');
+const params=new URLSearchParams(location.search);
+
+function header(title,sub){return '<header class="bar"><div class="mono">BADM 225 · Professional Communication for Business</div><h1>'+esc(title)+'</h1>'+(sub?'<div class="sub" style="color:#C6CDD6;margin-top:4px">'+esc(sub)+'</div>':'')+'</header>';}
+
+/* ---------- instructor setup (no params) ---------- */
+function renderSetup(){
+  document.title='BADM 225 — Exam Setup (Instructor)';
+  app.innerHTML=header('Timed Exam — Instructor Setup','Build a dated exam link to post in the LMS when you are ready.')+
+  '<div class="card"><h2>1 · Configure</h2>'+
+  '<div class="grid2"><div><label>Exam</label><select id="ex"><option value="midterm">Midterm (Ch 1–8, 60 questions)</option><option value="final">Final (Ch 9–17, 60 questions)</option></select></div>'+
+  '<div><label>Time limit (minutes)</label><input id="dur" type="number" min="30" max="300" value="'+DEFAULT_MIN+'"></div></div>'+
+  '<div class="grid2"><div><label>Opens (students cannot start before this)</label><input id="open" type="datetime-local"></div>'+
+  '<div><label>Last start (latest a student may begin)</label><input id="last" type="datetime-local"></div></div>'+
+  '<div class="sub" style="margin-top:8px">Each student gets the full time limit from the moment they press START, as long as they begin before "last start." Leave "last start" blank for a 24-hour window.</div>'+
+  '<div style="margin-top:14px"><button class="btn" id="gen">GENERATE EXAM LINK</button></div>'+
+  '<div id="out"></div></div>'+
+  '<div class="card"><h2>How it works</h2><ul style="margin-left:18px;font-size:14px">'+
+  '<li>Post the generated link in your LMS at exam time (or in advance — it will not open early).</li>'+
+  '<li>60 multiple-choice questions; question and answer order are shuffled per student.</li>'+
+  '<li>The timer runs from each student’s START; the exam auto-submits at zero. Progress auto-saves in the student’s browser, so a refresh does not lose answers or reset the clock.</li>'+
+  '<li>On submit, students get a completion code (same BC2 format as homework) to paste into the LMS. Verify codes in the practice site’s Instructor tab — exams appear with mode EXAM.</li>'+
+  '<li>FERPA: nothing students enter leaves their browser. No answer key is shown to students after submission.</li>'+
+  '<li>Timing runs on the student’s device clock; the completion code embeds the actual date-time and seconds used, so anomalies are visible to you at verification.</li></ul></div>'+
+  footerHTML();
+  const now=new Date(Date.now()+3600e3); now.setMinutes(0,0,0);
+  document.getElementById('open').value=now.toISOString().slice(0,16);
+  document.getElementById('gen').onclick=()=>{
+    const ex=document.getElementById('ex').value, dur=parseInt(document.getElementById('dur').value)||DEFAULT_MIN;
+    const open=document.getElementById('open').value; let last=document.getElementById('last').value;
+    if(!open){alert('Set an opening time.');return;}
+    if(!last) last=new Date(new Date(open).getTime()+24*3600e3).toISOString().slice(0,16);
+    const qs='e='+ex+'&t='+encodeURIComponent(open)+'&d='+dur+'&x='+encodeURIComponent(last);
+    const sig=djb2(qs+SECRET);
+    const url=location.origin+location.pathname+'?'+qs+'&sig='+sig;
+    document.getElementById('out').innerHTML='<div class="codebox" id="lnk">'+esc(url)+'</div><button class="btn2" onclick="navigator.clipboard.writeText(document.getElementById(\'lnk\').textContent).then(()=>this.textContent=\'COPIED ✓\')">COPY LINK</button>'+
+    '<div class="warn" style="margin-top:12px"><b>'+esc(EXAMS[ex].label)+'</b> · opens '+new Date(open).toLocaleString()+' · last start '+new Date(last).toLocaleString()+' · '+dur+' minutes per student.</div>';
+  };
+}
+
+/* ---------- student flow ---------- */
+function readConfig(){
+  const e=params.get('e'),t=params.get('t'),d=params.get('d'),x=params.get('x'),sig=params.get('sig');
+  if(!e||!t||!d||!x||!sig||!EXAMS[e]) return null;
+  const qs='e='+e+'&t='+encodeURIComponent(t)+'&d='+d+'&x='+encodeURIComponent(x);
+  if(djb2(qs+SECRET)!==sig) return {bad:true};
+  return {exam:e,open:new Date(t),mins:Math.min(300,Math.max(10,parseInt(d)||DEFAULT_MIN)),last:new Date(x),sig};
+}
+const cfg=readConfig();
+function sKey(){return 'bc_exam_'+cfg.exam+'_'+cfg.sig;}
+function loadS(){try{return JSON.parse(localStorage.getItem(sKey()))||null;}catch(e){return null;}}
+function saveS(s){localStorage.setItem(sKey(),JSON.stringify(s));}
+function footerHTML(){return '<footer><b>Privacy.</b> Nothing you enter on this page is uploaded or stored on any server. Your answers and identity stay in this browser; your score reaches your instructor only through the completion code you submit in the LMS. Original instructor-created material — not affiliated with any textbook or publisher.</footer>';}
+
+function renderGate(){
+  const E=EXAMS[cfg.exam];
+  document.title='BADM 225 — '+E.label;
+  const st=loadS();
+  if(st&&st.done){renderDone(st);return;}
+  if(st&&st.startedAt){renderExam();return;}
+  const now=Date.now();
+  const before=now<cfg.open.getTime(), after=now>cfg.last.getTime();
+  app.innerHTML=header(E.label,E.cover+' · 60 multiple-choice questions · '+cfg.mins+' minutes')+
+  '<div class="card"><h2>Exam window</h2><p style="font-size:15px">Opens: <b>'+cfg.open.toLocaleString()+'</b><br>Last start: <b>'+cfg.last.toLocaleString()+'</b><br>Time limit: <b>'+cfg.mins+' minutes</b> from when you press START.</p>'+
+  (before?'<div class="warn">This exam has not opened yet. It opens in <b id="cd"></b>. This page will unlock automatically.</div>':'')+
+  (after?'<div class="warn danger">The start window for this exam has closed. Contact your instructor.</div>':'')+
+  '</div>'+
+  '<div class="card"><h2>Before you start</h2>'+
+  '<label>Full name</label><input id="nm" autocomplete="name" maxlength="60">'+
+  '<label>Student ID</label><input id="sid" maxlength="30">'+
+  '<label>Section / class number</label><input id="sec" maxlength="20" placeholder="e.g., 24854">'+
+  '<div class="warn">Rules: closed notes unless your instructor says otherwise · the timer does not pause · the exam submits itself when time expires · you may change answers any time before submitting · one attempt. Your progress auto-saves in this browser if the page reloads.</div>'+
+  '<button class="btn" id="start" '+(before||after?'disabled':'')+'>START EXAM — TIMER BEGINS IMMEDIATELY</button></div>'+footerHTML();
+  if(before){
+    const cd=document.getElementById('cd');
+    const iv=setInterval(()=>{const r=(cfg.open.getTime()-Date.now())/1000;if(r<=0){clearInterval(iv);renderGate();return;}cd.textContent=fmtT(r);},500);
+    const r0=(cfg.open.getTime()-now)/1000; cd.textContent=fmtT(r0);
+  }
+  const btn=document.getElementById('start');
+  if(btn) btn.onclick=()=>{
+    const nm=document.getElementById('nm').value.trim(),sid=document.getElementById('sid').value.trim(),sec=document.getElementById('sec').value.trim();
+    if(!nm||!sid||!sec){alert('Enter your name, student ID, and section.');return;}
+    if(Date.now()<cfg.open.getTime()||Date.now()>cfg.last.getTime()){renderGate();return;}
+    const seed=seedFrom(nm+'|'+sid+'|'+cfg.sig);
+    const qOrder=seededOrder(EXAMS[cfg.exam].bank.length,seed);
+    const oOrders=qOrder.map((qi,k)=>seededOrder(4,seed+31*k+7));
+    saveS({name:nm,id:sid,sec:sec,startedAt:Date.now(),qOrder,oOrders,ans:{},done:false});
+    renderExam();
+  };
+}
+
+let tick=null;
+function deadline(st){return Math.min(st.startedAt+cfg.mins*60e3, cfg.last.getTime()+cfg.mins*60e3);}
+function renderExam(){
+  const E=EXAMS[cfg.exam], st=loadS();
+  const bank=E.bank;
+  let html=header(E.label,st.name+' · '+st.id+' · Section '+st.sec)+
+  '<div class="timerbar" id="tb"><span>TIME REMAINING</span><b id="tm">--:--</b><span class="progress" id="pg"></span></div><div id="qs">';
+  st.qOrder.forEach((qi,k)=>{
+    const q=bank[qi], ord=st.oOrders[k];
+    html+='<div class="q"><div class="qt"><span class="qn">'+(k+1)+'.</span>'+esc(q.q)+'</div>';
+    ord.forEach(oi=>{
+      const sel=st.ans[k]===oi?' sel':'';
+      html+='<label class="opt'+sel+'"><input type="radio" name="q'+k+'" value="'+oi+'"'+(st.ans[k]===oi?' checked':'')+'> <span>'+esc(q.o[oi])+'</span></label>';
+    });
+    html+='</div>';
+  });
+  html+='</div><div class="card"><h2>Submit</h2><p class="sub">Check the unanswered count above before submitting. You cannot reopen the exam after submission.</p><button class="btn" id="sub">SUBMIT EXAM</button></div>'+footerHTML();
+  app.innerHTML=html;
+  document.getElementById('qs').addEventListener('change',ev=>{
+    if(ev.target.name&&ev.target.name.startsWith('q')){
+      const k=parseInt(ev.target.name.slice(1)); const s=loadS();
+      s.ans[k]=parseInt(ev.target.value); saveS(s);
+      document.querySelectorAll('[name='+ev.target.name+']').forEach(r=>r.closest('.opt').classList.toggle('sel',r.checked));
+      updateProgress();
+    }
+  });
+  document.getElementById('sub').onclick=()=>{const s=loadS();const un=s.qOrder.length-Object.keys(s.ans).length;
+    if(!confirm(un?('You have '+un+' unanswered question'+(un>1?'s':'')+'. Submit anyway?'):'Submit your exam now?'))return; finishExam(false);};
+  function updateProgress(){const s=loadS();document.getElementById('pg').textContent=Object.keys(s.ans).length+' / '+s.qOrder.length+' answered';}
+  updateProgress();
+  if(tick)clearInterval(tick);
+  tick=setInterval(()=>{
+    const rem=(deadline(st)-Date.now())/1000;
+    const tm=document.getElementById('tm'); if(!tm){clearInterval(tick);return;}
+    tm.textContent=fmtT(rem);
+    if(rem<=300)document.getElementById('tb').classList.add('low');
+    if(rem<=0){clearInterval(tick);finishExam(true);}
+  },500);
+}
+
+function finishExam(auto){
+  const st=loadS(); if(!st||st.done)return;
+  const bank=EXAMS[cfg.exam].bank;
+  let score=0;
+  st.qOrder.forEach((qi,k)=>{if(st.ans[k]===bank[qi].a)score++;});
+  const secs=Math.min(cfg.mins*60,Math.round((Date.now()-st.startedAt)/1000));
+  const code=makeCode('EXAM',EXAMS[cfg.exam].label,score,bank.length,st.id,st.name,secs,st.sec);
+  st.done=true;st.score=score;st.code=code;st.secs=secs;st.auto=!!auto;saveS(st);
+  renderDone(st);
+}
+function renderDone(st){
+  if(tick)clearInterval(tick);
+  const E=EXAMS[cfg.exam];
+  document.title='BADM 225 — '+E.label+' — Submitted';
+  app.innerHTML=header(E.label+' — Submitted',st.name+' · Section '+st.sec)+
+  '<div class="card"><h2>Your result</h2><div class="big">'+st.score+' / '+E.bank.length+'</div>'+
+  '<p class="sub">Time used: '+fmtT(st.secs)+(st.auto?' · submitted automatically when time expired':'')+'</p>'+
+  '<div class="warn">Copy the completion code below and paste it into the <b>'+esc(E.label)+'</b> assignment in the LMS. Your instructor verifies it there. Individual answers are not shown.</div>'+
+  '<div class="codebox" id="code">'+esc(st.code)+'</div>'+
+  '<button class="btn" onclick="navigator.clipboard.writeText(document.getElementById(\'code\').textContent).then(()=>this.textContent=\'COPIED ✓\')">COPY CODE</button></div>'+footerHTML();
+}
+
+/* ---------- route ---------- */
+if(!cfg){renderSetup();}
+else if(cfg.bad){app.innerHTML=header('Exam link invalid')+'<div class="card"><div class="warn danger">This exam link is invalid or has been altered. Ask your instructor for the correct link.</div></div>'+footerHTML();}
+else{renderGate();}
+</script>
+</body>
+</html>

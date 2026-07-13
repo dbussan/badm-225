@@ -1,4 +1,4 @@
-# Chapter 7 — Negative Messages (22 slides, delivery-neutral)
+# Chapter 7 — Negative Messages (45 slides, delivery-neutral)
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from decklib import *
@@ -139,6 +139,208 @@ s = two_col_slide(prs, "Two refusals you can reuse this week",
         "What we can do: repair at $180 — a third of replacement — scheduled this week. And the reinforced case on p. 12 prevents exactly this break.”",
     ], D, nxt())
 notes(s, "Both from the guide's worked examples: buffer, reasons, one no, concrete pivot.")
+
+s = section_slide(prs, "04", "Saying no, genre by genre",
+    "The pattern is one; the craft is knowing how it bends per situation.", D, nxt())
+notes(s, "Section 4: applied refusals. Same skeleton — buffer, reasons, one no, pivot — tuned to four recurring situations.")
+
+s = bullets_slide(prs, "Refusing a favor or invitation", [
+    ("Fast beats padded.", "A quick, warm no lets them ask the next person today; a slow, agonized no costs them the week you spent dreading it."),
+    ("One real reason, not three excuses.", "'I'm committed through the 22nd' closes the case; a pile of small excuses invites rebuttal of each."),
+    ("Protect the relationship, not the fiction.", "Never invent a conflict — invented conflicts get discovered at exactly the wrong party."),
+    ("Pivot if you mean it, close if you don't.", "'Ask me again for the spring cycle' is a promise; don't issue it as decoration."),
+], D, nxt())
+notes(s, "Low-stakes refusals are where students practice the pattern safely. The speed point is underrated: slow nos are a tax on the asker.")
+
+s = bullets_slide(prs, "Refusing an internal proposal", [
+    ("Honor the work first — specifically.", "'The vendor comparison in section two is the best I've seen this year' — a real buffer, because real effort preceded the no."),
+    ("Give the decision-grade reason.", "Budget, timing, strategy conflict — the actual constraint, stated so the proposer could verify it."),
+    ("Separate the idea's fate from the person's.", "'This isn't fundable this cycle' must not decode as 'stop bringing me ideas' — say the second part out loud: 'bring me the Q4 version.'"),
+    ("A no without a reason teaches people to stop proposing.", "The long-term cost of lazy refusals is an organization that goes quiet (Chapter 1's upward filter, self-inflicted)."),
+], D, nxt())
+notes(s, "The audience for an internal refusal is bigger than the proposer — everyone watching learns whether proposing is safe here.")
+
+s = bullets_slide(prs, "Turning down a candidate", [
+    ("Tell them promptly.", "Every day of silence after their interview is a day they held their life in a hold pattern for you."),
+    ("Buffer with the true positive,", "then the news in one clean sentence: 'we've offered the role to another candidate.' No euphemism maze."),
+    ("Don't machine-audit them.", "A rejection is not the moment for a feedback report; offer feedback only if they ask and you can give it usefully."),
+    ("Leave the door authentically.", "'I'd genuinely encourage you to apply for the analyst opening in the fall' — only if true; candidates remember which companies meant it."),
+], D, nxt())
+notes(s, "Candidates talk, review sites exist, and today's rejected applicant is next year's client-side buyer. The rejection letter is brand communication.")
+
+s = bullets_slide(prs, "The policy no: refusing a customer request", [
+    ("Explain the policy's why, not just its existence.", "'Returns close at 90 days because we can't resell after that window' beats the wall of 'per our policy.'"),
+    ("Never hide behind the system.", "'The system won't let me' reads as 'I stopped trying' — because it is."),
+    ("Find the adjacent yes.", "Can't refund? Maybe credit. Can't expedite? Maybe partial-ship. The pivot slide's four moves apply verbatim."),
+    ("Know your own escalation line.", "If you'd grant it as the manager, escalate it as the rep — routing a borderline case up IS good refusal craft."),
+], D, nxt())
+notes(s, "Policy nos are where companies bleed goodwill invisibly. The 'adjacent yes' habit converts a stonewall into a negotiation.")
+
+s = two_col_slide(prs, "The discount request: two refusals",
+    "Version A", [
+        "'Unfortunately we are unable to offer discounting at this time due to company policy.'",
+        "No reason a reader could verify",
+        "No pivot — the sentence is a wall",
+        "Customer hears: 'we don't value you enough to explain'",
+    ],
+    "Version B", [
+        "'Our pricing stays flat because we don't pad list prices for negotiation — everyone gets the same number.'",
+        "'What I can do: waive onboarding ($400) and lock this rate for 24 months.'",
+        "The no arrives WITH its logic and a real yes",
+        "Customer hears: 'the price is honest and they worked for me'",
+    ], D, nxt(), left_fill=RGBColor(0xF7, 0xEA, 0xE8), left_head_color=RGBColor(0xB2, 0x3A, 0x31))
+notes(s, "Same policy, same no. Version B converts pricing rigidity into a fairness story and still finds a concession that costs less than a discount.")
+
+s = section_slide(prs, "05", "Criticism and performance feedback",
+    "Negative news about someone's work — delivered so the work improves.", D, nxt())
+notes(s, "Section 5: feedback. The negative message where the reader has to keep working with you tomorrow.")
+
+s = flow_slide(prs, "The SBI-R skeleton", [
+    ("SITUATION", "Anchor it: 'In Tuesday's client call…' — not 'you always…'"),
+    ("BEHAVIOR", "What happened, observably: 'the pricing slide had last quarter's numbers.'"),
+    ("IMPACT", "The consequence: 'the client caught it, and we spent ten minutes rebuilding credibility.'"),
+    ("REQUEST", "The forward ask: 'run the numbers check before client decks — want me to show you my checklist?'"),
+], D, nxt(), note_text="Behavior is the hinge: 'the slide was wrong' can be fixed; 'you're careless' can only be resented.")
+notes(s, "Situation-Behavior-Impact plus the request. Every element is checkable — which is what makes it hearable.")
+
+s = bullets_slide(prs, "Criticism that lands", [
+    ("Private, always.", "Public correction is punishment theater; the audience learns fear, not the lesson."),
+    ("Prompt, not ambush.", "Feedback about March delivered in June is an indictment, not a correction — nothing can be done about March in June."),
+    ("The behavior, never the person.", "'This report buries the recommendation' is workable; 'you're a poor writer' is a verdict (Chapter 4's review rules, higher stakes)."),
+    ("One thing at a time.", "The six-issue feedback session fixes zero issues; pick the one that matters most this month."),
+    ("End at the future.", "The last sentence is what happens next, not a replay of the failure."),
+], D, nxt())
+notes(s, "Five rules, all violations common. The 'one thing' rule is the least practiced — feedback hoarding produces annual avalanches.")
+
+s = two_col_slide(prs, "Feedback failure modes",
+    "The sandwich (praise-criticism-praise)", [
+        "Predictable structure teaches people to dread compliments",
+        "The criticism gets lost in the bread on purpose — that's the problem",
+        "Better: honest sequencing — real praise when earned, clear criticism when needed, separately",
+    ],
+    "The other classics", [
+        ("The drive-by:", "criticism in passing, in chat, at 4:58 — stakes deserve a conversation"),
+        ("The vague wince:", "'just tighten it up' — unactionable disappointment"),
+        ("The pile-on:", "saving twelve items for one meeting — an avalanche is not feedback"),
+        ("The proxy:", "criticism routed through a third person arrives as gossip"),
+    ], D, nxt())
+notes(s, "The sandwich critique matters: it's still taught, and it trains teams to distrust praise. Honest, kind, separate is the replacement.")
+
+s = bullets_slide(prs, "Taking criticism about your work", [
+    ("First response: understand, not defend.", "'Can you show me where it lost you?' — the defensive reflex kills the information flow permanently."),
+    ("Extract the checkable core.", "Even badly delivered criticism usually contains a real stumble — mine it for the data and discard the delivery."),
+    ("Close the loop visibly.", "'I reworked the opening per your note — better?' teaches people that feedback to you is a good investment."),
+    ("You're allowed to disagree — after understanding.", "'I see why it read that way; here's why I kept it' is a professional sentence. Reflexive rejection isn't."),
+], D, nxt())
+notes(s, "Mirror of Chapter 4's receiving-edits slide, at relationship stakes. People stop giving feedback to those who bleed on them — and being feedback-starved is a career ceiling.")
+
+s = section_slide(prs, "06", "Anger and de-escalation",
+    "When the negative message is the one arriving — flaming, at 9 a.m.", D, nxt())
+notes(s, "Section 6: handling incoming heat. The skill that makes everything else in the chapter possible under fire.")
+
+s = bullets_slide(prs, "Answering the angry email", [
+    ("Do not match the temperature.", "Anger answered with anger produces a thread nobody survives with dignity — one of you has to be the professional; it's you."),
+    ("Acknowledge the frustration as real,", "without conceding facts you haven't verified: 'I understand this outage hit you mid-launch — let me find out exactly what happened.'"),
+    ("Answer the substance, skip the bait.", "The three insults get no reply; the two legitimate questions get complete ones. Watch the thread cool."),
+    ("Shift channels deliberately.", "Two hot replies means pick up the phone — voice carries the empathy that text strips (Chapter 1's richness, applied)."),
+], D, nxt())
+notes(s, "The selective-response move — answer substance, ignore bait — is the single most effective de-escalation technique in writing, and it's teachable.")
+
+s = flow_slide(prs, "The de-escalation sequence", [
+    ("ACKNOWLEDGE", "Their experience is real before anything else: 'that delay cost you a weekend.'"),
+    ("ALIGN", "Signal the shared goal: 'we both need this live before Monday.'"),
+    ("INFORM", "Facts, cleanly: what happened, what's known, what isn't yet."),
+    ("ACT", "The concrete step, with a time: 'you'll have the patch or a call from me by 3:00.'"),
+], D, nxt(), note_text="Skipping ACKNOWLEDGE and jumping to facts reads as 'your anger is irrelevant' — and re-arms it. The sequence exists because the order matters.")
+notes(s, "Four beats, in order. Most technical people skip straight to INFORM and are baffled when accurate information makes things worse.")
+
+s = bullets_slide(prs, "The message you must never send", [
+    ("The 9 p.m. flame reply:", "write it if you must — in a document, never in the reply window with a live To: field."),
+    ("Sleep is an editor.", "Overnight, the devastating rebuttal becomes visibly career-limiting; the morning edit is always shorter and always calmer."),
+    ("Sarcasm reads twice as hostile in print", "and lives forever (Chapter 5's permanence — your worst sentence is a screenshot on layaway)."),
+    ("The test before sending anything heated:", "would you stand behind every sentence in a meeting with both your managers present? That meeting is one forward away."),
+], D, nxt())
+notes(s, "Chapter 1's composure rule with mechanics. The 'draft outside the reply window' trick prevents the classic catastrophe of the accidental send.")
+
+s = bullets_slide(prs, "Case: the thread one calm reply ended", [
+    ("Eleven messages deep:", "two departments, escalating CCs, bolded accusations about a missed handoff — the thread had become the conflict."),
+    ("The reply that ended it", "answered only the two factual questions, owned the one piece that was genuinely hers, proposed a 15-minute call, and CC'd no one new."),
+    ("The call took nine minutes.", "The written summary afterward — three lines, decisions and owners — was the first message in the thread anyone kept."),
+    ("The lesson:", "in a hot thread, the person who narrows the audience, owns their piece, and changes the channel is the one everyone remembers as the adult."),
+], D, nxt())
+notes(s, "Every element is teachable: selective response, ownership, channel shift, CC discipline, written confirmation. The 'adds no new CCs' detail is the quiet masterstroke.")
+
+s = section_slide(prs, "07", "Bad news at scale",
+    "Crisis communication: the chapter's rules, under stadium lights.", D, nxt())
+notes(s, "Section 7: organizational crisis. Same anatomy — own, inform, act — executed publicly and fast.")
+
+s = flow_slide(prs, "The crisis response sequence", [
+    ("ACKNOWLEDGE FAST", "Hours, not days. Silence gets narrated by everyone except you."),
+    ("FACTS + HONEST UNKNOWNS", "What you know, what you don't yet — stated as confidently as the knowns."),
+    ("THE ACTION", "What's being done right now, and who owns it."),
+    ("THE CADENCE", "'Next update at 4:00' — a promised rhythm kills the refresh-and-rumor cycle."),
+    ("FOLLOW THROUGH", "Keep every promised update, especially the ones where nothing changed."),
+], D, nxt(), note_text="The cadence is the underrated step: a promised 4:00 update, kept, buys calm that no wording can.")
+notes(s, "Crisis compresses the MUM effect to hours. The 'honest unknowns' move — saying clearly what you don't know yet — is what separates credible statements from lawyerly ones.")
+
+s = bullets_slide(prs, "The holding statement: when you know almost nothing", [
+    ("You can always say four true things:", "we know something happened · we're investigating now · here's who's affected as far as we know · here's when we'll say more."),
+    ("Never speculate to fill the silence.", "The guessed cause you retract tomorrow costs more credibility than a day of 'we're still confirming.'"),
+    ("Never minimize on arrival.", "'A small number of accounts' announced before you've counted becomes the quote in every follow-up story."),
+    ("The holding statement buys time honestly —", "which is its entire job. It promises the next communication, not the answers."),
+], D, nxt())
+notes(s, "The first hours, operationalized. Minimizing-before-counting is the classic self-inflicted wound — the correction becomes a second story.")
+
+s = two_col_slide(prs, "Crisis communication: the record",
+    "What works", [
+        "Named human spokesperson, consistent across updates",
+        "Plain language — jargon reads as evasion under stress",
+        "Affected people hear it from you before the press does",
+        "Sympathy stated plainly: 'we're sorry this happened to you' (see the legal slide — sympathy ≠ admission)",
+    ],
+    "What fails, every time", [
+        "'We take this very seriously' as the entire content",
+        "Passive camouflage: 'access was gained,' 'errors occurred'",
+        "Legal review that strips every human sentence",
+        "The staged apology that arrives after the stock dip, not the harm",
+    ], D, nxt())
+notes(s, "The failure column is recognizable from every mishandled breach of the last decade. Passive camouflage callbacks: Chapter 3's incident report case.")
+
+s = bullets_slide(prs, "Case: two product recalls", [
+    ("Company A announced the recall itself,", "the day the defect was confirmed: plain-language notice, prepaid return labels, a named VP on every update, weekly cadence until closed."),
+    ("Company B waited for the regulator,", "issued a statement 'out of an abundance of caution' that named no defect, and routed press questions to a form."),
+    ("A year later:", "Company A's recall is a customer-service case study its own sales team cites. Company B's is the first search result for its brand."),
+    ("The asymmetry:", "the recall cost both companies the same money. The narration cost one of them the reputation."),
+], D, nxt())
+notes(s, "Composite case built on the recurring public pattern. The point for students: the event is rarely the reputational damage — the handling is.")
+
+s = section_slide(prs, "08", "The fine print",
+    "Law, culture, and the ethics of sequencing.", D, nxt())
+notes(s, "Section 8: the boundaries around the craft — what negative messages must respect beyond the reader's feelings.")
+
+s = bullets_slide(prs, "Negative messages have legal gravity", [
+    ("Everything is discoverable —", "including the snarky draft you deleted and the 'candid' chat beside the official letter (Chapter 5's permanence, with subpoenas)."),
+    ("Sympathy is not admission.", "'We're sorry this happened to you' is human; 'this was our fault' is a legal conclusion — know which one you're authorized to write."),
+    ("References and rejections:", "stick to verifiable facts and the decision itself; characterizations of the person are where defamation exposure lives."),
+    ("When liability is plausible, loop in counsel —", "but fight for the human sentences. 'Legally clean and emotionally dead' is a failure mode too, and it also ends up in court."),
+], D, nxt())
+notes(s, "Not legal advice — professional awareness. The sympathy-vs-admission distinction is the practical one students will actually use.")
+
+s = bullets_slide(prs, "Bad news across cultures", [
+    ("Directness is calibrated locally.", "The clean, owned no this chapter teaches reads as refreshing in low-context cultures — and as brutal in high-context ones (Chapter 1)."),
+    ("Watch for the soft no.", "'This would be very difficult' or 'we will study it carefully' IS the refusal in much of the world; pressing for a 'real answer' insults twice."),
+    ("Preserve face deliberately.", "Bad news delivered so the receiver can maintain dignity in front of their own organization is a design requirement, not a nicety."),
+    ("When cultures mix, name the norm.", "'I'm going to be very direct, in the way of my field' — announcing your register buys tolerance for it."),
+], D, nxt())
+notes(s, "The chapter's pattern is not culturally universal in its calibration — the sequence survives, the bluntness dial moves. The soft-no decoder is immediately practical.")
+
+s = bullets_slide(prs, "The ethics line: sequencing is not spin", [
+    ("The test:", "after your indirect message, does the reader know everything a blunt version would have told them? If yes — craft. If no — deception with a structure."),
+    ("Buffers may not promise,", "reasons may not be invented, pivots may not be decorative. Every element carries a truth requirement."),
+    ("Delay is a decision with an owner.", "'Waiting for certainty' past the point of usefulness is the MUM effect wearing a prudence costume — see the slipping-launch case."),
+    ("The publicity test (Chapter 1) applies to structure:", "would you be comfortable explaining WHY you ordered the message this way? 'So they'd hear the reasons first' survives. 'So they wouldn't notice' doesn't."),
+], D, nxt())
+notes(s, "The chapter's own integrity check. Indirectness is defensible exactly as far as it serves the reader's ability to hear — one inch past that, it's manipulation.")
 
 s = takeaways_slide(prs, [
     "Indirect structure is sequencing, not evasion: reasons reach an unwounded mind; every fact arrives.",

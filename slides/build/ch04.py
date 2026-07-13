@@ -1,4 +1,4 @@
-# Chapter 4 — Revising Business Messages (28 slides, original, delivery-neutral)
+# Chapter 4 — Revising Business Messages (31 slides, original, delivery-neutral)
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from decklib import *
@@ -141,6 +141,80 @@ s = bullets_slide(prs, "Tools are pass zero — not the walkthrough", [
     ("The standard stays yours:", "your name is on it (Chapter 15's rule). Automated passes are smoke detectors, not judges."),
 ], D, nxt())
 notes(s, "Division of labor between writer and tools.")
+
+s = section_slide(prs, "05", "The tone pass",
+    "Correct isn't the same as right. Read once more for how it sounds.", D, nxt())
+notes(s, "Section 5: tone as a revision altitude. A message can be structurally sound, concise, and error-free — and still land wrong.")
+
+s = bullets_slide(prs, "Tone: the pass most writers never run", [
+    ("Read it as the recipient.", "Not 'is this what I meant?' but 'how does this feel arriving in MY inbox on a bad day?'"),
+    ("Hunt the accidental accusations.", "'You failed to include the form' → 'The form wasn't attached — could you resend it?' Same fact, no finger."),
+    ("Check the temperature of imperatives.", "'Send me the report' reads colder in text than it sounded in your head. Please is free."),
+    ("Confidence without arrogance.", "'I believe this might possibly work' undersells; 'obviously this is the answer' overplays. State it plainly and stand behind it."),
+    ("The forward test.", "Would this sentence embarrass you if forwarded to the person it's about? Then it's not done."),
+], D, nxt())
+notes(s, "Tone errors are invisible to every tool and most writers — they require deliberately switching seats. The forward test catches the sentences people regret most.")
+
+s = two_col_slide(prs, "Bias-free language: precision, not politics",
+    "The patterns to catch", [
+        "Gendered job titles: chairman, salesman, manpower",
+        "Unnecessary demographic tags: 'the female engineer'",
+        "Age assumptions: 'young and energetic team'",
+        "Disability phrasing that leads with the condition",
+    ],
+    "The repairs", [
+        "Chair, sales rep, staffing — the neutral term is usually shorter",
+        "Mention demographics only when relevant to the point",
+        "Describe the behavior, not the birth year",
+        "Person-first or identity-first per the person's own preference; when unknown, person-first",
+    ], D, nxt())
+notes(s, "Frame: bias-free language is a precision skill — the biased version usually states something the writer didn't mean to claim. Shorter and more accurate, not censored.")
+
+s = bullets_slide(prs, "Reviewing someone else's draft", [
+    ("Comment on the work, never the writer.", "'This paragraph buries the request' — not 'you always bury your requests.'"),
+    ("Triage your comments.", "One structural issue outweighs nine comma notes. Lead with what matters; don't drown the writer in trivia."),
+    ("Suggest, don't seize.", "Rewriting their document in your voice teaches nothing and breeds resentment. Mark the problem; let them solve it."),
+    ("Say what works.", "'Keep this opening — it's exactly right' is information too. All-negative reviews get ignored as noise."),
+], D, nxt())
+notes(s, "Peer review etiquette. The reviewer's job is to make the document better AND keep the writer improving — both, not either.")
+
+s = bullets_slide(prs, "Receiving edits without bleeding", [
+    ("The document is not you.", "Detach on purpose: every mark is a reader telling you where they stumbled — free intelligence, painfully delivered."),
+    ("Stumbles are data, wording is negotiable.", "If a reviewer misread the sentence, the sentence is guilty. You don't have to accept their fix — you do have to fix the stumble."),
+    ("Ask the clarifying question.", "'What did you expect this section to say?' turns a vague 'this is confusing' into an actionable repair."),
+    ("Thank the harsh reviewer.", "The colleague who marks everything is doing what your future readers would have done silently."),
+], D, nxt())
+notes(s, "The professional skill is separating identity from output. Writers who can't be edited stop being given important documents to write.")
+
+s = section_slide(prs, "06", "Revision under pressure",
+    "No time for three passes? There's still a system for five minutes.", D, nxt())
+notes(s, "Section 6: deadline triage. The full system when there's time; the ranked shortlist when there isn't.")
+
+s = icon_rows_slide(prs, "The five-minute triage (in strict order)", [
+    ("1", "The last-thing check", "Recipients · subject line · attachment. Twenty seconds against the classic catastrophes."),
+    ("2", "Names and numbers", "Verify every one against its source — highest damage per error, fastest to check."),
+    ("3", "The first sentence", "Is the main point there? A buried lead fails even with perfect grammar."),
+    ("4", "Read the riskiest paragraph aloud", "The one with the bad news, the money, or the ask — ears on the highest-stakes prose only."),
+    ("5", "One flab sweep of the opening", "Readers judge in the first three lines; trim those hardest."),
+], D, nxt(), kicker="When time is short, spend it where errors cost most — not evenly.")
+notes(s, "Triage logic: allocate scarce proofreading minutes by expected damage, not by document order. The last-thing check is first because those errors are both common and unrecoverable.")
+
+s = bullets_slide(prs, "AI as a revision assistant — the right prompts", [
+    ("Ask for critique, not rewrites.", "'List the three biggest clarity problems' keeps you the writer; 'rewrite this' makes you the typist of someone else's voice."),
+    ("Ask targeted passes.", "'Check subject-verb agreement only' · 'flag every abstract claim that lacks a number' — the tool is excellent at single-error sweeps."),
+    ("Verify its catches.", "AI flags phantom errors confidently; accept or reject each one deliberately, exactly as with a human reviewer."),
+    ("Never paste what can't leak.", "Names, salaries, unreleased numbers — confidentiality rules apply to AI tools like any external service."),
+    ("Your name ships on it.", "The judgment layer — tone, stakes, structure — stays yours (Chapter 15's rule)."),
+], D, nxt())
+notes(s, "AI is the best pass-zero tool yet built and still misses the verification errors entirely. Treat it as a tireless junior reviewer, not a sign-off authority.")
+
+s = bullets_slide(prs, "Case: the apology that needed one more pass", [
+    ("The draft was accurate:", "'We regret any inconvenience that may have been experienced as a result of the billing discrepancy.'"),
+    ("Every word defensible. Every word wrong.", "Passive, conditional, abstract — 'may have been experienced' implies the customer might be imagining it."),
+    ("The tone-pass rewrite:", "'We billed you twice, and that's our error. The refund is processing today, and here's what we changed so it can't recur.'"),
+    ("The lesson:", "the six flab targets and the passive-as-camouflage habit aren't just style issues — under pressure, they read as evasion."),
+], D, nxt())
+notes(s, "Ties conciseness, active voice, and concreteness to tone. The rewrite is shorter, riskier-feeling to write, and completely disarming to receive — Chapter 7 develops this fully.")
 
 s = takeaways_slide(prs, [
     "Three passes at three altitudes: structure, sentences, proof — never one anxious reread.",

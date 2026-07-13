@@ -1,4 +1,4 @@
-# Chapter 6 — Positive and Neutral Messages (22 slides, delivery-neutral)
+# Chapter 6 — Positive and Neutral Messages (32 slides, delivery-neutral)
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from decklib import *
@@ -136,6 +136,87 @@ s = two_col_slide(prs, "Two five-minute templates",
         ("Count the S's:", "specific, sincere, short, spontaneous, selfless."),
     ], D, nxt())
 notes(s, "Both from the study guide's worked examples.")
+
+s = section_slide(prs, "05", "The business letter",
+    "The formal channel that signals: this one counts.", D, nxt())
+notes(s, "Section 5: letters. Rare enough now that using one is itself a message — which is exactly why the format survives.")
+
+s = bullets_slide(prs, "When a letter is the right channel", [
+    ("Crossing the organizational boundary.", "Customers, officials, other firms — the letter is the org-to-org and person-to-org register."),
+    ("Ceremony is part of the content.", "Offers, awards, formal thanks, resignations — the formality honors the moment."),
+    ("Legal and contractual weight.", "Notices, agreements, and anything a lawyer may one day wave — letters are built to be exhibits."),
+    ("The scarcity works for you.", "In an inbox century, letterhead is the costly signal: someone composed, printed, and signed this."),
+], D, nxt())
+notes(s, "The letter didn't die; it specialized. Students will write fewer letters than emails — but the letters will matter more per document.")
+
+s = icon_rows_slide(prs, "Letter anatomy, top to bottom", [
+    ("🏛", "Letterhead + date", "Who's writing and when — the date matters legally; write it unambiguously (July 15, 2026)."),
+    ("📍", "Inside address + salutation", "The recipient's name, title, organization, address — then 'Dear Ms. Okafor:' with the name verified (Chapter 4)."),
+    ("¶", "Body in block format", "Everything flush left, blank line between paragraphs — the modern default. Direct pattern applies: point in paragraph one."),
+    ("✒", "Complimentary close + signature block", "'Sincerely,' then four blank lines for ink, then typed name and title."),
+    ("📎", "Notations", "'Enclosure' and 'cc:' lines at the bottom — the letter's version of the attachment paperclip."),
+], D, nxt())
+notes(s, "Format walk-through — block format only, since it's the modern standard. The salutation-name verification callback to Chapter 4 is deliberate.")
+
+s = bullets_slide(prs, "The introductory letter — this unit's assignment", [
+    ("Paragraph one: who you are and why you're writing.", "Both, in two sentences — the reader shouldn't finish the paragraph still wondering."),
+    ("Paragraph two: the substance.", "What you offer or ask, with the specifics that make a response possible (the complete-ask standard again)."),
+    ("Paragraph three: the forward close.", "The concrete next step — who contacts whom, how, by when."),
+    ("The register check:", "warmer than a memo, tighter than a chat — professional, but a human being wrote it."),
+], D, nxt())
+notes(s, "Direct setup for the assignment. The three-paragraph skeleton is the request flow from Section 1 dressed in letter format.")
+
+s = section_slide(prs, "06", "Announcements, confirmations, welcomes",
+    "The quiet genres that keep organizations running on rails.", D, nxt())
+notes(s, "Section 6: three routine positive genres students will send weekly for the rest of their careers.")
+
+s = bullets_slide(prs, "Good-news and neutral announcements", [
+    ("Lead with the news, not the process.", "'The office closes at noon on July 3' — never 'As part of our ongoing commitment to work-life balance…'"),
+    ("Answer the reader's three questions in order:", "What's changing? Am I affected, and how? What do I do, by when?"),
+    ("One channel for questions, named.", "'Questions: reply to Dana, not all' — or the announcement becomes forty separate conversations."),
+    ("Time it for the affected, not the announcer.", "News that changes Monday's work goes out Thursday, not Monday at 8:59."),
+], D, nxt())
+notes(s, "Announcements are downward communication (Chapter 1) at its most routine — and the genre where corporate throat-clearing is most epidemic.")
+
+s = bullets_slide(prs, "Confirmations: the thread-enders", [
+    ("Restate the terms, don't reference them.", "'Confirming: 500 units at $12.40, delivered June 30 to the Fargo warehouse' — the numbers live IN the confirmation."),
+    ("Send it while memory is fresh.", "Same day as the call or meeting; a confirmation of last week's conversation confirms nobody's memory."),
+    ("Invite correction explicitly.", "'If any detail doesn't match your notes, tell me by Friday' — silence then becomes agreement, fairly."),
+    ("This is the record being born.", "Chapter 5's graduation rule: spoken agreements become written ones, or they become disputes."),
+], D, nxt())
+notes(s, "The confirmation is the cheapest litigation insurance ever invented, and it doubles as courtesy. The explicit correction window is the professional touch.")
+
+s = bullets_slide(prs, "The welcome message", [
+    ("To a new colleague or client, day one:", "warmth plus logistics — what happens next, where things live, who their humans are."),
+    ("Name a person, not a department.", "'Your first stop is Maya (maya@…), who runs onboarding' beats 'contact HR with any questions.'"),
+    ("One first step, not twelve.", "The welcome that lists everything due in month one reads as a warning. Give the next action and the map's location."),
+    ("It sets the relationship's tone —", "the first message anyone receives from you or your team is the one they'll remember as 'what this place is like.'"),
+], D, nxt())
+notes(s, "Welcomes are goodwill messages with an operations payload. The named-human rule echoes the OOO slide in Chapter 5.")
+
+s = bullets_slide(prs, "Recommendations and referrals", [
+    ("Vouch only for what you observed.", "'She ran our audit for two years; the findings were clean twice' — specifics are the currency, adjectives are filler."),
+    ("The genre runs on YOUR credibility.", "Every inflated recommendation you sign devalues the next one — recommenders get reputations too."),
+    ("Can't recommend honestly? Decline honestly.", "'I don't think I'm the right reference for this role' is kinder than a visibly tepid letter — and everyone can read tepid."),
+    ("Make referrals a warm handoff:", "introduce both parties, state why the match makes sense, then step out and let them work."),
+], D, nxt())
+notes(s, "Recommendations sit at the boundary of goodwill and risk: generous by nature, but written on the recommender's credit. The tepid-letter point matters — damning with faint praise is a real signal recipients decode.")
+
+s = bullets_slide(prs, "Praise travels up, credit travels down", [
+    ("Praise in public, correct in private.", "The goodwill note's public cousin: recognition in the channel, the meeting, the newsletter."),
+    ("CC the manager — as a gift.", "'CCing Dr. Reyes so she knows what your triage saved us' turns a thank-you into a career artifact."),
+    ("Pass credit downward relentlessly.", "'The analysis is Maya's' costs nothing and is remembered forever — hoarded credit is remembered too."),
+    ("Written praise is permanent praise.", "The five-S note that reaches a personnel file outlives every hallway compliment."),
+], D, nxt())
+notes(s, "The routing rules of goodwill: direction and visibility multiply the same five minutes of writing. Ties to Grant's giver research from the stat slide.")
+
+s = bullets_slide(prs, "Case: the confirmation that settled the dispute", [
+    ("A phone agreement on custom terms:", "extended payment window in exchange for a larger order — nothing signed, deal moving fast."),
+    ("The account manager sent a five-line confirmation", "same afternoon: quantities, prices, the nonstandard window, and 'flag anything that doesn't match by Thursday.'"),
+    ("Eight months later, new management disputed the terms.", "The email — dated, acknowledged, uncorrected — ended the argument in one meeting."),
+    ("The lesson:", "confirmations feel like busywork on the day you send them. They are the only version of events that survives personnel changes."),
+], D, nxt())
+notes(s, "The case argues the habit: confirm while it's friendly, because you can't confirm after it isn't. Links Chapter 5's permanence section to a positive outcome.")
 
 s = takeaways_slide(prs, [
     "Ask first, in question form; detail to the complete-ask standard; close with a dated reason.",

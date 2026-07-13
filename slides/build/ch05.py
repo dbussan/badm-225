@@ -1,4 +1,4 @@
-# Chapter 5 — Short Workplace Messages and Digital Media (24 slides, delivery-neutral)
+# Chapter 5 — Short Workplace Messages and Digital Media (41 slides, delivery-neutral)
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from decklib import *
@@ -148,6 +148,157 @@ s = two_col_slide(prs, "Three makeovers you'll use this week",
         "Reply (sender only): “Thanks, Dana — the turnaround saved us.” Narrower = more personal.",
     ], D, nxt())
 notes(s, "Complete, frontloaded, correctly addressed.")
+
+s = section_slide(prs, "05", "Memos and internal documents",
+    "Email's older sibling still has a job — knowing which job is the skill.", D, nxt())
+notes(s, "Section 5: the memo. Not nostalgia — a distinct tool for policy, record, and anything that must outlive an inbox.")
+
+s = bullets_slide(prs, "When a memo still beats an email", [
+    ("The content must outlive the inbox.", "Policies, procedures, and decisions of record get attached as memos — a document is filed; an email is buried."),
+    ("The audience is 'everyone, indefinitely.'", "A memo posted to the intranet reaches the person hired next year; an email never will."),
+    ("The formality is the message.", "A signed memo announcing a reorganization says 'this is official' in a way a chat ping cannot."),
+    ("The practical pattern:", "a two-line email carries a one-page memo attachment: 'Attached is the updated travel policy, effective August 1. Summary below.'"),
+], D, nxt())
+notes(s, "The memo survived because email is a delivery channel, not an archive. Anything with a shelf life belongs in a document.")
+
+s = icon_rows_slide(prs, "Memo anatomy — four lines, then business", [
+    ("➤", "TO / FROM / DATE / SUBJECT", "The four-line header replaces salutation and signature — no 'Dear,' no 'Sincerely.'"),
+    ("◎", "Opening = the point", "First sentence states the news or decision, exactly like a direct email (Chapter 3)."),
+    ("▤", "Headings for anything past half a page", "Memos get skimmed on bulletin boards and intranets — design for the F-pattern."),
+    ("✍", "Initials, not signatures", "Convention: the sender initials next to their name in the FROM line — the whole document is the signature."),
+], D, nxt())
+notes(s, "Format walk-through. The subject line rules from Section 1 apply verbatim — 'Parking Permit Renewal Due June 15,' not 'Parking.'")
+
+s = bullets_slide(prs, "The status update that manages up", [
+    ("The three-line skeleton:", "On track: [what's fine]. Slipping: [what's not + the fix + new date]. Need from you: [ask or 'nothing yet']."),
+    ("Lead with the exception.", "If something is slipping, that's the news — never make a manager excavate for it (Chapter 1's upward filter)."),
+    ("Same format every time.", "Predictable structure means your manager reads it in ten seconds — and notices instantly when something changes."),
+    ("Silence is a report too.", "A skipped update is read as 'something is wrong and they're not saying' — usually correctly."),
+], D, nxt())
+notes(s, "The single highest-frequency 'manage up' document. The honest 'Slipping:' line builds more trust than a month of 'all good.'")
+
+s = section_slide(prs, "06", "Meetings start in writing",
+    "The invite, the agenda, and the two-line record afterward.", D, nxt())
+notes(s, "Section 6: calendar communication. A meeting is three written artifacts wrapped around a conversation.")
+
+s = bullets_slide(prs, "The meeting invite is a message — write it like one", [
+    ("The title states the outcome.", "'Decide Q3 vendor' beats 'Sync' — attendees should know why they're there before they accept."),
+    ("The body carries the agenda,", "the pre-read links, and what each person should bring. An empty invite is a blank check drawn on everyone's calendar."),
+    ("Invite the necessary, inform the rest.", "Every optional attendee who comes anyway doubles the cost; send the notes to the curious instead."),
+    ("Honest duration.", "Book the 25 minutes it needs, not the 60 the calendar defaults to — meetings expand to fill the container."),
+], D, nxt())
+notes(s, "The invite is a persuasive message: it asks people to spend their scarcest resource. The cost math slide later makes this concrete.")
+
+s = icon_rows_slide(prs, "Agenda anatomy: items that can actually be run", [
+    ("◎", "Each item is an outcome", "'Choose between vendors A and B' — not the topic-shaped fog of 'Vendors.'"),
+    ("👤", "Each item has an owner", "The person who presents, frames the decision, and captures the result."),
+    ("⏱", "Each item has a time box", "Ten minutes on item one is a promise to items two and three."),
+    ("📎", "Pre-reads attached, expectations stated", "'Read the one-pager before we meet; we will not walk through it live.'"),
+], D, nxt())
+notes(s, "Agendas fail when items are nouns instead of outcomes. 'Budget' can absorb an hour; 'approve the two changed budget lines' takes eight minutes.")
+
+s = bullets_slide(prs, "After the meeting: the two-line record", [
+    ("Decisions + owners + dates.", "'Decided: renew TechServe. Maya drafts terms by 7/12; Sam reviews by 7/15.' That's the whole document."),
+    ("Send it within the hour,", "to attendees AND the informed-but-absent — memory of a meeting has a half-life measured in minutes."),
+    ("Post it where the team decides things,", "not just in one inbox: the channel, the wiki, the project page."),
+    ("Unrecorded decisions get re-decided.", "The three-minute summary is cheaper than the second meeting to settle what the first one settled."),
+], D, nxt())
+notes(s, "This is the chat-graduation rule applied to meetings: spoken decisions become written records or they evaporate. Chapter 9 develops formal minutes.")
+
+s = bullets_slide(prs, "Case: the meeting that should have been a message", [
+    ("The standing Thursday review:", "eight people, one hour, status read aloud from slides nobody saw in advance."),
+    ("The math:", "8 people × 1 hour × 50 weeks = 400 hours a year — reading aloud what a three-line status email carries in 30 seconds."),
+    ("The repair:", "written status by Wednesday noon; Thursday shrinks to 20 minutes for the two items that need discussion."),
+    ("The test that generalizes:", "if information flows one way and no decision is made, it's a message wearing a meeting costume."),
+], D, nxt())
+notes(s, "Not anti-meeting — anti-broadcast-meeting. Real-time belongs to conflict, complexity, and connection (Chapter 1's rich-channel rule).")
+
+s = section_slide(prs, "07", "Working in shared documents",
+    "The document is the meeting room now — behave accordingly.", D, nxt())
+notes(s, "Section 7: collaboration platforms — comments, suggestions, versions.")
+
+s = bullets_slide(prs, "Comment etiquette in shared documents", [
+    ("Comment on the text, not the author.", "'This claim needs a source' — not 'you never cite anything.' (Chapter 4's review rules apply verbatim.)"),
+    ("Make comments resolvable.", "A comment is a task: state what would satisfy it, so the writer can do the thing and close it."),
+    ("Use suggestion mode for wording,", "comments for substance. Direct edits to someone else's live draft are drive-by rewrites."),
+    ("Resolve your own threads.", "When your question is answered, close it — a document with 60 open comments is unnavigable."),
+    ("Big disagreements leave the margins.", "Three comment-thread volleys mean the discussion needs a richer channel; settle it, then record the outcome."),
+], D, nxt())
+notes(s, "Comment threads are permanent, visible-to-all writing. The margin of a shared doc is a public room, not a private note.")
+
+s = two_col_slide(prs, "Version discipline: chaos vs. system",
+    "You have version chaos if…", [
+        "Report_FINAL_v2_REALLY_final.docx",
+        "Three people edited three copies — someone's Saturday merges them",
+        "The deck presented wasn't the deck approved",
+        "'Which file is current?' gets asked weekly",
+    ],
+    "The system (four rules)", [
+        "ONE living copy, in shared space — never emailed as an attachment for editing",
+        "The filename says what it is; the platform tracks versions",
+        "One named owner per document — merge authority lives somewhere",
+        "Frozen snapshots (sent, approved, submitted) get dated copies: 'Proposal—as-submitted-2026-07-15'",
+    ], D, nxt())
+notes(s, "Cloud platforms made copies unnecessary — version chaos today is a habit problem, not a tooling problem. The 'as-submitted' snapshot ties to Chapter 10's versioning discipline.")
+
+s = bullets_slide(prs, "Out-of-office replies and availability signals", [
+    ("The OOO has three jobs:", "dates you're gone, who covers what while you are, and when the sender can expect you — three lines, done."),
+    ("Name a human per category:", "'Contracts: Dana Ruiz. Everything else: I'll reply after July 21.' A bare 'I'm away' just defers the sender's problem."),
+    ("No apology spiral.", "'I apologize for any inconvenience my vacation may cause' — rest is not a billing discrepancy (Chapter 4's tone pass)."),
+    ("Status indicators are micro-OOOs.", "'Focus time — back at 2:00' does for an afternoon what the autoreply does for a vacation. Set them honestly, honor others'."),
+], D, nxt())
+notes(s, "Availability signaling is boundary-keeping made polite and searchable. Ties to response-time norms from Section 2.")
+
+s = section_slide(prs, "08", "The wider digital workplace",
+    "Beyond inbox and chat: the channels that hold institutional memory.", D, nxt())
+notes(s, "Section 8: wikis, internal posts, video messages — where knowledge lives after the thread scrolls away.")
+
+s = icon_rows_slide(prs, "Channels beyond the inbox", [
+    ("📚", "Wiki / intranet pages", "Institutional memory: how-tos, policies, decisions of record. Written once, found for years."),
+    ("📰", "Internal posts & newsletters", "Broadcast without reply-pressure — announcements, wins, context-setting from leadership."),
+    ("🎥", "Recorded video / audio messages", "Tone-rich broadcast for change and morale; pair with a written summary for searchability."),
+    ("💬", "Forums & open channels", "Questions asked in public teach everyone — yesterday's answered thread is tomorrow's documentation."),
+], D, nxt(), kicker="Match the channel to the content's SHELF LIFE, not just its urgency.")
+notes(s, "New axis introduced: shelf life. Chat is minutes, email is weeks, the wiki is years. Writers who put long-shelf-life content in short-shelf-life channels doom the team to re-asking.")
+
+s = bullets_slide(prs, "Writing for the wiki: findability is the whole game", [
+    ("Title for the searcher, not the writer.", "'How to submit a travel reimbursement' — the words a desperate colleague will actually type."),
+    ("Answer first, context after.", "Wiki readers arrive mid-task; give the steps, then the background (the inverted pyramid, again)."),
+    ("Date it and own it.", "Every page shows when it was last verified and who maintains it — undated pages read as unreliable and usually are."),
+    ("Delete or redirect the obsolete.", "A wrong wiki page is worse than none; it answers confidently and incorrectly forever."),
+], D, nxt())
+notes(s, "The wiki is where Chapter 3's structure rules meet an audience of future strangers. Findability beats elegance.")
+
+s = two_col_slide(prs, "Video message or written message?",
+    "Record VIDEO when…", [
+        "Tone carries the content: change, thanks, morale",
+        "You're demonstrating something visual",
+        "The audience is broad and the message is once",
+        ("Always:", "keep it short and attach the decisions in text"),
+    ],
+    "Write TEXT when…", [
+        "Anyone will need to find it later — video is unsearchable",
+        "Readers need to skim, quote, or forward pieces",
+        "Precision matters: numbers, dates, commitments",
+        ("Test:", "if someone will ask 'what exactly did they say?' — text"),
+    ], D, nxt())
+notes(s, "Video is rich but opaque to search; text is lean but permanent and quotable. The pairing pattern — video for tone, text summary for record — gets both.")
+
+s = bullets_slide(prs, "Signature block anatomy (this unit's assignment)", [
+    ("The load-bearing four:", "name · title · organization · one phone number. Everything else is optional."),
+    ("Optional and fine:", "pronouns, LinkedIn URL, office hours or time zone — anything that helps a stranger reach you correctly."),
+    ("Leave out:", "inspirational quote forests, six social icons, legal disclaimers you weren't told to add, and images that arrive as attachment paperclips."),
+    ("Test it where it will live:", "on a phone screen, in a reply chain, in plain-text mode — the signature that only works in one client doesn't work."),
+], D, nxt())
+notes(s, "Direct setup for the email-signature assignment. The signature is letterhead: identification, not decoration.")
+
+s = stat_slide(prs, "The real cost of 'quick' interruptions", "~23 min",
+    "is roughly how long it takes to fully re-engage with demanding work after an interruption, in University of California, Irvine research on task switching (Mark et al.).",
+    [("The ping is never just the ping.", "Ten 'quick questions' can dissolve a workday without any of them being unreasonable alone."),
+     ("Sender-side implication:", "batch non-urgent asks; one message with three questions costs one recovery, not three."),
+     ("Receiver-side implication:", "the unpinged block from Section 4 isn't a luxury — it's where the demanding work actually happens."),
+    ], D, nxt())
+notes(s, "Gloria Mark's UC Irvine work on interruption recovery — cite as approximate, the point is the order of magnitude. This arms students with the 'why' behind batching and focus blocks.")
 
 s = takeaways_slide(prs, [
     "The subject line is the message's job; sentence one delivers it; the dated ask ends it.",
