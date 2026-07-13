@@ -100,7 +100,7 @@ footer b{color:var(--ink)}
 .tab.active{background:var(--card);color:var(--navy);border-color:var(--navy);border-bottom:2px solid var(--card);margin-bottom:-2px;font-weight:500}
 .formcard{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--stamp);border-radius:0 10px 10px 0;padding:22px 24px;margin-top:18px;box-shadow:0 3px 14px rgba(28,43,58,.06)}
 .formcard label{display:block;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.1em;color:var(--mut);margin-top:12px}
-.formcard input{width:100%;max-width:380px;font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);background:#FCFAF5;margin-top:4px}
+.formcard input,.formcard select{width:100%;max-width:380px;font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);background:#FCFAF5;margin-top:4px}
 .rules{font-size:13.5px;color:#4A4438;margin-top:12px;max-width:66ch}
 .rules li{margin:4px 0 4px 18px}
 .gobtn{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;letter-spacing:.06em;background:var(--navy);color:#fff;border:none;border-radius:7px;padding:11px 22px;cursor:pointer;margin-top:16px;transition:background .15s,box-shadow .15s}
@@ -525,6 +525,11 @@ wr:[
 /* INSTRUCTOR: change this secret to any private phrase BEFORE sharing the site.
    Completion codes are only verifiable with the same secret in the Instructor panel. */
 const SECRET='xC5HdRKpNu3k33MMQunh8YLZ';
+/* INSTRUCTOR: list every course section you teach here. Students pick from this list
+   instead of typing it, so the gradebook can never get fragmented by typos or
+   inconsistent formatting (e.g. "Sec 1" vs "Section 1" vs "1"). To add a new course or
+   section, add another quoted name to this array, save the file, and redeploy. */
+const SECTIONS=['Section 1','Section 2'];
 const QUIZ_N=10, QUIZ_MIN=12, ALL_N=20, ALL_MIN=25;
 /* Lecture slide decks (accessible PPTX, original content). Add entries as decks are published. */
 const SLIDES={1:'slides/ch01-communicating-in-todays-workplace.pptx',2:'slides/ch02-planning-business-messages.pptx',3:'slides/ch03-organizing-and-drafting.pptx',4:'slides/ch04-revising-business-messages.pptx',5:'slides/ch05-short-workplace-messages.pptx',6:'slides/ch06-positive-and-neutral-messages.pptx',7:'slides/ch07-negative-messages.pptx',8:'slides/ch08-persuasive-messages.pptx',9:'slides/ch09-informal-reports.pptx',10:'slides/ch10-proposals-and-formal-reports.pptx',11:'slides/ch11-professionalism-teamwork-meetings.pptx',12:'slides/ch12-business-presentations.pptx',13:'slides/ch13-job-search-and-resumes.pptx',14:'slides/ch14-interviewing-and-follow-up.pptx',15:'slides/ch15-ai-agents-professional-communication.pptx',16:'slides/ch16-leadership-under-pressure-influence.pptx',17:'slides/ch17-strategy-for-communicators.pptx'};
@@ -635,7 +640,8 @@ function tabsHtml(mode){
 function idForm(btnLabel,rules){
   return '<div class="formcard"><label>FULL NAME</label><input id="f_name" autocomplete="name" placeholder="Jane Q. Student">'+
    '<label>STUDENT ID</label><input id="f_id" placeholder="e.g., 0123456">'+
-   '<label>SECTION / CLASS #</label><input id="f_sec" placeholder="e.g., 12946">'+
+   '<label>COURSE / SECTION</label><select id="f_sec"><option value="">— Select your section —</option>'+
+   SECTIONS.map(s=>'<option value="'+esc(s)+'">'+esc(s)+'</option>').join('')+'</select>'+
    '<ul class="rules">'+rules.map(r=>'<li>'+r+'</li>').join('')+'</ul>'+
    '<div class="warn">Privacy: your name, ID, and answers never leave this page — nothing is uploaded or stored. Your score is delivered to your instructor only through the completion code you submit in the LMS.</div>'+
    '<button class="gobtn green" id="startbtn">'+btnLabel+'</button></div>';
@@ -702,7 +708,7 @@ function renderHomework(m,d){
       'When finished, paste your completion code into the matching LMS assignment.']));
     document.getElementById('startbtn').onclick=()=>{
       const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim(), sc2=document.getElementById('f_sec').value.trim();
-      if(!n||!i||!sc2){alert('Please enter your name, student ID, and section/class number.');return;}
+      if(!n||!i||!sc2){alert('Please enter your name and student ID, and select your section.');return;}
       s.name=n;s.id=i;s.sec=sc2;s.started=true;s.t0=Date.now();render();
     }; return;
   }
@@ -749,7 +755,7 @@ function renderQuiz(m){
       'No feedback until submission; paste the completion code into the LMS afterward.']));
     document.getElementById('startbtn').onclick=()=>{
       const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim(), sc2=document.getElementById('f_sec').value.trim();
-      if(!n||!i||!sc2){alert('Please enter your name, student ID, and section/class number.');return;}
+      if(!n||!i||!sc2){alert('Please enter your name and student ID, and select your section.');return;}
       s.name=n;s.id=i;s.sec=sc2;s.started=true;
       let pool=[];
       if(all){for(const c in DATA) DATA[c].mc.forEach((q,qi)=>pool.push({c:+c,qi}));}
@@ -902,7 +908,7 @@ function renderInstructor(m){
    '<li><b>Change the secret.</b> Open this file and edit the <span class="mono">SECRET</span> constant near the top of the script before deploying. Codes are only verifiable against the same secret, which prevents students from generating codes on an unmodified copy.</li>'+
    '<li><b>FERPA posture.</b> This site is static: no server, no database, no analytics, no transmission. Names, IDs, answers, and scores exist only in the student\u2019s browser and vanish on reload. Grades enter your records solely through the LMS assignment where students paste their code \u2014 so all education records stay inside your institution\u2019s FERPA-covered systems. Consider having students use their university ID (not SSN or personal data) in the ID field.</li>'+
    '<li><b>The gradebook stays on your computer.</b> Entries you add above are saved only in this browser on this machine (localStorage) \u2014 the digital equivalent of a grade file on your desk; nothing is uploaded. Use your own computer, not a shared or public one, and export CSV backups \u2014 clearing browser data erases the gradebook.</li>'+
-   '<li><b>Sections.</b> Students enter their Section/Class # when starting graded work; it is embedded in their completion code, so one gradebook cleanly separates every section you teach. Filter with the dropdown above.</li>'+
+   '<li><b>Sections.</b> Students choose their course/section from a dropdown when starting graded work (edit the <span class="mono">SECTIONS</span> constant near the top of this file to add or rename one) — it is embedded in their completion code, so one gradebook cleanly separates every section you teach. Filter with the dropdown above.</li>'+
    '<li><b>Integrity limits, honestly stated.</b> Codes are tamper-evident (editing any digit invalidates them), but this is a client-side homework tool, not a proctored exam platform: a determined student could read the page source. Appropriate for low-stakes homework and practice quizzes; run high-stakes exams in the LMS.</li>'+
    '<li><b>Grading workflow.</b> Create one LMS text-entry assignment per homework/quiz. Students paste codes there; you paste batches here and click ADD TO GRADEBOOK. Duplicates are skipped automatically, and the best score per student per assignment is shown. Codes embed name, ID, section, score, total, date, and time-on-task.</li>'+
    '</ul></div></div>');

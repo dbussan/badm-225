@@ -56,6 +56,7 @@ a{color:var(--navy)}
    and SECRET as the course practice site's gradebook).
    ============================================================ */
 const SECRET='xC5HdRKpNu3k33MMQunh8YLZ';   // must match index.html
+const SECTIONS=['Section 1','Section 2'];   // must match index.html, or the gradebook fragments
 const DEFAULT_MIN=120;
 
 /* ---------- completion codes (identical to index.html) ---------- */
@@ -296,7 +297,8 @@ function renderGate(){
   '<div class="card"><h2>Before you start (or to resume)</h2>'+
   '<label>Full name</label><input id="nm" autocomplete="name" maxlength="60">'+
   '<label>Student ID</label><input id="sid" maxlength="30">'+
-  '<label>Section / class number</label><input id="sec" maxlength="20" placeholder="e.g., 24854">'+
+  '<label>Course / section</label><select id="sec"><option value="">— Select your section —</option>'+
+  SECTIONS.map(s=>'<option value="'+esc(s)+'">'+esc(s)+'</option>').join('')+'</select>'+
   '<div class="warn">Rules: closed notes unless your instructor says otherwise · the timer does not pause · the exam submits itself when time expires · you may change answers any time before submitting · one attempt. If this page reloads, enter the SAME name and ID again to resume — this device may be shared with other students.</div>'+
   '<button class="btn" id="start" '+(before||after?'disabled':'')+'>START / RESUME EXAM</button></div>'+footerHTML();
   if(before){
@@ -307,7 +309,7 @@ function renderGate(){
   const btn=document.getElementById('start');
   if(btn) btn.onclick=()=>{
     const nm=document.getElementById('nm').value.trim(),sid=document.getElementById('sid').value.trim(),sec=document.getElementById('sec').value.trim();
-    if(!nm||!sid||!sec){alert('Enter your name, student ID, and section.');return;}
+    if(!nm||!sid||!sec){alert('Enter your name and student ID, and select your section.');return;}
     if(Date.now()<cfg.open.getTime()||Date.now()>cfg.last.getTime()){renderGate();return;}
     CURRENT_KEY=studentKey(nm,sid);
     const existing=loadS();
