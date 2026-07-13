@@ -597,6 +597,8 @@ function buildNav(){
     nav.appendChild(div);
   });
   const xd=document.createElement('div'); xd.className='navxtra';
+  const bg=document.createElement('a'); bg.className='chbtn'; bg.href='guides/BADM225-complete-study-guide.docx'; bg.setAttribute('download',''); bg.innerHTML='<span class="n">⬇</span><span class="t">Complete Study Guide (all 17 ch., Word)</span>';
+  xd.appendChild(bg);
   const bq=document.createElement('button'); bq.className='chbtn'; bq.innerHTML='<span class="n">★</span><span class="t">Comprehensive Quiz ('+ALL_N+' Q, all chapters)</span>';
   bq.onclick=()=>{view={kind:'quizAll'};render();window.scrollTo({top:0});};
   const bc=document.createElement('button'); bc.className='chbtn'+(view.kind==='career'?' active':''); bc.innerHTML='<span class="n">▤</span><span class="t">Professional Development ('+CAREER.length+' decks)</span>';
