@@ -36,4 +36,4 @@ const SECTIONS=[
    like SECRET above, it lives in this file's plain text, so it stops casual clicking,
    not someone who reads the page source. Unlocking is remembered only for the current
    browser tab session (it clears when the tab/browser closes). */
-const INSTRUCTOR_PASSCODE='badm225-instructor';
+const INSTRUCTOR_PASSCODE='Mnbv1234!';
