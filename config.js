@@ -37,3 +37,18 @@ const SECTIONS=[
    not someone who reads the page source. Unlocking is remembered only for the current
    browser tab session (it clears when the tab/browser closes). */
 const INSTRUCTOR_PASSCODE='Mnbv1234!';
+
+/* INSTRUCTOR: optional class roster. Leave the list empty [] and any student ID is
+   accepted (roster check off). To restrict graded work (homework, quizzes, exams) to
+   enrolled students only: open Instructor Tools on the site, paste your students' IDs
+   into the Class Roster builder, and copy the generated line over the one below.
+   NEVER put raw student IDs or names in this file — it is publicly readable. The
+   builder produces scrambled fingerprints (hashes), so enrollment can be checked
+   without anyone being able to read your roster off the site. */
+const ROSTER=[];
+
+/* Runtime check used by index.html and exam.html (djb2 is defined by each page). */
+function rosterAllows(id){
+  if(!ROSTER.length) return true;
+  return ROSTER.indexOf(djb2('roster|'+String(id).trim().toLowerCase()))>=0;
+}

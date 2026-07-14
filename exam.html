@@ -327,6 +327,7 @@ function renderGate(){
   if(btn) btn.onclick=()=>{
     const nm=document.getElementById('nm').value.trim(),sid=document.getElementById('sid').value.trim(),sec=document.getElementById('sec').value.trim();
     if(!nm||!sid||!sec){alert('Enter your name and student ID, and select your section.');return;}
+    if(!rosterAllows(sid)){alert('This student ID is not on the class roster. Check that you typed your university ID exactly as it appears in the LMS, or contact your instructor.');return;}
     if(Date.now()<cfg.open.getTime()||Date.now()>cfg.last.getTime()){renderGate();return;}
     CURRENT_KEY=studentKey(nm,sid);
     const existing=loadS();

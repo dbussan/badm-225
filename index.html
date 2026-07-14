@@ -704,6 +704,7 @@ function renderHomework(m,d){
     document.getElementById('startbtn').onclick=()=>{
       const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim(), sc2=document.getElementById('f_sec').value.trim();
       if(!n||!i||!sc2){alert('Please enter your name and student ID, and select your section.');return;}
+      if(!rosterAllows(i)){alert('This student ID is not on the class roster. Check that you typed your university ID exactly as it appears in the LMS, or contact your instructor.');return;}
       s.name=n;s.id=i;s.sec=sc2;s.started=true;s.t0=Date.now();render();
     }; return;
   }
@@ -751,6 +752,7 @@ function renderQuiz(m){
     document.getElementById('startbtn').onclick=()=>{
       const n=document.getElementById('f_name').value.trim(), i=document.getElementById('f_id').value.trim(), sc2=document.getElementById('f_sec').value.trim();
       if(!n||!i||!sc2){alert('Please enter your name and student ID, and select your section.');return;}
+      if(!rosterAllows(i)){alert('This student ID is not on the class roster. Check that you typed your university ID exactly as it appears in the LMS, or contact your instructor.');return;}
       s.name=n;s.id=i;s.sec=sc2;s.started=true;
       let pool=[];
       if(all){for(const c in DATA) DATA[c].mc.forEach((q,qi)=>pool.push({c:+c,qi}));}
@@ -917,6 +919,11 @@ function renderInstructor(m){
    '<span class="mono">FILTER BY NAME:</span><input id="gbfilter" placeholder="Student name…" style="'+selStyle+'width:160px">'+
    '<button class="reset" id="gbcsv">EXPORT CSV</button><button class="reset" id="gbclear" style="margin-left:8px;color:var(--proof)">CLEAR GRADEBOOK</button></div>'+
    '<div id="gbout"></div></div>'+
+   '<div class="memo" style="margin-top:22px"><h2 style="font-size:20px">Class Roster builder</h2>'+
+   '<p class="sub" style="margin-top:6px">Restrict graded work to enrolled students. Paste your students’ university IDs below (one per line) and click GENERATE. Copy the produced <span class="mono">const ROSTER=[...]</span> line over the matching line in <span class="mono">config.js</span> (edit it on GitHub), and only those IDs can start homework, quizzes, or exams. The line contains scrambled fingerprints, never the IDs themselves, so nothing private is published. Roster status: <b>'+(typeof ROSTER!=='undefined'&&ROSTER.length?ROSTER.length+' student ID(s) enrolled':'OFF — any ID accepted')+'</b>.</p>'+
+   '<label style="font-family:ui-monospace,Consolas,Menlo,monospace;font-size:11px;letter-spacing:.1em;color:var(--mut);display:block;margin-top:10px">STUDENT IDS — ONE PER LINE (kept in this browser only)</label>'+
+   '<textarea id="rin" style="width:100%;min-height:90px;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12.5px;padding:10px;border:1px solid var(--line);background:#FCFAF5" placeholder="0123456&#10;0234567"></textarea>'+
+   '<button class="gobtn green" id="rgen">GENERATE ROSTER LINE</button><div id="rout"></div></div>'+
    '<div class="memo" style="margin-top:22px"><h2 style="font-size:20px">Setup &amp; privacy notes</h2><div class="rules"><ul>'+
    '<li><b>Change the secret.</b> Open this file and edit the <span class="mono">SECRET</span> constant near the top of the script before deploying. Codes are only verifiable against the same secret, which prevents students from generating codes on an unmodified copy.</li>'+
    '<li><b>FERPA posture.</b> This site is static: no server, no database, no analytics, no transmission. Names, IDs, answers, and scores exist only in the student\u2019s browser and vanish on reload. Grades enter your records solely through the LMS assignment where students paste their code \u2014 so all education records stay inside your institution\u2019s FERPA-covered systems. Consider having students use their university ID (not SSN or personal data) in the ID field.</li>'+
@@ -969,6 +976,15 @@ function renderInstructor(m){
   document.getElementById('gbclear').onclick=()=>{
     if(!confirm('Delete ALL stored gradebook entries from this browser? Export a CSV first if you need a record.')) return;
     localStorage.removeItem(GBKEY); renderInstructor(m);
+  };
+  document.getElementById('rgen').onclick=()=>{
+    const ids=document.getElementById('rin').value.split(/\n+/).map(s=>s.trim()).filter(Boolean);
+    if(!ids.length){document.getElementById('rout').innerHTML='<p class="sub" style="margin-top:8px">Paste at least one student ID above.</p>';return;}
+    const uniq=Array.from(new Set(ids.map(s=>s.toLowerCase())));
+    const line="const ROSTER=["+uniq.map(id=>"'"+djb2('roster|'+id)+"'").join(',')+"];";
+    document.getElementById('rout').innerHTML='<p class="sub" style="margin-top:10px"><b>'+uniq.length+' student ID(s)</b> — copy this line over the <span class="mono">const ROSTER=[];</span> line in <span class="mono">config.js</span>:</p>'+
+     '<div class="codebox" style="word-break:break-all">'+esc(line)+'</div><button class="copybtn" data-code="'+esc(line)+'">COPY LINE</button>';
+    wireCopy(document.getElementById('rout'));
   };
   drawGB();
 }
