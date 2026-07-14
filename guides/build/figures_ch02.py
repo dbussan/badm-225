@@ -41,14 +41,24 @@ arr(ax,1.8,1.9,4.4,1.15); arr(ax,5.0,1.9,5.0,1.2); arr(ax,8.2,1.9,5.7,1.15)
 box(ax,1.4,0.35,7.2,0.8,'“So that the director (who) approves the $2,400 license (what)\nbecause it saves six staff-hours weekly (why).”',fc=TINT,tc=INK,fs=10)
 save(fig,'ch2_purpose.png')
 
-# 3 — audience rings
-fig, ax = plt.subplots(figsize=(7.0,4.6)); ax.set_xlim(0,10); ax.set_ylim(0,7); ax.axis('off'); ax.set_aspect('equal')
-for r,c,a in [(3.3,'#DFE9E2',1),(2.4,'#BDD4C4',1),(1.5,MOSS,1),(0.75,GREEN,1)]:
-    ax.add_patch(Circle((5,3.4),r,fc=c,ec='white',lw=2))
-ax.text(5,3.4,'PRIMARY\nacts on it',ha='center',va='center',color='white',fontsize=9.5,weight='bold')
-ax.text(5,5.15,'SECONDARY — will read it later (the forward, the file)',ha='center',fontsize=9.5,color=INK)
-ax.text(5,6.0,'GATEKEEPERS — decide whether it reaches the primary reader',ha='center',fontsize=9.5,color=INK)
-ax.text(5,6.75,'HIDDEN — legal, HR, competitors, the public record',ha='center',fontsize=9.5,color=INK)
+# 3 — audience rings (labels beside the rings, never across them)
+fig, ax = plt.subplots(figsize=(8.6,4.4)); ax.set_xlim(0,12); ax.set_ylim(0,7); ax.axis('off'); ax.set_aspect('equal')
+rings=[(3.2,'#DFE9E2'),(2.35,'#BDD4C4'),(1.5,MOSS),(0.78,GREEN)]
+for r,c in rings:
+    ax.add_patch(Circle((3.4,3.5),r,fc=c,ec='white',lw=2))
+ax.text(3.4,3.5,'PRIMARY',ha='center',va='center',color='white',fontsize=9.5,weight='bold')
+legend=[
+    (GREEN,'PRIMARY','acts on it — the decision-maker you write for'),
+    (MOSS,'SECONDARY','will read it later (the forward, the file)'),
+    ('#BDD4C4','GATEKEEPERS','decide whether it reaches the primary reader'),
+    ('#DFE9E2','HIDDEN','legal, HR, competitors, the public record'),
+]
+ly=5.6
+for c,name,desc in legend:
+    ax.add_patch(Rectangle((7.0,ly-0.17),0.42,0.42,fc=c,ec='white',lw=1.5))
+    ax.text(7.6,ly+0.04,name,ha='left',va='center',fontsize=9.5,weight='bold',color=INK)
+    ax.text(7.6,ly-0.42,desc,ha='left',va='center',fontsize=9.5,color=INK)
+    ly-=1.15
 save(fig,'ch2_audience.png')
 
 # 4 — you-view transformation

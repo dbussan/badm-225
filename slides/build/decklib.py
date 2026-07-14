@@ -266,16 +266,20 @@ def _footer_dark(slide, deck_label, idx):
 def takeaways_slide(prs, items, deck_label, idx, site_note=None):
     slide = content_slide(prs, "Key takeaways", deck_label, idx)
     y = Inches(1.7)
-    step = Inches(0.7) if site_note else Inches(0.8)
+    # Fit rows to the space above the site_note card (if any): shrink the row
+    # step and font together so long lists can never collide with the card.
+    bottom = Inches(5.95) if site_note else Inches(6.9)
+    step = min(Inches(0.7) if site_note else Inches(0.8),
+               int((bottom - y) / max(1, len(items))))
+    size = 15.5 if step >= Inches(0.66) else 13.5
     for i, it in enumerate(items):
-        badge(slide, Inches(0.7), y + Inches(0.02), Inches(0.46), "✓",
+        badge(slide, Inches(0.7), y + Inches(0.02), min(Inches(0.46), step - Inches(0.12)), "✓",
               alt_text="Checkmark")
-        tf = textbox(slide, Inches(1.45), y, Inches(11.3), Inches(0.7), "Takeaway " + str(i + 1))
-        para(tf, it, size=15.5, first=True)
+        tf = textbox(slide, Inches(1.45), y, Inches(11.3), step, "Takeaway " + str(i + 1))
+        para(tf, it, size=size, first=True)
         y += step
     if site_note:
-        cy = min(y + Inches(0.08), Inches(6.15))
-        _, tf = card(slide, Inches(0.6), cy, Inches(11.4), Inches(0.75),
+        _, tf = card(slide, Inches(0.6), y + Inches(0.08), Inches(11.4), Inches(0.75),
                      fill=GREEN, alt="Practice reminder")
         para(tf, site_note, size=14.5, color=WHITE, first=True, space_after=0)
         tf.paragraphs[0].runs[0].font.bold = True
