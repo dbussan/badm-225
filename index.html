@@ -1005,7 +1005,7 @@ function render(){
        '<p class="sub" style="margin-top:4px">'+c[2]+'</p>'+
        '<a class="mono" href="slides/career/'+c[0]+'" download style="color:var(--navy);font-size:12px">⬇ DOWNLOAD</a></div>';
     });
-    m.insertAdjacentHTML('beforeend',h+'<footer><b>About this series.</b> These presentations are the instructor’s own original work, shared for students in this course. They are not affiliated with any textbook or publisher.</footer>');
+    m.insertAdjacentHTML('beforeend',h+'<footer><b>About this series.</b> These presentations are the instructor’s own original work, shared for students in this course. They are not affiliated with any textbook or publisher. <b>Copyright &amp; institutional use.</b> &copy; Derek D. Bussan. Free for individual browsing; institutional adoption or redistribution requires a license from the author (<a href="mailto:bussan@okstate.edu" style="color:var(--navy)">bussan@okstate.edu</a>).</footer>');
     return;
   }
   if(view.kind==='quizAll'){
@@ -1027,7 +1027,7 @@ function render(){
   if(view.mode==='practice') renderPractice(m,d);
   else if(view.mode==='homework') renderHomework(m,d);
   else renderQuiz(m);
-  m.insertAdjacentHTML('beforeend','<footer><b>About this practice set.</b> All questions and model guidance are original material written by the instructor as supplemental practice for BADM 225. This is an independent, instructor-created site — it is not an official university website, and it is not affiliated with, and does not reproduce content from, any textbook or publisher. Nothing you enter is uploaded or stored; scores reach your instructor only via completion codes submitted in the LMS.</footer>');
+  m.insertAdjacentHTML('beforeend','<footer><b>About this practice set.</b> All questions and model guidance are original material written by the instructor as supplemental practice for BADM 225. This is an independent, instructor-created site — it is not an official university website, and it is not affiliated with, and does not reproduce content from, any textbook or publisher. Nothing you enter is uploaded or stored; scores reach your instructor only via completion codes submitted in the LMS. <b>Copyright &amp; institutional use.</b> &copy; Derek D. Bussan. Free for individual students and instructors to browse and practice. Institutional adoption — assigning these materials in a course, importing the question banks into an LMS, or redistribution — requires a license; LMS-ready packages (Canvas, Blackboard, or any QTI-compatible system) and turnkey course builds are available from the author at <a href="mailto:bussan@okstate.edu" style="color:var(--navy)">bussan@okstate.edu</a>.</footer>');
   wireCopy(m);
 }
 render();
