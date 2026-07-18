@@ -54,7 +54,7 @@ def _page_numbers(doc, chapter_num):
     footer = doc.sections[0].footer
     p = footer.paragraphs[0]
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r1 = p.add_run(f'BADM 225 Study Guide · Chapter {chapter_num}  —  Page ')
+    r1 = p.add_run(f'© 2026 Derek D. Bussan · BADM 225 Study Guide · Chapter {chapter_num}  —  Page ')
     r1.font.size = Pt(9); r1.font.color.rgb = MUT
     _field(p, 'PAGE')
     r2 = p.add_run(' of ')

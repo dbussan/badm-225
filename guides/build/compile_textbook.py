@@ -63,6 +63,10 @@ def build_master():
         'companion practice site uploads or stores student data — completion codes are the only '
         'record that reaches the instructor.')
     r2.font.size = Pt(10); r2.font.color.rgb = MUT
+    p3 = doc.add_paragraph(); r3 = p3.add_run(
+        '© 2026 Derek D. Bussan. All rights reserved. Free for individual student and instructor '
+        'use; institutional adoption or redistribution requires a license from the author.')
+    r3.font.size = Pt(10); r3.font.color.rgb = MUT; r3.font.bold = True
     doc.add_page_break()
 
     doc.add_paragraph('Table of Contents', style='Heading 1')
@@ -100,7 +104,7 @@ def set_volume_footer(doc, total_pages=None):
     for r in list(p.runs):
         r._r.getparent().remove(r._r)
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r1 = p.add_run('BADM 225 · Complete Study Guide  —  Page ')
+    r1 = p.add_run('© 2026 Derek D. Bussan · BADM 225 Complete Study Guide  —  Page ')
     r1.font.size = Pt(9); r1.font.color.rgb = MUT; r1.font.name = 'Calibri'
     field(p, 'PAGE')
     r2 = p.add_run(' of ' + (str(total_pages) if total_pages else '000'))

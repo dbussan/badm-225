@@ -38,7 +38,7 @@ def _bg(slide, color):
 def _footer(slide, deck_label, idx):
     tb = slide.shapes.add_textbox(Inches(0.55), Inches(7.05), Inches(6), Inches(0.35))
     tf = tb.text_frame; tf.word_wrap = False
-    r = tf.paragraphs[0].add_run(); r.text = deck_label
+    r = tf.paragraphs[0].add_run(); r.text = deck_label + '  ·  © Derek D. Bussan'
     r.font.name = BODY; r.font.size = Pt(10); r.font.color.rgb = MUTED
     _alt(tb, "Footer: " + deck_label)
     tb2 = slide.shapes.add_textbox(Inches(12.3), Inches(7.05), Inches(0.7), Inches(0.35))
@@ -259,7 +259,7 @@ def discussion_slide(prs, title, questions, deck_label, idx):
 
 def _footer_dark(slide, deck_label, idx):
     tb = slide.shapes.add_textbox(Inches(0.55), Inches(7.05), Inches(6), Inches(0.35))
-    r = tb.text_frame.paragraphs[0].add_run(); r.text = deck_label
+    r = tb.text_frame.paragraphs[0].add_run(); r.text = deck_label + '  ·  © Derek D. Bussan'
     r.font.name = BODY; r.font.size = Pt(10); r.font.color.rgb = RGBColor(0xA8, 0xC4, 0xB2)
     _alt(tb, "Footer")
 
