@@ -128,7 +128,7 @@ def title_slide(prs, kicker, title, subtitle, deck_label):
     tfs = textbox(slide, Inches(0.9), Inches(4.2), Inches(11.0), Inches(1.0), "Subtitle")
     para(tfs, subtitle, size=19, color=TINT, first=True)
     tfd = textbox(slide, Inches(0.9), Inches(6.4), Inches(11.0), Inches(0.6), "Attribution")
-    para(tfd, deck_label + "  ·  Original instructional material — no publisher content", size=12,
+    para(tfd, deck_label + "  ·  Original material © 2026 Derek D. Bussan, PhD, MBA  ·  No publisher content", size=12,
          color=RGBColor(0xA8, 0xC4, 0xB2), first=True)
     return slide
 
